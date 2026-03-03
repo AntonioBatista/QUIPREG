@@ -1,50 +1,55 @@
 {
   "topics": [
     {
-      "name": "T1: Estructura Atómica",
-      "file": "T1:_Estructura_Atómica.json",
-      "count": 5
-    },
-    {
-      "name": "T2: Enlace Químico",
-      "file": "T2:_Enlace_Químico.json",
-      "count": 1
-    },
-    {
-      "name": "T3: Termoquímica",
-      "file": "T3:_Termoquímica.json",
-      "count": 3
-    },
-    {
-      "name": "T4: Cinética Química",
-      "file": "T4:_Cinética_Química.json",
-      "count": 1
-    },
-    {
-      "name": "T5: Equilibrio Químico",
-      "file": "T5:_Equilibrio_Químico.json",
-      "count": 5
-    },
-    {
-      "name": "T6: Ácido-Base",
-      "file": "T6:_Ácido-Base.json",
+      "name": "Estructura Atómica",
+      "file": "Estructura_Atómica.json",
       "count": 2
     },
     {
-      "name": "T7: Redox",
-      "file": "T7:_Redox.json",
-      "count": 4
-    },
-    {
-      "name": "T8: Química Orgánica",
-      "file": "T8:_Química_Orgánica.json",
-      "count": 5
-    },
-    {
-      "name": "T0: Formulación inorgánica",
-      "file": "T0:_Formulación_inorgánica.json",
+      "name": "Enlace Químico",
+      "file": "Enlace_Químico.json",
       "count": 0
+    },
+    {
+      "name": "Termoquímica",
+      "file": "Termoquímica.json",
+      "count": 1
+    },
+    {
+      "name": "Cinética Química",
+      "file": "Cinética_Química.json",
+      "count": 0
+    },
+    {
+      "name": "Equilibrio Químico",
+      "file": "Equilibrio_Químico.json",
+      "count": 2
+    },
+    {
+      "name": "Ácido-Base",
+      "file": "Ácido-Base.json",
+      "count": 0
+    },
+    {
+      "name": "Redox",
+      "file": "Redox.json",
+      "count": 1
+    },
+    {
+      "name": "Química Orgánica",
+      "file": "Química_Orgánica.json",
+      "count": 2
+    },
+    {
+      "name": "Química Inorgánica",
+      "file": "Química_Inorgánica.json",
+      "count": 0
+    },
+    {
+      "name": "Estequiometría",
+      "file": "Estequiometría.json",
+      "count": 1
     }
   ],
-  "last_updated": "2026-03-03T17:43:31.125Z"
+  "last_updated": "2026-03-03T21:15:31.348Z"
 }
