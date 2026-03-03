@@ -13,6 +13,60 @@
   ],
   "questions": [
     {
+      "text": "1A. Escriba las configuraciones electrónicas de los siguientes elementos: a) El elemento del grupo 14 de menor carácter metálico. b) El elemento del tercer periodo de mayor radio atómico. c) El elemento del cuarto periodo con solo un electrón en un orbital “d”. d) El elemento del segundo periodo que tiene más tendencia a formar un catión divalente.",
+      "topic_name": "Estructura Atómica",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "1B. a) Dadas las moléculas H2S y PF3, razone en cuál o cuáles de ellas el átomo central presenta algún par de electrones sin compartir. b) Justifique la geometría que presenta la molécula de PF3 c) Indique la hibridación del átomo central del H2S. d) ¿Por qué la molécula BF3 es apolar?",
+      "topic_name": "Enlace Químico",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "2A. Justifique si son verdaderas o falsas las siguientes afirmaciones: a) Un proceso exotérmico y espontáneo a cualquier temperatura tendrá ΔS > 0. b) La sublimación del diyodo es un proceso que implica un aumento de entropía. c) En todos los procesos espontáneos la entropía del sistema aumenta. d) La reacción PCl3(g) + Cl2(g) → PCl5(g) (ΔH0 = −86 kJ·mol−1) no es espontánea a ninguna temperatura.",
+      "topic_name": "Termoquímica",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "2B. La reacción química 2A + B → C tiene como ecuación de velocidad v = k·[A]2·[B]. Responda razonadamente: a) ¿Cuál es el orden total de la reacción? b) Determine las unidades de la constante de velocidad. c) ¿Se puede considerar que, durante el transcurso de la reacción química, la velocidad de la reacción permanece constante? d) ¿La velocidad de desaparición de B es igual que la velocidad de aparición de C?",
+      "topic_name": "Cinética Química",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "3A. El equilibrio de descomposición del NaHCO3 puede expresarse como: 2NaHCO3(s) ⇄ Na2CO3(s) + CO2(g) + H2O(g). Para estudiar este equilibrio en el laboratorio, se depositaron 200 g de NaHCO3(s) en un recipiente cerrado de 25 L, en el que previamente se hizo el vacío y se calentó a 110 °C. La presión en el interior del recipiente, una vez alcanzado el equilibrio, fue de 1,65 atm. Calcule: a) La masa de NaHCO3(s) que queda en el recipiente tras alcanzarse el equilibrio a 110 °C. b) El valor de KP y KC a esa temperatura. Datos: R = 0,082 atm·L·mol−1·K−1; Masas atómicas relativas: Na=23; O=16; C=12; H=1",
+      "topic_name": "Equilibrio Químico",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "3B. Se preparan 250 mL de una disolución acuosa de HNO3 a partir de 2 mL de una disolución comercial de densidad 1,12 g·mL−1 y 20% de riqueza en masa. a) ¿Qué molaridad y pH tendrá la disolución preparada? b) ¿Qué volumen de una disolución de NaOH 0,02 M será necesario añadir para neutralizar 100 mL de la disolución que se ha preparado? Datos: Masas atómicas relativas: O=16; N=14; H=1",
+      "topic_name": "Ácido-Base",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "4A. Nombre o formule los siguientes compuestos: a) CH3―CH=CH―CH=CH2 b) CH3―CH(OH)―CH2―CN c) 3–Metilpent–2–eno d) Etanamida",
+      "topic_name": "Química Orgánica",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "4B. a) Escriba y ajuste la reacción de combustión del CH3CH2CH3 b) Escriba y ajuste la reacción de deshidratación del CH3CH2CH2OH c) Escriba un isómero de función del compuesto CH3COCH2CH3",
+      "topic_name": "Química Orgánica",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
+      "text": "5. PROTECCIÓN CONTRA LA CORROSIÓN. a) Justifique cuáles de los metales de la Tabla pueden utilizarse como ánodo de sacrificio. b) Calcule la intensidad de corriente necesaria para obtener una producción diaria de 10 kg de magnesio metálico por electrólisis de MgCl2 fundido, escribiendo la reacción correspondiente. c) A partir del equilibrio de solubilidad del MgCO3, determine la masa de magnesio que hay disuelta en 25 L de disolución saturada de dicha sal. d) Nombre o formule los cuatro compuestos que aparecen en negrita en el texto (óxido de hierro(III), MgCl2, MgCO3, fosfato de magnesio, MgF2, Mg(OH)2). Datos: F= 96500 C·mol–1, Masa atómica relativa: Mg= 24,3; Ks(MgCO3)= 3,5·10–8",
+      "topic_name": "Redox",
+      "exam_year": 2025,
+      "source_file": "Examen_Titular-A_Quimica.pdf"
+    },
+    {
       "text": "1A. Justifique la veracidad o falsedad de las siguientes afirmaciones: a) Una de las posibles combinaciones de los números cuánticos del electrón diferenciador del átomo de B es (2,1,0,−1/2). b) Los electrones que se encuentran en los orbitales 2p tienen la misma energía. c) El átomo de oxígeno tiene dos electrones desapareados en los orbitales 2p. d) Los elementos situados en el grupo 13 de la tabla periódica tienen distinto número de electrones en su capa de valencia.",
       "topic_name": "Estructura Atómica",
       "exam_year": 2025,
