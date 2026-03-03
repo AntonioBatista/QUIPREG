@@ -1,13 +1,13 @@
 {
   "topics": [
     {
-      "name": "Estructura Atómica",
-      "file": "Estructura_Atómica.json",
+      "name": "T1: Estructura Atómica",
+      "file": "T1:_Estructura_Atómica.json",
       "count": 5
     },
     {
-      "name": "Enlace Químico",
-      "file": "Enlace_Químico.json",
+      "name": "T2: Enlace Químico",
+      "file": "T2:_Enlace_Químico.json",
       "count": 1
     },
     {
@@ -39,7 +39,12 @@
       "name": "Química Orgánica",
       "file": "Química_Orgánica.json",
       "count": 5
+    },
+    {
+      "name": "T0: Formulación inorgánica",
+      "file": "T0:_Formulación_inorgánica.json",
+      "count": 0
     }
   ],
-  "last_updated": "2026-03-03T17:34:48.894Z"
+  "last_updated": "2026-03-03T17:40:11.742Z"
 }
