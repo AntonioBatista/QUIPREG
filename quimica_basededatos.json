@@ -1,0 +1,55 @@
+{
+  "topics": [
+    {
+      "name": "Estructura Atómica",
+      "file": "Estructura_Atómica.json",
+      "count": 5
+    },
+    {
+      "name": "Enlace Químico",
+      "file": "Enlace_Químico.json",
+      "count": 1
+    },
+    {
+      "name": "Termoquímica",
+      "file": "Termoquímica.json",
+      "count": 3
+    },
+    {
+      "name": "Cinética Química",
+      "file": "Cinética_Química.json",
+      "count": 1
+    },
+    {
+      "name": "Equilibrio Químico",
+      "file": "Equilibrio_Químico.json",
+      "count": 5
+    },
+    {
+      "name": "Ácido-Base",
+      "file": "Ácido-Base.json",
+      "count": 2
+    },
+    {
+      "name": "Redox",
+      "file": "Redox.json",
+      "count": 4
+    },
+    {
+      "name": "Química Orgánica",
+      "file": "Química_Orgánica.json",
+      "count": 5
+    },
+    {
+      "name": "Química Inorgánica",
+      "file": "Química_Inorgánica.json",
+      "count": 4
+    },
+    {
+      "name": "Estequiometría",
+      "file": "Estequiometría.json",
+      "count": 1
+    }
+  ],
+  "last_updated": "2026-03-03T17:25:08.958Z"
+}
