@@ -31,8 +31,8 @@
       "count": 2
     },
     {
-      "name": "Redox",
-      "file": "Redox.json",
+      "name": "T7: Redox",
+      "file": "T7:_Redox.json",
       "count": 4
     },
     {
@@ -46,5 +46,5 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-03T17:42:46.491Z"
+  "last_updated": "2026-03-03T17:42:58.465Z"
 }
