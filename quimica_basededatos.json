@@ -39,17 +39,7 @@
       "name": "Química Orgánica",
       "file": "Química_Orgánica.json",
       "count": 5
-    },
-    {
-      "name": "Química Inorgánica",
-      "file": "Química_Inorgánica.json",
-      "count": 4
-    },
-    {
-      "name": "Estequiometría",
-      "file": "Estequiometría.json",
-      "count": 1
     }
   ],
-  "last_updated": "2026-03-03T17:25:26.567Z"
+  "last_updated": "2026-03-03T17:32:59.938Z"
 }
