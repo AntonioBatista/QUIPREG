@@ -16,8 +16,8 @@
       "count": 3
     },
     {
-      "name": "Cinética Química",
-      "file": "Cinética_Química.json",
+      "name": "T4: Cinética Química",
+      "file": "T4:_Cinética_Química.json",
       "count": 1
     },
     {
@@ -26,8 +26,8 @@
       "count": 5
     },
     {
-      "name": "Ácido-Base",
-      "file": "Ácido-Base.json",
+      "name": "T6: Ácido-Base",
+      "file": "T6:_Ácido-Base.json",
       "count": 2
     },
     {
@@ -46,5 +46,5 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-03T17:41:43.270Z"
+  "last_updated": "2026-03-03T17:42:46.491Z"
 }
