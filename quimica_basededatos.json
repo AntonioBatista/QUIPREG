@@ -11,8 +11,8 @@
       "count": 1
     },
     {
-      "name": "Termoquímica",
-      "file": "Termoquímica.json",
+      "name": "T3: Termoquímica",
+      "file": "T3:_Termoquímica.json",
       "count": 3
     },
     {
@@ -21,8 +21,8 @@
       "count": 1
     },
     {
-      "name": "Equilibrio Químico",
-      "file": "Equilibrio_Químico.json",
+      "name": "T5: Equilibrio Químico",
+      "file": "T5:_Equilibrio_Químico.json",
       "count": 5
     },
     {
@@ -46,5 +46,5 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-03T17:40:11.742Z"
+  "last_updated": "2026-03-03T17:41:43.270Z"
 }
