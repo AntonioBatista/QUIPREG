@@ -1,6 +1,11 @@
 {
   "topics": [
     {
+      "name": "T0: Formulación inorgánica",
+      "file": "T0:_Formulación_inorgánica.json",
+      "count": 0
+    },
+    {
       "name": "T1: Estructura Atómica",
       "file": "T1:_Estructura_Atómica.json",
       "count": 4
@@ -46,15 +51,10 @@
       "count": 6
     },
     {
-      "name": "T0: Formulación inorgánica",
-      "file": "T0:_Formulación_inorgánica.json",
-      "count": 0
-    },
-    {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
       "count": 3
     }
   ],
-  "last_updated": "2026-03-04T12:58:43.155Z"
+  "last_updated": "2026-03-04T13:09:01.843Z"
 }
