@@ -1,5 +1,27 @@
 [
   {
+    "text": "BLOQUE B (Cuestiones). Se plantearán SEIS cuestiones para elegir TRES de las propuestas. La puntuación máxima de cada cuestión es de 1,50 puntos. Cuando las cuestiones tengan varios apartados, la puntuación total se repartirá, por igual, entre los mismos.",
+    "topic_name": "Actividad Competencial",
+    "exam_year": 2024,
+    "exam_model": "Desconocido",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "foi5mxq73",
+    "source_file": "Criterios_Titular-A_QUÍMICA.pdf"
+  },
+  {
+    "text": "BLOQUE C (Problemas). Se platearán CUATRO problemas para elegir DOS de los propuestos. La puntuación máxima de cada problema es de 2,00 puntos. Cuando los problemas tengan varios apartados, la puntuación total se repartirá, por igual, entre los mismos.",
+    "topic_name": "Actividad Competencial",
+    "exam_year": 2024,
+    "exam_model": "Desconocido",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "sedqmsqzx",
+    "source_file": "Criterios_Titular-A_QUÍMICA.pdf"
+  },
+  {
     "text": "C4. Una aplicación para el hidrógeno verde es, utilizando CO2 atmosférico, su conversión a CH3OH, ya que éste es fácil de transportar y puede ser utilizado como combustible. La reacción es la siguiente: 2CO2(g) + 4H2(g) -> 2CH3OH(l) + O2(g). a) Obtenga la variación de entalpía estándar de la reacción a partir de las entalpías estándar de formación de los compuestos implicados. b) Calcule la variación de entropía y determine la variación de energía libre de Gibbs a 500 K. Datos proporcionados en tabla.",
     "topic_name": "Actividad Competencial",
     "exam_year": 2024,
