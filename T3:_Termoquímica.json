@@ -1,5 +1,14 @@
 [
   {
+    "text": "3A. a) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH3CH2OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l)\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior.\nDatos: O2(g) [S0=204,8; ΔHf0=0], CO2(g) [S0=213,8; ΔHf0=-393,5], H2O(l) [S0=69,8; ΔHf0=-285,8], CH3CH2OH(l) [S0=160,5; ΔHf0=-277,3]. (Unidades S0: J·mol-1·K-1; ΔHf0: kJ·mol-1)",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "is_competency_based": false,
+    "id": "9qh5ky09d",
+    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+  },
+  {
     "text": "2A. Justifique si son verdaderas o falsas las siguientes afirmaciones: a) Un proceso exotérmico y espontáneo a cualquier temperatura tendrá ΔS> 0. b) La sublimación del diyodo es un proceso que implica un aumento de entropía. c) En todos los procesos espontáneos la entropía del sistema aumenta. d) La reacción PCl3(g) + Cl2(g) → PCl5(g) (ΔH0= −86 kJ·mol–1) no es espontánea a ninguna temperatura.",
     "topic_name": "T3: Termoquímica",
     "exam_year": 2025,
