@@ -1,5 +1,16 @@
 [
   {
+    "text": "3A. a) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH3CH2OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l)\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior.\nDatos: S0 (J·mol-1·K-1): O2(g)=204,8; CO2(g)=213,8; H2O(l)=69,8; CH3CH2OH(l)=160,5. ΔHf (kJ·mol-1): O2(g)=0; CO2(g)=-393,5; H2O(l)=-285,8; CH3CH2OH(l)=-277,3.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "es5lnklwp",
+    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+  },
+  {
     "text": "3A. a) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH3CH2OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l)\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior.\nDatos: O2(g) [S0=204,8; ΔHf0=0], CO2(g) [S0=213,8; ΔHf0=-393,5], H2O(l) [S0=69,8; ΔHf0=-285,8], CH3CH2OH(l) [S0=160,5; ΔHf0=-277,3]. (Unidades S0: J·mol-1·K-1; ΔHf0: kJ·mol-1)",
     "topic_name": "T3: Termoquímica",
     "exam_year": 2025,
