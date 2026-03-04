@@ -1,5 +1,23 @@
 [
   {
+    "text": "3A. a) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH3CH2OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l)\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior. Datos: O2(g) S0=204,8, ΔHf0=0; CO2(g) S0=213,8, ΔHf0=-393,5; H2O(l) S0=69,8, ΔHf0=-285,8; CH3CH2OH(l) S0=160,5, ΔHf0=-277,3 (unidades en J·mol-1·K-1 y kJ·mol-1 respectivamente).",
+    "topic_name": "Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "i8h0acmny",
+    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+  },
+  {
+    "text": "2A. Justifique si son verdaderas o falsas las siguientes afirmaciones: a) Un proceso exotérmico y espontáneo a cualquier temperatura tendrá ΔS> 0. b) La sublimación del diyodo es un proceso que implica un aumento de entropía. c) En todos los procesos espontáneos la entropía del sistema aumenta. d) La reacción PCl3(g) + Cl2(g) → PCl5(g) (ΔH0= −86 kJ·mol–1) no es espontánea a ninguna temperatura.",
+    "topic_name": "Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "id": "lzr9yjol3",
+    "source_file": "Examen_Titular-A_Quimica.pdf"
+  },
+  {
     "text": "2A. a) Estudie la espontaneidad del siguiente proceso: H2(g) + 1/2O2(g) → H2O(g) ∆H0= –241,8 kJ·mol–1. b) Razone si la obtención de amoniaco a partir de sus elementos presenta un aumento o disminución de entropía. c) En qué caso coindice el valor del calor de reacción a presión constante y el valor del calor de reacción a volumen constante. Justique la respuesta utilizando la relación que existe entre ambas. d) Razone cómo varía la entropía en la fusión del hielo.",
     "topic_name": "Termoquímica",
     "exam_year": 2025,
