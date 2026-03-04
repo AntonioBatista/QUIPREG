@@ -1,5 +1,27 @@
 [
   {
+    "text": "B4. Dada la pila: Al(s)|Al3+(ac)||Cu2+(ac)|Cu(s)\na) Justifique, escribiendo la semirreacción que tiene lugar en cada uno, cuál es el ánodo y cuál el cátodo.\nb) Calcule el potencial estándar de la pila.\nc) Razone qué ocurriría si se sustituyera el electrodo de aluminio por uno de plata.\nDatos: E°(Al3+/Al)= –1,66 V; E°(Cu2+/Cu)= 0,34 V; E°(Ag+/Ag)= 0,80 V",
+    "topic_name": "T8: Redox",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "ehfy68wwm",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "C4. El estaño reacciona con ácido nítrico y se forma dióxido de estaño, monóxido de nitrógeno y agua. Sn + HNO3 → SnO2 + NO + H2O. a) Ajuste las ecuaciones iónica y molecular por el método del ion-electrón. b) Se dispone de una aleación de estaño empleada para soldar componentes electrónicos. Para determinar su pureza se hacen reaccionar 50 g con ácido nítrico en exceso. Calcule el porcentaje de Sn en la aleación si en el proceso se obtienen 6,75 L de NO a 785 mmHg y 28 ºC. Datos: Masa atómica relativa: Sn= 118,7; R= 0,082 atm·L·mol–1·K–1",
+    "topic_name": "T8: Redox",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "b2t7wuxzn",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
     "text": "C4. El Cl2 es un gas corrosivo por lo que se sintetiza en el laboratorio a través de la siguiente reacción: KMnO4(ac) + HCl(ac) → KCl(ac) + MnCl2(ac) + H2O(l) + Cl2(g)\na) Ajuste las ecuaciones iónica y molecular por el método del ion-electrón.\nb) Calcule el volumen de Cl2 obtenido a 0 ºC y 1 atm de presión a partir de 30 mL de una disolución 0,5 M de KMnO4 y 50 mL de una disolución 0,25 M de HCl.\nDato: R= 0,082 atm·L·mol−1·K−1",
     "topic_name": "T8: Redox",
     "exam_year": 2024,
