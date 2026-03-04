@@ -3,27 +3,27 @@
     {
       "name": "T1: Estructura Atómica",
       "file": "T1:_Estructura_Atómica.json",
-      "count": 2
+      "count": 3
     },
     {
       "name": "T2: Enlace Químico",
       "file": "T2:_Enlace_Químico.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "T3: Termoquímica",
       "file": "T3:_Termoquímica.json",
-      "count": 1
+      "count": 2
     },
     {
       "name": "T4: Cinética Química",
       "file": "T4:_Cinética_Química.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "T5: Equilibrio Químico",
       "file": "T5:_Equilibrio_Químico.json",
-      "count": 1
+      "count": 2
     },
     {
       "name": "T6: Equilibrios de precipitación",
@@ -33,7 +33,7 @@
     {
       "name": "T7: Ácido-Base",
       "file": "T7:_Ácido-Base.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "T8: Redox",
@@ -43,7 +43,7 @@
     {
       "name": "T9: Química Orgánica",
       "file": "T9:_Química_Orgánica.json",
-      "count": 2
+      "count": 4
     },
     {
       "name": "T0: Formulación inorgánica",
@@ -56,5 +56,5 @@
       "count": 1
     }
   ],
-  "last_updated": "2026-03-04T11:34:18.998Z"
+  "last_updated": "2026-03-04T11:35:33.364Z"
 }
