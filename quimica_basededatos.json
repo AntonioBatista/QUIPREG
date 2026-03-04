@@ -3,7 +3,7 @@
     {
       "name": "T0: Formulación inorgánica",
       "file": "T0:_Formulación_inorgánica.json",
-      "count": 12
+      "count": 13
     },
     {
       "name": "T1: Estructura Atómica",
@@ -53,8 +53,8 @@
     {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
-      "count": 5
+      "count": 7
     }
   ],
-  "last_updated": "2026-03-04T14:38:28.386Z"
+  "last_updated": "2026-03-04T14:38:44.266Z"
 }
