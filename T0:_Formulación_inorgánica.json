@@ -1,27 +1,5 @@
 [
   {
-    "text": "Se plantearán DOS preguntas para elegir UNA de las propuestas. La puntuación se realizará como en convocatorias anteriores: Seis fórmulas correctas: 1,50 puntos; Cinco fórmulas correctas: 1,00 puntos; Cuatro fórmulas correctas: 0,50 puntos; Tres fórmulas correctas: 0,25 puntos; Menos de tres fórmulas correctas: 0,00 puntos.",
-    "topic_name": "T0: Formulación inorgánica",
-    "exam_year": 2024,
-    "exam_model": "Suplente-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "be24pc1ll",
-    "source_file": "Criterios_Suplente-A_QUÍMICA.pdf"
-  },
-  {
-    "text": "BLOQUE A (Formulación). Se plantearán DOS preguntas para elegir UNA de las propuestas. La puntuación se realizará como en convocatorias anteriores: Seis fórmulas correctas: 1,50 puntos; Cinco fórmulas correctas: 1,00 puntos; Cuatro fórmulas correctas: 0,50 puntos; Tres fórmulas correctas: 0,25 puntos; Menos de tres fórmulas correctas: 0,00 puntos.",
-    "topic_name": "T0: Formulación inorgánica",
-    "exam_year": 2024,
-    "exam_model": "Desconocido",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "krs0zl27h",
-    "source_file": "Criterios_Titular-A_QUÍMICA.pdf"
-  },
-  {
     "text": "A1. Formule o nombre los siguientes compuestos: a) Hidróxido de vanadio(V); b) Bromato de aluminio; c) Etilbenceno; d) CuH2; e) H3AsO3; f) HOOCCH2COOH",
     "topic_name": "T0: Formulación inorgánica",
     "exam_year": 2024,
@@ -30,7 +8,8 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "ai7rx22zo",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
+    "solution": "### a) Hidróxido de vanadio(V)\n\nLos hidróxidos son compuestos formados por la combinación de un catión metálico con el anión hidróxido, $OH^-$. En este caso, el vanadio actúa con su estado de oxidación $+5$, según indica el numeral romano.\n\n*   Catión: $V^{5+}$\n*   Anión: $OH^-$\n\nPara que el compuesto sea eléctricamente neutro, se necesitan cinco aniones hidróxido por cada catión de vanadio.\n\n**Fórmula:** $V(OH)_5$\n\n### b) Bromato de aluminio\n\nSe trata de una oxisal formada por el anión bromato y el catión aluminio. \n\n1.  **Anión bromato:** Proviene del ácido brómico ($HBrO_3$). El bromo actúa con estado de oxidación $+5$. El anión resultante al perder el protón es $BrO_3^-$.\n2.  **Catión aluminio:** El aluminio pertenece al grupo 13 y posee un único estado de oxidación, $Al^{3+}$.\n\nAl cruzar las valencias para obtener la neutralidad de la carga:\n\n**Fórmula:** $Al(BrO_3)_3$\n\n### c) Etilbenceno\n\nEs un hidrocarburo aromático derivado del benceno donde uno de los átomos de hidrógeno ha sido sustituido por un grupo etilo ($-CH_2-CH_3$).\n\n*   Estructura del benceno: $C_6H_6$\n*   Sustituyente etilo: $-C_2H_5$\n\n**Fórmula:** $C_6H_5-CH_2-CH_3$ (también aceptado como $C_8H_{10}$)\n\n### d) $CuH_2$\n\nEste compuesto es un hidruro metálico donde el hidrógeno actúa con estado de oxidación $-1$ y el cobre con $+2$. \n\n*   **Nomenclatura de composición (prefijos multiplicadores):** Se indica el número de átomos de cada elemento.\n*   **Nomenclatura de Stock (estado de oxidación):** Se indica el estado de oxidación del metal en números romanos si tiene más de uno.\n\n**Nombre:** Dihidruro de cobre o Hidruro de cobre(II)\n\n### e) $H_3AsO_3$\n\nEs un oxoácido de arsénico. Para nombrarlo, determinamos el estado de oxidación del átomo central ($As$):\n\n$$3 \\cdot (+1) + x + 3 \\cdot (-2) = 0 \\Rightarrow 3 + x - 6 = 0 \\Rightarrow x = +3$$\n\nEl arsénico tiene estados de oxidación $+1, +3, +5$. El estado $+3$ corresponde al sufijo \"-oso\". Al ser el ácido que contiene tres moléculas de agua respecto al óxido (forma \"orto\", que es la habitual y obligatoria de omitir el prefijo en el caso del arsénico según la IUPAC actual), se denomina:\n\n**Nombre:** Ácido arsenioso (o Trihidroxidoarsénico según la nomenclatura de adición)\n\n### f) $HOOCCH_2COOH$\n\nSe trata de un ácido dicarboxílico que presenta una cadena de tres átomos de carbono. \n\n1.  La cadena principal tiene 3 carbonos: prefijo \"propan-\".\n2.  Contiene dos grupos carboxilo ($-COOH$) en los extremos (posiciones 1 y 3).\n3.  Se añade el sufijo \"-dioico\".\n\n**Nombre:** Ácido propanodioico"
   },
   {
     "text": "A2. Formule o nombre los siguientes compuestos: a) Óxido de aluminio; b) Ácido cloroso; c) But-2-ino; d) Sn(OH)2; e) Ba(MnO4)2; f) CH3CH2CONH2",
