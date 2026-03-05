@@ -3,17 +3,17 @@
     {
       "name": "Estructura Atómica",
       "file": "Estructura_Atómica.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Enlace Químico",
       "file": "Enlace_Químico.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Termoquímica",
       "file": "Termoquímica.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Cinética Química",
@@ -23,22 +23,22 @@
     {
       "name": "Equilibrio Químico",
       "file": "Equilibrio_Químico.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Ácido-Base",
       "file": "Ácido-Base.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Redox",
       "file": "Redox.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Química Orgánica",
       "file": "Química_Orgánica.json",
-      "count": 0
+      "count": 2
     },
     {
       "name": "Química Inorgánica",
@@ -49,7 +49,12 @@
       "name": "Estequiometría",
       "file": "Estequiometría.json",
       "count": 0
+    },
+    {
+      "name": "Actividad Competencial",
+      "file": "Actividad_Competencial.json",
+      "count": 1
     }
   ],
-  "last_updated": "2026-03-05T13:45:41.194Z"
+  "last_updated": "2026-03-05T13:46:38.394Z"
 }
