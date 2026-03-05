@@ -1,60 +1,55 @@
 {
   "topics": [
     {
-      "name": "T0: Formulación inorgánica",
-      "file": "T0:_Formulación_inorgánica.json",
-      "count": 12
+      "name": "Estructura Atómica",
+      "file": "Estructura_Atómica.json",
+      "count": 0
     },
     {
-      "name": "T1: Estructura Atómica",
-      "file": "T1:_Estructura_Atómica.json",
-      "count": 15
+      "name": "Enlace Químico",
+      "file": "Enlace_Químico.json",
+      "count": 0
     },
     {
-      "name": "T2: Enlace Químico",
-      "file": "T2:_Enlace_Químico.json",
-      "count": 9
+      "name": "Termoquímica",
+      "file": "Termoquímica.json",
+      "count": 0
     },
     {
-      "name": "T3: Termoquímica",
-      "file": "T3:_Termoquímica.json",
-      "count": 6
+      "name": "Cinética Química",
+      "file": "Cinética_Química.json",
+      "count": 0
     },
     {
-      "name": "T4: Cinética Química",
-      "file": "T4:_Cinética_Química.json",
-      "count": 3
+      "name": "Equilibrio Químico",
+      "file": "Equilibrio_Químico.json",
+      "count": 0
     },
     {
-      "name": "T5: Equilibrio Químico",
-      "file": "T5:_Equilibrio_Químico.json",
-      "count": 11
+      "name": "Ácido-Base",
+      "file": "Ácido-Base.json",
+      "count": 0
     },
     {
-      "name": "T6: Equilibrios de precipitación",
-      "file": "T6:_Equilibrios_de_precipitación.json",
-      "count": 8
+      "name": "Redox",
+      "file": "Redox.json",
+      "count": 0
     },
     {
-      "name": "T7: Ácido-Base",
-      "file": "T7:_Ácido-Base.json",
-      "count": 12
+      "name": "Química Orgánica",
+      "file": "Química_Orgánica.json",
+      "count": 0
     },
     {
-      "name": "T8: Redox",
-      "file": "T8:_Redox.json",
-      "count": 13
+      "name": "Química Inorgánica",
+      "file": "Química_Inorgánica.json",
+      "count": 0
     },
     {
-      "name": "T9: Química Orgánica",
-      "file": "T9:_Química_Orgánica.json",
-      "count": 14
-    },
-    {
-      "name": "Actividad Competencial",
-      "file": "Actividad_Competencial.json",
-      "count": 7
+      "name": "Estequiometría",
+      "file": "Estequiometría.json",
+      "count": 0
     }
   ],
-  "last_updated": "2026-03-05T06:56:55.097Z"
+  "last_updated": "2026-03-05T13:38:02.102Z"
 }
