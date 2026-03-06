@@ -1,5 +1,36 @@
 [
   {
+    "text": "C) **VIBRACIONES Y ONDAS**\n\n**a)** Razone, apoyándose en el esquema del trazado de rayos y explicando su construcción, si la siguiente afirmación es verdadera o falsa: “un espejo esférico convexo puede producir una imagen virtual con un aumento lateral mayor que la unidad”.",
+    "topic_name": "T4: Óptica",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Óptica geométrica",
+      "Espejos esféricos"
+    ],
+    "id": "0awosnklo",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
+    "text": "C) **VIBRACIONES Y ONDAS**\n\n**b1)** Un haz de luz monocromática se propaga desde el aire al agua cambiando su longitud de onda de 700 a 525 nm. Calcule razonadamente:\n**i)** (0,5 puntos) la frecuencia del haz de luz;\n**ii)** (0,5 puntos) el índice de refracción del agua;\n**iii)** (0,5 puntos) su velocidad de propagación en el segundo medio.\nc = 3·108 m s-1; naire = 1",
+    "topic_name": "T4: Óptica",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Refracción",
+      "Luz monocromática",
+      "Índice de refracción"
+    ],
+    "id": "7iulh2jxo",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
     "text": "**C) VIBRACIONES Y ONDAS**\n\n**a)** Se desea obtener una imagen virtual y de mayor tamaño que el objeto utilizando una lente delgada. Justifique, apoyándose en el esquema del trazado de rayos y explicando su construcción, qué tipo de lente debe usarse e indique dónde debe colocarse el objeto.",
     "topic_name": "T4: Óptica",
     "exam_year": 2025,
