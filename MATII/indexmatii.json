@@ -24,8 +24,103 @@
       "name": "Sistemas de Ecuaciones",
       "file": "Sistemas_de_Ecuaciones.json",
       "count": 1
+    },
+    {
+      "name": "Tema 0: Formulación inorgánica",
+      "file": "Tema_0-_Formulacion_inorganica.json",
+      "count": 0
+    },
+    {
+      "name": "T1: Estructura Atómica",
+      "file": "T1-_Estructura_Atomica.json",
+      "count": 0
+    },
+    {
+      "name": "T2: Enlace Químico",
+      "file": "T2-_Enlace_Quimico.json",
+      "count": 0
+    },
+    {
+      "name": "T3: Termoquímica",
+      "file": "T3-_Termoquimica.json",
+      "count": 0
+    },
+    {
+      "name": "T4: Cinética Química",
+      "file": "T4-_Cinetica_Quimica.json",
+      "count": 0
+    },
+    {
+      "name": "T5: Equilibrio Químico",
+      "file": "T5-_Equilibrio_Quimico.json",
+      "count": 0
+    },
+    {
+      "name": "T7: Ácido-Base",
+      "file": "T7-_Acido-Base.json",
+      "count": 0
+    },
+    {
+      "name": "T8: Redox",
+      "file": "T8-_Redox.json",
+      "count": 0
+    },
+    {
+      "name": "T9: Química Orgánica",
+      "file": "T9-_Quimica_Organica.json",
+      "count": 0
+    },
+    {
+      "name": "Estructura Atómica",
+      "file": "Estructura_Atomica.json",
+      "count": 0
+    },
+    {
+      "name": "Enlace Químico",
+      "file": "Enlace_Quimico.json",
+      "count": 0
+    },
+    {
+      "name": "Termoquímica",
+      "file": "Termoquimica.json",
+      "count": 0
+    },
+    {
+      "name": "Equilibrio Químico",
+      "file": "Equilibrio_Quimico.json",
+      "count": 0
+    },
+    {
+      "name": "Ácido-Base",
+      "file": "Acido-Base.json",
+      "count": 0
+    },
+    {
+      "name": "Redox",
+      "file": "Redox.json",
+      "count": 0
+    },
+    {
+      "name": "Química Orgánica",
+      "file": "Quimica_Organica.json",
+      "count": 0
+    },
+    {
+      "name": "Química Inorgánica",
+      "file": "Quimica_Inorganica.json",
+      "count": 0
+    },
+    {
+      "name": "Cinética Química",
+      "file": "Cinetica_Quimica.json",
+      "count": 0
+    },
+    {
+      "name": "Estequiometría",
+      "file": "Estequiometria.json",
+      "count": 0
     }
   ],
-  "last_updated": "2026-03-06T06:25:54.121Z",
+  "last_updated": "2026-03-06T08:49:03.035Z",
   "total_questions": 12
 }
