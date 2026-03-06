@@ -161,8 +161,6 @@
 </div>
 
 <script>
-let currentSubject = "quimica";
-let allQuestions = [];
 // 1. Configuración de rutas y UI por asignatura
 const subjectConfig = {
     'QUIM': { title: 'Química', icon: '🧪', file: 'indexquim.json', color: 'text-emerald-600' },
@@ -173,8 +171,8 @@ const subjectConfig = {
     'DTECII': { title: 'Dibujo Técnico II', icon: '📐', file: 'indexdtec.json', color: 'text-gray-700' }
 };
 
-let currentSubject = "QUIM"; // ID inicial
-let allQuestions = [];
+let currentSubject = "QUIM"; // ID inicial único
+let allQuestions = [];       // Array de preguntas único
 
 // 2. Cambiar de asignatura
 function switchSubject(subjectId) {
@@ -220,7 +218,6 @@ async function loadData() {
     const indexFile = config.file;
 
     try {
-        // Cargar el índice de la asignatura elegida
         const response = await fetch(`${basePath}/${indexFile}`);
         if (!response.ok) throw new Error("No se encontró el índice");
         
@@ -228,7 +225,6 @@ async function loadData() {
         const files = index.topics.map(t => `${basePath}/${t.file}`);
 
         allQuestions = [];
-        // Cargar todos los JSON de los temas en paralelo
         const promises = files.map(f => fetch(f).then(r => r.json()).catch(e => []));
         const results = await Promise.all(promises);
         
@@ -249,12 +245,10 @@ function populateFilters() {
     const tSel = document.getElementById('topicSelect');
     const ySel = document.getElementById('yearSelect');
 
-    // Temas únicos
     const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
     tSel.innerHTML = '<option value="all">Todos los temas</option>';
     topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
 
-    // Años únicos
     const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
     ySel.innerHTML = '<option value="all">Todos los años</option>';
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
@@ -321,7 +315,6 @@ function render() {
         container.appendChild(card);
     });
 
-    // Renderizar LaTeX (KaTeX)
     renderMathInElement(container, {
         delimiters: [
             {left: "$$", right: "$$", display: true},
@@ -331,12 +324,11 @@ function render() {
     });
 }
 
-// 7. Event Listeners y arranque
 document.getElementById('search').oninput = render;
 document.getElementById('topicSelect').onchange = render;
 document.getElementById('yearSelect').onchange = render;
 
-// Carga inicial (Química por defecto)
+// Inicio
 loadData();
 </script>
 
