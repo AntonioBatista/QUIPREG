@@ -39,7 +39,7 @@ function renderQuestions(){
   results.innerHTML = filtered.map(q=>`
     <div class="question">
       <div class="meta">${q.exam_year} · ${q.exam_model} · ${q.topic_name}</div>
-      <div>${q.text}</div>
+      <div class="prose">${marked.parse(q.text)}</div>
     </div>
   `).join("");
 }
