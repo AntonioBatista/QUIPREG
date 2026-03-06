@@ -90,7 +90,7 @@
 <header class="sticky top-0 z-50 glass-header px-8 py-3 flex flex-wrap items-center justify-between gap-4">
     
     <div class="flex items-center gap-4">
-        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-lg">
+        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-lg transform rotate-3">
             <span class="text-white font-serif italic text-xl">v3</span>
         </div>
         <div>
@@ -98,30 +98,22 @@
                 Banco de Preguntas
             </h1>
             <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-1">
-                Codigo Corrector Exámenes v3.4
+                EBAU 2026 · Codigo Corrector
             </p>
         </div>
     </div>
 
-    <nav class="bg-gray-100/50 p-1 rounded-lg flex gap-1 border border-gray-200">
-        <button onclick="switchSubject('quimica')" id="btn-quimica" class="subject-tab active-sub flex items-center gap-2">
-            <span class="text-xs">🧪</span> Química
-        </button>
-        <button onclick="switchSubject('matii')" id="btn-matii" class="subject-tab flex items-center gap-2">
-            <span class="text-xs">➗</span> Mates II
-        </button>
+    <nav id="subjectNav" class="bg-gray-100/80 p-1 rounded-xl flex gap-1 border border-gray-200 overflow-x-auto max-w-full md:max-w-2xl no-scrollbar">
+        <button onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub whitespace-nowrap">🧪 Química</button>
+        <button onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab whitespace-nowrap">🧲 Física</button>
+        <button onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab whitespace-nowrap">⚙️ Tecno Ind. II</button>
+        <button onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab whitespace-nowrap">➗ Mates II</button>
+        <button onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab whitespace-nowrap">📈 Mates CCSS</button>
+        <button onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab whitespace-nowrap">📐 Dibujo II</button>
     </nav>
 
-    <div class="flex items-center gap-3">
-        <div id="stats" class="text-[11px] font-mono font-bold bg-white border border-gray-200 px-3 py-1.5 rounded-md shadow-sm text-gray-600">
-            ---
-        </div>
-        <button onclick="window.print()" class="p-2 hover:bg-gray-100 rounded-full transition-colors" title="Imprimir búsqueda">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
-                <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
-            </svg>
-        </button>
+    <div id="stats" class="hidden lg:block text-[11px] font-mono font-bold bg-white border border-gray-200 px-3 py-1.5 rounded-md shadow-sm text-gray-600">
+        0 RESULTADOS
     </div>
 </header>
 
@@ -171,87 +163,118 @@
 <script>
 let currentSubject = "quimica";
 let allQuestions = [];
+// 1. Configuración de rutas y UI por asignatura
+const subjectConfig = {
+    'QUIM': { title: 'Química', icon: '🧪', file: 'indexquim.json', color: 'text-emerald-600' },
+    'FIS': { title: 'Física', icon: '🧲', file: 'indexfis.json', color: 'text-blue-600' },
+    'TINII': { title: 'Tecnología Industrial II', icon: '⚙️', file: 'indextinii.json', color: 'text-orange-600' },
+    'MATII': { title: 'Matemáticas II', icon: '➗', file: 'indexmatii.json', color: 'text-indigo-600' },
+    'MACSII': { title: 'Mates Aplicadas CCSS', icon: '📈', file: 'indexmacsii.json', color: 'text-red-600' },
+    'DTECII': { title: 'Dibujo Técnico II', icon: '📐', file: 'indexdtec.json', color: 'text-gray-700' }
+};
 
-// Cambiar de asignatura con feedback visual
-function switchSubject(subject){
-    currentSubject = subject;
+let currentSubject = "QUIM"; // ID inicial
+let allQuestions = [];
+
+// 2. Cambiar de asignatura
+function switchSubject(subjectId) {
+    currentSubject = subjectId;
+    const config = subjectConfig[subjectId];
     
-    // UI Updates
-    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active-sub', 'text-black'));
-    document.getElementById(`btn-${subject}`).classList.add('active-sub');
+    // Actualizar botones (Tabs)
+    document.querySelectorAll('.subject-tab').forEach(btn => btn.classList.remove('active-sub'));
+    document.getElementById(`btn-${subjectId}`).classList.add('active-sub');
     
+    // Actualizar título dinámicamente
     const title = document.getElementById('mainTitle');
-    title.innerHTML = subject === "quimica" 
-        ? 'Banco de Preguntas · <span class="text-emerald-600">🧪 Química</span>' 
-        : 'Banco de Preguntas · <span class="text-indigo-600">➗ Matemáticas II</span>';
+    title.innerHTML = `Banco de Preguntas · <span class="${config.color}">${config.icon} ${config.title}</span>`;
 
+    // Resetear filtros visuales antes de cargar
+    document.getElementById('search').value = "";
+    
     loadData();
 }
 
-// Formateador mejorado (protege fórmulas de Markdown)
-function formatChemicalFormula(text){
-    if(!text) return "";
+// 3. Formateador de fórmulas químicas (subíndices automáticos)
+function formatChemicalFormula(text) {
+    if (!text) return "";
     return text.replace(/\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g, (match) => {
-        if(!/[A-Z].*\d|\(|\)/.test(match)) return match;
-        return match.replace(/(\d+)/g,'<sub>$1</sub>');
+        if (!/[A-Z].*\d|\(|\)/.test(match)) return match;
+        return match.replace(/(\d+)/g, '<sub>$1</sub>');
     });
 }
 
-async function loadData(){
+// 4. Carga de Datos (Lógica Principal)
+async function loadData() {
     const loader = document.getElementById('loader');
     const container = document.getElementById('questions');
+    const stats = document.getElementById('stats');
+    
     loader.style.display = "block";
+    loader.classList.add('loading-pulse');
     container.innerHTML = "";
+    stats.textContent = "CARGANDO...";
 
-    const basePath = currentSubject === "quimica" ? "QUIM" : "MATII";
-    const indexFile = currentSubject === "quimica" ? "indexquim.json" : "indexmatii.json";
+    const config = subjectConfig[currentSubject];
+    const basePath = currentSubject; 
+    const indexFile = config.file;
 
     try {
-        const index = await fetch(`${basePath}/${indexFile}`).then(r=>r.json());
+        // Cargar el índice de la asignatura elegida
+        const response = await fetch(`${basePath}/${indexFile}`);
+        if (!response.ok) throw new Error("No se encontró el índice");
+        
+        const index = await response.json();
         const files = index.topics.map(t => `${basePath}/${t.file}`);
 
         allQuestions = [];
-        for(const f of files){
-            const qs = await fetch(f).then(r=>r.json());
-            allQuestions.push(...qs);
-        }
+        // Cargar todos los JSON de los temas en paralelo
+        const promises = files.map(f => fetch(f).then(r => r.json()).catch(e => []));
+        const results = await Promise.all(promises);
+        
+        results.forEach(qs => allQuestions.push(...qs));
 
         populateFilters();
         render();
         loader.style.display = "none";
     } catch (e) {
-        loader.textContent = "Error al cargar los datos. Verifica las rutas.";
+        loader.style.display = "block";
+        loader.innerHTML = `<div class="text-red-500 font-bold px-4">⚠️ Error al cargar ${config.title}.<br><small>Asegúrate de que la carpeta "${basePath}" y el archivo "${indexFile}" están en tu repositorio.</small></div>`;
+        stats.textContent = "ERROR";
     }
 }
 
-function populateFilters(){
-    // Topics
+// 5. Rellenar selects de Filtros
+function populateFilters() {
     const tSel = document.getElementById('topicSelect');
+    const ySel = document.getElementById('yearSelect');
+
+    // Temas únicos
     const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
     tSel.innerHTML = '<option value="all">Todos los temas</option>';
     topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
 
-    // Years
-    const ySel = document.getElementById('yearSelect');
-    const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b)=>b-a);
+    // Años únicos
+    const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
     ySel.innerHTML = '<option value="all">Todos los años</option>';
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
 }
 
-function normalizeTopic(q){
-    if(q.is_competency_based || q.topic_name === "Actividad Competencial") return "Actividad Competencial";
-    if(q.topic_name.includes("Formulación")) return "T00: Formulación";
+function normalizeTopic(q) {
+    if (q.is_competency_based || q.topic_name === "Actividad Competencial") return "Actividad Competencial";
+    if (q.topic_name.includes("Formulación")) return "T00: Formulación";
     return q.topic_name;
 }
 
-function getQuestionType(text){
+function getQuestionType(text) {
     const t = text.toLowerCase();
-    if(/calcule|determine|ajuste|halle/.test(t)) return {label:'Problema', color:'bg-blue-50 text-blue-600 border-blue-100'};
-    if(/justifique|razone|explique/.test(t)) return {label:'Teoría', color:'bg-emerald-50 text-emerald-600 border-emerald-100'};
+    if (/calcule|determine|ajuste|halle|obtenga/.test(t)) return {label:'Problema', color:'bg-blue-50 text-blue-600 border-blue-100'};
+    if (/justifique|razone|explique|indique/.test(t)) return {label:'Teoría', color:'bg-emerald-50 text-emerald-600 border-emerald-100'};
     return {label:'Mixto', color:'bg-gray-50 text-gray-600 border-gray-100'};
 }
 
-function render(){
+// 6. Dibujar resultados
+function render() {
     const year = document.getElementById('yearSelect').value;
     const topic = document.getElementById('topicSelect').value;
     const term = document.getElementById('search').value.toLowerCase();
@@ -267,13 +290,18 @@ function render(){
     const container = document.getElementById('questions');
     container.innerHTML = '';
 
+    if (filtered.length === 0) {
+        container.innerHTML = '<div class="text-center py-20 text-gray-400 italic">No se han encontrado preguntas con estos filtros.</div>';
+        return;
+    }
+
     filtered.forEach(q => {
         const type = getQuestionType(q.text);
         const card = document.createElement('div');
         card.className = 'data-row rounded-xl grid grid-cols-[100px_1fr_180px] p-6 gap-6 items-start';
         
         const context = q.context_text ? `<div class="mb-4 p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600">${formatChemicalFormula(marked.parse(q.context_text))}</div>` : "";
-        const solution = q.solution ? `<details class="mt-4 border-t pt-4"><summary class="text-xs font-bold cursor-pointer hover:underline text-emerald-700">SOLUCIÓN DISPONIBLE</summary><div class="mt-2 text-sm text-gray-700">${formatChemicalFormula(marked.parse(q.solution))}</div></details>` : "";
+        const solution = q.solution ? `<details class="mt-4 border-t pt-4"><summary class="text-xs font-bold cursor-pointer hover:underline text-emerald-700">VER SOLUCIÓN PASO A PASO</summary><div class="mt-2 text-sm text-gray-700 border-l-2 border-emerald-100 pl-4">${formatChemicalFormula(marked.parse(q.solution))}</div></details>` : "";
 
         card.innerHTML = `
             <div class="flex flex-col">
@@ -293,6 +321,7 @@ function render(){
         container.appendChild(card);
     });
 
+    // Renderizar LaTeX (KaTeX)
     renderMathInElement(container, {
         delimiters: [
             {left: "$$", right: "$$", display: true},
@@ -302,12 +331,12 @@ function render(){
     });
 }
 
-// Event Listeners
+// 7. Event Listeners y arranque
 document.getElementById('search').oninput = render;
 document.getElementById('topicSelect').onchange = render;
 document.getElementById('yearSelect').onchange = render;
 
-// Inicio
+// Carga inicial (Química por defecto)
 loadData();
 </script>
 
