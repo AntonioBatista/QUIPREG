@@ -1,5 +1,50 @@
 [
   {
+    "text": "A) **CAMPO GRAVITATORIO**\n\n**a)** Discuta razonadamente si los siguientes enunciados son verdaderos o falsos: **i)** (0,5 puntos) si se realiza trabajo sobre una partícula, su energía cinética aumenta; **ii)** (0,5 puntos) las fuerzas conservativas siempre realizan trabajo nulo.",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Trabajo y energía",
+      "Fuerzas conservativas"
+    ],
+    "id": "faomgye8n",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
+    "text": "A) **CAMPO GRAVITATORIO**\n\n**b1)** Dos masas puntuales de 200 kg están situadas en los puntos A(0,-3) m y B(0,3) m. Calcule razonadamente:\n**i)** (1 punto) el campo gravitatorio en el punto C(4,0) m, apoyándose en un esquema;\n**ii)** (0,5 puntos) la fuerza sobre una masa puntual de 3 kg situada en el origen.\nG = 6,67·10-11 N m2 kg-2",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Campo gravitatorio",
+      "Ley de gravitación universal"
+    ],
+    "id": "8arwl0fch",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
+    "text": "A) **CAMPO GRAVITATORIO**\n\n**b2)** Un satélite de 1400 kg en una órbita circular tarda un día y medio en dar la vuelta a la Tierra. Calcule razonadamente:\n**i)** (0,75 puntos) el radio de la órbita;\n**ii)** (0,75 puntos) la velocidad mínima que hay que suministrarle para que abandone el campo gravitatorio terrestre desde la órbita en la que se encuentra.\nG = 6,67·10-11 N m2 kg-2; MT = 5,98·1024 kg; RT = 6370 km; 1 día = 24h",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Órbitas circulares",
+      "Velocidad de escape"
+    ],
+    "id": "ud6d4tqnc",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
     "text": "**A) CAMPO GRAVITATORIO**\n\n**a)** Considere dos masas puntuales iguales separadas una cierta distancia. Razone la veracidad de las siguientes afirmaciones: **i)** (0,5 puntos) el campo gravitatorio es nulo solamente en el punto medio entre las dos masas; **ii)** (0,5 puntos) el potencial gravitatorio solo se anula a distancia infinita.",
     "topic_name": "T1: Interacción Gravitatoria",
     "exam_year": 2025,
