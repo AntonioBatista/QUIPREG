@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "text": "2A. Dados los siguientes potenciales normales de reducción: Eº(Cu2+/Cu)= +0,34 V; Eº(Ni2+/Ni)= −0,25 V; Eº(HNO3/NO)= +0,96 V. Razone cuáles de las siguientes afirmaciones son verdaderas o falsas: a) Cuando se introduce un trozo de Cu metálico en ácido nítrico (HNO3), el Cu pasa a la disolución como iones Cu2+. b) Al introducir Ni metálico en una disolución de Cu2+, el Ni se oxida a Ni2+. c) Si se añade Ni metálico a una disolución de ácido nítrico, el Ni no se oxida. d) El HNO3 es la especie más oxidante.",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "y8jjuk8w5",
+    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+  },
+  {
+    "text": "3A. El magnesio se obtiene por electrólisis de MgCl2 fundido. Basándose en las semirreacciones correspondientes, calcule: a) La masa de metal que se depositará si se hace pasar por la cuba electrolítica una corriente de 50 A durante 1 hora. b) El volumen de Cl2(g) generado a 650 K y 1,18 atm. Datos: F= 96500 C·mol–1; R= 0,082 atm·L·mol–1·K–1; Masas atómicas relativas: Cl= 35,5; Mg= 24,3",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "8te7bij05",
+    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+  },
+  {
+    "text": "2B. Se pasa una corriente el3©ctrica continua a trav3©s de NaBr fundido para generar Na y Br2 \na) Escriba y ajuste las semirreacciones que tienen lugar en el 3¡nodo y en el c3¡todo. \nb) Indique qu3© signo tendr3¡ el potencial de la celda, razonando la respuesta. \nc) Explique la raz3³n por la cual el NaBr debe estar fundido. \nd) Razone en qu3© sentido fluir3¡n los electrones por el hilo conductor externo que une el c3¡todo y el 3¡nodo.",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "qm4f78dzj",
+    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+  },
+  {
+    "text": "3B. Queremos platear electroqu3­micamente una tetera con 15 g de plata haciendo pasar una corriente de 5 A a trav3©s de una disoluci3³n acuosa de AgNO3 \na) Escriba la semirreacci3³n de reducci3³n y calcule el tiempo necesario para ello. \nb) Determine la cantidad de oro que se depositar3¡ al usar una disoluci3³n de AuCl3, utilizando la misma intensidad de corriente que en el apartado anterior durante 45 min. Escriba la semirreacci3³n correspondiente. \nDatos: F= 96500 C·mol−1; Masas at3³micas relativas: Ag= 108; Au= 197",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "irgfkvnw0",
+    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+  },
+  {
+    "text": "2A. Se ha montado una pila basada en la siguiente reacción: Ni(s) + 2Ag+(ac) → Ni2+(ac) + 2Ag(s) \na) Escriba las semirreaciones que tienen lugar en la pila, indicando cuál es la de reducción y la de oxidación. \nb) ¿De qué elemento metálico estará hecho el cátodo? \nc) Razone en qué sentido fluirán los electrones por el hilo conductor externo que une el cátodo y el ánodo. \nd) Justifique la espontaneidad de la reacción que tiene lugar en la pila. \nDatos: Eº(Ag+/Ag)= +0,80 V; Eº(Ni2+/Ni)= −0,23 V",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "uiw5riz96",
+    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+  },
+  {
+    "text": "3B. Al hacer reaccionar ácido clorhídrico (HCl) con dicromato de potasio (K2Cr2O7) se forma tricloruro de cromo (CrCl3), dicloro (Cl2), cloruro de potasio (KCl) y agua (H2O). \na) Ajuste la reacción molecular por el método del ion-electrón. \nb) ¿Qué volumen de HCl del 37% de riqueza en masa y densidad 1,19 g·mL–1 se necesitará para que reaccionen 7 g de K2Cr2O7? \nDatos: Masas atómicas relativas: H=1; O= 16; Cl= 35,5; K= 39; Cr= 52",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "dsg6fd3wy",
+    "source_file": "Examen_Titular-B_Quimica.pdf"
+  },
+  {
+    "text": "2B. Se pasa una corriente eléctrica continua a través de NaBr fundido para generar Na y Br2 a) Escriba y ajuste las semirreacciones que tienen lugar en el ánodo y en el cátodo. b) Indique qué signo tendrá el potencial de la celda, razonando la respuesta. c) Explique la razón por la cual el NaBr debe estar fundido. d) Razone en qué sentido fluirán los electrones por el hilo conductor externo que une el cátodo y el ánodo.",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "mzsaycvvj",
+    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+  },
+  {
+    "text": "3B. Queremos platear electroquímicamente una tetera con 15 g de plata haciendo pasar una corriente de 5 A a través de una disolución acuosa de AgNO3 a) Escriba la semirreacción de reducción y calcule el tiempo necesario para ello. b) Determine la cantidad de oro que se depositará al usar una disolución de AuCl3, utilizando la misma intensidad de corriente que en el apartado anterior durante 45 min. Escriba la semirreacción correspondiente. Datos: F= 96500 C·mol–1; Masas atómicas relativas: Ag= 108; Au= 197",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "6npnx8wp6",
+    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+  },
+  {
+    "text": "3B. Una forma de obtener Cl2 gaseoso en el laboratorio es adicionar ácido clorhídrico sobre dióxido de manganeso sólido, produciéndose la siguiente reacción:\nHCl(ac) + MnO2(s) → Cl2(g) + MnCl2(ac) + H2O(l)\na) Ajuste la reacción molecular por el método del ion-electrón.\nb) Si se han obtenido 10,3 L de Cl2(g) a una temperatura de 22 °C y una presión de 0,99 atm, ¿cuál ha sido el rendimiento de la reacción si se han empleado 47,5 g de MnO2 en exceso de HCl?\nDatos: R= 0,082 atm·L·mol–1·K–1; Masas atómicas relativas: O= 16; Cl= 35,5; Mn= 55",
+    "topic_name": "T8: Redox",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "ve07c4q89",
+    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+  }
+]
