@@ -1,0 +1,41 @@
+{
+  "topics": [
+    {
+      "name": "Interacción Gravitatoria",
+      "file": "Interaccion_Gravitatoria.json",
+      "count": 0
+    },
+    {
+      "name": "Interacción Electromagnética",
+      "file": "Interaccion_Electromagnetica.json",
+      "count": 0
+    },
+    {
+      "name": "Vibraciones y Ondas",
+      "file": "Vibraciones_y_Ondas.json",
+      "count": 0
+    },
+    {
+      "name": "Óptica",
+      "file": "Optica.json",
+      "count": 0
+    },
+    {
+      "name": "Física Relativista",
+      "file": "Fisica_Relativista.json",
+      "count": 0
+    },
+    {
+      "name": "Física Cuántica",
+      "file": "Fisica_Cuantica.json",
+      "count": 0
+    },
+    {
+      "name": "Física Nuclear",
+      "file": "Fisica_Nuclear.json",
+      "count": 0
+    }
+  ],
+  "last_updated": "2026-03-06T19:25:25.010Z",
+  "total_questions": 0
+}
