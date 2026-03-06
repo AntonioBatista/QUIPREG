@@ -26,11 +26,6 @@
       "count": 2
     },
     {
-      "name": "Tema 0: Formulación inorgánica",
-      "file": "Tema_0-_Formulacion_inorganica.json",
-      "count": 0
-    },
-    {
       "name": "T1: Estructura Atómica",
       "file": "T1-_Estructura_Atomica.json",
       "count": 0
@@ -141,6 +136,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T18:46:37.115Z",
+  "last_updated": "2026-03-06T18:49:12.464Z",
   "total_questions": 19
 }
