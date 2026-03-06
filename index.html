@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Codificador de Exámenes v3.4 | Banco de Preguntas</title>
+    <title>Generador de Exámenes v4.0 | Codigo Corrector</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -13,163 +12,115 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:italic,wght@400;600&display=swap');
+        :root { --bg: #F8F9FA; --subject-color: #141414; }
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; transition: background-color 0.4s; }
+        .glass-header { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+        .subject-tab { padding: 0.5rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.82rem; transition: 0.2s; color: #64748b; }
+        .subject-tab.active-sub { color: var(--subject-color); background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .data-row { background: white; border-radius: 12px; transition: 0.3s; border-left: 4px solid transparent; }
+        .data-row:hover { border-left-color: var(--subject-color); transform: translateY(-2px); }
         
-        :root {
-            --bg: #F8F9FA;
-            --subject-color: #141414;
-            --subject-bg-soft: rgba(20, 20, 20, 0.05);
+        /* Estilos específicos para IMPRESIÓN */
+        @media print {
+            body { background: white !important; }
+            header, aside, .no-print { display: none !important; }
+            main { padding: 0 !important; margin: 0 !important; width: 100% !important; max-width: none !important; }
+            .exam-view { display: block !important; }
+            .data-row { border: none !important; box-shadow: none !important; padding: 0 !important; margin-bottom: 2rem !important; page-break-inside: avoid; }
+            .prose { font-family: 'Lora', serif !important; font-size: 12pt !important; line-height: 1.5 !important; }
+            .exam-header { border-bottom: 2px solid black; padding-bottom: 1rem; margin-bottom: 2rem; display: block !important; }
         }
-
-        body { 
-            background-color: var(--bg); 
-            font-family: 'Inter', sans-serif; 
-            color: #1a1a1a; 
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        /* Cabecera Premium Optimizada */
-        .glass-header {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 0.75rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        /* Navegación mejorada */
-        .subject-nav-container {
-            background: rgba(0,0,0,0.03);
-            padding: 4px;
-            border-radius: 14px;
-            display: flex;
-            gap: 4px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .subject-tab {
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.82rem;
-            transition: all 0.2s ease;
-            color: #64748b;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .subject-tab:hover {
-            color: var(--subject-color);
-            background: rgba(255,255,255,0.5);
-        }
-
-        .subject-tab.active-sub {
-            color: var(--subject-color);
-            background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        /* Tarjetas con acento dinámico */
-        .data-row { 
-            border-left: 4px solid transparent;
-            transition: all 0.3s ease;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .data-row:hover { 
-            border-left-color: var(--subject-color);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
-        }
-
-        .tag-subject {
-            background: var(--subject-bg-soft);
-            color: var(--subject-color);
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        /* Utilidades */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .loading-pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        
-        .prose { max-width: none; }
+        .exam-view { display: none; }
     </style>
 </head>
-
 <body class="min-h-screen flex flex-col">
 
-<header class="sticky top-0 z-50 glass-header">
+<header class="sticky top-0 z-50 glass-header px-8 py-3 flex items-center justify-between no-print">
     <div class="flex items-center gap-4">
-        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-lg transform rotate-3 transition-transform hover:rotate-0">
-            <span class="text-white font-serif italic text-xl">v3</span>
-        </div>
+        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white font-serif italic text-xl shadow-lg transform rotate-3">v4</div>
         <div class="hidden sm:block">
-            <h1 id="mainTitle" class="text-lg font-bold tracking-tight text-gray-900 leading-none transition-colors">
-                Banco de Preguntas
-            </h1>
-            <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-1">
-                EBAU 2026 · Codigo Corrector
-            </p>
+            <h1 id="mainTitle" class="text-lg font-bold text-gray-900 leading-none">Banco de Preguntas</h1>
+            <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">EBAU 2026 · Codigo Corrector</p>
         </div>
     </div>
 
-    <nav id="subjectNav" class="subject-nav-container overflow-x-auto no-scrollbar mx-4">
-        <button onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub">🧪 Química</button>
-        <button onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab">🧲 Física</button>
-        <button onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab">⚙️ Tecno II</button>
-        <button onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab">➗ Mates II</button>
-        <button onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab">📈 CCSS II</button>
-        <button onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab">📐 Dibujo II</button>
+    <nav class="bg-gray-100/80 p-1 rounded-xl flex gap-1 border border-gray-200 overflow-x-auto no-scrollbar max-w-2xl">
+        <button onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub">🧪 QUIM</button>
+        <button onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab">🧲 FIS</button>
+        <button onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab">⚙️ TIN II</button>
+        <button onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab">➗ MAT II</button>
+        <button onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab">📈 MACS II</button>
+        <button onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab">📐 DTEC II</button>
     </nav>
 
-    <div id="stats" class="text-[11px] font-mono font-bold bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-sm text-gray-500 whitespace-nowrap">
-        0 RESULTADOS
+    <div class="flex items-center gap-3">
+        <button onclick="toggleExamPanel()" class="bg-black text-white px-4 py-2 rounded-lg text-xs font-bold shadow-md hover:bg-gray-800 transition">
+            📋 MI EXAMEN (<span id="examCount">0</span>)
+        </button>
+        <div id="stats" class="text-[11px] font-mono font-bold bg-white border px-3 py-1.5 rounded-lg text-gray-500">0 RES</div>
     </div>
 </header>
 
-<div class="flex flex-1 overflow-hidden">
-    <aside class="w-72 bg-white/50 border-r border-gray-200 p-6 flex flex-col gap-6 hidden md:flex">
-        <div>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Búsqueda Libre</label>
-            <input id="search" type="text" placeholder="Concepto, año..." 
-                class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-black outline-none transition-all bg-white">
-        </div>
+<div class="flex flex-1 overflow-hidden no-print">
+    <aside class="w-80 bg-white border-r border-gray-200 p-6 flex flex-col gap-6 overflow-y-auto">
+        <section>
+            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Buscador</label>
+            <input id="search" type="text" placeholder="Filtrar por texto..." class="w-full border rounded-xl px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black">
+        </section>
 
-        <div>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Año</label>
-            <select id="yearSelect" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white"></select>
-        </div>
+        <section class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
+            <h3 class="text-xs font-bold uppercase mb-4 flex items-center gap-2">⚡ Generación Auto</h3>
+            <div class="space-y-3">
+                <input id="autoNum" type="number" value="4" class="w-full border p-2 rounded-lg text-sm" placeholder="Nº de preguntas">
+                <select id="autoType" class="w-full border p-2 rounded-lg text-sm">
+                    <option value="random">Totalmente Aleatorio</option>
+                    <option value="byBlock">Por Pesos (Bloques)</option>
+                    <option value="onlyTheory">Solo Teoría</option>
+                    <option value="onlyProblems">Solo Problemas</option>
+                </select>
+                <button onclick="generateAuto()" class="w-full py-2 bg-blue-600 text-white rounded-xl text-xs font-bold hover:bg-blue-700">Generar Ahora</button>
+            </div>
+        </section>
 
-        <div>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Bloque Temático</label>
-            <select id="topicSelect" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white"></select>
-        </div>
+        <section class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100">
+            <h3 class="text-xs font-bold uppercase mb-4">🖋️ Datos de Impresión</h3>
+            <div class="space-y-2">
+                <input id="instName" type="text" placeholder="Institución" class="w-full border p-2 rounded-lg text-xs">
+                <input id="examTitle" type="text" placeholder="Título Examen" class="w-full border p-2 rounded-lg text-xs">
+                <textarea id="examInstructions" placeholder="Instrucciones..." class="w-full border p-2 rounded-lg text-xs" rows="2"></textarea>
+            </div>
+        </section>
 
-        <div class="mt-auto p-4 rounded-2xl border border-current opacity-40 text-xs italic" style="color: var(--subject-color)">
-            Filtrando base de datos dinámica v3.4. 
-        </div>
+        <button onclick="printExam()" class="mt-4 w-full py-3 bg-black text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg">
+            🖨️ IMPRIMIR PDF
+        </button>
     </aside>
 
-    <main class="flex-1 overflow-y-auto p-4 md:p-8">
-        <div class="max-w-5xl mx-auto">
-            <div id="questions" class="flex flex-col gap-4">
-                </div>
-            <div id="loader" class="text-center py-20 opacity-30 italic">Iniciando sistema...</div>
-        </div>
+    <main class="flex-1 overflow-y-auto p-8 bg-gray-50/50">
+        <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-4"></div>
+        <div id="loader" class="text-center py-20 opacity-30 italic">Cargando base de datos...</div>
     </main>
 </div>
 
+<div id="printArea" class="exam-view p-12 max-w-4xl mx-auto hidden">
+    <div class="exam-header mb-8">
+        <div class="flex justify-between items-start border-b-2 border-black pb-4">
+            <div>
+                <h1 id="p-inst" class="text-2xl font-bold uppercase tracking-tight">NOMBRE DE LA INSTITUCIÓN</h1>
+                <h2 id="p-title" class="text-xl italic font-serif mt-1">Título del Examen</h2>
+            </div>
+            <div class="text-right text-sm font-mono">
+                <p>ASIGNATURA: <span id="p-subject">---</span></p>
+                <p>FECHA: ___________</p>
+                <p>NOMBRE: _______________________</p>
+            </div>
+        </div>
+        <div id="p-instr" class="mt-4 text-xs italic text-gray-600">Instrucciones por defecto del examen.</div>
+    </div>
+    <div id="p-questions" class="space-y-12"></div>
+</div>
+
 <script>
-// 1. Configuración de Temas y Colores (RUTAS CORREGIDAS)
 const subjectConfig = {
     'QUIM':   { title: 'Química', icon: '🧪', folder: 'QUIM', file: 'indexquim.json', color: '#10b981', bg: '#f0fdf4' },
     'FIS':    { title: 'Física', icon: '🧲', folder: 'FIS', file: 'indexfis.json', color: '#3b82f6', bg: '#eff6ff' },
@@ -181,166 +132,125 @@ const subjectConfig = {
 
 let currentSubject = "QUIM";
 let allQuestions = [];
+let selectedIds = new Set(); // Carrito de compra manual
 
-function switchSubject(subjectId) {
-    currentSubject = subjectId;
-    const config = subjectConfig[subjectId];
-    
+function switchSubject(id) {
+    currentSubject = id;
+    const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
     document.documentElement.style.setProperty('--bg', config.bg);
-    document.documentElement.style.setProperty('--subject-bg-soft', config.color + '20');
-
-    document.querySelectorAll('.subject-tab').forEach(btn => btn.classList.remove('active-sub'));
-    const btn = document.getElementById(`btn-${subjectId}`);
-    if(btn) btn.classList.add('active-sub');
-    
-    const title = document.getElementById('mainTitle');
-    title.innerHTML = `Banco de Preguntas · <span style="color:${config.color}">${config.icon} ${config.title}</span>`;
-
-    document.getElementById('search').value = "";
+    document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
+    document.getElementById(`btn-${id}`).classList.add('active-sub');
+    document.getElementById('mainTitle').innerHTML = `Banco · <span style="color:${config.color}">${config.title}</span>`;
+    selectedIds.clear();
+    updateExamCounter();
     loadData();
 }
 
 async function loadData() {
     const loader = document.getElementById('loader');
     const container = document.getElementById('questions');
-    const stats = document.getElementById('stats');
-    
-    loader.style.display = "block";
-    container.innerHTML = "";
-    stats.textContent = "CARGANDO...";
-
     const config = subjectConfig[currentSubject];
-    // Construimos la ruta base: "FIS/" o "MACSII/"
-    const basePath = config.folder + "/"; 
-    const indexPath = basePath + config.file;
+    loader.style.display = "block"; container.innerHTML = "";
 
     try {
-        const response = await fetch(indexPath);
-        if (!response.ok) throw new Error(`No se halló el índice en ${indexPath}`);
-        
+        const response = await fetch(`${config.folder}/${config.file}`);
         const index = await response.json();
-        
-        // Cargamos los temas usando la misma basePath
-        allQuestions = [];
-        const promises = index.topics.map(t => 
-            fetch(basePath + t.file)
-                .then(r => r.ok ? r.json() : [])
-                .catch(() => [])
-        );
-        
+        const promises = index.topics.map(t => fetch(`${config.folder}/${t.file}`).then(r => r.json()).catch(() => []));
         const results = await Promise.all(promises);
-        results.forEach(qs => allQuestions.push(...qs));
-
-        populateFilters();
+        allQuestions = results.flat();
         render();
         loader.style.display = "none";
     } catch (e) {
-        console.error(e);
-        loader.innerHTML = `<div class="text-red-500 font-bold px-4">⚠️ Error en ${config.title}.<br><small>No se pudo leer: ${indexPath}</small></div>`;
-        stats.textContent = "ERROR";
+        loader.innerHTML = `<div class="text-red-500">⚠️ Error al cargar ${config.title}</div>`;
     }
 }
 
-// Las funciones formatChemicalFormula, normalizeTopic, getQuestionType, populateFilters y render se mantienen igual que las tenías.
+function addToExam(id) {
+    if (selectedIds.has(id)) selectedIds.delete(id);
+    else selectedIds.add(id);
+    updateExamCounter();
+    render();
+}
 
-function formatChemicalFormula(text) {
-    if (!text) return "";
-    return text.replace(/\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g, (match) => {
-        if (!/[A-Z].*\d|\(|\)/.test(match)) return match;
-        return match.replace(/(\d+)/g, '<sub>$1</sub>');
+function updateExamCounter() {
+    document.getElementById('examCount').textContent = selectedIds.size;
+}
+
+function generateAuto() {
+    const num = parseInt(document.getElementById('autoNum').value);
+    const type = document.getElementById('autoType').value;
+    let pool = [...allQuestions];
+
+    if (type === "onlyTheory") pool = pool.filter(q => /justifique|razone|explique|indique/.test(q.text.toLowerCase()));
+    if (type === "onlyProblems") pool = pool.filter(q => /calcule|determine|ajuste|halle/.test(q.text.toLowerCase()));
+
+    // Aleatorizar y seleccionar
+    selectedIds.clear();
+    const shuffled = pool.sort(() => 0.5 - Math.random());
+    shuffled.slice(0, num).forEach(q => selectedIds.add(q.id));
+    
+    updateExamCounter();
+    render();
+    alert(`Se han seleccionado ${selectedIds.size} preguntas aleatorias.`);
+}
+
+function printExam() {
+    const questionsToPrint = allQuestions.filter(q => selectedIds.has(q.id));
+    if (questionsToPrint.length === 0) return alert("Selecciona al menos una pregunta.");
+
+    // Rellenar encabezado
+    document.getElementById('p-inst').textContent = document.getElementById('instName').value || "INSTITUCIÓN EDUCATIVA";
+    document.getElementById('p-title').textContent = document.getElementById('examTitle').value || "EXAMEN DE EVALUACIÓN";
+    document.getElementById('p-instr').textContent = document.getElementById('examInstructions').value || "Lea atentamente y responda con claridad.";
+    document.getElementById('p-subject').textContent = subjectConfig[currentSubject].title.toUpperCase();
+
+    // Rellenar preguntas
+    const pArea = document.getElementById('p-questions');
+    pArea.innerHTML = "";
+    questionsToPrint.forEach((q, i) => {
+        pArea.innerHTML += `
+            <div class="data-row">
+                <div class="prose">
+                    <strong>PREGUNTA ${i + 1}.</strong> ${marked.parse(q.text)}
+                    ${q.context_text ? `<div class="italic mt-2 text-sm">${marked.parse(q.context_text)}</div>` : ''}
+                </div>
+            </div>
+        `;
     });
-}
 
-function normalizeTopic(q) {
-    if (q.is_competency_based || q.topic_name === "Actividad Competencial") return "Actividad Competencial";
-    if (q.topic_name.includes("Formulación")) return "T00: Formulación";
-    return q.topic_name;
-}
-
-function getQuestionType(text) {
-    const t = text.toLowerCase();
-    if (/calcule|determine|ajuste|halle|obtenga/.test(t)) return {label:'Problema', color:'bg-blue-50 text-blue-600 border-blue-100'};
-    if (/justifique|razone|explique|indique/.test(t)) return {label:'Teoría', color:'bg-emerald-50 text-emerald-600 border-emerald-100'};
-    return {label:'Mixto', color:'bg-gray-50 text-gray-600 border-gray-100'};
-}
-
-function populateFilters() {
-    const tSel = document.getElementById('topicSelect');
-    const ySel = document.getElementById('yearSelect');
-
-    const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
-    tSel.innerHTML = '<option value="all">Todos los bloques</option>';
-    topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
-
-    const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
-    ySel.innerHTML = '<option value="all">Todos los años</option>';
-    years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
+    renderMathInElement(pArea, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+    window.print();
 }
 
 function render() {
-    const year = document.getElementById('yearSelect').value;
-    const topic = document.getElementById('topicSelect').value;
     const term = document.getElementById('search').value.toLowerCase();
-    
-    const filtered = allQuestions.filter(q => {
-        const okText = q.text.toLowerCase().includes(term);
-        const okTopic = topic === 'all' || normalizeTopic(q) === topic;
-        const okYear = year === 'all' || q.exam_year == year;
-        return okText && okTopic && okYear;
-    });
-
-    document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
+    const filtered = allQuestions.filter(q => q.text.toLowerCase().includes(term));
     const container = document.getElementById('questions');
-    container.innerHTML = '';
-
-    if (filtered.length === 0) {
-        container.innerHTML = '<div class="text-center py-20 text-gray-400 italic">No hay coincidencias.</div>';
-        return;
-    }
+    container.innerHTML = "";
+    document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
 
     filtered.forEach(q => {
-        const type = getQuestionType(q.text);
+        const isSelected = selectedIds.has(q.id);
         const card = document.createElement('div');
-        card.className = 'data-row p-6 flex flex-col gap-4 shadow-sm border border-gray-100 mb-4';
-        
-        const context = q.context_text ? `<div class="p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600 rounded-r-lg">${formatChemicalFormula(marked.parse(q.context_text))}</div>` : "";
-        const solution = q.solution ? `<details class="mt-2 border-t pt-3"><summary class="text-xs font-bold cursor-pointer hover:opacity-70" style="color:var(--subject-color)">VER SOLUCIÓN</summary><div class="mt-2 text-sm text-gray-700 pl-4 border-l-2 border-gray-100">${formatChemicalFormula(marked.parse(q.solution))}</div></details>` : "";
-
+        card.className = `data-row p-6 flex flex-col gap-4 shadow-sm border ${isSelected ? 'ring-2 ring-black border-black' : 'border-gray-100'}`;
         card.innerHTML = `
-            <div class="flex justify-between items-start gap-4">
-                <div class="flex flex-col">
-                    <span class="text-xl font-black">${q.exam_year}</span>
-                    <span class="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">${q.exam_model || 'Gral'}</span>
-                </div>
-                <div class="flex flex-col items-end gap-2 text-right">
-                    <span class="tag-subject">${normalizeTopic(q)}</span>
-                    <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${type.color}">${type.label.toUpperCase()}</span>
-                </div>
+            <div class="flex justify-between items-start">
+                <span class="text-xl font-black">${q.exam_year} <small class="text-xs font-normal opacity-50">${q.exam_model || ''}</small></span>
+                <button onclick="addToExam('${q.id}')" class="px-3 py-1 rounded-full text-xs font-bold transition ${isSelected ? 'bg-red-500 text-white' : 'bg-gray-100 hover:bg-black hover:text-white'}">
+                    ${isSelected ? 'QUITAR DEL EXAMEN' : '+ AÑADIR AL EXAMEN'}
+                </button>
             </div>
-            <div class="prose prose-sm text-gray-800">
-                ${context}
-                <div>${formatChemicalFormula(marked.parse(q.text))}</div>
-                ${solution}
-            </div>
+            <div class="prose text-sm text-gray-800">${marked.parse(q.text.substring(0, 300) + '...')}</div>
+            <div class="text-[10px] uppercase font-bold text-gray-400">${q.topic_name}</div>
         `;
         container.appendChild(card);
     });
 
-    renderMathInElement(container, {
-        delimiters: [
-            {left: "$$", right: "$$", display: true},
-            {left: "$", right: "$", display: false}
-        ],
-        throwOnError: false
-    });
+    renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
 }
 
 document.getElementById('search').oninput = render;
-document.getElementById('topicSelect').onchange = render;
-document.getElementById('yearSelect').onchange = render;
-
-// Inicio
 switchSubject('QUIM');
 </script>
 </body>
