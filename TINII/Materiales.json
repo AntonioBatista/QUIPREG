@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "text": "**EJERCICIO 1 OPCIÓN A**\n\n**Un ensayo de tipo Brinell que se realiza sobre un determinado metal da como resultado una dureza de 80 HB. La bola utilizada como penetrador es de 5 mm de diámetro y la huella que se obtiene al cabo de 30 s es de 2 mm de diámetro. Se pide:**\n**a) La carga que se ha aplicado en el ensayo expresada en Newtons. (1 punto)**\n**b) La constante de ensayo del material. (1 punto)**\n**c) Expresar la dureza en su forma normalizada. (0,5 puntos)**",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ensayos de dureza",
+      "Brinell"
+    ],
+    "id": "p8xx0xg0u",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "**EJERCICIO 1 OPCIÓN B**\n\n**Para medir la resiliencia de un material mediante un ensayo Charpy se ha utilizado una probeta de sección cuadrada de 10 mm de lado, con una entalla en forma de V de 2 mm de profundidad. La resiliencia obtenida fue de 220 J/cm2 dejando caer un martillo de 35 kg desde una altura de 150 cm. Se pide:**\n**a) Calcular la altura a la que se elevará el martillo tras golpear y romper la probeta. (1,25 puntos)**\n**b) Si el martillo fuera de 20 kg de masa y se hubiera soltado desde una altura de 1,75 m, determinar la energía sobrante tras el impacto. (1,25 puntos)**",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ensayo Charpy",
+      "Resiliencia"
+    ],
+    "id": "eh64owm9l",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  }
+]
