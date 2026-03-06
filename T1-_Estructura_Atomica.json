@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "text": "1A. a) Razone cuál es el número máximo de electrones en un átomo que pueden tener los números cuánticos n= 2 y ms= –1/2. b) Escriba un conjunto de números cuánticos válido de un electrón alojado en un orbital 3p. c) Justifique cuántos electrones tiene el átomo de fósforo en la capa de valencia. d) Explique cuántos electrones desapareados tiene el átomo de hierro en su estado fundamental.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "xo3i7iub7",
+    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+  },
+  {
+    "text": "1A. Justifique la veracidad o falsedad de las siguientes afirmaciones: \na) Los iones S2– y Cl– son especies isoelectr3³nicas. \nb) El aluminio tiene menor energ3­a de ionizaci3³n que el azufre. \nc) El 1H1 y el 2He4 son is3³topos. \nd) Los iones O2– y S2– tienen el mismo n3ºmero de protones.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "0fr5bhkk7",
+    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+  },
+  {
+    "text": "1A. Justifique la veracidad o falsedad de las siguientes afirmaciones: \na) Los orbitales se describen por cuatro números cuánticos. \nb) El orbital 4s es más energético que el orbital 5d. \nc) Es posible la siguiente combinación de números cuánticos: (2,2,0,+1/2). \nd) Los isótopos son átomos de un mismo elemento con el mismo número másico y distinto número atómico.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "zmtwwyhgw",
+    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+  },
+  {
+    "text": "1B. Considerando las especies N3–, Mg2+ y Ar, explique si las siguientes afirmaciones son verdaderas o falsas: \na) Las tres especies son isoelectrónicas. \nb) Las tres especies tienen el mismo número de electrones desapareados. \nc) El Ar tiene mayor energía de ionización que el Mg2+. \nd) El radio iónico de N3– es mayor que el de Mg2+.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "fkjuoaef1",
+    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+  },
+  {
+    "text": "1A. Escriba las configuraciones electrónicas de los siguientes elementos:\na) El elemento del grupo 14 de menor carácter metálico.\nb) El elemento del tercer periodo de mayor radio atómico.\nc) El elemento del cuarto periodo con solo un electrón en un orbital “d”.\nd) El elemento del segundo periodo que tiene más tendencia a formar un catión divalente.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "8cw7cbtya",
+    "source_file": "Examen_Titular-A_Quimica.pdf"
+  },
+  {
+    "text": "1A. Justifique la veracidad o falsedad de las siguientes afirmaciones: \na) Una de las posibles combinaciones de los números cuánticos del electrón diferenciador del átomo de B es (2,1,0,−1/2). \nb) Los electrones que se encuentran en los orbitales 2p tienen la misma energía. \nc) El átomo de oxígeno tiene dos electrones desapareados en los orbitales 2p. \nd) Los elementos situados en el grupo 13 de la tabla periódica tienen distinto número de electrones en su capa de valencia.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "z3hdblpnc",
+    "source_file": "Examen_Titular-B_Quimica.pdf"
+  },
+  {
+    "text": "1B. Sean los elementos A (Z= 6), B (Z= 17) y C (Z= 36). \na) Escriba las configuraciones electrónicas de los elementos B y C en su estado fundamental. \nb) Razone el grupo y periodo de los elementos A y C. \nc) Justifique cuál de los tres elementos tiene menor radio. \nd) Explique cuál de los tres elementos tiene mayor energía de ionización.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "zjni2fxot",
+    "source_file": "Examen_Titular-B_Quimica.pdf"
+  },
+  {
+    "text": "1A. Los números atómicos de los elementos X e Y son 20 y 34, respectivamente.\na) Razone a qué grupo y periodo pertenece cada uno de ellos.\nb) Escriba las configuraciones electrónicas de los iones X2+ e Y2–.\nc) Justifique cuál de los dos elementos será más electronegativo.\nd) Explique cuál de los dos elementos tendrá menor radio.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "39phnqf9i",
+    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+  },
+  {
+    "text": "1A. Justifique la veracidad o falsedad de las siguientes afirmaciones: a) Los iones S2– y Cl– son especies isoelectrónicas. b) El aluminio tiene menor energía de ionización que el azufre. c) El 1H 1 y el 2He 4 son isótopos. d) Los iones O2– y S2– tienen el mismo número de protones.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "tevg26way",
+    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+  }
+]
