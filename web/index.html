@@ -1,23 +1,112 @@
-ee<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Banco de Preguntas SELE</title>
-<link rel="stylesheet" href="style.css">
+<title>Banco de Preguntas</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+:root{
+  --color-bg:#E4E3E0;
+  --color-ink:#141414;
+  --color-line:#141414;
+}
+body{background:var(--color-bg);color:var(--color-ink);font-family:Inter,system-ui;}
+.data-row{border-bottom:1px solid var(--color-line);transition:.2s}
+.data-row:hover{background:var(--color-ink);color:var(--color-bg)}
+.col-header{font-style:italic;font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:.08em}
+.data-value{font-family:monospace}
+</style>
 </head>
-<body>
 
-<h1>📚 Banco de Preguntas PEvAU</h1>
+<body class="min-h-screen">
 
-<select id="subject">
-  <option value="quimica">Química</option>
-</select>
+<header class="border-b p-6 bg-white/50 backdrop-blur">
+  <h1 class="text-2xl italic font-serif">Banco de Preguntas</h1>
+  <p class="text-xs uppercase tracking-widest opacity-50">Química · Acceso Público</p>
+</header>
 
-<select id="topic"></select>
-<input type="text" id="search" placeholder="Buscar enunciado...">
+<main class="p-6 max-w-6xl mx-auto">
 
-<div id="results"></div>
+<div class="flex gap-4 mb-6">
+  <select id="topicSelect" class="border px-4 py-2 rounded bg-white">
+    <option value="all">Todos los temas</option>
+  </select>
 
-<script src="app.js"></script>
+  <input id="search" placeholder="Buscar por texto..." class="border px-4 py-2 rounded flex-1 bg-white">
+</div>
+
+<div id="stats" class="mb-4 text-sm opacity-60"></div>
+
+<div class="border rounded overflow-hidden bg-white/50">
+  <div class="grid grid-cols-[120px_1fr_160px] p-4 bg-black text-white text-xs uppercase tracking-widest">
+    <div>Año</div>
+    <div>Enunciado</div>
+    <div>Tema</div>
+  </div>
+  <div id="questions"></div>
+</div>
+
+</main>
+
+<script>
+let allQuestions=[];
+
+async function loadData(){
+  const index=await fetch('../quimica/indexquim.json').then(r=>r.json());
+  const files=index.topics.map(t=>'../quimica/'+t.file);
+  
+  for(const f of files){
+    const qs=await fetch(f).then(r=>r.json());
+    allQuestions.push(...qs);
+  }
+  
+  populateTopics();
+  render();
+}
+
+function populateTopics(){
+  const sel=document.getElementById('topicSelect');
+  const topics=[...new Set(allQuestions.map(q=>q.topic_name))];
+  topics.forEach(t=>{
+    const o=document.createElement('option');
+    o.value=t;o.textContent=t;sel.appendChild(o);
+  });
+}
+
+function render(){
+  const term=document.getElementById('search').value.toLowerCase();
+  const topic=document.getElementById('topicSelect').value;
+  
+  const filtered=allQuestions.filter(q=>{
+    const okText=q.text.toLowerCase().includes(term);
+    const okTopic=topic==='all'||q.topic_name===topic;
+    return okText&&okTopic;
+  });
+
+  document.getElementById('stats').textContent=
+    `${filtered.length} preguntas encontradas`;
+
+  const container=document.getElementById('questions');
+  container.innerHTML='';
+
+  filtered.forEach(q=>{
+    const row=document.createElement('div');
+    row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
+    row.innerHTML=`
+      <div class="data-value">${q.exam_year}</div>
+      <div>${q.text}</div>
+      <div class="text-xs opacity-70">${q.topic_name}</div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+document.getElementById('search').oninput=render;
+document.getElementById('topicSelect').onchange=render;
+
+loadData();
+</script>
+
 </body>
 </html>
