@@ -1,5 +1,27 @@
 [
   {
+    "text": "B1. Dados los elementos A, B y C, con números atómicos: A (Z = 11), B (Z = 16), C (Z = 37).\na) ¿Cuál será el número de oxidación más probable para los elementos A y B? Razónelo en base a su configuración electrónica.\nb) Indique, razonadamente, si (4, 0, 0, +½) puede ser un conjunto de números cuánticos válido para el electrón más externo del elemento C.\nc) Ordene, razonadamente, de menor a mayor radio atómico los elementos A, B y C.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2024,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "y06km27fl",
+    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "B4. El número de protones de cuatro átomos es el siguiente: A= 8; B= 9; C= 12 y D= 20. Razone:\na) ¿Cuál es el más electronegativo?\nb) ¿Cuál posee menor energía de ionización?\nc) ¿Cuál puede convertirse en anión divalente estable?",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2024,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "jlu2i7cjt",
+    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
     "text": "1A. a) Razone cuál es el número máximo de electrones en un átomo que pueden tener los números cuánticos n= 2 y ms= –1/2. b) Escriba un conjunto de números cuánticos válido de un electrón alojado en un orbital 3p. c) Justifique cuántos electrones tiene el átomo de fósforo en la capa de valencia. d) Explique cuántos electrones desapareados tiene el átomo de hierro en su estado fundamental.",
     "topic_name": "T1: Estructura Atómica",
     "exam_year": 2025,
