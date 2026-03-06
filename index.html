@@ -94,7 +94,7 @@ async function loadData(){
 
 function populateTopics(){
   const sel=document.getElementById('topicSelect');
-  const topics=[...new Set(allQuestions.map(q=>q.topic_name))];
+  const topics=[...new Set(allQuestions.map(q=>normalizeTopic(q)))];
   topics.forEach(t=>{
     const o=document.createElement('option');
     o.value=t;o.textContent=t;sel.appendChild(o);
@@ -122,6 +122,16 @@ function getQuestionType(text){
   return {label:'Mixto',color:'bg-gray-100 text-gray-800'};
 }
 
+function normalizeTopic(q){
+  const t=q.text.toLowerCase();
+
+  if(t.includes("formule o nombre")){
+    return "Tema 00: Formulación (antes de 2025)";
+  }
+
+  return q.topic_name;
+}
+  
 function render(){
   const year=document.getElementById('yearSelect').value;
   const term=document.getElementById('search').value.toLowerCase();
@@ -129,7 +139,7 @@ function render(){
   
   const filtered=allQuestions.filter(q=>{
     const okText=q.text.toLowerCase().includes(term);
-    const okTopic=topic==='all'||q.topic_name===topic;
+    const okTopic=topic==='all'||normalizeTopic(q)===topic;
     const okYear=year==='all'||q.exam_year==year;
     return okText && okTopic && okYear;
   });
@@ -143,18 +153,34 @@ function render(){
   filtered.forEach(q=>{
     const type=getQuestionType(q.text);
 
+    const solutionBlock = q.solution ? `
+  <details class="mt-3 bg-white/70 rounded p-3 border">
+    <summary class="cursor-pointer font-semibold text-sm">
+      🧪 Ver solución
+    </summary>
+    <div class="prose mt-2">
+      ${formatChemicalFormula(marked.parse(q.solution))}
+    </div>
+  </details>
+` : "";
+
     const row=document.createElement('div');
     row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
-    row.innerHTML=`
-      <div class="data-value">${q.exam_year}</div>
-      <div class="prose">${formatChemicalFormula(marked.parse(q.text))}</div>
-      <div class="flex flex-col gap-2">
-        <span class="text-xs opacity-70">${q.topic_name}</span>
-        <span class="px-2 py-1 rounded text-xs font-semibold ${type.color}">
-          ${type.label}
-        </span>
-      </div>
-    `;
+  row.innerHTML=`
+  <div class="data-value">${q.exam_year}</div>
+
+  <div>
+    <div class="prose">${formatChemicalFormula(marked.parse(q.text))}</div>
+    ${solutionBlock}
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <span class="text-xs opacity-70">${normalizeTopic(q)}</span>
+    <span class="px-2 py-1 rounded text-xs font-semibold ${type.color}">
+      ${type.label}
+    </span>
+  </div>
+`;
     container.appendChild(row);
   });
 
