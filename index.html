@@ -66,7 +66,18 @@ body{background:var(--color-bg);color:var(--color-ink);font-family:Inter,system-
 </main>
 
 <script>
+<script>
 let allQuestions=[];
+
+function formatChemicalFormula(text){
+  return text.replace(
+    /\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g,
+    (match) => {
+      if(!/[A-Z].*\d|\(|\)/.test(match)) return match;
+      return match.replace(/(\d+)/g,'<sub>$1</sub>');
+    }
+  );
+}
 
 async function loadData(){
   const index=await fetch('QUIM/indexquim.json').then(r=>r.json());
@@ -137,7 +148,7 @@ function render(){
     row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
     row.innerHTML=`
       <div class="data-value">${q.exam_year}</div>
-      <div class="prose">${marked.parse(q.text)}</div>
+      <div class="prose">${formatChemicalFormula(marked.parse(q.text))}</div>
       <div class="flex flex-col gap-2">
         <span class="text-xs opacity-70">${q.topic_name}</span>
         <span class="px-2 py-1 rounded text-xs font-semibold ${type.color}">
