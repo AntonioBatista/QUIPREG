@@ -48,7 +48,7 @@
     {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
-      "count": 11
+      "count": 10
     },
     {
       "name": "Estructura Atómica",
@@ -94,13 +94,8 @@
       "name": "Cinética Química",
       "file": "Cinetica_Quimica.json",
       "count": 1
-    },
-    {
-      "name": "Estequiometría",
-      "file": "Estequiometria.json",
-      "count": 0
     }
   ],
-  "last_updated": "2026-03-06T05:03:26.232Z",
-  "total_questions": 97
+  "last_updated": "2026-03-06T05:13:25.892Z",
+  "total_questions": 96
 }
