@@ -42,22 +42,87 @@
 
         .prose { max-width: none; font-size: 0.95rem; }
         .active-sub { border-bottom: 3px solid var(--accent); font-weight: 600; }
+
+        /* Cabecera con efecto cristal y gradiente */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-image: radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%), 
+                              radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%);
+        }
+        
+        /* Tabs de asignatura estilo Apple/Notion */
+        .subject-tab {
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            color: #6b7280;
+        }
+        
+        .subject-tab:hover {
+            background: rgba(0, 0, 0, 0.03);
+            color: #111827;
+        }
+        
+        .subject-tab.active-sub {
+            color: #111827;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+        }
+        
+        /* Animación para el contador de preguntas */
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .loading-pulse {
+            animation: pulse-soft 2s infinite;
+        }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
 
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 px-8 py-4 flex justify-between items-center">
-    <div class="flex items-center gap-6">
-        <h1 id="mainTitle" class="text-xl font-serif italic text-gray-900">
-            Banco de Preguntas · <span class="text-emerald-600">🧪 Química</span>
-        </h1>
-        <nav class="flex gap-4 ml-8">
-            <button onclick="switchSubject('quimica')" id="btn-quimica" class="px-3 py-1 text-sm transition-all active-sub">Química</button>
-            <button onclick="switchSubject('matii')" id="btn-matii" class="px-3 py-1 text-sm transition-all text-gray-500 hover:text-black">Matemáticas II</button>
-        </nav>
+<header class="sticky top-0 z-50 glass-header px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+    
+    <div class="flex items-center gap-4">
+        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-lg">
+            <span class="text-white font-serif italic text-xl">v3</span>
+        </div>
+        <div>
+            <h1 id="mainTitle" class="text-lg font-bold tracking-tight text-gray-900 leading-none">
+                Banco de Preguntas
+            </h1>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-1">
+                Codigo Corrector Exámenes v3.4
+            </p>
+        </div>
     </div>
-    <div id="stats" class="text-xs font-mono bg-gray-100 px-3 py-1 rounded-full text-gray-500">Cargando datos...</div>
+
+    <nav class="bg-gray-100/50 p-1 rounded-lg flex gap-1 border border-gray-200">
+        <button onclick="switchSubject('quimica')" id="btn-quimica" class="subject-tab active-sub flex items-center gap-2">
+            <span class="text-xs">🧪</span> Química
+        </button>
+        <button onclick="switchSubject('matii')" id="btn-matii" class="subject-tab flex items-center gap-2">
+            <span class="text-xs">➗</span> Mates II
+        </button>
+    </nav>
+
+    <div class="flex items-center gap-3">
+        <div id="stats" class="text-[11px] font-mono font-bold bg-white border border-gray-200 px-3 py-1.5 rounded-md shadow-sm text-gray-600">
+            ---
+        </div>
+        <button onclick="window.print()" class="p-2 hover:bg-gray-100 rounded-full transition-colors" title="Imprimir búsqueda">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+            </svg>
+        </button>
+    </div>
 </header>
 
 <div class="flex flex-1 overflow-hidden">
