@@ -123,12 +123,18 @@ function getQuestionType(text){
 }
 
 function normalizeTopic(q){
-  const t=q.text.toLowerCase();
 
-  if(t.includes("formule o nombre")){
-    return "T0: Formulación (antes de 2025)";
+  // 🥇 PRIORIDAD MÁXIMA: competencial
+  if(q.is_competency_based || q.topic_name === "Actividad Competencial"){
+    return "Actividad Competencial";
   }
 
+  // 🥈 Formulación antigua
+  if(q.topic_name.includes("Formulación")){
+    return "T00: Formulación (antes de 2025)";
+  }
+
+  // 🥉 Resto de temas
   return q.topic_name;
 }
   
@@ -172,7 +178,12 @@ function render(){
 ` : "";
     row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
   row.innerHTML=`
-  <div class="data-value">${q.exam_year}</div>
+  <div class="flex flex-col leading-tight">
+  <span class="data-value">${q.exam_year}</span>
+  <span class="text-[11px] opacity-50 font-mono uppercase tracking-tight">
+    ${q.exam_model || ''}
+  </span>
+</div>
 
   <div>
     <div>
