@@ -26,36 +26,6 @@
       "count": 2
     },
     {
-      "name": "Ácido-Base",
-      "file": "Acido-Base.json",
-      "count": 0
-    },
-    {
-      "name": "Redox",
-      "file": "Redox.json",
-      "count": 0
-    },
-    {
-      "name": "Química Orgánica",
-      "file": "Quimica_Organica.json",
-      "count": 0
-    },
-    {
-      "name": "Química Inorgánica",
-      "file": "Quimica_Inorganica.json",
-      "count": 0
-    },
-    {
-      "name": "Cinética Química",
-      "file": "Cinetica_Quimica.json",
-      "count": 0
-    },
-    {
-      "name": "Estequiometría",
-      "file": "Estequiometria.json",
-      "count": 0
-    },
-    {
       "name": "Álgebra Lineal",
       "file": "Algebra_Lineal.json",
       "count": 0
@@ -76,6 +46,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T18:49:22.764Z",
+  "last_updated": "2026-03-06T18:49:35.309Z",
   "total_questions": 19
 }
