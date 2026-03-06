@@ -26,11 +26,6 @@
       "count": 2
     },
     {
-      "name": "T5: Equilibrio Químico",
-      "file": "T5-_Equilibrio_Quimico.json",
-      "count": 0
-    },
-    {
       "name": "T7: Ácido-Base",
       "file": "T7-_Acido-Base.json",
       "count": 0
@@ -116,6 +111,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T18:49:16.622Z",
+  "last_updated": "2026-03-06T18:49:17.447Z",
   "total_questions": 19
 }
