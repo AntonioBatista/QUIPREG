@@ -48,7 +48,7 @@
     {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
-      "count": 10
+      "count": 9
     },
     {
       "name": "Estructura Atómica",
@@ -94,13 +94,8 @@
       "name": "Química Inorgánica",
       "file": "Quimica_Inorganica.json",
       "count": 0
-    },
-    {
-      "name": "Estequiometría",
-      "file": "Estequiometria.json",
-      "count": 0
     }
   ],
-  "last_updated": "2026-03-06T04:49:49.097Z",
-  "total_questions": 85
+  "last_updated": "2026-03-06T04:56:36.308Z",
+  "total_questions": 84
 }
