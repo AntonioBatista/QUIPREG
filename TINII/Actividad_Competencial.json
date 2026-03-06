@@ -1,5 +1,21 @@
 [
   {
+    "text": "**EJERCICIO 2. OPCIÓN B.** Un brazo robótico utilizado en una línea de ensamblaje industrial está equipado con un cilindro neumático de doble efecto que controla la apertura y el cierre de una pinza para la manipulación de piezas. El cilindro tiene un émbolo de 20 mm de diámetro, un vástago de 8 mm de diámetro y una carrera de 40 mm. El sistema incluye un compresor que suministra aire comprimido a 9 bares y realiza una maniobra de 12 ciclos por minuto. Calcular:\na) **La fuerza que ejerce el vástago en la carrera de avance.** (1 punto)\nb) **El consumo de aire en condiciones normales en l / min.** (1,5 puntos)",
+    "topic_name": "Actividad Competencial",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": true,
+    "context_text": "Un brazo robótico utilizado en una línea de ensamblaje industrial está equipado con un cilindro neumático de doble efecto que controla la apertura y el cierre de una pinza para la manipulación de piezas. El cilindro tiene un émbolo de 20 mm de diámetro, un vástago de 8 mm de diámetro y una carrera de 40 mm. El sistema incluye un compresor que suministra aire comprimido a 9 bares y realiza una maniobra de 12 ciclos por minuto.",
+    "detected_topics": [
+      "Neumática",
+      "Cilindros de doble efecto",
+      "Consumo de aire"
+    ],
+    "id": "qwqx36yjp",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "**EJERCICIO 3 OPCIÓN B**\n\n**El sistema de seguridad de una fábrica monitoriza el acceso a una zona de trabajo peligrosa. El sistema activa dos alarmas (A y B) en función de cuatro variables: Variable X: sensor de identificación (acceso autorizado = “1”, no autorizado = “0”). Variable Y: sensor de puerta abierta (abierta = “1”, cerrada = “0”). Variable Z: sensor de maquinaria en funcionamiento (máquina activada = “1”, máquina desactivada = “0”). Variable W: pulsador de emergencia (activado = “1”, no activado = “0”). La alarma de seguridad A se activa si hay una persona no autorizada en la zona o si la puerta está abierta mientras la maquinaria está funcionando. La alarma B controla la detención de la maquinaria y se activa si el pulsador de emergencia está presionado o si una persona no autorizada intenta acceder mientras la maquinaria está funcionando. Se pide:**\n**a) Obtener la tabla de verdad de las alarmas A y B. (1 punto)**\n**b) Simplificar por el método de Karnaugh las funciones A y B. (1 punto)**\n**c) Implementar los circuitos que realicen dichas funciones con puertas lógicas. (0,5 puntos)**",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
