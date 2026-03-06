@@ -51,21 +51,6 @@
       "count": 10
     },
     {
-      "name": "Equilibrio Químico",
-      "file": "Equilibrio_Quimico.json",
-      "count": 1
-    },
-    {
-      "name": "Ácido-Base",
-      "file": "Acido-Base.json",
-      "count": 1
-    },
-    {
-      "name": "Redox",
-      "file": "Redox.json",
-      "count": 2
-    },
-    {
       "name": "Química Orgánica",
       "file": "Quimica_Organica.json",
       "count": 1
@@ -96,6 +81,6 @@
       "count": 1
     }
   ],
-  "last_updated": "2026-03-06T05:32:34.117Z",
-  "total_questions": 108
+  "last_updated": "2026-03-06T05:32:38.421Z",
+  "total_questions": 104
 }
