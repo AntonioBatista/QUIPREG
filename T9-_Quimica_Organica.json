@@ -1,5 +1,16 @@
 [
   {
+    "text": "B6. Escriba las siguientes reacciones: \na) Combustión del **CH3CH3** \nb) Deshidratación del **CH3CH2OH** \nc) Nitración del benceno (**C6H6**)",
+    "topic_name": "T9: Química Orgánica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "0au67dosn",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
     "text": "4B. a) Escriba y ajuste la reacción de combustión del CH3CH2CH3\nb) Escriba y ajuste la reacción de deshidratación del CH3CH2CH2OH\nc) Escriba un isómero de función del compuesto CH3COCH2CH3",
     "topic_name": "T9: Química Orgánica",
     "exam_year": 2025,
@@ -185,16 +196,5 @@
     "context_text": "",
     "id": "hbjbvs61b",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf"
-  },
-  {
-    "text": "B6. Escriba las siguientes reacciones: \na) Combustión del **CH3CH3** \nb) Deshidratación del **CH3CH2OH** \nc) Nitración del benceno (**C6H6**)",
-    "topic_name": "T9: Química Orgánica",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "0au67dosn",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
   }
 ]
