@@ -51,16 +51,6 @@
       "count": 10
     },
     {
-      "name": "Termoquímica",
-      "file": "Termoquimica.json",
-      "count": 0
-    },
-    {
-      "name": "Equilibrio Químico",
-      "file": "Equilibrio_Quimico.json",
-      "count": 1
-    },
-    {
       "name": "Cinética Química",
       "file": "Cinetica_Quimica.json",
       "count": 1
@@ -71,6 +61,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T05:38:14.561Z",
-  "total_questions": 101
+  "last_updated": "2026-03-06T05:38:24.449Z",
+  "total_questions": 100
 }
