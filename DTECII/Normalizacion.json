@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "text": "**EJERCICIO 4: NORMALIZACIÓN**\n\nDados planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide:\n1. Dibujar el corte A-A a escala 1:2.\n2. Acotar según normas.",
+    "topic_name": "Normalización",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Cortes y secciones",
+      "Acotación",
+      "Escalas"
+    ],
+    "id": "anolw9lr5",
+    "source_file": "Examen-Titular-A_Dibujo_Técnico_II.pdf"
+  }
+]
