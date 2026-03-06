@@ -1,5 +1,27 @@
 [
   {
+    "text": "C1. El cloro gaseoso, Cl2(g), se obtiene industrialmente a partir de HCl(g) y O2(g), de acuerdo con la siguiente ecuación: 4HCl(g) + O2(g) ⇄ 2Cl2(g) + 2H2O(g). Se introducen 32,85 g de HCl y 38,40 g de O2 en un recipiente cerrado de 10 L y se calienta la mezcla de reacción a 390 ºC. Cuando se alcanza el equilibrio se observa que la presión parcial del Cl2(g) vale 2,175 atm. Calcule:\na) Las concentraciones de todos los gases en el equilibrio.\nb) Las constantes KC y KP a 390 ºC.\nDatos: Masas atómicas relativas: Cl= 35,5; O= 16; H= 1; R = 0,082 atm·L·mol−1·K−1",
+    "topic_name": "T5: Equilibrio Químico",
+    "exam_year": 2024,
+    "exam_model": "Reserva-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "ll74tzz2x",
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "C2. El producto de solubilidad del BaF2 es 1,7·10–6.\na) A partir del equilibrio de disociación correspondiente, determine la solubilidad en g·L–1 del BaF2\nb) Calcule la masa de NaF(s) que se debe añadir a 100 mL de disolución 0,005 M de Ba(NO3)2 para iniciar la precipitación de BaF2\nDatos: Masas atómicas relativas: F= 19; Ba= 137; Na= 23",
+    "topic_name": "T5: Equilibrio Químico",
+    "exam_year": 2024,
+    "exam_model": "Reserva-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "qkofaqvjw",
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+  },
+  {
     "text": "B6. Al añadir una pequeña cantidad de Ca(OH)2 sólido a un vaso con agua se observa que no se disuelve por completo, quedando parte del sólido en equilibrio con la disolución saturada.\na) A partir del equilibrio correspondiente, deduzca la relación entre la solubilidad molar de este compuesto y su producto de solubilidad.\nb) Razone si aumentará la solubilidad del **Ca(OH)2** añadiendo a la disolución **CaCl2**, que es una sal muy soluble.\nc) Justifique si cambiará el producto de solubilidad del **Ca(OH)2** al añadir **NaOH** a la disolución saturada.",
     "topic_name": "T5: Equilibrio Químico",
     "exam_year": 2024,
