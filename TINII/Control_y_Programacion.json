@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "text": "**EJERCICIO 4 OPCIÓN ÚNICA**\n\n**a) Respecto a los documentos de un proyecto técnico, indicar qué relación existe entre el documento de Mediciones y el de Presupuesto y entre el de Mediciones y el de Planos. (0,5 puntos)**\n**b) Explicar en qué consiste la eficiencia energética de los materiales y enumerar dos factores que influyan sobre ella. (1 punto)**\n**c) Un ordenador reporta que ha detectado un malware. Explicar qué significa este aviso y cómo se debe proceder. (0,5 puntos)**\n**d) Una empresa de desarrollo software quiere adoptar una metodología que permita desarrollar prototipos en ciclos cortos de iteración para recibir una realimentación rápida de los usuarios y poder mejorar así el producto desde fases tempranas del desarrollo. Proponer y razonar la elección de un tipo de metodología agile que esté alineado con las necesidades de esta empresa. (0,5 puntos)**",
+    "topic_name": "Control y Programación",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Documentos de proyecto",
+      "Sostenibilidad",
+      "Seguridad informática",
+      "Metodologías Ágiles"
+    ],
+    "id": "fk9acc3t3",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  }
+]
