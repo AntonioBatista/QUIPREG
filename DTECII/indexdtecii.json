@@ -3,24 +3,29 @@
     {
       "name": "Geometría Plana",
       "file": "Geometria_Plana.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Sistemas de Representación",
       "file": "Sistemas_de_Representacion.json",
-      "count": 0
+      "count": 2
     },
     {
       "name": "Normalización",
       "file": "Normalizacion.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Documentación Gráfica",
       "file": "Documentacion_Grafica.json",
       "count": 0
+    },
+    {
+      "name": "Actividad Competencial",
+      "file": "Actividad_Competencial.json",
+      "count": 0
     }
   ],
-  "last_updated": "2026-03-06T19:26:02.491Z",
-  "total_questions": 0
+  "last_updated": "2026-03-06T20:09:37.353Z",
+  "total_questions": 4
 }
