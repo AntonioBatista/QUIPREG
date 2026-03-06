@@ -1,0 +1,31 @@
+{
+  "topics": [
+    {
+      "name": "Materiales",
+      "file": "Materiales.json",
+      "count": 0
+    },
+    {
+      "name": "Máquinas Térmicas",
+      "file": "Maquinas_Termicas.json",
+      "count": 0
+    },
+    {
+      "name": "Sistemas Automáticos",
+      "file": "Sistemas_Automaticos.json",
+      "count": 0
+    },
+    {
+      "name": "Circuitos Lógicos",
+      "file": "Circuitos_Logicos.json",
+      "count": 0
+    },
+    {
+      "name": "Control y Programación",
+      "file": "Control_y_Programacion.json",
+      "count": 0
+    }
+  ],
+  "last_updated": "2026-03-06T19:25:48.871Z",
+  "total_questions": 0
+}
