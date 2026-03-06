@@ -1,6 +1,0 @@
-{
-  "subjects": [
-    { "id": "quimica", "name": "Química 2º Bach", "path": "QUIM/" },
-    { "id": "mat2", "name": "Matemáticas II 2º Bach", "path": "MATII/" }
-  ]
-}
