@@ -1,5 +1,37 @@
 [
   {
+    "text": "D) **FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS**\n\n**b1)** **i)** (1 punto) Determine razonadamente la energía de enlace del isótopo 3 2He.\n**ii)** (0,5 puntos) Sabiendo que la energía de enlace por nucleón del 4 2He es de 6,83 MeV/nucleón, razone si es más o menos estable que el 3 2He.\nm(3 2He) = 3,016029 u; mp = 1,007276 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; e = 1,6·10-19 C; c = 3·108 m s-1",
+    "topic_name": "T6: Física Nuclear",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Defecto de masa",
+      "Energía de enlace",
+      "Estabilidad nuclear"
+    ],
+    "id": "4nkcwizku",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
+    "text": "D) **FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS**\n\n**b2)** La masa de un núcleo de plutonio-239 es 239,05 u y su periodo de semidesintegración es 24200 años. Determine:\n**i)** (0,25 puntos) la constante de desintegración;\n**ii)** (0,75 puntos) la actividad de una muestra de 1 mg de plutonio-239;\n**iii)** (0,5 puntos) el tiempo necesario para que quede el 25% de los núcleos de la muestra anterior.\nNA = 6,02·1023 mol-1",
+    "topic_name": "T6: Física Nuclear",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Desintegración radiactiva",
+      "Actividad radiactiva",
+      "Periodo de semidesintegración"
+    ],
+    "id": "e1nisif8h",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
     "text": "**b1)** Un proyecto de investigación estudia producir la fisión de 10B5 mediante el bombardeo con neutrones para dar lugar a una partícula alfa y 7Li3. **i)** (0,25 puntos) Escriba la ecuación de la reacción nuclear. **ii)** (1,25 puntos) Calcule la energía liberada cuando se forman 1,5 millones de núcleos de 7Li3.\n**m(10B5) = 10,012937 u; m(7Li3) = 7,016003 u; m(4He2) = 4,002603 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; c = 3·108 m s-1**",
     "topic_name": "T6: Física Nuclear",
     "exam_year": 2025,
