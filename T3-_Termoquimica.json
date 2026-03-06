@@ -1,5 +1,16 @@
 [
   {
+    "text": "B5. Indique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas:\na) Toda reacción exotérmica es espontánea.\nb) En toda reacción química espontánea la variación de entropía es positiva.\nc) En el cambio de estado H2O(l) ⇄ H2O(g) se produce un aumento de entropía.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2024,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "rccelhtkr",
+    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
     "text": "2A. Justifique si son verdaderas o falsas las siguientes afirmaciones:\na) Un proceso exotérmico y espontáneo a cualquier temperatura tendrá ΔS > 0.\nb) La sublimación del diyodo es un proceso que implica un aumento de entropía.\nc) En todos los procesos espontáneos la entropía del sistema aumenta.\nd) La reacción PCl3(g) + Cl2(g) → PCl5(g) (ΔH0 = −86 kJ·mol⁻¹) no es espontánea a ninguna temperatura.",
     "topic_name": "T3: Termoquímica",
     "exam_year": 2025,
@@ -53,16 +64,5 @@
     "context_text": "",
     "id": "2k7jm0tt6",
     "source_file": "Examen_Suplente1-A_Quimica.pdf"
-  },
-  {
-    "text": "B5. Indique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas:\na) Toda reacción exotérmica es espontánea.\nb) En toda reacción química espontánea la variación de entropía es positiva.\nc) En el cambio de estado H2O(l) ⇄ H2O(g) se produce un aumento de entropía.",
-    "topic_name": "T3: Termoquímica",
-    "exam_year": 2024,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "rccelhtkr",
-    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
   }
 ]
