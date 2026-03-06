@@ -1,55 +1,56 @@
 {
   "topics": [
     {
-      "name": "T0: Formulación inorgánica",
-      "file": "T0:_Formulación_inorgánica.json",
+      "name": "Tema 0: Formulación inorgánica",
+      "file": "Tema_0-_Formulación_inorgánica.json",
       "count": 0
     },
     {
       "name": "T1: Estructura Atómica",
-      "file": "T1:_Estructura_Atómica.json",
-      "count": 0
+      "file": "T1-_Estructura_Atómica.json",
+      "count": 3
     },
     {
       "name": "T2: Enlace Químico",
-      "file": "T2:_Enlace_Químico.json",
-      "count": 0
+      "file": "T2-_Enlace_Químico.json",
+      "count": 3
     },
     {
       "name": "T3: Termoquímica",
-      "file": "T3:_Termoquímica.json",
-      "count": 0
+      "file": "T3-_Termoquímica.json",
+      "count": 2
     },
     {
       "name": "T4: Cinética Química",
-      "file": "T4:_Cinética_Química.json",
+      "file": "T4-_Cinética_Química.json",
       "count": 0
     },
     {
       "name": "T5: Equilibrio Químico",
-      "file": "T5:_Equilibrio_Químico.json",
-      "count": 0
+      "file": "T5-_Equilibrio_Químico.json",
+      "count": 3
     },
     {
       "name": "T7: Ácido-Base",
-      "file": "T7:_Ácido-Base.json",
-      "count": 0
+      "file": "T7-_Ácido-Base.json",
+      "count": 3
     },
     {
       "name": "T8: Redox",
-      "file": "T8:_Redox.json",
-      "count": 0
+      "file": "T8-_Redox.json",
+      "count": 4
     },
     {
       "name": "T9: Química Orgánica",
-      "file": "T9:_Química_Orgánica.json",
-      "count": 0
+      "file": "T9-_Química_Orgánica.json",
+      "count": 6
     },
     {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
-      "count": 0
+      "count": 3
     }
   ],
-  "last_updated": "2026-03-05T15:25:19.290Z"
+  "last_updated": "2026-03-06T04:12:53.701Z",
+  "total_questions": 27
 }
