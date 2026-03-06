@@ -51,11 +51,6 @@
       "count": 10
     },
     {
-      "name": "Estructura Atómica",
-      "file": "Estructura_Atomica.json",
-      "count": 2
-    },
-    {
       "name": "Enlace Químico",
       "file": "Enlace_Quimico.json",
       "count": 1
@@ -101,6 +96,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T05:31:30.204Z",
-  "total_questions": 108
+  "last_updated": "2026-03-06T05:31:44.483Z",
+  "total_questions": 106
 }
