@@ -13,14 +13,19 @@
     {
       "name": "Probabilidad",
       "file": "Probabilidad.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Estadística",
       "file": "Estadistica.json",
-      "count": 0
+      "count": 2
+    },
+    {
+      "name": "Actividad Competencial",
+      "file": "Actividad_Competencial.json",
+      "count": 4
     }
   ],
-  "last_updated": "2026-03-06T19:25:38.262Z",
-  "total_questions": 0
+  "last_updated": "2026-03-06T20:04:09.163Z",
+  "total_questions": 7
 }
