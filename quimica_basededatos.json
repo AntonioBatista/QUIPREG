@@ -49,8 +49,43 @@
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
       "count": 10
+    },
+    {
+      "name": "Termoquímica",
+      "file": "Termoquimica.json",
+      "count": 0
+    },
+    {
+      "name": "Equilibrio Químico",
+      "file": "Equilibrio_Quimico.json",
+      "count": 1
+    },
+    {
+      "name": "Ácido-Base",
+      "file": "Acido-Base.json",
+      "count": 1
+    },
+    {
+      "name": "Redox",
+      "file": "Redox.json",
+      "count": 2
+    },
+    {
+      "name": "Química Orgánica",
+      "file": "Quimica_Organica.json",
+      "count": 1
+    },
+    {
+      "name": "Cinética Química",
+      "file": "Cinetica_Quimica.json",
+      "count": 1
+    },
+    {
+      "name": "Estequiometría",
+      "file": "Estequiometria.json",
+      "count": 0
     }
   ],
-  "last_updated": "2026-03-06T05:33:35.676Z",
-  "total_questions": 99
+  "last_updated": "2026-03-06T05:37:58.428Z",
+  "total_questions": 105
 }
