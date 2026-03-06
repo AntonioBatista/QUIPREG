@@ -8,7 +8,7 @@
     {
       "name": "T1: Estructura Atómica",
       "file": "T1-_Estructura_Atomica.json",
-      "count": 6
+      "count": 8
     },
     {
       "name": "T2: Enlace Químico",
@@ -28,29 +28,29 @@
     {
       "name": "T5: Equilibrio Químico",
       "file": "T5-_Equilibrio_Quimico.json",
-      "count": 6
+      "count": 8
     },
     {
       "name": "T7: Ácido-Base",
       "file": "T7-_Acido-Base.json",
-      "count": 4
+      "count": 5
     },
     {
       "name": "T8: Redox",
       "file": "T8-_Redox.json",
-      "count": 5
+      "count": 6
     },
     {
       "name": "T9: Química Orgánica",
       "file": "T9-_Quimica_Organica.json",
-      "count": 10
+      "count": 12
     },
     {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
-      "count": 5
+      "count": 6
     }
   ],
-  "last_updated": "2026-03-06T04:25:46.973Z",
-  "total_questions": 45
+  "last_updated": "2026-03-06T04:26:16.466Z",
+  "total_questions": 54
 }
