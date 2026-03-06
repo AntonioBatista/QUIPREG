@@ -51,11 +51,6 @@
       "count": 10
     },
     {
-      "name": "Termoquímica",
-      "file": "Termoquimica.json",
-      "count": 0
-    },
-    {
       "name": "Equilibrio Químico",
       "file": "Equilibrio_Quimico.json",
       "count": 1
@@ -89,8 +84,18 @@
       "name": "Estequiometría",
       "file": "Estequiometria.json",
       "count": 0
+    },
+    {
+      "name": "Estructura Atómica",
+      "file": "Estructura_Atomica.json",
+      "count": 2
+    },
+    {
+      "name": "Enlace Químico",
+      "file": "Enlace_Quimico.json",
+      "count": 1
     }
   ],
-  "last_updated": "2026-03-06T05:31:59.818Z",
-  "total_questions": 105
+  "last_updated": "2026-03-06T05:32:34.117Z",
+  "total_questions": 108
 }
