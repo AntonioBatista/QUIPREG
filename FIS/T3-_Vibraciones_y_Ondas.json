@@ -1,5 +1,21 @@
 [
   {
+    "text": "C) **VIBRACIONES Y ONDAS**\n\n**a)** Un objeto describe un movimiento armónico simple de amplitud A en el extremo de un resorte. Si la amplitud se duplica, conteste razonadamente: i) (0,5 puntos) ¿qué sucede con la energía del sistema?; ii) (0,5 puntos) ¿qué sucede con la velocidad máxima del objeto?\n\n**b1)** Se sitúa un objeto de 20 cm de altura a 2 m del vértice de un espejo esférico convexo. Si la distancia focal es 6 m, calcule, indicando el criterio de signos utilizado: i) (1 punto) la distancia a la que se forma la imagen justificando si la misma es real o virtual; ii) (0,5 puntos) la altura de la imagen.\n\n**b2)** Un rayo de luz amarilla, emitido por una lámpara de sodio, tiene una longitud de onda en el vacío de 5,89·10−7 m. Determine: i) (0,5 puntos) su frecuencia; ii) (0,5 puntos) su velocidad de propagación y su longitud de onda en el interior de una fibra de cuarzo; iii) (0,5 puntos) el ángulo límite entre la lámina de cuarzo y el aire. c = 3·108 m s-1; naire = 1; ncuarzo = 1,458",
+    "topic_name": "T3: Vibraciones y Ondas",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Movimiento Armónico Simple",
+      "Óptica geométrica",
+      "Ondas electromagnéticas"
+    ],
+    "id": "dimn7egzh",
+    "source_file": "Examen_Suplente1-A_FÍSICA.pdf"
+  },
+  {
     "text": "C) VIBRACIONES Y ONDAS \n\n**b2)** Una onda estacionaria está descrita mediante la siguiente ecuación: y(x,t) = 0,5∙cos(0,5π x)∙sen(4π t) (SI). Determine razonadamente: \n\n**i)** (0,75 puntos) la amplitud, la longitud de onda y la velocidad de propagación de las ondas armónicas cuya superposición da lugar a esta onda estacionaria; \n\n**ii)** (0,75 puntos) la posición de algún nodo, ayudándose de un esquema.",
     "topic_name": "T3: Vibraciones y Ondas",
     "exam_year": 2025,
