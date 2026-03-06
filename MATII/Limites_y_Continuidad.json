@@ -1,0 +1,36 @@
+[
+  {
+    "text": "EJERCICIO 2. (2,5 puntos)\nSabiendo que $\\lim_{x \\to 0} \\frac{\\text{sen}(x) - ax + 2 - 2 \\cos(x)}{e^x - x \\cos(x) - 1}$ es finito, calcula $a$ y el valor del límite.",
+    "topic_name": "Límites y Continuidad",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "jfk01197b",
+    "source_file": "Examen_Titular-A_Matematicas II_Tabla.pdf",
+    "solution": "### Análisis de la indeterminación y aplicación de la Regla de L'Hôpital\n\nPara resolver el límite propuesto, comenzamos evaluando la expresión directamente en $x = 0$:\n\n$$L = \\lim_{x \\to 0} \\frac{\\text{sen}(x) - ax + 2 - 2 \\cos(x)}{e^x - x \\cos(x) - 1}$$\n\nSustituyendo $x = 0$:\n\n- Numerador: $\\text{sen}(0) - a(0) + 2 - 2 \\cos(0) = 0 - 0 + 2 - 2(1) = 0$\n- Denominador: $e^0 - 0 \\cdot \\cos(0) - 1 = 1 - 0 - 1 = 0$\n\nObtenemos una indeterminación del tipo $\\frac{0}{0}$. Dado que las funciones del numerador y denominador son derivables en un entorno de $x = 0$, podemos aplicar la **Regla de L'Hôpital**, la cual establece que el límite del cociente de las funciones es igual al límite del cociente de sus derivadas:\n\n$$L = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}(\\text{sen}(x) - ax + 2 - 2 \\cos(x))}{\\frac{d}{dx}(e^x - x \\cos(x) - 1)}$$\n\nCalculamos las derivadas:\n\n$$L = \\lim_{x \\to 0} \\frac{\\cos(x) - a + 2 \\text{sen}(x)}{e^x - (\\cos(x) - x \\text{sen}(x))} = \\lim_{x \\to 0} \\frac{\\cos(x) - a + 2 \\text{sen}(x)}{e^x - \\cos(x) + x \\text{sen}(x)}$$\n\n### Determinación del parámetro $a$\n\nEvaluamos de nuevo el límite cuando $x \\to 0$:\n\n- Denominador: $e^0 - \\cos(0) + 0 \\cdot \\text{sen}(0) = 1 - 1 + 0 = 0$\n- Numerador: $\\cos(0) - a + 2 \\text{sen}(0) = 1 - a + 0 = 1 - a$\n\nEl enunciado especifica que el límite es **finito**. Para que un límite con denominador tendiendo a cero sea finito, es condición necesaria que el numerador también tienda a cero (de lo contrario, el límite sería $\\pm \\infty$). Por tanto, debemos imponer:\n\n$$1 - a = 0 \\implies a = 1$$\n\n### Cálculo del valor del límite\n\nUna vez determinado que $a = 1$, el límite presenta de nuevo la indeterminación $\\frac{0}{0}$:\n\n$$L = \\lim_{x \\to 0} \\frac{\\cos(x) - 1 + 2 \\text{sen}(x)}{e^x - \\cos(x) + x \\text{sen}(x)}$$\n\nAplicamos la Regla de L'Hôpital por segunda vez derivando el numerador y el denominador:\n\n$$L = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}(\\cos(x) - 1 + 2 \\text{sen}(x))}{\\frac{d}{dx}(e^x - \\cos(x) + x \\text{sen}(x))}$$\n\nCalculamos las segundas derivadas:\n\n- Numerador: $\\frac{d}{dx}(\\cos(x) - 1 + 2 \\text{sen}(x)) = -\\text{sen}(x) + 2 \\cos(x)$\n- Denominador: $\\frac{d}{dx}(e^x - \\cos(x) + x \\text{sen}(x)) = e^x - (-\\text{sen}(x)) + (1 \\cdot \\text{sen}(x) + x \\cos(x)) = e^x + 2 \\text{sen}(x) + x \\cos(x)$\n\nSustituimos en el límite:\n\n$$L = \\lim_{x \\to 0} \\frac{-\\text{sen}(x) + 2 \\cos(x)}{e^x + 2 \\text{sen}(x) + x \\cos(x)}$$\n\nEvaluamos en $x = 0$:\n\n$$L = \\frac{-\\text{sen}(0) + 2 \\cos(0)}{e^0 + 2 \\text{sen}(0) + 0 \\cdot \\cos(0)} = \\frac{0 + 2(1)}{1 + 0 + 0} = \\frac{2}{1} = 2$$\n\nLa solución final es:\n\n$$a = 1, \\quad \\text{Límite} = 2$$"
+  },
+  {
+    "text": "EJERCICIO 3. (2,5 puntos)\nSea la función $f : (0, +\\infty) \\to \\mathbb{R}$ definida por $f(x) = a + \\frac{\\ln(x)}{x^2}$.\na) [1 punto] Calcula $a$ para que $y = 1$ sea una asíntota horizontal de la gráfica de $f$.\nb) [1,5 puntos] Para $a = 0$, calcula los intervalos de crecimiento y de decrecimiento de $f$. Estudia y halla los extremos relativos de $f$ (abscisas donde se obtienen y valores que se alcanzan).",
+    "topic_name": "Límites y Continuidad",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "t8myeyhbb",
+    "source_file": "Examen_Titular-A_Matematicas II_Tabla.pdf"
+  },
+  {
+    "text": "EJERCICIO 6. (2,5 puntos)\nCalcula $a$ y $b$ sabiendo que $\\lim_{x\\to 0} \\frac{x \\text{ sen}(x) + a(e^x - 1) + \\text{ sen}(x)}{bx^2 + x - \\text{ sen}(x)} = 1$.",
+    "topic_name": "Límites y Continuidad",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "z75cttv83",
+    "source_file": "Examen_Titular-B_MatematicasII.pdf"
+  }
+]
