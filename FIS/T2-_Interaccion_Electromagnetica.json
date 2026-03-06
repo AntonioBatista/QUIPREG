@@ -1,5 +1,21 @@
 [
   {
+    "text": "B) **CAMPO ELECTROMAGNÉTICO**\n\n**a)** Dos partículas cargadas, con el mismo valor absoluto de carga eléctrica, entran perpendicularmente con la misma velocidad en el seno de un campo magnético uniforme. Las partículas describen trayectorias circulares de sentidos contrarios y radios R1 y R2 (R2 = 2 R1). i) (0,25 puntos) Explique qué puede decirse del signo de las cargas eléctricas de estas partículas. ii) (0,75 puntos) Obtenga la relación entre sus masas (m2/m1). Razone sus respuestas.\n\n**b1)** Una espira cuadrada contenida en el plano XY, de 30 cm de lado y 1 Ω de resistencia, se mueve con una velocidad v⃗ = 10 i⃗ m s-1. La espira penetra en un campo magnético B⃗ = 0,05 k⃗ T. Calcule razonadamente el valor de la corriente inducida en la espira en los siguientes casos: i) (1 punto) mientras está entrando en el campo; ii) (0,5 puntos) mientras se mueve en el seno del campo. En ambas situaciones, realice un esquema indicando el campo inducido en el interior de la espira y la corriente inducida.\n\n**b2)** Un electrón, inicialmente en reposo, que está situado en el seno de un campo eléctrico uniforme adquiere una aceleración de 1012 m s-2, en sentido positivo del eje OX, por acción del campo. Obtenga razonadamente: i) (0,75 puntos) el vector campo eléctrico; ii) (0,75) el módulo de la velocidad y la energía cinética, a partir de consideraciones energéticas, cuando ha recorrido 0,5 m. e = 1,6·10−19 C; me = 9,1·10−31 kg",
+    "topic_name": "T2: Interacción Electromagnética",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Magnetismo",
+      "Inducción electromagnética",
+      "Campo eléctrico"
+    ],
+    "id": "z0hhmx9cw",
+    "source_file": "Examen_Suplente1-A_FÍSICA.pdf"
+  },
+  {
     "text": "B) CAMPO ELECTROMAGNÉTICO \n\n**a)** Dos cargas de valores +q y -4q se encuentran separadas una distancia d. \n\n**i)** (0,5 puntos) Explique, con ayuda de un esquema, si puede ser nulo el campo eléctrico en algún punto de la línea que pasa por ambas cargas. \n\n**ii)** (0,5 puntos) En caso afirmativo, determine su posición en función de la distancia d.",
     "topic_name": "T2: Interacción Electromagnética",
     "exam_year": 2025,
