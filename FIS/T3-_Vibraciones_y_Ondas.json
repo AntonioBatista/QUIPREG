@@ -1,5 +1,20 @@
 [
   {
+    "text": "C) VIBRACIONES Y ONDAS \n\n**b2)** Una onda estacionaria está descrita mediante la siguiente ecuación: y(x,t) = 0,5∙cos(0,5π x)∙sen(4π t) (SI). Determine razonadamente: \n\n**i)** (0,75 puntos) la amplitud, la longitud de onda y la velocidad de propagación de las ondas armónicas cuya superposición da lugar a esta onda estacionaria; \n\n**ii)** (0,75 puntos) la posición de algún nodo, ayudándose de un esquema.",
+    "topic_name": "T3: Vibraciones y Ondas",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ondas estacionarias",
+      "Ecuación de onda"
+    ],
+    "id": "6bszqtrts",
+    "source_file": "Examen_Suplente2-B_Fisica.pdf"
+  },
+  {
     "text": "C) **VIBRACIONES Y ONDAS**\n\n**b2)** La ecuación de una onda viajera que se pro-paga por una cuerda tensa es: y(x,t) = 10∙sen(25 t - 15 x) (SI).\nCalcule razonadamente:\n**i)** (0,5 puntos) la velocidad de propagación de la onda;\n**ii)** (0,5 puntos) la velocidad de oscilación de la cuerda en el punto x = 0 m en t = 5 s;\n**iii)** (0,5 puntos) la diferencia de fase entre dos puntos que, en el mismo instante, están separados 2 m.",
     "topic_name": "T3: Vibraciones y Ondas",
     "exam_year": 2025,
