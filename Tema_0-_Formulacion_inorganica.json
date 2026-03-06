@@ -1,28 +1,5 @@
 [
   {
-    "text": "A1. Formule o nombre los siguientes compuestos: \na) **Sulfuro de plomo(II)**; b) **Hidróxido de berilio**; c) **Etanoato de metilo**; d) **TiF4**; e) **Ni3(PO4)2**; f) **CH3CH2CH2NH2**",
-    "topic_name": "Tema 0: Formulación inorgánica",
-    "exam_year": 2024,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "d0mx0vi3s",
-    "source_file": "Examen_Titular-B_QUÍMICA.pdf",
-    "solution": "### a) **Sulfuro de plomo(II)**\n$PbS$\n\n### b) **Hidróxido de berilio**\n$Be(OH)_2$\n\n### c) **Etanoato de metilo**\n$CH_3COOCH_3$\n\n### d) **$TiF_4$**\nFluoruro de titanio(IV)\n\n### e) **$Ni_3(PO_4)_2$**\nFosfato de níquel(II)\n\n### f) **$CH_3CH_2CH_2NH_2$**\nPropan-1-amina"
-  },
-  {
-    "text": "A2. Formule o nombre los siguientes compuestos: \na) **Peróxido de hidrógeno**; b) **Arsenato de hierro(III)**; c) **2,2,4-trimetilpentano**; d) **O3I2**; e) **Cr(OH)3**; f) **CH3CH2CHO**",
-    "topic_name": "Tema 0: Formulación inorgánica",
-    "exam_year": 2024,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "afk1bq9a8",
-    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
-  },
-  {
     "text": "A1. Formule o nombre los siguientes compuestos: \na) Hidróxido de vanadio(V); b) Bromato de aluminio; c) Etilbenceno; d) CuH2; e) H3AsO3; f) HOOCCH2COOH",
     "topic_name": "Tema 0: Formulación inorgánica",
     "exam_year": 2024,
@@ -31,8 +8,7 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "mkt0uev6u",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
-    "solution": "### a) Hidróxido de vanadio(V)\n$V(OH)_5$\n\n### b) Bromato de aluminio\n$Al(BrO_3)_3$\n\n### c) Etilbenceno\n$C_6H_5-CH_2-CH_3$\n\n### d) $CuH_2$\nHidruro de cobre(II)\n\n### e) $H_3AsO_3$\nÁcido arsenioso\n\n### f) $HOOCCH_2COOH$\nÁcido propanodioico"
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
   },
   {
     "text": "A2. Formule o nombre los siguientes compuestos: \na) Óxido de aluminio; b) Ácido cloroso; c) But-2-ino; d) Sn(OH)2; e) Ba(MnO4)2; f) CH3CH2CONH2",
@@ -44,5 +20,28 @@
     "context_text": "",
     "id": "ndaed7bl5",
     "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
+    "text": "A1. Formule o nombre los siguientes compuestos: \na) **Sulfuro de plomo(II)**; b) **Hidróxido de berilio**; c) **Etanoato de metilo**; d) **TiF4**; e) **Ni3(PO4)2**; f) **CH3CH2CH2NH2**",
+    "topic_name": "Tema 0: Formulación inorgánica",
+    "exam_year": 2024,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "d0mx0vi3s",
+    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "A2. Formule o nombre los siguientes compuestos: \na) **Peróxido de hidrógeno**; b) **Arsenato de hierro(III)**; c) **2,2,4-trimetilpentano**; d) **O3I2**; e) **Cr(OH)3**; f) **CH3CH2CHO**",
+    "topic_name": "Tema 0: Formulación inorgánica",
+    "exam_year": 2024,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "afk1bq9a8",
+    "source_file": "Examen_Titular-B_QUÍMICA.pdf",
+    "solution": "### a) Peróxido de hidrógeno\n$H_2O_2$\n\n### b) Arsenato de hierro(III)\n$FeAsO_4$\n\n### c) 2,2,4-trimetilpentano\n$CH_3C(CH_3)_2CH_2CH(CH_3)CH_3$\n\n### d) $O_3I_2$\nTrióxido de diyodo\n\n### e) $Cr(OH)_3$\nHidróxido de cromo(III)\n\n### f) $CH_3CH_2CHO$\nPropanal"
   }
 ]
