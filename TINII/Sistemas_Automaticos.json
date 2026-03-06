@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "text": "**EJERCICIO 2 OPCIÓN B**\n\n**Para desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:**\n**a) La fuerza que ejerce el vástago en la carrera de avance. (1 punto)**\n**b) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min. (1,5 puntos)**",
+    "topic_name": "Sistemas Automáticos",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Neumática",
+      "Cilindros de doble efecto",
+      "Caudal"
+    ],
+    "id": "hkjdlpnq3",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  }
+]
