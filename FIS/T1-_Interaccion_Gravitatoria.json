@@ -1,5 +1,53 @@
 [
   {
+    "text": "A) CAMPO GRAVITATORIO \n\n**a)** La intensidad gravitatoria en la superficie de la Luna es 0,163 veces la de la Tierra y el radio de la Luna es 0,27 veces el de la Tierra. Razone la veracidad de la siguiente afirmación: la velocidad de escape de la Luna es la mitad que la velocidad de escape de la Tierra.",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Campo gravitatorio",
+      "Velocidad de escape",
+      "Intensidad gravitatoria"
+    ],
+    "id": "ftxvfkmpr",
+    "source_file": "Examen_Suplente2-B_Fisica.pdf"
+  },
+  {
+    "text": "A) CAMPO GRAVITATORIO \n\n**b1)** Dos masas puntuales, de masas 2 kg y 3 kg, están colocadas en los puntos A(2,0) m y B(0,2) m, respectivamente. \n\n**i)** (0,25 puntos) Realice un esquema del campo gravitatorio en el punto C(3,1) m. \n\n**ii)** (0,75 puntos) Calcule el vector campo gravitatorio en dicho punto. \n\n**iii)** (0,5 puntos) Calcule el vector fuerza que experimenta la masa de 3 kg. \n\nG = 6,67·10-11 N m2 kg-2",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Masas puntuales",
+      "Campo gravitatorio",
+      "Fuerza gravitatoria"
+    ],
+    "id": "81rq0nr90",
+    "source_file": "Examen_Suplente2-B_Fisica.pdf"
+  },
+  {
+    "text": "A) CAMPO GRAVITATORIO \n\n**b2)** Un bloque de 3 kg se halla en reposo en la parte superior de un plano rugoso de 4 m de altura que está inclinado 37º respecto a la horizontal. Al liberar el bloque, desliza por el plano y llega al final con una velocidad de 5 m s-1. Determine mediante razonamientos energéticos: \n\n**i)** (0,75 puntos) el trabajo realizado por cada una de las fuerzas que actúan sobre el bloque; \n\n**ii)** (0,75 puntos) el coeficiente de rozamiento entre el bloque y el plano. \n\ng = 9,8 m s-2",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Energía mecánica",
+      "Trabajo y energía",
+      "Fuerza de rozamiento"
+    ],
+    "id": "urkdq3ig7",
+    "source_file": "Examen_Suplente2-B_Fisica.pdf"
+  },
+  {
     "text": "A) **CAMPO GRAVITATORIO**\n\n**a)** Discuta razonadamente si los siguientes enunciados son verdaderos o falsos: **i)** (0,5 puntos) si se realiza trabajo sobre una partícula, su energía cinética aumenta; **ii)** (0,5 puntos) las fuerzas conservativas siempre realizan trabajo nulo.",
     "topic_name": "T1: Interacción Gravitatoria",
     "exam_year": 2025,
