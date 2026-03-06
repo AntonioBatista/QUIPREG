@@ -1,5 +1,16 @@
 [
   {
+    "text": "B3. Dadas las moléculas de **BF3** y **PF3** \na) Represente las estructuras de Lewis de cada una de ellas. \nb) Razone la geometría molecular de cada una de las sustancias a partir de la teoría RPECV. \nc) Justifique su polaridad.",
+    "topic_name": "T2: Enlace Químico",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "qh9tul9st",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
     "text": "1B. Razone las siguientes afirmaciones: a) A 25 °C y 1 atm, el agua es un líquido y el sulfuro de hidrógeno es un gas. b) El NH3 tiene un punto de ebullición más alto que el CH4 c) A 25 °C y 1 atm, el diflúor y el dicloro son gases, el dibromo es líquido y el diyodo es sólido. d) El KCl tiene un punto de fusión mayor que el Cl2",
     "topic_name": "T2: Enlace Químico",
     "exam_year": 2025,
@@ -64,16 +75,5 @@
     "context_text": "",
     "id": "1wxo74jvi",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf"
-  },
-  {
-    "text": "B3. Dadas las moléculas de **BF3** y **PF3** \na) Represente las estructuras de Lewis de cada una de ellas. \nb) Razone la geometría molecular de cada una de las sustancias a partir de la teoría RPECV. \nc) Justifique su polaridad.",
-    "topic_name": "T2: Enlace Químico",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "qh9tul9st",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
   }
 ]
