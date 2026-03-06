@@ -1,5 +1,16 @@
 [
   {
+    "text": "a) Calcule las kilocalorías que aporta el contenido en alcohol de una botella de whisky, basándose en la combustión del etanol: (1 punto) CH3CH2OH + 3O2 → 2CO2 + 3H2O. Datos: Masas atómicas relativas: C= 12, O= 16; H= 1; densidad del etanol= 0,789 g·mL–1; 1 kcal= 4,18 kJ. b) ¿Qué masa de Cr2(SO4)3 se obtendría en el test de alcoholemia si utilizamos 2 mL de H2SO4 (96% de riqueza en masa y densidad 1,84 g·mL–1)? (1 punto) Datos: Masas atómicas relativas: S= 32; Cr= 52. c) Nombre o formule los cuatro compuestos que aparecen en negrita. (0,5 puntos). Sustancias en negrita de la reacción: **etanol**, **ácido acético**, **Cr2(SO4)3**, **ácido sulfúrico**.",
+    "topic_name": "Actividad Competencial",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": true,
+    "context_text": "NO A LAS BEBIDAS ALCOHÓLICAS. Las bebidas alcohólicas, presentes en diversas culturas y celebraciones, contienen etanol, una sustancia psicoactiva que perjudica al sistema nervioso central. Está científicamente demostrado que afecta a la memoria, el aprendizaje, la coordinación y la capacidad de tomar decisiones. Además, como el hígado es el principal órgano encargado de metabolizar el alcohol, su consumo excesivo puede llevar a enfermedades hepáticas como la cirrosis. También debilita las defensas del organismo, haciéndolo más vulnerable a infecciones, así como agravar problemas de salud mental como la depresión y la ansiedad. Los test de alcoholemia se basan en la reacción redox del etanol en el aire espirado con una sal de cromo para dar ácido acético y Cr2(SO4)3 o nitrato de cromo(III), según se haga en presencia de ácido sulfúrico o de ácido nítrico: 3CH3CH2OH+ 2K2Cr2O7 + 8H2SO4 → 3CH3COOH + 2Cr2(SO4)3 + 2K2SO4 + 11H2O. Además, las bebidas alcohólicas aportan una cantidad significativa de calorías vacías, es decir, calorías que no proporcionan nutrientes esenciales como vitaminas y minerales, lo que contribuye al aumento de peso y a la obesidad. Aunque el cuerpo metaboliza el alcohol de forma diferente, se pueden calcular las calorías que aporta una botella de whisky (700 mL) mediante la entalpía de combustión del etanol que contiene.",
+    "id": "8pnvso8ba",
+    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+  },
+  {
     "text": "PREGUNTA 5.- (2,5 puntos). Responda TODOS los apartados planteados. \na) Ajuste la reacci3³n molecular del aluminio con 3¡cido sulf3³rico por el m3©todo del ion-electr3³n. \nb) Calcule el volumen de disoluci3³n acuosa de HCl 10–5 M necesario para neutralizar 5 L de una disoluci3³n acuosa saturada de Al(OH)3. \nc) Nombre o formule los cuatro compuestos que aparecen en negrita.",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
