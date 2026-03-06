@@ -1,27 +1,5 @@
 [
   {
-    "text": "B4. Dada la pila: **Al(s)|Al3+(ac)||Cu2+(ac)|Cu(s)** \na) Justifique, escribiendo la semirreacción que tiene lugar en cada uno, cuál es el ánodo y cuál el cátodo. \nb) Calcule el potencial estándar de la pila. \nc) Razone qué ocurriría si se sustituyera el electrodo de aluminio por uno de plata. \nDatos: Eº(Al3+/Al)= –1,66 V; Eº(Cu2+/Cu)= 0,34 V; Eº(Ag+/Ag)= 0,80 V",
-    "topic_name": "T8: Redox",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "ymz52hx16",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
-  },
-  {
-    "text": "C4. El estaño reacciona con ácido nítrico y se forma dióxido de estaño, monóxido de nitrógeno y agua. \n**Sn + HNO3 → SnO2 + NO + H2O** \na) Ajuste las ecuaciones iónica y molecular por el método del ion-electrón. \nb) Se dispone de una aleación de estaño empleada para soldar componentes electrónicos. Para determinar su pureza se hacen reaccionar 50 g con ácido nítrico en exceso. Calcule el porcentaje de **Sn** en la aleación si en el proceso se obtienen 6,75 L de **NO** a 785 mmHg y 28 ºC. \nDatos: Masa atómica relativa: Sn= 118,7; R= 0,082 atm·L·mol–1·K–1",
-    "topic_name": "T8: Redox",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "illnrzfye",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
-  },
-  {
     "text": "2A. Dados los siguientes potenciales normales de reducción: Eº(Cu2+/Cu)= +0,34 V; Eº(Ni2+/Ni)= −0,25 V; Eº(HNO3/NO)= +0,96 V. Razone cuáles de las siguientes afirmaciones son verdaderas o falsas: a) Cuando se introduce un trozo de Cu metálico en ácido nítrico (HNO3), el Cu pasa a la disolución como iones Cu2+. b) Al introducir Ni metálico en una disolución de Cu2+, el Ni se oxida a Ni2+. c) Si se añade Ni metálico a una disolución de ácido nítrico, el Ni no se oxida. d) El HNO3 es la especie más oxidante.",
     "topic_name": "T8: Redox",
     "exam_year": 2025,
@@ -130,5 +108,27 @@
     "context_text": "",
     "id": "afgibxopu",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "B4. Dada la pila: **Al(s)|Al3+(ac)||Cu2+(ac)|Cu(s)** \na) Justifique, escribiendo la semirreacción que tiene lugar en cada uno, cuál es el ánodo y cuál el cátodo. \nb) Calcule el potencial estándar de la pila. \nc) Razone qué ocurriría si se sustituyera el electrodo de aluminio por uno de plata. \nDatos: Eº(Al3+/Al)= –1,66 V; Eº(Cu2+/Cu)= 0,34 V; Eº(Ag+/Ag)= 0,80 V",
+    "topic_name": "T8: Redox",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "ymz52hx16",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "C4. El estaño reacciona con ácido nítrico y se forma dióxido de estaño, monóxido de nitrógeno y agua. \n**Sn + HNO3 → SnO2 + NO + H2O** \na) Ajuste las ecuaciones iónica y molecular por el método del ion-electrón. \nb) Se dispone de una aleación de estaño empleada para soldar componentes electrónicos. Para determinar su pureza se hacen reaccionar 50 g con ácido nítrico en exceso. Calcule el porcentaje de **Sn** en la aleación si en el proceso se obtienen 6,75 L de **NO** a 785 mmHg y 28 ºC. \nDatos: Masa atómica relativa: Sn= 118,7; R= 0,082 atm·L·mol–1·K–1",
+    "topic_name": "T8: Redox",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "illnrzfye",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
   }
 ]
