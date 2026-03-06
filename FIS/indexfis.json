@@ -26,8 +26,8 @@
       "count": 2
     },
     {
-      "name": "Física Nuclear",
-      "file": "Fisica_Nuclear.json",
+      "name": "T6: Física Nuclear",
+      "file": "T6-_Fisica_Nuclear.json",
       "count": 1
     },
     {
@@ -36,6 +36,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T21:32:26.223Z",
+  "last_updated": "2026-03-06T21:32:35.282Z",
   "total_questions": 12
 }
