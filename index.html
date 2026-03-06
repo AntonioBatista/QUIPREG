@@ -165,12 +165,20 @@ function render(){
 ` : "";
 
     const row=document.createElement('div');
+    const contextBlock = q.is_competency_based && q.context_text ? `
+  <div class="mb-3 p-3 bg-amber-50 border-l-4 border-amber-400 italic text-[14px] leading-relaxed">
+    ${formatChemicalFormula(marked.parse(q.context_text))}
+  </div>
+` : "";
     row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
   row.innerHTML=`
   <div class="data-value">${q.exam_year}</div>
 
   <div>
-    <div class="prose">${formatChemicalFormula(marked.parse(q.text))}</div>
+    <div>
+  ${contextBlock}
+  <div class="prose">${formatChemicalFormula(marked.parse(q.text))}</div>
+</div>
     ${solutionBlock}
   </div>
 
