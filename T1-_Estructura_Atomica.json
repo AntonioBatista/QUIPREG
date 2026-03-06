@@ -84,7 +84,7 @@
     "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
     "is_competency_based": false,
     "context_text": "",
-    "id": "ir74e97yl",
+    "id": "39phnqf9i",
     "source_file": "Examen_Suplente1-A_Quimica.pdf"
   },
   {
@@ -97,16 +97,5 @@
     "context_text": "",
     "id": "tevg26way",
     "source_file": "Examen_Suplente1-B_Quimica.pdf"
-  },
-  {
-    "text": "1A. Los números atómicos de los elementos X e Y son 20 y 34, respectivamente.\na) Razone a qué grupo y periodo pertenece cada uno de ellos.\nb) Escriba las configuraciones electrónicas de los iones X2+ e Y2–.\nc) Justifique cuál de los dos elementos será más electronegativo.\nd) Explique cuál de los dos elementos tendrá menor radio.",
-    "topic_name": "T1: Estructura Atómica",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "39phnqf9i",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
   }
 ]
