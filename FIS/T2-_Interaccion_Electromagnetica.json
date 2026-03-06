@@ -1,5 +1,52 @@
 [
   {
+    "text": "B) **CAMPO ELECTROMAGNÉTICO**\n\n**a)** Discuta la veracidad de las siguientes afirmaciones:\n**i)** (0,5 puntos) si no existe flujo magnético a través de una superficie, no existe campo magnético en esa región;\n**ii)** (0,5 puntos) si el valor del flujo magnético es muy grande, el valor de la fuerza electromotriz inducida en una espira será también muy grande.",
+    "topic_name": "T2: Interacción Electromagnética",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Flujo magnético",
+      "Inducción electromagnética",
+      "Ley de Faraday"
+    ],
+    "id": "nn9xql0ja",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
+    "text": "B) **CAMPO ELECTROMAGNÉTICO**\n\n**b1)** Dos conductores rectilíneos muy largos se disponen paralelamente al eje OZ. El primero pasa por el punto A(0,1) m y el segundo por el punto B(0,4) m del plano XY. Por ellos circulan corrientes de 1 A y 2 A, respectivamente, hacia la parte positiva del eje OZ.\n**i)** (1 punto) Realice un esquema y calcule el vector campo magnético total en el punto C(0,3) m del plano XY.\n**ii)** (0,5 puntos) Calcule la fuerza por unidad de longitud que se ejerce sobre el conductor por el que pasa 2 A. Justifique sus respuestas.\nμ0 = 4π·10-7 T m A-1",
+    "topic_name": "T2: Interacción Electromagnética",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Campo magnético creado por conductores",
+      "Fuerza entre conductores paralelos"
+    ],
+    "id": "8fera4ynn",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
+    "text": "B) **CAMPO ELECTROMAGNÉTICO**\n\n**b2)** Una carga q1 = 2·10-9 C está fija en el origen de coordenadas y otra carga q2 = -4·10-9 C se encuentra fija en el punto A(2,0) m.\n**i)** (0,5 puntos) Determine y dibuje el campo eléctrico, debido a ambas cargas, en el punto B(4,0) m.\n**ii)** (1 punto) Calcule el trabajo que las fuerzas del campo realizan para trasladar una tercera carga q3 = 1·10-9 C, desde B hasta un punto C(0,4) m. Interprete el signo del trabajo.\nK = 9·109 N m2 C-2",
+    "topic_name": "T2: Interacción Electromagnética",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Campo eléctrico",
+      "Potencial eléctrico",
+      "Trabajo eléctrico"
+    ],
+    "id": "zmqssz8rk",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
     "text": "**B) CAMPO ELECTROMAGNÉTICO**\n\n**a)** Dos partículas cargadas se mueven perpendicularmente a un campo magnético uniforme con la misma velocidad. **i)** (0,5 puntos) Deduzca la expresión del radio de la trayectoria de una de ellas. **ii)** (0,5 puntos) Si la masa de la primera es veinte veces mayor y su carga es la mitad de la segunda, encuentre la razón entre los periodos de sus movimientos. Razone sus respuestas.",
     "topic_name": "T2: Interacción Electromagnética",
     "exam_year": 2025,
