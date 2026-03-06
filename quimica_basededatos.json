@@ -49,18 +49,8 @@
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
       "count": 10
-    },
-    {
-      "name": "Cinética Química",
-      "file": "Cinetica_Quimica.json",
-      "count": 1
-    },
-    {
-      "name": "Estequiometría",
-      "file": "Estequiometria.json",
-      "count": 0
     }
   ],
-  "last_updated": "2026-03-06T05:38:24.449Z",
-  "total_questions": 100
+  "last_updated": "2026-03-06T05:38:34.422Z",
+  "total_questions": 99
 }
