@@ -3,32 +3,32 @@
     {
       "name": "T1: Interacción Gravitatoria",
       "file": "T1-_Interaccion_Gravitatoria.json",
-      "count": 6
+      "count": 9
     },
     {
       "name": "T2: Interacción Electromagnética",
       "file": "T2-_Interaccion_Electromagnetica.json",
-      "count": 6
+      "count": 9
     },
     {
       "name": "T3: Vibraciones y Ondas",
       "file": "T3-_Vibraciones_y_Ondas.json",
-      "count": 2
+      "count": 3
     },
     {
       "name": "T4: Óptica",
       "file": "T4-_Optica.json",
-      "count": 4
+      "count": 6
     },
     {
       "name": "T5: Física moderna",
       "file": "T5-_Fisica_moderna.json",
-      "count": 3
+      "count": 4
     },
     {
       "name": "T6: Física Nuclear",
       "file": "T6-_Fisica_Nuclear.json",
-      "count": 3
+      "count": 5
     },
     {
       "name": "Actividad Competencial",
@@ -36,6 +36,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T21:41:27.073Z",
-  "total_questions": 24
+  "last_updated": "2026-03-06T21:46:39.713Z",
+  "total_questions": 36
 }
