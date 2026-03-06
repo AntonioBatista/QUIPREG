@@ -11,8 +11,8 @@
       "count": 3
     },
     {
-      "name": "Vibraciones y Ondas",
-      "file": "Vibraciones_y_Ondas.json",
+      "name": "T3: Vibraciones y Ondas",
+      "file": "T3-_Vibraciones_y_Ondas.json",
       "count": 1
     },
     {
@@ -41,6 +41,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T21:31:17.505Z",
+  "last_updated": "2026-03-06T21:31:32.270Z",
   "total_questions": 12
 }
