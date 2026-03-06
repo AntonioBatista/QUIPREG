@@ -1,5 +1,16 @@
 [
   {
+    "text": "a) Se construye una pila galvánica con un electrodo de cobre, un electrodo de estaño, una disolución 1 M de Cu(NO3)2 y una disolución 1 M de Sn(NO3)2. Indique, razonadamente, cuál es el cátodo, cuál es el ánodo y calcule el potencial estándar de la pila. \nb) Se calienta una mezcla de 2500 kg de casiterita con 90 kg de carbono. Calcule la masa de estaño metálico que se obtendrá. Suponga que la reacción tiene un rendimiento del 100%. \nc) Formule o nombre los cuatro compuestos que aparecen en negrita en el texto. \nDatos: Masas atómicas relativas: Sn= 119; C= 12; O= 16. Tabla Potenciales: E°(Ag+/Ag)= +0,80 V; E°(Cu2+/Cu)= +0,34 V; E°(2H+/H2)= 0 V; E°(Sn2+/Sn)= -0,14 V; E°(Zn2+/Zn)= -0,76 V",
+    "topic_name": "Actividad Competencial",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": true,
+    "context_text": "NEW YORK, NEW YORK. El cobre se ha venido utilizando desde la antigüedad para múltiples usos, siendo uno de los más populares la fabricación de estatuas. La estatua de la Libertad está hecha con láminas de cobre, aunque el color verde que tiene actualmente se debe a la formación de una capa de **hidróxido de cobre(II)** y **carbonato de cobre(II)**, productos de la reacción de este metal con los componentes de la atmósfera. Podemos obtener cobre a partir de minerales como la calcopirita, la calsonita y la covelita, que es rica en **CuS**. El cobre también se utiliza en una aleación con estaño que se conoce como bronce y cuyo origen data del año 3000 a.C. Los principales usos de esta aleación fueron en la fabricación de armas, armaduras y, de nuevo, estatuas. El principal mineral para la obtención del estaño es la casiterita, cuya riqueza es del 76% en **SnO2**. El estaño metálico se obtiene calentando la casiterita con carbón, según la reacción: SnO2 + C → Sn + CO2. Ambos metales se utilizan también de manera tradicional en la fabricación de pilas galvánicas. Estas celdas electroquímicas permitieron obtener energía a través de reacciones redox y asentaron las bases de las pilas y baterías actuales.",
+    "id": "oivryeuh9",
+    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+  },
+  {
     "text": "a) Calcule las kilocalorías que aporta el contenido en alcohol de una botella de whisky, basándose en la combustión del etanol: (1 punto) CH3CH2OH + 3O2 → 2CO2 + 3H2O. Datos: Masas atómicas relativas: C= 12, O= 16; H= 1; densidad del etanol= 0,789 g·mL–1; 1 kcal= 4,18 kJ. b) ¿Qué masa de Cr2(SO4)3 se obtendría en el test de alcoholemia si utilizamos 2 mL de H2SO4 (96% de riqueza en masa y densidad 1,84 g·mL–1)? (1 punto) Datos: Masas atómicas relativas: S= 32; Cr= 52. c) Nombre o formule los cuatro compuestos que aparecen en negrita. (0,5 puntos). Sustancias en negrita de la reacción: **etanol**, **ácido acético**, **Cr2(SO4)3**, **ácido sulfúrico**.",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
