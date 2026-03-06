@@ -1,269 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Banco de Preguntas</title>
+    <meta charset="UTF-8">
+    <title>Codificador de Exámenes v3.4 | Banco de Preguntas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/mhchem.min.js"></script>
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:italic,wght@400;600&display=swap');
+        
+        :root {
+            --bg: #F8F9FA;
+            --accent: #141414;
+        }
 
-<!-- Markdown -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; color: #1a1a1a; }
+        .font-serif { font-family: 'Lora', serif; }
+        
+        /* Efecto de fila mejorado */
+        .data-row { 
+            border-bottom: 1px solid #e5e7eb; 
+            transition: all 0.2s ease;
+            background: white;
+        }
+        .data-row:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
 
-<!-- KaTeX -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/mhchem.min.js"></script>
-  
-<style>
-.prose strong{font-weight:bold;}
-.prose{line-height:1.6}
+        /* Scrollbar estética */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #999; }
 
-:root{
-  --color-bg:#E4E3E0;
-  --color-ink:#141414;
-  --color-line:#141414;
-}
-body{background:var(--color-bg);color:var(--color-ink);font-family:Inter,system-ui;}
-.data-row{border-bottom:1px solid var(--color-line);transition:.2s}
-.data-row:hover{background:var(--color-ink);color:var(--color-bg)}
-.col-header{font-style:italic;font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:.08em}
-.data-value{font-family:monospace}
-</style>
+        .prose { max-width: none; font-size: 0.95rem; }
+        .active-sub { border-bottom: 3px solid var(--accent); font-weight: 600; }
+    </style>
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen flex flex-col">
 
-<header class="border-b p-6 bg-white/50 backdrop-blur">
-
-  <h1 id="mainTitle" class="text-2xl italic font-serif">
-    Banco de Preguntas · 🧪 Química
-  </h1>
-
-  <div class="flex gap-3 mt-4">
-
-    <button onclick="switchSubject('quimica')"
-      class="px-4 py-2 rounded bg-emerald-100 hover:bg-emerald-200">
-      🧪 Química
-    </button>
-
-    <button onclick="switchSubject('matii')"
-      class="px-4 py-2 rounded bg-indigo-100 hover:bg-indigo-200">
-      ➗ Matemáticas II
-    </button>
-
-  </div>
-
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-6">
+        <h1 id="mainTitle" class="text-xl font-serif italic text-gray-900">
+            Banco de Preguntas · <span class="text-emerald-600">🧪 Química</span>
+        </h1>
+        <nav class="flex gap-4 ml-8">
+            <button onclick="switchSubject('quimica')" id="btn-quimica" class="px-3 py-1 text-sm transition-all active-sub">Química</button>
+            <button onclick="switchSubject('matii')" id="btn-matii" class="px-3 py-1 text-sm transition-all text-gray-500 hover:text-black">Matemáticas II</button>
+        </nav>
+    </div>
+    <div id="stats" class="text-xs font-mono bg-gray-100 px-3 py-1 rounded-full text-gray-500">Cargando datos...</div>
 </header>
 
-<main class="p-6 max-w-6xl mx-auto">
+<div class="flex flex-1 overflow-hidden">
+    
+    <aside class="w-72 bg-white border-r border-gray-200 p-6 flex flex-col gap-6 hidden md:flex">
+        <div>
+            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Búsqueda</label>
+            <input id="search" type="text" placeholder="Escribe para filtrar..." 
+                class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-black outline-none transition-all">
+        </div>
 
-<div class="flex gap-4 mb-6">
-  <select id="topicSelect" class="border px-4 py-2 rounded bg-white">
-    <option value="all">Todos los temas</option>
-  </select>
-  <select id="yearSelect" class="border px-4 py-2 rounded bg-white">
-  <option value="all">Todos los años</option>
-  </select>
+        <div>
+            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Año Académico</label>
+            <select id="yearSelect" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-gray-50"></select>
+        </div>
 
-  <input id="search" placeholder="Buscar por texto..." class="border px-4 py-2 rounded flex-1 bg-white">
+        <div>
+            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Bloque Temático</label>
+            <select id="topicSelect" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-gray-50"></select>
+        </div>
+
+        <div class="mt-auto p-4 bg-blue-50 rounded-xl border border-blue-100">
+            <p class="text-[11px] text-blue-700 leading-relaxed">
+                <strong>Consejo:</strong> Puedes buscar conceptos específicos como <em>"entalpía"</em> o <em>"redox"</em> para filtrar resultados rápidamente.
+            </p>
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto bg-gray-50 p-4 md:p-8">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="grid grid-cols-[100px_1fr_180px] px-6 py-3 text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+                <div>Referencia</div>
+                <div>Contenido del Ejercicio</div>
+                <div class="text-right">Categoría</div>
+            </div>
+
+            <div id="questions" class="flex flex-col gap-4 mt-2">
+                </div>
+            
+            <div id="loader" class="text-center py-20 opacity-30 italic">Cargando base de datos...</div>
+        </div>
+    </main>
 </div>
-
-<div id="stats" class="mb-4 text-sm opacity-60"></div>
-
-<div class="border rounded overflow-hidden bg-white/50">
-  <div class="grid grid-cols-[120px_1fr_160px] p-4 bg-black text-white text-xs uppercase tracking-widest">
-    <div>Año</div>
-    <div>Enunciado</div>
-    <div>Tema</div>
-  </div>
-  <div id="questions"></div>
-</div>
-
-</main>
 
 <script>
 let currentSubject = "quimica";
 let allQuestions = [];
 
-  function switchSubject(subject){
+// Cambiar de asignatura con feedback visual
+function switchSubject(subject){
+    currentSubject = subject;
+    
+    // UI Updates
+    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active-sub', 'text-black'));
+    document.getElementById(`btn-${subject}`).classList.add('active-sub');
+    
+    const title = document.getElementById('mainTitle');
+    title.innerHTML = subject === "quimica" 
+        ? 'Banco de Preguntas · <span class="text-emerald-600">🧪 Química</span>' 
+        : 'Banco de Preguntas · <span class="text-indigo-600">➗ Matemáticas II</span>';
 
-  currentSubject = subject;
-
-  // Cambiar título
-  const title = document.getElementById('mainTitle');
-
-  if(subject === "quimica"){
-    title.innerHTML = "Banco de Preguntas · 🧪 Química";
-  }
-  else if(subject === "mates"){
-    title.innerHTML = "Banco de Preguntas · ➗ Matemáticas II";
-  }
-
-  // Limpiar preguntas anteriores
-  allQuestions = [];
-  document.getElementById('questions').innerHTML = "";
-
-  // Recargar datos
-  loadData();
+    loadData();
 }
-  
+
+// Formateador mejorado (protege fórmulas de Markdown)
 function formatChemicalFormula(text){
-  return text.replace(
-    /\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g,
-    (match) => {
-      if(!/[A-Z].*\d|\(|\)/.test(match)) return match;
-      return match.replace(/(\d+)/g,'<sub>$1</sub>');
-    }
-  );
+    if(!text) return "";
+    return text.replace(/\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g, (match) => {
+        if(!/[A-Z].*\d|\(|\)/.test(match)) return match;
+        return match.replace(/(\d+)/g,'<sub>$1</sub>');
+    });
 }
 
 async function loadData(){
+    const loader = document.getElementById('loader');
+    const container = document.getElementById('questions');
+    loader.style.display = "block";
+    container.innerHTML = "";
 
-  const basePath = currentSubject === "quimica" ? "QUIM" : "MATII";
-  const indexFile = currentSubject === "quimica" ? "indexquim.json" : "indexmatii.json";
+    const basePath = currentSubject === "quimica" ? "QUIM" : "MATII";
+    const indexFile = currentSubject === "quimica" ? "indexquim.json" : "indexmatii.json";
 
-  const index = await fetch(`${basePath}/${indexFile}`).then(r=>r.json());
-  const files = index.topics.map(t => `${basePath}/${t.file}`);
+    try {
+        const index = await fetch(`${basePath}/${indexFile}`).then(r=>r.json());
+        const files = index.topics.map(t => `${basePath}/${t.file}`);
 
-  allQuestions = [];
+        allQuestions = [];
+        for(const f of files){
+            const qs = await fetch(f).then(r=>r.json());
+            allQuestions.push(...qs);
+        }
 
-  for(const f of files){
-    const qs = await fetch(f).then(r=>r.json());
-    allQuestions.push(...qs);
-  }
-
-  populateTopics();
-  populateYears();
-  render();
+        populateFilters();
+        render();
+        loader.style.display = "none";
+    } catch (e) {
+        loader.textContent = "Error al cargar los datos. Verifica las rutas.";
+    }
 }
 
-function populateTopics(){
-  const sel=document.getElementById('topicSelect');
-  const topics=[...new Set(allQuestions.map(q=>normalizeTopic(q)))];
-  topics.forEach(t=>{
-    const o=document.createElement('option');
-    o.value=t;o.textContent=t;sel.appendChild(o);
-  });
-}
+function populateFilters(){
+    // Topics
+    const tSel = document.getElementById('topicSelect');
+    const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
+    tSel.innerHTML = '<option value="all">Todos los temas</option>';
+    topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
 
-function populateYears(){
-  const sel=document.getElementById('yearSelect');
-  const years=[...new Set(allQuestions.map(q=>q.exam_year))].sort((a,b)=>b-a);
-  years.forEach(y=>{
-    const o=document.createElement('option');
-    o.value=y;
-    o.textContent=y;
-    sel.appendChild(o);
-  });
-}
-
-function getQuestionType(text){
-  const t=text.toLowerCase();
-  const teoria=/justifique|razone|explique|indique|ordene|defina/.test(t);
-  const problema=/calcule|determine|ajuste|halle|obtenga|cuantifique/.test(t);
-
-  if(problema) return {label:'Problema',color:'bg-blue-100 text-blue-800'};
-  if(teoria) return {label:'Teoría',color:'bg-emerald-100 text-emerald-800'};
-  return {label:'Mixto',color:'bg-gray-100 text-gray-800'};
+    // Years
+    const ySel = document.getElementById('yearSelect');
+    const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b)=>b-a);
+    ySel.innerHTML = '<option value="all">Todos los años</option>';
+    years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
 }
 
 function normalizeTopic(q){
-
-  // 🥇 PRIORIDAD MÁXIMA: competencial
-  if(q.is_competency_based || q.topic_name === "Actividad Competencial"){
-    return "Actividad Competencial";
-  }
-
-  // 🥈 Formulación antigua
-  if(q.topic_name.includes("Formulación")){
-    return "T00: Formulación (antes de 2025)";
-  }
-
-  // 🥉 Resto de temas
-  return q.topic_name;
+    if(q.is_competency_based || q.topic_name === "Actividad Competencial") return "Actividad Competencial";
+    if(q.topic_name.includes("Formulación")) return "T00: Formulación";
+    return q.topic_name;
 }
-  
+
+function getQuestionType(text){
+    const t = text.toLowerCase();
+    if(/calcule|determine|ajuste|halle/.test(t)) return {label:'Problema', color:'bg-blue-50 text-blue-600 border-blue-100'};
+    if(/justifique|razone|explique/.test(t)) return {label:'Teoría', color:'bg-emerald-50 text-emerald-600 border-emerald-100'};
+    return {label:'Mixto', color:'bg-gray-50 text-gray-600 border-gray-100'};
+}
+
 function render(){
-  const year=document.getElementById('yearSelect').value;
-  const term=document.getElementById('search').value.toLowerCase();
-  const topic=document.getElementById('topicSelect').value;
-  
-  const filtered=allQuestions.filter(q=>{
-    const okText=q.text.toLowerCase().includes(term);
-    const okTopic=topic==='all'||normalizeTopic(q)===topic;
-    const okYear=year==='all'||q.exam_year==year;
-    return okText && okTopic && okYear;
-  });
+    const year = document.getElementById('yearSelect').value;
+    const topic = document.getElementById('topicSelect').value;
+    const term = document.getElementById('search').value.toLowerCase();
+    
+    const filtered = allQuestions.filter(q => {
+        const okText = q.text.toLowerCase().includes(term);
+        const okTopic = topic === 'all' || normalizeTopic(q) === topic;
+        const okYear = year === 'all' || q.exam_year == year;
+        return okText && okTopic && okYear;
+    });
 
-  document.getElementById('stats').textContent=
-    `${filtered.length} preguntas encontradas`;
+    document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
+    const container = document.getElementById('questions');
+    container.innerHTML = '';
 
-  const container=document.getElementById('questions');
-  container.innerHTML='';
+    filtered.forEach(q => {
+        const type = getQuestionType(q.text);
+        const card = document.createElement('div');
+        card.className = 'data-row rounded-xl grid grid-cols-[100px_1fr_180px] p-6 gap-6 items-start';
+        
+        const context = q.context_text ? `<div class="mb-4 p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600">${formatChemicalFormula(marked.parse(q.context_text))}</div>` : "";
+        const solution = q.solution ? `<details class="mt-4 border-t pt-4"><summary class="text-xs font-bold cursor-pointer hover:underline text-emerald-700">SOLUCIÓN DISPONIBLE</summary><div class="mt-2 text-sm text-gray-700">${formatChemicalFormula(marked.parse(q.solution))}</div></details>` : "";
 
-  filtered.forEach(q=>{
-    const type=getQuestionType(q.text);
+        card.innerHTML = `
+            <div class="flex flex-col">
+                <span class="text-lg font-bold">${q.exam_year}</span>
+                <span class="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">${q.exam_model || 'Gral'}</span>
+            </div>
+            <div class="prose prose-sm">
+                ${context}
+                <div class="text-gray-800 leading-relaxed">${formatChemicalFormula(marked.parse(q.text))}</div>
+                ${solution}
+            </div>
+            <div class="flex flex-col items-end gap-2 text-right">
+                <span class="text-[11px] font-medium text-gray-500">${normalizeTopic(q)}</span>
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold border ${type.color}">${type.label.toUpperCase()}</span>
+            </div>
+        `;
+        container.appendChild(card);
+    });
 
-    const solutionBlock = q.solution ? `
-  <details class="mt-3 bg-white/70 rounded p-3 border">
-    <summary class="cursor-pointer font-semibold text-sm">
-      🧪 Ver solución
-    </summary>
-    <div class="prose mt-2">
-      ${formatChemicalFormula(marked.parse(q.solution))}
-    </div>
-  </details>
-` : "";
-
-    const row=document.createElement('div');
-    const contextBlock = q.is_competency_based && q.context_text ? `
-  <div class="mb-3 p-3 bg-amber-50 border-l-4 border-amber-400 italic text-[14px] leading-relaxed">
-    ${formatChemicalFormula(marked.parse(q.context_text))}
-  </div>
-` : "";
-    row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
-  row.innerHTML=`
-  <div class="flex flex-col leading-tight">
-  <span class="data-value">${q.exam_year}</span>
-  <span class="text-[11px] opacity-50 font-mono uppercase tracking-tight">
-    ${q.exam_model || ''}
-  </span>
-</div>
-
-  <div>
-    <div>
-  ${contextBlock}
-  <div class="prose">${formatChemicalFormula(marked.parse(q.text))}</div>
-</div>
-    ${solutionBlock}
-  </div>
-
-  <div class="flex flex-col gap-2">
-    <span class="text-xs opacity-70">${normalizeTopic(q)}</span>
-    <span class="px-2 py-1 rounded text-xs font-semibold ${type.color}">
-      ${type.label}
-    </span>
-  </div>
-`;
-    container.appendChild(row);
-  });
-
-  renderMathInElement(container, {
-    delimiters: [
-      {left: "$", right: "$", display: false},
-      {left: "$$", right: "$$", display: true}
-    ],
-    trust: true
-  });
+    renderMathInElement(container, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+    });
 }
 
-document.getElementById('search').oninput=render;
-document.getElementById('topicSelect').onchange=render;
-document.getElementById('yearSelect').onchange=render;
+// Event Listeners
+document.getElementById('search').oninput = render;
+document.getElementById('topicSelect').onchange = render;
+document.getElementById('yearSelect').onchange = render;
 
+// Inicio
 loadData();
 </script>
-  
+
 </body>
 </html>
