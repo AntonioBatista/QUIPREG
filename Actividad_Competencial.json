@@ -1,5 +1,16 @@
 [
   {
+    "text": "C4. Una aplicación para el hidrógeno verde es, utilizando CO2 atmosférico, su conversión a CH3OH, ya que éste es fácil de transportar y puede ser utilizado como combustible. La reacción es la siguiente: 2CO2(g) + 4H2(g) → 2CH3OH(l) + O2(g)\na) Obtenga la variación de entalpía estándar de la reacción a partir de las entalpías estándar de formación de los compuestos implicados.\nb) Calcule la variación de entropía y determine la variación de energía libre de Gibbs a 500 K.",
+    "topic_name": "Actividad Competencial",
+    "exam_year": 2024,
+    "exam_model": "Reserva-A",
+    "community": "Andalucía",
+    "is_competency_based": true,
+    "context_text": "Una aplicación para el hidrógeno verde es, utilizando CO2 atmosférico, su conversión a CH3OH, ya que éste es fácil de transportar y puede ser utilizado como combustible. La reacción es la siguiente: 2CO2(g) + 4H2(g) → 2CH3OH(l) + O2(g)",
+    "id": "g9bgnefbr",
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
     "text": "Pregunta 5: a) Calcule el calor desprendido en la producción de un mol de etanol mediante la fermentación de glucosa. (1 punto)\nb) Para regular el pH de una masa de pan industrial se necesitan 150 L de una disolución de HCl de pH 3,98 ¿qué cantidad de HCl comercial se tendrá que utilizar para prepararla? (1 punto)\nc) Formule o nombre los cuatro compuestos que aparecen en negrita en el texto. (0,5 puntos)",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
