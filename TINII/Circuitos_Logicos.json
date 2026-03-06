@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "text": "**EJERCICIO 3 OPCIÓN A**\n\n**a) Dado el circuito lógico proporcionado en la imagen: a.1) Obtener la tabla de verdad para la salida F. (0,75 puntos); a.2) Simplificar F por el método de Karnaugh e implementarla mediante un circuito con puertas lógicas NAND. (1 punto)**\n**b) Obtener la función de transferencia C/E del siguiente sistema de control: [Diagrama de bloques con G1, G2 y realimentación G3]. (0,75 puntos)**",
+    "topic_name": "Circuitos Lógicos",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Puertas lógicas",
+      "Mapas de Karnaugh",
+      "Función de transferencia",
+      "Sistemas de control"
+    ],
+    "id": "viams372k",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  }
+]
