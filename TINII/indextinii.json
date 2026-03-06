@@ -3,29 +3,34 @@
     {
       "name": "Materiales",
       "file": "Materiales.json",
-      "count": 0
+      "count": 2
     },
     {
       "name": "Máquinas Térmicas",
       "file": "Maquinas_Termicas.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Sistemas Automáticos",
       "file": "Sistemas_Automaticos.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Circuitos Lógicos",
       "file": "Circuitos_Logicos.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Control y Programación",
       "file": "Control_y_Programacion.json",
-      "count": 0
+      "count": 1
+    },
+    {
+      "name": "Actividad Competencial",
+      "file": "Actividad_Competencial.json",
+      "count": 1
     }
   ],
-  "last_updated": "2026-03-06T19:25:48.871Z",
-  "total_questions": 0
+  "last_updated": "2026-03-06T19:28:20.185Z",
+  "total_questions": 7
 }
