@@ -3,22 +3,22 @@
     {
       "name": "Interacción Gravitatoria",
       "file": "Interaccion_Gravitatoria.json",
-      "count": 0
+      "count": 3
     },
     {
       "name": "Interacción Electromagnética",
       "file": "Interaccion_Electromagnetica.json",
-      "count": 0
+      "count": 3
     },
     {
       "name": "Vibraciones y Ondas",
       "file": "Vibraciones_y_Ondas.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Óptica",
       "file": "Optica.json",
-      "count": 0
+      "count": 2
     },
     {
       "name": "Física Relativista",
@@ -28,14 +28,19 @@
     {
       "name": "Física Cuántica",
       "file": "Fisica_Cuantica.json",
-      "count": 0
+      "count": 2
     },
     {
       "name": "Física Nuclear",
       "file": "Fisica_Nuclear.json",
+      "count": 1
+    },
+    {
+      "name": "Actividad Competencial",
+      "file": "Actividad_Competencial.json",
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T19:25:25.010Z",
-  "total_questions": 0
+  "last_updated": "2026-03-06T20:05:45.901Z",
+  "total_questions": 12
 }
