@@ -49,33 +49,8 @@
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
       "count": 10
-    },
-    {
-      "name": "Química Inorgánica",
-      "file": "Quimica_Inorganica.json",
-      "count": 0
-    },
-    {
-      "name": "Cinética Química",
-      "file": "Cinetica_Quimica.json",
-      "count": 1
-    },
-    {
-      "name": "Estequiometría",
-      "file": "Estequiometria.json",
-      "count": 0
-    },
-    {
-      "name": "Estructura Atómica",
-      "file": "Estructura_Atomica.json",
-      "count": 2
-    },
-    {
-      "name": "Enlace Químico",
-      "file": "Enlace_Quimico.json",
-      "count": 1
     }
   ],
-  "last_updated": "2026-03-06T05:32:39.329Z",
-  "total_questions": 103
+  "last_updated": "2026-03-06T05:32:51.756Z",
+  "total_questions": 99
 }
