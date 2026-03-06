@@ -1,5 +1,36 @@
 [
   {
+    "text": "**EJERCICIO 1. OPCIÓN A.** En un ensayo de tracción efectuado a una probeta cilíndrica se ha obtenido el diagrama tensión-deformación que se representa en la figura de la derecha, donde el punto A señala el límite elástico. Determinar:\na) **El módulo de elasticidad.** (0,75 puntos)\nb) **El alargamiento de la probeta si se aplica una carga de 20000 N, sabiendo que su diámetro es 25 mm y su longitud 75 mm.** (1 punto)\nc) **La carga máxima que soporta esta probeta sin deformarse permanentemente.** (0,75 puntos)",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ensayo de tracción",
+      "Módulo de Young",
+      "Límite elástico"
+    ],
+    "id": "fnnyopb2h",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "**EJERCICIO 1. OPCIÓN B.** En un laboratorio se pretende realizar un ensayo de dureza Brinell y otro de dureza Vickers para una misma muestra de acero:\na) **Determinar la expresión normalizada de la dureza Brinell si en el ensayo se obtiene una huella de 2,5 mm de diámetro aplicando una carga de 725 kp con un penetrador de 5 mm de diámetro durante 20 segundos.** (1,25 puntos)\nb) **Determinar la expresión normalizada de la dureza Vickers si en el ensayo se emplea una punta piramidal aplicando una carga de 120 kp durante 10 segundos y se obtiene como resultado una huella con diagonales de 1,25 mm y 1,23 mm.** (1,25 puntos)",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Dureza Brinell",
+      "Dureza Vickers"
+    ],
+    "id": "d162visgy",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "**EJERCICIO 1 OPCIÓN A**\n\n**Un ensayo de tipo Brinell que se realiza sobre un determinado metal da como resultado una dureza de 80 HB. La bola utilizada como penetrador es de 5 mm de diámetro y la huella que se obtiene al cabo de 30 s es de 2 mm de diámetro. Se pide:**\n**a) La carga que se ha aplicado en el ensayo expresada en Newtons. (1 punto)**\n**b) La constante de ensayo del material. (1 punto)**\n**c) Expresar la dureza en su forma normalizada. (0,5 puntos)**",
     "topic_name": "Materiales",
     "exam_year": 2025,
