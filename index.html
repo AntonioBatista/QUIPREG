@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Codificador de Exámenes v3.4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+    <style>
+        .problem-card { border: 1px solid #444; padding: 20px; margin: 15px 0; border-radius: 10px; background: #fff; color: #333; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
+        .meta-tags { font-size: 0.8em; margin-bottom: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .tag { background: #007bff; color: white; padding: 2px 8px; border-radius: 15px; }
+        #search-container { position: sticky; top: 0; background: var(--background-body); padding: 10px 0; z-index: 100; border-bottom: 2px solid #007bff; }
+    </style>
+</head>
+<body>
+
+<div id="search-container">
+    <h1>📚 Buscador de Problemas v3.4</h1>
+    <div style="display: flex; gap: 10px;">
+        <select id="subject-select"><option>Cargando asignaturas...</option></select>
+        <select id="topic-select" disabled><option>Selecciona asignatura</option></select>
+    </div>
+    <input type="text" id="search-box" placeholder="Busca por texto, año, comunidad...">
+</div>
+
+<div id="results">
+    <p>Selecciona una asignatura y un tema para ver los problemas.</p>
+</div>
+
+<script>
+let currentBasePath = "";
+let allProblems = [];
+
+// 1. Cargar configuración maestra
+fetch('config.json')
+    .then(r => r.json())
+    .then(data => {
+        const subSelect = document.getElementById('subject-select');
+        subSelect.innerHTML = '<option value="">-- Asignatura --</option>';
+        data.subjects.forEach(s => {
+            subSelect.innerHTML += `<option value="${s.path}">${s.name}</option>`;
+        });
+    });
+
+// 2. Al cambiar asignatura, cargar sus temas
+document.getElementById('subject-select').onchange = async (e) => {
+    currentBasePath = e.target.value;
+    const topicSelect = document.getElementById('topic-select');
+    if(!currentBasePath) return;
+
+    const res = await fetch(currentBasePath + 'topics.json');
+    const data = await res.json();
+    
+    topicSelect.disabled = false;
+    topicSelect.innerHTML = '<option value="">-- Elige Tema --</option>';
+    data.topics.forEach(t => {
+        topicSelect.innerHTML += `<option value="${t.file}">${t.name}</option>`;
+    });
+};
+
+// 3. Cargar problemas del tema
+document.getElementById('topic-select').onchange = async (e) => {
+    const file = e.target.value;
+    if(!file) return;
+    
+    const res = await fetch(currentBasePath + file);
+    allProblems = await res.json();
+    render(allProblems);
+};
+
+// 4. Buscador
+document.getElementById('search-box').oninput = (e) => {
+    const query = e.target.value.toLowerCase();
+    const filtered = allProblems.filter(p => 
+        p.text.toLowerCase().includes(query) || 
+        p.community.toLowerCase().includes(query) ||
+        p.exam_year.toString().includes(query)
+    );
+    render(filtered);
+};
+
+function render(list) {
+    const container = document.getElementById('results');
+    container.innerHTML = `<h3>Encontrados: ${list.length}</h3>`;
+    list.forEach(p => {
+        container.innerHTML += `
+            <div class="problem-card">
+                <div class="meta-tags">
+                    <span class="tag">${p.exam_year}</span>
+                    <span class="tag" style="background:#28a745">${p.community}</span>
+                    <span class="tag" style="background:#6f42c1">${p.exam_model}</span>
+                </div>
+                <div class="problem-text">${p.text.replace(/\n/g, '<br>')}</div>
+                <hr>
+                <small>ID: ${p.id} | Archivo: ${p.source_file}</small>
+            </div>
+        `;
+    });
+    // Activar renderizado de fórmulas LaTeX (KaTeX)
+    renderMathInElement(document.body);
+}
+</script>
+</body>
+</html>
