@@ -3,7 +3,7 @@
     {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
-      "count": 2
+      "count": 1
     },
     {
       "name": "Límites y Continuidad",
@@ -26,6 +26,6 @@
       "count": 1
     }
   ],
-  "last_updated": "2026-03-06T06:21:04.629Z",
-  "total_questions": 13
+  "last_updated": "2026-03-06T06:25:00.668Z",
+  "total_questions": 12
 }
