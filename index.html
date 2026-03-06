@@ -35,8 +35,25 @@ body{background:var(--color-bg);color:var(--color-ink);font-family:Inter,system-
 <body class="min-h-screen">
 
 <header class="border-b p-6 bg-white/50 backdrop-blur">
-  <h1 class="text-2xl italic font-serif">Banco de Preguntas</h1>
-  <p class="text-xs uppercase tracking-widest opacity-50">Química · Acceso Público</p>
+
+  <h1 id="mainTitle" class="text-2xl italic font-serif">
+    Banco de Preguntas · 🧪 Química
+  </h1>
+
+  <div class="flex gap-3 mt-4">
+
+    <button onclick="switchSubject('quimica')"
+      class="px-4 py-2 rounded bg-emerald-100 hover:bg-emerald-200">
+      🧪 Química
+    </button>
+
+    <button onclick="switchSubject('matii')"
+      class="px-4 py-2 rounded bg-indigo-100 hover:bg-indigo-200">
+      ➗ Matemáticas II
+    </button>
+
+  </div>
+
 </header>
 
 <main class="p-6 max-w-6xl mx-auto">
@@ -66,8 +83,31 @@ body{background:var(--color-bg);color:var(--color-ink);font-family:Inter,system-
 </main>
 
 <script>
-let allQuestions=[];
+let currentSubject = "quimica";
+let allQuestions = [];
 
+  function switchSubject(subject){
+
+  currentSubject = subject;
+
+  // Cambiar título
+  const title = document.getElementById('mainTitle');
+
+  if(subject === "quimica"){
+    title.innerHTML = "Banco de Preguntas · 🧪 Química";
+  }
+  else if(subject === "mates"){
+    title.innerHTML = "Banco de Preguntas · ➗ Matemáticas II";
+  }
+
+  // Limpiar preguntas anteriores
+  allQuestions = [];
+  document.getElementById('questions').innerHTML = "";
+
+  // Recargar datos
+  loadData();
+}
+  
 function formatChemicalFormula(text){
   return text.replace(
     /\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g,
@@ -79,14 +119,20 @@ function formatChemicalFormula(text){
 }
 
 async function loadData(){
-  const index=await fetch('QUIM/indexquim.json').then(r=>r.json());
-  const files=index.topics.map(t=>'QUIM/'+t.file);
-  
+
+  const basePath = currentSubject === "quimica" ? "QUIM" : "MATII";
+  const indexFile = currentSubject === "quimica" ? "indexquim.json" : "indexmatii.json";
+
+  const index = await fetch(`${basePath}/${indexFile}`).then(r=>r.json());
+  const files = index.topics.map(t => `${basePath}/${t.file}`);
+
+  allQuestions = [];
+
   for(const f of files){
-    const qs=await fetch(f).then(r=>r.json());
+    const qs = await fetch(f).then(r=>r.json());
     allQuestions.push(...qs);
   }
-  
+
   populateTopics();
   populateYears();
   render();
