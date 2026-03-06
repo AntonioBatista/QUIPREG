@@ -1,16 +1,5 @@
 [
   {
-    "text": "B1. Dada la siguiente reacción: **NaCl(s) → Na+(ac) + Cl–(ac) ΔHº= 1,7 kJ·mol–1** \nIndique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas: \na) La reacción es exotérmica. \nb) Se produce un aumento de la entropía. \nc) La reacción es espontánea a cualquier temperatura.",
-    "topic_name": "T3: Termoquímica",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "j10brwgv1",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
-  },
-  {
     "text": "2A. Justifique si son verdaderas o falsas las siguientes afirmaciones:\na) Un proceso exotérmico y espontáneo a cualquier temperatura tendrá ΔS > 0.\nb) La sublimación del diyodo es un proceso que implica un aumento de entropía.\nc) En todos los procesos espontáneos la entropía del sistema aumenta.\nd) La reacción PCl3(g) + Cl2(g) → PCl5(g) (ΔH0 = −86 kJ·mol⁻¹) no es espontánea a ninguna temperatura.",
     "topic_name": "T3: Termoquímica",
     "exam_year": 2025,
@@ -75,5 +64,16 @@
     "context_text": "",
     "id": "rccelhtkr",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "B1. Dada la siguiente reacción: **NaCl(s) → Na+(ac) + Cl–(ac) ΔHº= 1,7 kJ·mol–1** \nIndique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas: \na) La reacción es exotérmica. \nb) Se produce un aumento de la entropía. \nc) La reacción es espontánea a cualquier temperatura.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "j10brwgv1",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
   }
 ]
