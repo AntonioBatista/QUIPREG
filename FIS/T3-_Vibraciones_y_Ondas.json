@@ -1,5 +1,21 @@
 [
   {
+    "text": "C) **VIBRACIONES Y ONDAS**\n\n**b2)** La ecuación de una onda viajera que se pro-paga por una cuerda tensa es: y(x,t) = 10∙sen(25 t - 15 x) (SI).\nCalcule razonadamente:\n**i)** (0,5 puntos) la velocidad de propagación de la onda;\n**ii)** (0,5 puntos) la velocidad de oscilación de la cuerda en el punto x = 0 m en t = 5 s;\n**iii)** (0,5 puntos) la diferencia de fase entre dos puntos que, en el mismo instante, están separados 2 m.",
+    "topic_name": "T3: Vibraciones y Ondas",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ondas armónicas",
+      "Velocidad de propagación",
+      "Fase de una onda"
+    ],
+    "id": "vqzrtz7pb",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
     "text": "**b1)** Por una cuerda tensa, se propaga en el sentido negativo del eje OX una onda armónica transversal de 0,1 m de amplitud, 5 Hz de frecuencia y una velocidad de propagación de 0,5 m s-1. Determine razonadamente: **i)** (0,75 puntos) la ecuación de la onda, sabiendo que para t = 0 s y x = 0 m se encuentra en la posición más alta de su oscilación; **ii)** (0,5 puntos) la diferencia de fase entre dos puntos de la cuerda separados 10 cm para un mismo instante; **iii)** (0,25 puntos) la distancia mínima entre dos puntos de la cuerda que se encuentren en oposición de fase en un mismo instante.",
     "topic_name": "T3: Vibraciones y Ondas",
     "exam_year": 2025,
