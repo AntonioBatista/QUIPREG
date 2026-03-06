@@ -78,6 +78,7 @@ async function loadData(){
   }
   
   populateTopics();
+  populateYears();
   render();
 }
 
@@ -90,35 +91,7 @@ function populateTopics(){
   });
 }
 
-function getQuestionType(text){
-  const t=text.toLowerCase();
-
-  const teoria=/justifique|razone|explique|indique|ordene|defina/.test(t);
-  const problema=/calcule|determine|ajuste|halle|obtenga|cuantifique/.test(t);
-
-  if(problema) return {label:'Problema',color:'bg-blue-100 text-blue-800'};
-  if(teoria) return {label:'Teoría',color:'bg-emerald-100 text-emerald-800'};
-  return {label:'Mixto',color:'bg-gray-100 text-gray-800'};
-}
-  
-function render(){
-  const year=document.getElementById('yearSelect').value;
-  const term=document.getElementById('search').value.toLowerCase();
-  const topic=document.getElementById('topicSelect').value;
-  const type=getQuestionType(q.text);
-  
-  const filtered=allQuestions.filter(q=>{
-  const okText=q.text.toLowerCase().includes(term);
-  const okTopic=topic==='all'||q.topic_name===topic;
-  const okYear=year==='all'||q.exam_year==year;
-  return okText && okTopic && okYear;
-});
-
-  populateTopics();
-  populateYears();
-  render();
-
-  function populateYears(){
+function populateYears(){
   const sel=document.getElementById('yearSelect');
   const years=[...new Set(allQuestions.map(q=>q.exam_year))].sort((a,b)=>b-a);
   years.forEach(y=>{
@@ -129,6 +102,28 @@ function render(){
   });
 }
 
+function getQuestionType(text){
+  const t=text.toLowerCase();
+  const teoria=/justifique|razone|explique|indique|ordene|defina/.test(t);
+  const problema=/calcule|determine|ajuste|halle|obtenga|cuantifique/.test(t);
+
+  if(problema) return {label:'Problema',color:'bg-blue-100 text-blue-800'};
+  if(teoria) return {label:'Teoría',color:'bg-emerald-100 text-emerald-800'};
+  return {label:'Mixto',color:'bg-gray-100 text-gray-800'};
+}
+
+function render(){
+  const year=document.getElementById('yearSelect').value;
+  const term=document.getElementById('search').value.toLowerCase();
+  const topic=document.getElementById('topicSelect').value;
+  
+  const filtered=allQuestions.filter(q=>{
+    const okText=q.text.toLowerCase().includes(term);
+    const okTopic=topic==='all'||q.topic_name===topic;
+    const okYear=year==='all'||q.exam_year==year;
+    return okText && okTopic && okYear;
+  });
+
   document.getElementById('stats').textContent=
     `${filtered.length} preguntas encontradas`;
 
@@ -136,46 +131,38 @@ function render(){
   container.innerHTML='';
 
   filtered.forEach(q=>{
+    const type=getQuestionType(q.text);
+
     const row=document.createElement('div');
     row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
     row.innerHTML=`
-  <div class="data-value">${q.exam_year}</div>
-  <div class="prose">${formatChemistry ? formatChemistry(marked.parse(q.text)) : marked.parse(q.text)}</div>
-  <div class="flex flex-col gap-2">
-    <span class="text-xs opacity-70">${q.topic_name}</span>
-    <span class="px-2 py-1 rounded text-xs font-semibold ${type.color}">
-      ${type.label}
-    </span>
-  </div>
-`;
+      <div class="data-value">${q.exam_year}</div>
+      <div class="prose">${marked.parse(q.text)}</div>
+      <div class="flex flex-col gap-2">
+        <span class="text-xs opacity-70">${q.topic_name}</span>
+        <span class="px-2 py-1 rounded text-xs font-semibold ${type.color}">
+          ${type.label}
+        </span>
+      </div>
+    `;
     container.appendChild(row);
   });
+
   renderMathInElement(container, {
-  delimiters: [
-    {left: "$", right: "$", display: false},
-    {left: "$$", right: "$$", display: true}
-  ],
-  trust: true,
-  macros: {
-    "\\ce": "\\ce"
-  }
-});
+    delimiters: [
+      {left: "$", right: "$", display: false},
+      {left: "$$", right: "$$", display: true}
+    ],
+    trust: true
+  });
 }
 
 document.getElementById('search').oninput=render;
 document.getElementById('topicSelect').onchange=render;
 document.getElementById('yearSelect').onchange=render;
-  
-setTimeout(() => {
-  renderMathInElement(document.body, {
-    delimiters: [
-      {left: "$", right: "$", display: false},
-      {left: "$$", right: "$$", display: true}
-    ]
-  });
-}, 100);
+
 loadData();
 </script>
-
+  
 </body>
 </html>
