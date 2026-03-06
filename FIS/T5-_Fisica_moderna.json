@@ -1,5 +1,20 @@
 [
   {
+    "text": "D) **FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS**\n\n**a)** Un mesón π tiene una masa 274 veces mayor que la de un electrón. Si ambas partículas tienen la misma longitud de onda de De Broglie, determine:\n**i)** (0,5 puntos) la relación entre sus velocidades;\n**ii)** (0,5 puntos) la relación entre sus energías cinéticas.",
+    "topic_name": "T5: Física moderna",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Dualidad onda-corpúsculo",
+      "Longitud de onda de De Broglie"
+    ],
+    "id": "o2vmcemxj",
+    "source_file": "Examen_Titular-B_Fisica.pdf"
+  },
+  {
     "text": "**D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS**\n\n**a)** El potencial de frenado de los electrones en una célula fotoeléctrica es Vf. Deduzca y justifique: **i)** (0,5 puntos) la velocidad máxima de los electrones emitidos; **ii)** (0,5 puntos) la relación entre las velocidades máximas si el potencial de frenado se reduce a la mitad.",
     "topic_name": "T5: Física moderna",
     "exam_year": 2025,
