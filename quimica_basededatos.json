@@ -66,11 +66,6 @@
       "count": 1
     },
     {
-      "name": "Redox",
-      "file": "Redox.json",
-      "count": 2
-    },
-    {
       "name": "Química Orgánica",
       "file": "Quimica_Organica.json",
       "count": 1
@@ -86,6 +81,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T05:37:58.428Z",
-  "total_questions": 105
+  "last_updated": "2026-03-06T05:38:05.334Z",
+  "total_questions": 103
 }
