@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "text": "**EJERCICIO 2: SISTEMA DIÉDRICO**\n\nDadas las proyecciones horizontales del cuadrado ABCD, de la recta R y de su traza horizontal H, se pide:\n1. Dibujar las proyecciones del octaedro regular ABCDEF situado en el primer diedro de proyección, sabiendo que su diagonal EF es perpendicular al plano horizontal de proyección y el punto E tiene cota cero.\n2. Determinar la proyección vertical de R sabiendo que forma 30º con el plano horizontal de proyección.\n3. Representar la recta S paralela a R y que pasa por el punto medio de la diagonal EF.",
+    "topic_name": "Sistemas de Representación",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Sistema Diédrico",
+      "Poliedros regulares",
+      "Octaedro",
+      "Rectas",
+      "Ángulos"
+    ],
+    "id": "6lpi4dcvm",
+    "source_file": "Examen-Titular-A_Dibujo_Técnico_II.pdf"
+  },
+  {
+    "text": "**EJERCICIO 3: SISTEMA AXONOMÉTRICO**\n\nDados alzado, planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide:\n1. Representar su perspectiva isométrica a escala 1:1, según los ejes dados.\n2. Indicar el valor de la cifra de cota marcada con la letra C: ______ mm.",
+    "topic_name": "Sistemas de Representación",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Perspectiva Isométrica",
+      "Escalas",
+      "Vistas diédricas"
+    ],
+    "id": "6y6rzrd0n",
+    "source_file": "Examen-Titular-A_Dibujo_Técnico_II.pdf"
+  }
+]
