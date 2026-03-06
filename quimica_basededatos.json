@@ -3,22 +3,22 @@
     {
       "name": "Tema 0: Formulación inorgánica",
       "file": "Tema_0-_Formulacion_inorganica.json",
-      "count": 4
+      "count": 6
     },
     {
       "name": "T1: Estructura Atómica",
       "file": "T1-_Estructura_Atomica.json",
-      "count": 11
+      "count": 12
     },
     {
       "name": "T2: Enlace Químico",
       "file": "T2-_Enlace_Quimico.json",
-      "count": 6
+      "count": 7
     },
     {
       "name": "T3: Termoquímica",
       "file": "T3-_Termoquimica.json",
-      "count": 6
+      "count": 7
     },
     {
       "name": "T4: Cinética Química",
@@ -28,22 +28,22 @@
     {
       "name": "T5: Equilibrio Químico",
       "file": "T5-_Equilibrio_Quimico.json",
-      "count": 12
+      "count": 15
     },
     {
       "name": "T7: Ácido-Base",
       "file": "T7-_Acido-Base.json",
-      "count": 8
+      "count": 9
     },
     {
       "name": "T8: Redox",
       "file": "T8-_Redox.json",
-      "count": 10
+      "count": 12
     },
     {
       "name": "T9: Química Orgánica",
       "file": "T9-_Quimica_Organica.json",
-      "count": 17
+      "count": 18
     },
     {
       "name": "Actividad Competencial",
@@ -101,6 +101,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T05:29:07.006Z",
-  "total_questions": 96
+  "last_updated": "2026-03-06T05:29:45.439Z",
+  "total_questions": 108
 }
