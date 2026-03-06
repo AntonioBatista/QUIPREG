@@ -84,7 +84,7 @@
     "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
     "is_competency_based": false,
     "context_text": "",
-    "id": "god46agxx",
+    "id": "mswc647xr",
     "source_file": "Examen_Suplente1-A_Quimica.pdf"
   },
   {
@@ -97,16 +97,5 @@
     "context_text": "",
     "id": "6i2omxe9d",
     "source_file": "Examen_Suplente1-B_Quimica.pdf"
-  },
-  {
-    "text": "2A. Explique cómo afectan los siguientes cambios al equilibrio: H2(g) + I2(g) ⇄ 2HI(g) ΔH= 51,8 kJ\na) Elevar la temperatura.\nb) Retirar H2\nc) Introducir HI.\nd) Añadir un catalizador.",
-    "topic_name": "T5: Equilibrio Químico",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "mswc647xr",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
   }
 ]
