@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Banco de Preguntas</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Markdown -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
 <style>
 .prose strong{font-weight:bold;}
 .prose{line-height:1.6}
-</style>
-  
-<style>
+
 :root{
   --color-bg:#E4E3E0;
   --color-ink:#141414;
@@ -21,10 +28,6 @@ body{background:var(--color-bg);color:var(--color-ink);font-family:Inter,system-
 .data-row:hover{background:var(--color-ink);color:var(--color-bg)}
 .col-header{font-style:italic;font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:.08em}
 .data-value{font-family:monospace}
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </style>
 </head>
 
@@ -104,11 +107,17 @@ function render(){
     row.className='data-row grid grid-cols-[120px_1fr_160px] p-4 gap-4';
     row.innerHTML=`
       <div class="data-value">${q.exam_year}</div>
-      <div>${q.text}</div>
+      <div class="prose">${marked.parse(q.text)}</div>
       <div class="text-xs opacity-70">${q.topic_name}</div>
     `;
     container.appendChild(row);
   });
+  renderMathInElement(container, {
+  delimiters: [
+    {left: "$", right: "$", display: false},
+    {left: "$$", right: "$$", display: true}
+  ]
+});
 }
 
 document.getElementById('search').oninput=render;
