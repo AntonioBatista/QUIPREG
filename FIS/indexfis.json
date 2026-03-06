@@ -6,8 +6,8 @@
       "count": 3
     },
     {
-      "name": "Interacción Electromagnética",
-      "file": "Interaccion_Electromagnetica.json",
+      "name": "T2: Interacción Electromagnética",
+      "file": "T2-_Interaccion_Electromagnetica.json",
       "count": 3
     },
     {
@@ -41,6 +41,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T21:30:55.224Z",
+  "last_updated": "2026-03-06T21:31:17.505Z",
   "total_questions": 12
 }
