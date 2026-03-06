@@ -1,5 +1,52 @@
 [
   {
+    "text": "B) CAMPO ELECTROMAGNÉTICO \n\n**a)** Dos cargas de valores +q y -4q se encuentran separadas una distancia d. \n\n**i)** (0,5 puntos) Explique, con ayuda de un esquema, si puede ser nulo el campo eléctrico en algún punto de la línea que pasa por ambas cargas. \n\n**ii)** (0,5 puntos) En caso afirmativo, determine su posición en función de la distancia d.",
+    "topic_name": "T2: Interacción Electromagnética",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Campo eléctrico",
+      "Cargas puntuales",
+      "Superposición"
+    ],
+    "id": "oeotm4qit",
+    "source_file": "Examen_Suplente2-B_Fisica.pdf"
+  },
+  {
+    "text": "B) CAMPO ELECTROMAGNÉTICO \n\n**b1)** Una bobina circular, de 20 vueltas y 0,1 m de radio, se encuentra situada en un campo magnético, de forma que el flujo es máximo. Si el módulo del campo magnético es B(t) = 20 ∙ sen (4πt) (SI), calcule: \n\n**i)** (1 punto) la fuerza electromotriz máxima en la bobina; \n\n**ii)** (0,5 puntos) la fuerza electromotriz inducida, en el instante t = 0,125 s.",
+    "topic_name": "T2: Interacción Electromagnética",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Inducción electromagnética",
+      "Ley de Faraday",
+      "Flujo magnético"
+    ],
+    "id": "i9zbuplwf",
+    "source_file": "Examen_Suplente2-B_Fisica.pdf"
+  },
+  {
+    "text": "B) CAMPO ELECTROMAGNÉTICO \n\n**b2)** \n\n**i)** (0,5 puntos) Un conductor rectilíneo muy largo está situado en el eje OX y está recorrido por una corriente I = 3 A en sentido negativo del mismo. Determine, apoyándose en un esquema, el vector fuerza que actúa sobre una carga q = 4·10-6 C, que se encuentra en el eje OY en el punto y = 0,04 m y tiene una velocidad de módulo 4·105 m s-1 en sentido positivo del eje OY. \n\n**ii)** (1 punto) Un segundo conductor, igual que el anterior, se coloca paralelamente al primero y corta el eje OY en y = 0,2 m. Calcule, apoyándose en un esquema, la intensidad que debe circular por el segundo conductor, indicando su sentido, para que la fuerza resultante sobre la carga sea nula. \n\nμ0 = 4 π ·10-7 T m A-1",
+    "topic_name": "T2: Interacción Electromagnética",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Campo magnético creado por corrientes",
+      "Fuerza de Lorentz"
+    ],
+    "id": "s1hg7amhv",
+    "source_file": "Examen_Suplente2-B_Fisica.pdf"
+  },
+  {
     "text": "B) **CAMPO ELECTROMAGNÉTICO**\n\n**a)** Discuta la veracidad de las siguientes afirmaciones:\n**i)** (0,5 puntos) si no existe flujo magnético a través de una superficie, no existe campo magnético en esa región;\n**ii)** (0,5 puntos) si el valor del flujo magnético es muy grande, el valor de la fuerza electromotriz inducida en una espira será también muy grande.",
     "topic_name": "T2: Interacción Electromagnética",
     "exam_year": 2025,
