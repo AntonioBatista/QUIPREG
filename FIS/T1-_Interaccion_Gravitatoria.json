@@ -1,0 +1,48 @@
+[
+  {
+    "text": "**A) CAMPO GRAVITATORIO**\n\n**a)** Considere dos masas puntuales iguales separadas una cierta distancia. Razone la veracidad de las siguientes afirmaciones: **i)** (0,5 puntos) el campo gravitatorio es nulo solamente en el punto medio entre las dos masas; **ii)** (0,5 puntos) el potencial gravitatorio solo se anula a distancia infinita.",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Campo gravitatorio",
+      "Potencial gravitatorio"
+    ],
+    "id": "bvlss72mc",
+    "source_file": "Examen_Titular-A_Fisica.pdf"
+  },
+  {
+    "text": "**b1)** Un asistente de vuelo arrastra con velocidad constante una maleta sin ruedas de 7 kg, por una superficie horizontal. Tira de la maleta con una correa que forma un ángulo de 63º con el suelo. El coeficiente de rozamiento entre la maleta y el suelo es 0,25. **i)** (0,25 puntos) Realice un esquema de las fuerzas que actúan sobre la maleta. **ii)** (1,25 puntos) Calcule razonadamente el trabajo realizado por cada una de las fuerzas que actúan sobre la maleta en un recorrido de 3,5 m.\n**g = 9,8 m s-2**",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Dinámica",
+      "Trabajo y Energía"
+    ],
+    "id": "ev5x6v9h2",
+    "source_file": "Examen_Titular-A_Fisica.pdf"
+  },
+  {
+    "text": "**b2)** En los años 60 del siglo pasado, un satélite solía orbitar a 1,6·10^4 km sobre la superficie de la Tierra. Calcule razonadamente: **i)** (0,5 puntos) la energía potencial de un satélite de 1000 kg en esta órbita; **ii)** (0,5 puntos) la velocidad que lleva el satélite en esa órbita; **iii)** (0,5 puntos) la energía que tiene el satélite en dicha órbita.\n**G = 6,67·10-11 N m2 kg-2; MT = 5,98·1024 kg; RT = 6370 km**",
+    "topic_name": "T1: Interacción Gravitatoria",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Satélites",
+      "Energía orbital",
+      "Velocidad orbital"
+    ],
+    "id": "a39u8uabb",
+    "source_file": "Examen_Titular-A_Fisica.pdf"
+  }
+]
