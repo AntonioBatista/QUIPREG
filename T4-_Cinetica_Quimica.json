@@ -1,5 +1,16 @@
 [
   {
+    "text": "B2. La reacción en fase gaseosa: 2A + B → 3C es de orden dos respecto de A y de orden uno respecto de B. \na) Escriba la ecuación de velocidad en función de las concentraciones de A y B e indique el orden total de la reacción.\nb) Indique las unidades de la velocidad de reacción y de la constante cinética para esta reacción. \nc) Razone cómo afectará a la velocidad de reacción un aumento de la temperatura a volumen constante.",
+    "topic_name": "T4: Cinética Química",
+    "exam_year": 2024,
+    "exam_model": "Suplente-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "0bi5vt802",
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+  },
+  {
     "text": "2B. La reacción química 2A + B → C tiene como ecuación de velocidad v = k·[A]²·[B]. Responda razonadamente:\na) ¿Cuál es el orden total de la reacción?\nb) Determine las unidades de la constante de velocidad.\nc) ¿Se puede considerar que, durante el transcurso de la reacción química, la velocidad de la reacción permanece constante?\nd) ¿La velocidad de desaparición de B es igual que la velocidad de aparición de C?",
     "topic_name": "T4: Cinética Química",
     "exam_year": 2025,
