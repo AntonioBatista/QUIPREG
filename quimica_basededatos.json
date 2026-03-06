@@ -3,7 +3,7 @@
     {
       "name": "Tema 0: Formulación inorgánica",
       "file": "Tema_0-_Formulacion_inorganica.json",
-      "count": 2
+      "count": 4
     },
     {
       "name": "T1: Estructura Atómica",
@@ -48,17 +48,17 @@
     {
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
-      "count": 9
+      "count": 10
     },
     {
       "name": "Estructura Atómica",
       "file": "Estructura_Atomica.json",
-      "count": 0
+      "count": 2
     },
     {
       "name": "Enlace Químico",
       "file": "Enlace_Quimico.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Termoquímica",
@@ -68,29 +68,34 @@
     {
       "name": "Equilibrio Químico",
       "file": "Equilibrio_Quimico.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Ácido-Base",
       "file": "Acido-Base.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Redox",
       "file": "Redox.json",
-      "count": 0
+      "count": 2
     },
     {
       "name": "Química Orgánica",
       "file": "Quimica_Organica.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "Química Inorgánica",
       "file": "Quimica_Inorganica.json",
       "count": 0
+    },
+    {
+      "name": "Cinética Química",
+      "file": "Cinetica_Quimica.json",
+      "count": 1
     }
   ],
-  "last_updated": "2026-03-06T04:56:39.572Z",
-  "total_questions": 84
+  "last_updated": "2026-03-06T04:57:08.189Z",
+  "total_questions": 96
 }
