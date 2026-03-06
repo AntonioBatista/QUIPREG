@@ -1,0 +1,18 @@
+[
+  {
+    "text": "**b1)** Un proyecto de investigación estudia producir la fisión de 10B5 mediante el bombardeo con neutrones para dar lugar a una partícula alfa y 7Li3. **i)** (0,25 puntos) Escriba la ecuación de la reacción nuclear. **ii)** (1,25 puntos) Calcule la energía liberada cuando se forman 1,5 millones de núcleos de 7Li3.\n**m(10B5) = 10,012937 u; m(7Li3) = 7,016003 u; m(4He2) = 4,002603 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; c = 3·108 m s-1**",
+    "topic_name": "T6: Física Nuclear",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Reacciones nucleares",
+      "Defecto de masa",
+      "Energía de enlace"
+    ],
+    "id": "m03ryzbqh",
+    "source_file": "Examen_Titular-A_Fisica.pdf"
+  }
+]
