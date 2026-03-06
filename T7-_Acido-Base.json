@@ -1,16 +1,5 @@
 [
   {
-    "text": "C3. Una disolución acuosa de **KOH** para uso industrial tiene una composición del 40% de riqueza en masa y densidad 1,515 g·mL–1 \na) Calcule el volumen necesario de esta disolución para preparar 5 L de una disolución acuosa de pH 13. \nb) Si a 50 mL de la disolución de **KOH** de uso industrial se le adiciona agua hasta un volumen de 250 mL, calcule el volumen de una disolución acuosa de **HClO4** 2 M necesario para neutralizarla. \nDatos: Masas atómicas relativas: K=39; O= 16; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "afgnugvvj",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
-  },
-  {
     "text": "3B. Se preparan 250 mL de una disolución acuosa de HNO3 a partir de 2 mL de una disolución comercial de densidad 1,12 g·mL⁻¹ y 20% de riqueza en masa.\na) ¿Qué molaridad y pH tendrá la disolución preparada?\nb) ¿Qué volumen de una disolución de NaOH 0,02 M será necesario añadir para neutralizar 100 mL de la disolución que se ha preparado?\nDatos: Masas atómicas relativas: O = 16; N = 14; H = 1",
     "topic_name": "T7: Ácido-Base",
     "exam_year": 2025,
@@ -97,5 +86,16 @@
     "context_text": "",
     "id": "e5djyfxac",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "C3. Una disolución acuosa de **KOH** para uso industrial tiene una composición del 40% de riqueza en masa y densidad 1,515 g·mL–1 \na) Calcule el volumen necesario de esta disolución para preparar 5 L de una disolución acuosa de pH 13. \nb) Si a 50 mL de la disolución de **KOH** de uso industrial se le adiciona agua hasta un volumen de 250 mL, calcule el volumen de una disolución acuosa de **HClO4** 2 M necesario para neutralizarla. \nDatos: Masas atómicas relativas: K=39; O= 16; H= 1",
+    "topic_name": "T7: Ácido-Base",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "afgnugvvj",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
   }
 ]
