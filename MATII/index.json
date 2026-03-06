@@ -1,0 +1,31 @@
+{
+  "topics": [
+    {
+      "name": "Actividad Competencial",
+      "file": "Actividad_Competencial.json",
+      "count": 2
+    },
+    {
+      "name": "Límites y Continuidad",
+      "file": "Limites_y_Continuidad.json",
+      "count": 3
+    },
+    {
+      "name": "Geometría en el Espacio",
+      "file": "Geometria_en_el_Espacio.json",
+      "count": 4
+    },
+    {
+      "name": "Cálculo Integral",
+      "file": "Calculo_Integral.json",
+      "count": 3
+    },
+    {
+      "name": "Sistemas de Ecuaciones",
+      "file": "Sistemas_de_Ecuaciones.json",
+      "count": 1
+    }
+  ],
+  "last_updated": "2026-03-06T06:19:57.025Z",
+  "total_questions": 13
+}
