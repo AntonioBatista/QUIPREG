@@ -1,5 +1,38 @@
 [
   {
+    "text": "B2. El metanol se prepara industrialmente según el proceso siguiente: \nCO(g) + 2H2(g) ⇄ CH3OH(g) ΔH < 0\nRazone cómo afectaría al rendimiento de la reacción:\na) Aumentar la temperatura. \nb) Retirar del reactor el CH3OH a medida que se vaya produciendo. \nc) Aumentar la presión del sistema a temperatura constante.",
+    "topic_name": "T5: Equilibrio Químico",
+    "exam_year": 2024,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "5i8sh9nl8",
+    "source_file": "Examen_Titular-A_QUÍMICA.pdf"
+  },
+  {
+    "text": "C1. El N2O4 se descompone en NO2, estableciéndose el siguiente equilibrio:\nN2O4(g) ⇄ 2NO2(g)\nEn un recipiente de 0,5 L se introducen 0,025 moles de N2O4 a 250 ºC. Una vez alcanzado el equilibrio, la presión total es de 3,86 atm. \nCalcule:\na) La presión parcial de cada gas en el equilibrio y el valor de Kp a la temperatura dada.\nb) El grado de disociación del N2O4 y el valor de Kc a la temperatura dada.\nDato: R= 0,082 atm·L·mol−1·K−1",
+    "topic_name": "T5: Equilibrio Químico",
+    "exam_year": 2024,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "1na401c1w",
+    "source_file": "Examen_Titular-A_QUÍMICA.pdf"
+  },
+  {
+    "text": "C2. Para preparar 250 mL de disolución saturada de BaF2 a 25 ºC se necesitan 325 mg de dicho compuesto.\na) A partir del equilibrio correspondiente, calcule el producto de solubilidad del BaF2\nb) Calcule la solubilidad molar del BaF2 en presencia de NaF 0,50 M.\nDatos: Masas atómicas relativas: F= 19; Ba= 137,3",
+    "topic_name": "T5: Equilibrio Químico",
+    "exam_year": 2024,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "kgndgs50l",
+    "source_file": "Examen_Titular-A_QUÍMICA.pdf"
+  },
+  {
     "text": "3A. El equilibrio de descomposición del NaHCO3 puede expresarse como: 2NaHCO3(s) ⇄ Na2CO3(s) + CO2(g) + H2O(g). Para estudiar este equilibrio en el laboratorio, se depositaron 200 g de NaHCO3(s) en un recipiente cerrado de 25 L, en el que previamente se hizo el vacío y se calentó a 110 °C. La presión en el interior del recipiente, una vez alcanzado el equilibrio, fue de 1,65 atm. Calcule:\na) La masa de NaHCO3(s) que queda en el recipiente tras alcanzarse el equilibrio a 110 °C.\nb) El valor de KP y KC a esa temperatura.\nDatos: R = 0,082 atm·L·mol⁻¹·K⁻¹; Masas atómicas relativas: Na = 23; O = 16; C = 12; H = 1",
     "topic_name": "T5: Equilibrio Químico",
     "exam_year": 2025,
