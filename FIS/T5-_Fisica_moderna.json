@@ -1,0 +1,33 @@
+[
+  {
+    "text": "**D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS**\n\n**a)** El potencial de frenado de los electrones en una célula fotoeléctrica es Vf. Deduzca y justifique: **i)** (0,5 puntos) la velocidad máxima de los electrones emitidos; **ii)** (0,5 puntos) la relación entre las velocidades máximas si el potencial de frenado se reduce a la mitad.",
+    "topic_name": "T5: Física moderna",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Efecto fotoeléctrico",
+      "Potencial de frenado"
+    ],
+    "id": "f5c4nfli8",
+    "source_file": "Examen_Titular-A_Fisica.pdf"
+  },
+  {
+    "text": "**b2)** Un protón y un electrón tienen la misma energía cinética de 7,2·10-16 J. Calcule razonadamente: **i)** (0,75 puntos) la longitud de onda de De Broglie de cada una de ellas; **ii)** (0,75 puntos) la diferencia de potencial necesaria para detener cada una de ellas, justificando si el potencial debe aumentar o disminuir en cada caso.\n**h = 6,63·10-34 J s; e = 1,6·10-19 C; me = 9,1·10-31 kg; mp = 1,7·10-27 kg**",
+    "topic_name": "T5: Física moderna",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Hipótesis de De Broglie",
+      "Dualidad onda-corpúsculo",
+      "Energía cinética"
+    ],
+    "id": "54kdy9szr",
+    "source_file": "Examen_Titular-A_Fisica.pdf"
+  }
+]
