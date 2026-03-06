@@ -8,22 +8,22 @@
     {
       "name": "Límites y Continuidad",
       "file": "Limites_y_Continuidad.json",
-      "count": 3
+      "count": 5
     },
     {
       "name": "Geometría en el Espacio",
       "file": "Geometria_en_el_Espacio.json",
-      "count": 4
+      "count": 6
     },
     {
       "name": "Cálculo Integral",
       "file": "Calculo_Integral.json",
-      "count": 3
+      "count": 5
     },
     {
       "name": "Sistemas de Ecuaciones",
       "file": "Sistemas_de_Ecuaciones.json",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Tema 0: Formulación inorgánica",
@@ -121,6 +121,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T08:49:03.035Z",
-  "total_questions": 12
+  "last_updated": "2026-03-06T09:40:29.280Z",
+  "total_questions": 19
 }
