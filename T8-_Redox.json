@@ -1,5 +1,16 @@
 [
   {
+    "text": "C4. El clorato de potasio reacciona con hidróxido de cromo(III) en medio básico: KClO3 + Cr(OH)3 + KOH → KCl + K2CrO4\na) Ajuste las ecuaciones iónica y molecular por el método del ion-electrón.\nb) ¿Cuántos gramos de Cr(OH)3 del 90% de riqueza se necesitan para reaccionar completamente con 50 mL de una disolución de KClO3 0,55 M?\nMasas atómicas relativas: Cr= 52; O= 16; H= 1",
+    "topic_name": "T8: Redox",
+    "exam_year": 2024,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "afgibxopu",
+    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  },
+  {
     "text": "2A. Dados los siguientes potenciales normales de reducción: Eº(Cu2+/Cu)= +0,34 V; Eº(Ni2+/Ni)= −0,25 V; Eº(HNO3/NO)= +0,96 V. Razone cuáles de las siguientes afirmaciones son verdaderas o falsas: a) Cuando se introduce un trozo de Cu metálico en ácido nítrico (HNO3), el Cu pasa a la disolución como iones Cu2+. b) Al introducir Ni metálico en una disolución de Cu2+, el Ni se oxida a Ni2+. c) Si se añade Ni metálico a una disolución de ácido nítrico, el Ni no se oxida. d) El HNO3 es la especie más oxidante.",
     "topic_name": "T8: Redox",
     "exam_year": 2025,
@@ -97,16 +108,5 @@
     "context_text": "",
     "id": "ve07c4q89",
     "source_file": "Examen_Suplente1-A_Quimica.pdf"
-  },
-  {
-    "text": "C4. El clorato de potasio reacciona con hidróxido de cromo(III) en medio básico: KClO3 + Cr(OH)3 + KOH → KCl + K2CrO4\na) Ajuste las ecuaciones iónica y molecular por el método del ion-electrón.\nb) ¿Cuántos gramos de Cr(OH)3 del 90% de riqueza se necesitan para reaccionar completamente con 50 mL de una disolución de KClO3 0,55 M?\nMasas atómicas relativas: Cr= 52; O= 16; H= 1",
-    "topic_name": "T8: Redox",
-    "exam_year": 2024,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "afgibxopu",
-    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
   }
 ]
