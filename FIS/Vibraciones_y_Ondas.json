@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "text": "**b1)** Por una cuerda tensa, se propaga en el sentido negativo del eje OX una onda armónica transversal de 0,1 m de amplitud, 5 Hz de frecuencia y una velocidad de propagación de 0,5 m s-1. Determine razonadamente: **i)** (0,75 puntos) la ecuación de la onda, sabiendo que para t = 0 s y x = 0 m se encuentra en la posición más alta de su oscilación; **ii)** (0,5 puntos) la diferencia de fase entre dos puntos de la cuerda separados 10 cm para un mismo instante; **iii)** (0,25 puntos) la distancia mínima entre dos puntos de la cuerda que se encuentren en oposición de fase en un mismo instante.",
+    "topic_name": "Vibraciones y Ondas",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ondas armónicas",
+      "Ecuación de onda",
+      "Fase"
+    ],
+    "id": "3z5fufe8s",
+    "source_file": "Examen_Titular-A_Fisica.pdf"
+  }
+]
