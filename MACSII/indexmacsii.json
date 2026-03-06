@@ -1,0 +1,26 @@
+{
+  "topics": [
+    {
+      "name": "Álgebra",
+      "file": "Algebra.json",
+      "count": 0
+    },
+    {
+      "name": "Análisis",
+      "file": "Analisis.json",
+      "count": 0
+    },
+    {
+      "name": "Probabilidad",
+      "file": "Probabilidad.json",
+      "count": 0
+    },
+    {
+      "name": "Estadística",
+      "file": "Estadistica.json",
+      "count": 0
+    }
+  ],
+  "last_updated": "2026-03-06T19:25:38.262Z",
+  "total_questions": 0
+}
