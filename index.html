@@ -169,34 +169,31 @@
 </div>
 
 <script>
-// 1. Configuración de Temas y Colores
+// 1. Configuración de Temas y Colores (RUTAS CORREGIDAS)
 const subjectConfig = {
-    'QUIM':   { title: 'Química', icon: '🧪', file: 'QUIM/indexquim.json', color: '#10b981', bg: '#f0fdf4' },
-    'FIS':    { title: 'Física', icon: '🧲', file: 'FIS/indexfis.json', color: '#3b82f6', bg: '#eff6ff' },
-    'TINII':  { title: 'Tecnología Industrial II', icon: '⚙️', file: 'TINII/indextinii.json', color: '#f59e0b', bg: '#fffbeb' },
-    'MATII':  { title: 'Matemáticas II', icon: '➗', file: 'MATII/indexmatii.json', color: '#6366f1', bg: '#f5f3ff' },
-    'MACSII': { title: 'Mates Aplicadas CCSS', icon: '📈', file: 'MACSii/indexmacsii.json', color: '#ec4899', bg: '#fdf2f8' },
-    'DTECII': { title: 'Dibujo Técnico II', icon: '📐', file: 'DTECuu/indexdtecii.json', color: '#64748b', bg: '#f8fafc' }
+    'QUIM':   { title: 'Química', icon: '🧪', folder: 'QUIM', file: 'indexquim.json', color: '#10b981', bg: '#f0fdf4' },
+    'FIS':    { title: 'Física', icon: '🧲', folder: 'FIS', file: 'indexfis.json', color: '#3b82f6', bg: '#eff6ff' },
+    'TINII':  { title: 'Tecnología Industrial II', icon: '⚙️', folder: 'TINII', file: 'indextinii.json', color: '#f59e0b', bg: '#fffbeb' },
+    'MATII':  { title: 'Matemáticas II', icon: '➗', folder: 'MATII', file: 'indexmatii.json', color: '#6366f1', bg: '#f5f3ff' },
+    'MACSII': { title: 'Mates Aplicadas CCSS', icon: '📈', folder: 'MACSII', file: 'indexmacsii.json', color: '#ec4899', bg: '#fdf2f8' },
+    'DTECII': { title: 'Dibujo Técnico II', icon: '📐', folder: 'DTECII', file: 'indexdtec.json', color: '#64748b', bg: '#f8fafc' }
 };
 
 let currentSubject = "QUIM";
 let allQuestions = [];
 
-// 2. Lógica Inmersiva de Cambio de Materia
 function switchSubject(subjectId) {
     currentSubject = subjectId;
     const config = subjectConfig[subjectId];
     
-    // Aplicar Colores Dinámicos
     document.documentElement.style.setProperty('--subject-color', config.color);
     document.documentElement.style.setProperty('--bg', config.bg);
     document.documentElement.style.setProperty('--subject-bg-soft', config.color + '20');
 
-    // Actualizar Tabs
     document.querySelectorAll('.subject-tab').forEach(btn => btn.classList.remove('active-sub'));
-    document.getElementById(`btn-${subjectId}`).classList.add('active-sub');
+    const btn = document.getElementById(`btn-${subjectId}`);
+    if(btn) btn.classList.add('active-sub');
     
-    // Actualizar Título
     const title = document.getElementById('mainTitle');
     title.innerHTML = `Banco de Preguntas · <span style="color:${config.color}">${config.icon} ${config.title}</span>`;
 
@@ -204,7 +201,49 @@ function switchSubject(subjectId) {
     loadData();
 }
 
-// 3. Formateadores
+async function loadData() {
+    const loader = document.getElementById('loader');
+    const container = document.getElementById('questions');
+    const stats = document.getElementById('stats');
+    
+    loader.style.display = "block";
+    container.innerHTML = "";
+    stats.textContent = "CARGANDO...";
+
+    const config = subjectConfig[currentSubject];
+    // Construimos la ruta base: "FIS/" o "MACSII/"
+    const basePath = config.folder + "/"; 
+    const indexPath = basePath + config.file;
+
+    try {
+        const response = await fetch(indexPath);
+        if (!response.ok) throw new Error(`No se halló el índice en ${indexPath}`);
+        
+        const index = await response.json();
+        
+        // Cargamos los temas usando la misma basePath
+        allQuestions = [];
+        const promises = index.topics.map(t => 
+            fetch(basePath + t.file)
+                .then(r => r.ok ? r.json() : [])
+                .catch(() => [])
+        );
+        
+        const results = await Promise.all(promises);
+        results.forEach(qs => allQuestions.push(...qs));
+
+        populateFilters();
+        render();
+        loader.style.display = "none";
+    } catch (e) {
+        console.error(e);
+        loader.innerHTML = `<div class="text-red-500 font-bold px-4">⚠️ Error en ${config.title}.<br><small>No se pudo leer: ${indexPath}</small></div>`;
+        stats.textContent = "ERROR";
+    }
+}
+
+// Las funciones formatChemicalFormula, normalizeTopic, getQuestionType, populateFilters y render se mantienen igual que las tenías.
+
 function formatChemicalFormula(text) {
     if (!text) return "";
     return text.replace(/\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g, (match) => {
@@ -226,41 +265,6 @@ function getQuestionType(text) {
     return {label:'Mixto', color:'bg-gray-50 text-gray-600 border-gray-100'};
 }
 
-// 4. Carga de Datos Dinámica
-async function loadData() {
-    const loader = document.getElementById('loader');
-    const container = document.getElementById('questions');
-    const stats = document.getElementById('stats');
-    
-    loader.style.display = "block";
-    loader.classList.add('loading-pulse');
-    container.innerHTML = "";
-    stats.textContent = "CARGANDO...";
-
-    const config = subjectConfig[currentSubject];
-
-    try {
-        const response = await fetch(config.file);
-        if (!response.ok) throw new Error("Índice no encontrado");
-        
-        const index = await response.json();
-        const basePath = config.file.substring(0, config.file.lastIndexOf('/') + 1);
-        const files = index.topics.map(t => `${basePath}${t.file}`);
-
-        allQuestions = [];
-        const promises = files.map(f => fetch(f).then(r => r.json()).catch(() => []));
-        const results = await Promise.all(promises);
-        results.forEach(qs => allQuestions.push(...qs));
-
-        populateFilters();
-        render();
-        loader.style.display = "none";
-    } catch (e) {
-        loader.innerHTML = `<div class="text-red-500 font-bold px-4">⚠️ Error en ${config.title}.<br><small>Verifica rutas en GitHub.</small></div>`;
-        stats.textContent = "ERROR";
-    }
-}
-
 function populateFilters() {
     const tSel = document.getElementById('topicSelect');
     const ySel = document.getElementById('yearSelect');
@@ -274,7 +278,6 @@ function populateFilters() {
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
 }
 
-// 5. Motor de Renderizado
 function render() {
     const year = document.getElementById('yearSelect').value;
     const topic = document.getElementById('topicSelect').value;
@@ -299,7 +302,7 @@ function render() {
     filtered.forEach(q => {
         const type = getQuestionType(q.text);
         const card = document.createElement('div');
-        card.className = 'data-row p-6 flex flex-col gap-4 shadow-sm border border-gray-100';
+        card.className = 'data-row p-6 flex flex-col gap-4 shadow-sm border border-gray-100 mb-4';
         
         const context = q.context_text ? `<div class="p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600 rounded-r-lg">${formatChemicalFormula(marked.parse(q.context_text))}</div>` : "";
         const solution = q.solution ? `<details class="mt-2 border-t pt-3"><summary class="text-xs font-bold cursor-pointer hover:opacity-70" style="color:var(--subject-color)">VER SOLUCIÓN</summary><div class="mt-2 text-sm text-gray-700 pl-4 border-l-2 border-gray-100">${formatChemicalFormula(marked.parse(q.solution))}</div></details>` : "";
@@ -310,7 +313,7 @@ function render() {
                     <span class="text-xl font-black">${q.exam_year}</span>
                     <span class="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">${q.exam_model || 'Gral'}</span>
                 </div>
-                <div class="flex flex-col items-end gap-2">
+                <div class="flex flex-col items-end gap-2 text-right">
                     <span class="tag-subject">${normalizeTopic(q)}</span>
                     <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${type.color}">${type.label.toUpperCase()}</span>
                 </div>
@@ -333,12 +336,11 @@ function render() {
     });
 }
 
-// Eventos
 document.getElementById('search').oninput = render;
 document.getElementById('topicSelect').onchange = render;
 document.getElementById('yearSelect').onchange = render;
 
-// Inicio (Forzar carga inicial de Química)
+// Inicio
 switchSubject('QUIM');
 </script>
 </body>
