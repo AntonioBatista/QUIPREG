@@ -21,11 +21,6 @@
       "count": 2
     },
     {
-      "name": "T5: Física Relativista",
-      "file": "T5-_Fisica_Relativista.json",
-      "count": 0
-    },
-    {
       "name": "Física Cuántica",
       "file": "Fisica_Cuantica.json",
       "count": 2
@@ -41,6 +36,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-06T21:31:57.723Z",
+  "last_updated": "2026-03-06T21:32:05.360Z",
   "total_questions": 12
 }
