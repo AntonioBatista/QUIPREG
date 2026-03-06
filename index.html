@@ -53,8 +53,8 @@ body{background:var(--color-bg);color:var(--color-ink);font-family:Inter,system-
 let allQuestions=[];
 
 async function loadData(){
-  const index=await fetch('../quimica/indexquim.json').then(r=>r.json());
-  const files=index.topics.map(t=>'../quimica/'+t.file);
+  const index=await fetch('QUIM/indexquim.json').then(r=>r.json());
+  const files=index.topics.map(t=>'QUIM/'+t.file);
   
   for(const f of files){
     const qs=await fetch(f).then(r=>r.json());
