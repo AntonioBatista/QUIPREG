@@ -1,5 +1,27 @@
 [
   {
+    "text": "EJERCICIO 4. a) [1,5 puntos] Hasta 0,75 puntos por el planteamiento. b) [1 punto] Hasta 0,5 puntos por el planteamiento.",
+    "topic_name": "Geometría en el Espacio",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "26ma1vmty",
+    "source_file": "Criterios_Titular-B_Matematicas II.pdf"
+  },
+  {
+    "text": "EJERCICIO 5. a) [1 punto] a) Hasta 0,5 puntos por el planteamiento. b) [1,5 puntos] b) Hasta 0,75 puntos por el planteamiento.",
+    "topic_name": "Geometría en el Espacio",
+    "exam_year": 2025,
+    "exam_model": "Desconocido",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "1t9esk0gy",
+    "source_file": "Criterios_Titular-B_Matematicas II.pdf"
+  },
+  {
     "text": "EJERCICIO 4. (2,5 puntos)\nSean los puntos $O(0, 0, 0)$, $A(0, 2, -2)$, $B(1, 2, m)$ y $C(2, 3, 2)$.\na) [1,25 puntos] Halla los valores de $m$ para que el tetraedro determinado por los puntos $O, A, B$ y $C$ tenga un volumen de 3 unidades cúbicas.\nb) [1,25 puntos] Para $m = 0$, calcula la distancia del punto $O$ al plano que pasa por los puntos $A, B$ y $C$.",
     "topic_name": "Geometría en el Espacio",
     "exam_year": 2025,
