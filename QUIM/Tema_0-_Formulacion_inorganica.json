@@ -68,6 +68,28 @@
     "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
   },
   {
+    "text": "A1. Formule o nombre los siguientes compuestos:\n\na) Óxido de platino(IV); \n\nb) Perclorato de potasio; \n\nc) Nitrobenceno; \n\nd) HIO3; \n\ne) HgSO3; \n\nf) CH3COCH2CH2CH3",
+    "topic_name": "Tema 0: Formulación inorgánica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "lvpowof2w",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "A2. Formule o nombre los siguientes compuestos:\n\na) Hidróxido de cesio; \n\nb) Permanganato de litio; \n\nc) Etanamida; \n\nd) (NH4)2S; \n\ne) PH3; \n\nf) CH2=CHCH2CH=CH2",
+    "topic_name": "Tema 0: Formulación inorgánica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "hsi4zb3ca",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
     "text": "A1. Formule o nombre los siguientes compuestos:\n\na) Sulfuro de hidrógeno; \n\nb) Perclorato de cromo(III); \n\nc) Ácido hidroxietanoico; \n\nd) Co(OH)3; \n\ne) HIO; \n\nf) CH3CH(CH3)CH(CH3)CH2CH3",
     "topic_name": "Tema 0: Formulación inorgánica",
     "exam_year": 2024,
@@ -112,27 +134,5 @@
     "id": "afk1bq9a8",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf",
     "solution": "### a) Peróxido de hidrógeno\n$H_2O_2$\n\n### b) Arsenato de hierro(III)\n$FeAsO_4$\n\n### c) 2,2,4-trimetilpentano\n$CH_3C(CH_3)_2CH_2CH(CH_3)CH_3$\n\n### d) $O_3I_2$\nTrióxido de diyodo\n\n### e) $Cr(OH)_3$\nHidróxido de cromo(III)\n\n### f) $CH_3CH_2CHO$\nPropanal"
-  },
-  {
-    "text": "A1. Formule o nombre los siguientes compuestos:\n\na) Óxido de platino(IV); \n\nb) Perclorato de potasio; \n\nc) Nitrobenceno; \n\nd) HIO3; \n\ne) HgSO3; \n\nf) CH3COCH2CH2CH3",
-    "topic_name": "Tema 0: Formulación inorgánica",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "lvpowof2w",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
-  },
-  {
-    "text": "A2. Formule o nombre los siguientes compuestos:\n\na) Hidróxido de cesio; \n\nb) Permanganato de litio; \n\nc) Etanamida; \n\nd) (NH4)2S; \n\ne) PH3; \n\nf) CH2=CHCH2CH=CH2",
-    "topic_name": "Tema 0: Formulación inorgánica",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "hsi4zb3ca",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
   }
 ]
