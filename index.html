@@ -155,8 +155,7 @@ const subjectConfig = {
     'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', soft: 'rgba(101, 31, 255, 0.1)', icon: 'https://img.icons8.com/fluency/240/math.png' },
     'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', soft: 'rgba(245, 0, 87, 0.1)', icon: 'https://img.icons8.com/fluency/240/line-chart.png' },
     'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', soft: 'rgba(255, 145, 0, 0.1)', icon: 'https://img.icons8.com/fluency/240/circuit.png' },
-    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/240/ruler-pencil.png' }
-};
+    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/ruler-pencil.png' }};
 
 let currentSubject = "QUIM";
 let allQuestions = [];
@@ -246,13 +245,16 @@ function updateDynamicTags() {
     const cloud = document.getElementById('tagCloud');
     const section = document.getElementById('tagCloudSection');
 
+    // CAMBIO: Ahora se muestra si hay un tema seleccionado O si hay un año seleccionado
     if (topic === 'all' && year === 'all') { 
         section.classList.add('hidden'); 
         activeTagFilter = "all"; 
         return; 
     }
+    
     section.classList.remove('hidden');
 
+    // Filtramos las preguntas para obtener los tags que realmente existen en esa selección
     const visibleQs = allQuestions.filter(q => {
         const okTopic = topic === 'all' || q.topic_name === topic;
         const okYear = year === 'all' || q.exam_year == year;
@@ -263,6 +265,10 @@ function updateDynamicTags() {
     visibleQs.forEach(q => q.detected_topics?.forEach(tag => tagCounts[tag] = (tagCounts[tag] || 0) + 1));
 
     const uniqueTags = Object.keys(tagCounts).sort();
+    
+    // Si no hay tags detectados en ese año/bloque, ocultamos
+    if (uniqueTags.length === 0) { section.classList.add('hidden'); return; }
+
     const maxFreq = Math.max(...Object.values(tagCounts), 1);
     cloud.innerHTML = "";
     uniqueTags.forEach(tag => {
