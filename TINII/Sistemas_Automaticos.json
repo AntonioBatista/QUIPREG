@@ -1,5 +1,47 @@
 [
   {
+    "text": "Para desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:\n\na) La fuerza que ejerce el vástago en la carrera de avance.\n\nb) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min.",
+    "topic_name": "Sistemas Automáticos",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Neumática",
+      "Cilindros de doble efecto",
+      "Caudal",
+      "Fuerza neumática"
+    ],
+    "has_image": false,
+    "id": "0zcamx9ab",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "EJERCICIO 3 OPCIÓN B\n\na) Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.\n\nb) El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.",
+    "topic_name": "Sistemas Automáticos",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Circuitos lógicos",
+      "Control de lazo cerrado",
+      "Ganancia",
+      "Error en estado estacionario"
+    ],
+    "has_image": true,
+    "image_bbox": [
+      632,
+      138,
+      721,
+      892
+    ],
+    "image_description": "A la izquierda un esquema de puertas lógicas y a la derecha un diagrama de bloques de un sistema de control de lazo cerrado.",
+    "image_page": 2,
+    "id": "lmg8jjc3l",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "EJERCICIO 3. OPCIÓN B.\n\na) Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.\n\nb) El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.",
     "topic_name": "Sistemas Automáticos",
     "exam_year": 2025,
