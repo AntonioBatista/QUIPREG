@@ -18,32 +18,32 @@
     {
       "name": "T3: Termoquímica",
       "file": "T3-_Termoquimica.json",
-      "count": 8
+      "count": 7
     },
     {
       "name": "T4: Cinética Química",
       "file": "T4-_Cinetica_Quimica.json",
-      "count": 5
+      "count": 4
     },
     {
       "name": "T5: Equilibrio Químico",
       "file": "T5-_Equilibrio_Quimico.json",
-      "count": 23
+      "count": 21
     },
     {
       "name": "T7: Ácido-Base",
       "file": "T7-_Acido-Base.json",
-      "count": 16
+      "count": 15
     },
     {
       "name": "T8: Redox",
       "file": "T8-_Redox.json",
-      "count": 18
+      "count": 17
     },
     {
       "name": "T9: Química Orgánica",
       "file": "T9-_Quimica_Organica.json",
-      "count": 22
+      "count": 21
     },
     {
       "name": "Actividad Competencial",
@@ -51,6 +51,6 @@
       "count": 10
     }
   ],
-  "last_updated": "2026-03-07T08:03:08.764Z",
-  "total_questions": 144
+  "last_updated": "2026-03-07T08:13:10.557Z",
+  "total_questions": 137
 }
