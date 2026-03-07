@@ -1,5 +1,77 @@
 [
   {
+    "text": "Un ensayo de tipo Brinell que se realiza sobre un determinado metal da como resultado una dureza de 80 HB. La bola utilizada como penetrador es de 5 mm de diámetro y la huella que se obtiene al cabo de 30 s es de 2 mm de diámetro. Se pide:\n\na) La carga que se ha aplicado en el ensayo expresada en Newtons.\n\nb) La constante de ensayo del material.\n\nc) Expresar la dureza en su forma normalizada.",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Ensayo Brinell",
+      "Dureza",
+      "Propiedades mecánicas"
+    ],
+    "has_image": false,
+    "id": "9wr7c5mjr",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "Para medir la resiliencia de un material mediante un ensayo Charpy se ha utilizado una probeta de sección cuadrada de 10 mm de lado, con una entalla en forma de V de 2 mm de profundidad. La resiliencia obtenida fue de 220 J/cm2 dejando caer un martillo de 35 kg desde una altura de 150 cm. Se pide:\n\na) Calcular la altura a la que se elevará el martillo tras golpear y romper la probeta.\n\nb) Si el martillo fuera de 20 kg de masa y se hubiera soltado desde una altura de 1,75 m, determinar la energía sobrante tras el impacto.",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Ensayo Charpy",
+      "Resiliencia",
+      "Energía potencial"
+    ],
+    "has_image": false,
+    "id": "cz608agfd",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "EJERCICIO 1 OPCIÓN A\n\nEn un ensayo de tracción efectuado a una probeta cilíndrica se ha obtenido el diagrama tensión-deformación que se representa en la figura de la derecha, donde el punto A señala el límite elástico. Determinar:\n\na) El módulo de elasticidad.\n\nb) El alargamiento de la probeta si se aplica una carga de 20000 N, sabiendo que su diámetro es 25 mm y su longitud 75 mm.\n\nc) La carga máxima que soporta esta probeta sin deformarse permanentemente.",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Ensayo de tracción",
+      "Diagrama tensión-deformación",
+      "Módulo de elasticidad",
+      "Límite elástico"
+    ],
+    "has_image": true,
+    "image_bbox": [
+      370,
+      730,
+      505,
+      945
+    ],
+    "image_description": "Gráfico de tensión (sigma) frente a deformación (epsilon) mostrando el punto A como límite elástico.",
+    "image_page": 1,
+    "id": "9innb400i",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "EJERCICIO 1 OPCIÓN B\n\nEn un laboratorio se pretende realizar un ensayo de dureza Brinell y otro de dureza Vickers para una misma muestra de acero:\n\na) Determinar la expresión normalizada de la dureza Brinell si en el ensayo se obtiene una huella de 2,5 mm de diámetro aplicando una carga de 725 kp con un penetrador de 5 mm de diámetro durante 20 segundos.\n\nb) Determinar la expresión normalizada de la dureza Vickers si en el ensayo se emplea una punta piramidal aplicando una carga de 120 kp durante 10 segundos y se obtiene como resultado una huella con diagonales de 1,25 mm y 1,23 mm.",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Ensayo de dureza Brinell",
+      "Ensayo de dureza Vickers"
+    ],
+    "has_image": false,
+    "id": "6zd5fg981",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "EJERCICIO 1. OPCIÓN A. En un ensayo de tracción efectuado a una probeta cilíndrica se ha obtenido el diagrama tensión-deformación que se representa en la figura de la derecha, donde el punto A señala el límite elástico. Determinar:\n\na) El módulo de elasticidad.\n\nb) El alargamiento de la probeta si se aplica una carga de 20000 N, sabiendo que su diámetro es 25 mm y su longitud 75 mm.\n\nc) La carga máxima que soporta esta probeta sin deformarse permanentemente.",
     "topic_name": "Materiales",
     "exam_year": 2025,
