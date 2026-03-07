@@ -352,15 +352,25 @@ function cleanTextEngine(text) {
         clean = clean.replace(regex, encodingMap[key]);
     });
 
-    // 2. Formateo de Isótopos (Patrón: 1H1, 6C12, 92U238)
-    // Busca: Número + Letras + Número
-    clean = clean.replace(/\b(\d+)([A-Z][a-z]?)(\d+)\b/g, (match, z, symbol, a) => {
-        const subs = { '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉' };
-        const sups = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
-        const zSub = z.split('').map(n => subs[n]).join('');
-        const aSup = a.split('').map(n => sups[n]).join('');
-        return `${zSub}${aSup}${symbol}`;
-    });
+     // 2. Formateo de Isótopos (Versión Reforzada v6.8)
+        // Regla A: Maneja "1H 1", "2He 4" (con o sin espacios)
+        clean = clean.replace(/\b(\d+)\s*([A-Z][a-z]?)\s*(\d+)\b/g, (match, z, symbol, a) => {
+            return formatIsotope(z, a, symbol);
+        });
+        
+        // Regla B: Maneja "48 112Cd" (Z y A antes del símbolo)
+        clean = clean.replace(/\b(\d+)\s+(\d+)([A-Z][a-z]?)\b/g, (match, z, a, symbol) => {
+            return formatIsotope(z, a, symbol);
+        });
+        
+        // Función auxiliar para no repetir código (ponla fuera o arriba)
+        function formatIsotope(z, a, symbol) {
+            const subs = { '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉' };
+            const sups = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+            const zSub = z.split('').map(n => subs[n] || n).join('');
+            const aSup = a.split('').map(n => sups[n] || n).join('');
+            return `${zSub}${aSup}${symbol}`;
+        }
 
     // 3. Formateo de Iones (Cargas al final: S2-, Cl-, Al3+, H+)
     // Transforma en superíndices Unicode reales
