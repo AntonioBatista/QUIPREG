@@ -147,13 +147,15 @@ function switchSubject(id) {
 async function loadData() {
     const loader = document.getElementById('loader');
     const container = document.getElementById('questions');
-    const stats = document.getElementById('stats');
+    const stats = document.getElementById('stats'); // El elemento que daba el error
     const config = subjectConfig[currentSubject];
     
-    loader.style.display = "block";
-    loader.innerHTML = `<div class="loading-pulse">⏳ Procesando /${config.folder}...</div>`;
-    container.innerHTML = "";
-    stats.textContent = "CONECTANDO...";
+    if (loader) {
+        loader.style.display = "block";
+        loader.innerHTML = `<div class="loading-pulse text-sm italic">⏳ Procesando /${config.folder}...</div>`;
+    }
+    if (container) container.innerHTML = "";
+    if (stats) stats.textContent = "CONECTANDO..."; // Solo intenta si existe
 
     const indexUrl = `${config.folder}/${config.file}?v=${Date.now()}`;
 
@@ -161,7 +163,6 @@ async function loadData() {
         const response = await fetch(indexUrl);
         if (!response.ok) throw new Error(`No se encontró ${indexUrl}`);
         
-        // Leemos el índice como texto para evitar bloqueos si está mal formado
         const indexText = await response.text();
         const data = JSON.parse(indexText);
         
@@ -174,46 +175,32 @@ async function loadData() {
                 if (!res.ok) continue;
 
                 let rawText = await res.text();
-
-                // --- MOTOR DE LIMPIEZA AUTOMÁTICA ---
-                // 1. Corregimos barras invertidas de LaTeX solitarias
+                // Limpieza de barras invertidas de LaTeX para evitar errores JSON
                 rawText = rawText.replace(/\\(?![\\\/bfnrtu"'])/g, "\\\\");
-                
-                // 2. Intentamos limpiar comillas "curvas" o mal escapadas si rompen el JSON
-                // (Esta es la parte más delicada, el navegador hará lo mejor posible)
                 
                 const questions = JSON.parse(rawText);
                 allQuestions.push(...questions);
-
             } catch (err) {
-                console.warn(`Error en ${topic.file}:`, err);
-                loader.innerHTML += `<div class="text-[10px] text-orange-500">⚠️ Error de formato en ${topic.file}.</div>`;
+                console.warn(`Error en el archivo ${topic.file}:`, err);
             }
         }
 
-        if (allQuestions.length === 0) throw new Error("No se pudo extraer información de los archivos.");
+        if (allQuestions.length === 0) throw new Error("No se pudo extraer información.");
 
-        populateTopicWeights();
+        // Estas funciones deben existir en tu script
+        if (typeof populateTopicWeights === 'function') populateTopicWeights();
         render();
-        loader.style.display = "none";
+        
+        if (loader) loader.style.display = "none";
         
     } catch (e) {
-        console.error("ERROR:", e);
-        loader.innerHTML = `
-            <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl text-red-800 max-w-md mx-auto shadow-xl">
-                <h3 class="font-black text-lg mb-2 italic text-red-600">❌ ERROR TÉCNICO</h3>
-                <p class="text-sm mb-4">${e.message}</p>
-                <div class="text-[10px] bg-white/50 p-3 rounded font-mono text-left">
-                    <strong>DIAGNÓSTICO:</strong><br>
-                    El archivo no tiene un formato JSON puro. <br>
-                    Revisa si hay caracteres invisibles o comillas anidadas.<br><br>
-                    Ruta intentada: <strong>${indexUrl}</strong>
-                </div>
-                <button onclick="switchSubject('${currentSubject}')" class="mt-4 w-full bg-red-600 text-white py-2 rounded-xl text-xs font-bold shadow-lg">REINTENTAR CARGA</button>
-            </div>`;
-        stats.textContent = "ERROR";
+        console.error("ERROR FINAL:", e);
+        if (loader) loader.innerHTML = `<div class="text-red-500 p-4 border rounded bg-red-50">❌ Error: ${e.message}</div>`;
+        if (stats) stats.textContent = "ERROR";
     }
 }
+
+    
 // --- FUNCIONES DE RENDER Y FILTROS ---
 function populateTopicWeights() {
     const container = document.getElementById('topicWeights');
