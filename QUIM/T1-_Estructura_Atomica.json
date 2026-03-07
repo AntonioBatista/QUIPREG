@@ -1,5 +1,37 @@
 [
   {
+    "text": "Dados los elementos A (Z= \n\n19) y B (Z= \n\n36) :\n\na) Escriba las configuraciones electrónicas de los átomos en estado fundamental indicando el grupo y período al que pertenecen en el sistema periódico.\n\nb) Justifique si los siguientes números cuánticos podrían corresponder al electrón diferenciador de alguno de ellos, indicando a cuál: (5, 1, -1, +½); (4, 0, 0, -½) y (4, 1, 3, +½).\n\nc) Justifique cuál de los dos elementos tiene mayor tendencia a formar iones.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2024,
+    "exam_model": "Reserva-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Configuración electrónica",
+      "Números cuánticos",
+      "Sistema periódico"
+    ],
+    "id": "t9ih21ekv",
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
+    "text": "Razone si las siguientes afirmaciones son verdaderas o falsas:\n\na) La primera energía de ionización del Zn es mayor que la del Br.\n\nb) El radio atómico del Ni es menor que el del Ca.\n\nc) Es más difícil arrancar un electrón del ion Na+ que del átomo de Ne.",
+    "topic_name": "T1: Estructura Atómica",
+    "exam_year": 2024,
+    "exam_model": "Reserva-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Propiedades periódicas",
+      "Energía de ionización",
+      "Radio atómico"
+    ],
+    "id": "gcoxgzu4h",
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
     "text": "1A. Los números atómicos de los elementos X e Y son 20 y 34, respectivamente.\n\na) Razone a qué grupo y periodo pertenece cada uno de ellos.\n\nb) Escriba las configuraciones electrónicas de los iones X2+ e Y2–.\n\nc) Justifique cuál de los dos elementos será más electronegativo.\n\nd) Explique cuál de los dos elementos tendrá menor radio.",
     "topic_name": "T1: Estructura Atómica",
     "exam_year": 2025,
