@@ -3,7 +3,7 @@
     {
       "name": "Tema 0: Formulación inorgánica",
       "file": "Tema_0-_Formulacion_inorganica.json",
-      "count": 14
+      "count": 25
     },
     {
       "name": "T1: Estructura Atómica",
@@ -49,8 +49,13 @@
       "name": "Actividad Competencial",
       "file": "Actividad_Competencial.json",
       "count": 11
+    },
+    {
+      "name": "T0: Formulación inorgánica",
+      "file": "T0-_Formulacion_inorganica.json",
+      "count": 14
     }
   ],
-  "last_updated": "2026-03-07T20:20:29.971Z",
-  "total_questions": 151
+  "last_updated": "2026-03-07T20:21:36.238Z",
+  "total_questions": 176
 }
