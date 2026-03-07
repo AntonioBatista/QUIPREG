@@ -8,12 +8,12 @@
     {
       "name": "Límites y Continuidad",
       "file": "Limites_y_Continuidad.json",
-      "count": 5
+      "count": 4
     },
     {
       "name": "Geometría en el Espacio",
       "file": "Geometria_en_el_Espacio.json",
-      "count": 6
+      "count": 5
     },
     {
       "name": "Cálculo Integral",
@@ -46,6 +46,6 @@
       "count": 0
     }
   ],
-  "last_updated": "2026-03-07T07:17:14.886Z",
-  "total_questions": 19
+  "last_updated": "2026-03-07T07:21:59.015Z",
+  "total_questions": 17
 }
