@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Banco de Preguntas v4.2 | Codigo Corrector</title>
+    <title>Banco de Preguntas v4.5 | Codigo Corrector</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -13,113 +13,42 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:italic,wght@400;600&display=swap');
+        :root { --bg: #F8F9FA; --subject-color: #141414; --subject-bg-soft: rgba(20, 20, 20, 0.05); }
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; transition: all 0.4s ease; overflow: hidden; }
         
-        :root {
-            --bg: #F8F9FA;
-            --subject-color: #141414;
-            --subject-bg-soft: rgba(20, 20, 20, 0.05);
-        }
-
-        body { 
-            background-color: var(--bg); 
-            font-family: 'Inter', sans-serif; 
-            color: #1a1a1a; 
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        .font-serif { font-family: 'Lora', serif; }
-
-        .glass-header {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 0.75rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .subject-nav-container {
-            background: rgba(0,0,0,0.03);
-            padding: 4px;
-            border-radius: 14px;
-            display: flex;
-            gap: 4px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .subject-tab {
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.82rem;
-            transition: all 0.2s ease;
-            color: #64748b;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .subject-tab.active-sub {
-            color: var(--subject-color);
-            background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .data-row { 
-            border-left: 4px solid transparent;
-            transition: all 0.3s ease;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #eee;
-        }
-        .data-row:hover { 
-            border-left-color: var(--subject-color);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
-        }
-
-        .tag-subject {
-            background: var(--subject-bg-soft);
-            color: var(--subject-color);
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .loading-pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        /* Sidebar Retráctil */
+        #sidebar { transition: transform 0.3s ease, width 0.3s ease; width: 320px; z-index: 40; }
+        #sidebar.collapsed { transform: translateX(-100%); width: 0; padding: 0; margin: 0; overflow: hidden; }
         
-        .prose { max-width: none; }
+        .glass-header { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+        .subject-tab { padding: 0.5rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.8rem; transition: 0.2s; color: #64748b; white-space: nowrap; }
+        .subject-tab.active-sub { color: var(--subject-color); background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+        .data-row { border-left: 4px solid transparent; transition: 0.3s; background: white; border-radius: 12px; border: 1px solid #eee; }
+        .data-row:hover { border-left-color: var(--subject-color); transform: translateY(-2px); }
+
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 
         @media print {
             .no-print { display: none !important; }
-            main { padding: 0 !important; }
+            main { padding: 0 !important; width: 100% !important; overflow: visible !important; }
             .data-row { border: none !important; margin-bottom: 30px !important; page-break-inside: avoid; }
-            .exam-header { display: block !important; border-bottom: 2px solid #000; margin-bottom: 20px; }
         }
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="h-screen flex flex-col">
 
-<header class="sticky top-0 z-50 glass-header no-print">
+<header class="glass-header px-6 py-3 flex items-center justify-between no-print relative z-50">
     <div class="flex items-center gap-4">
-        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-lg transform rotate-3">
-            <span class="text-white font-serif italic text-xl">v3</span>
-        </div>
-        <div class="hidden sm:block">
-            <h1 id="mainTitle" class="text-lg font-bold tracking-tight text-gray-900 leading-none">Banco de Preguntas</h1>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">EBAU 2026 · Codigo Corrector</p>
-        </div>
+        <button onclick="toggleSidebar()" class="p-2 hover:bg-black/5 rounded-lg transition-colors" title="Alternar Menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white font-serif italic text-xl shadow-lg">v4</div>
     </div>
 
-    <nav class="subject-nav-container overflow-x-auto no-scrollbar mx-4">
+    <nav class="subject-nav-container flex gap-1 p-1 bg-black/5 rounded-xl overflow-x-auto no-scrollbar">
         <button onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub">🧪 Química</button>
         <button onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab">🧲 Física</button>
         <button onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab">⚙️ Tecno II</button>
@@ -128,68 +57,64 @@
         <button onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab">📐 Dibujo II</button>
     </nav>
 
-    <div class="flex items-center gap-3">
-        <div id="stats" class="text-[11px] font-mono font-bold bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-sm text-gray-500">0 RES</div>
-    </div>
+    <div id="stats" class="text-[11px] font-mono font-bold bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-sm text-gray-500">0 RES</div>
 </header>
 
-<div class="flex flex-1 overflow-hidden">
-    <aside class="w-72 bg-white/50 border-r border-gray-200 p-6 flex flex-col gap-6 no-print hidden md:flex">
-        <button onclick="resetFilters()" class="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-600 text-[10px] font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-            Limpiar Filtros
-        </button>
-
-        <div>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Búsqueda</label>
-            <input id="search" type="text" placeholder="Concepto, palabra..." class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black transition-all">
-        </div>
-
-        <div>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Año</label>
-            <select id="yearSelect" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white cursor-pointer"></select>
-        </div>
-
-        <div>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Modelo</label>
-            <select id="modelSelect" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white cursor-pointer"></select>
-        </div>
-
-        <div>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Bloque Temático</label>
-            <select id="topicSelect" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white cursor-pointer"></select>
-        </div>
-
-        <div class="mt-4 pt-6 border-t border-gray-200">
-            <button onclick="toggleExamTools()" class="w-full flex items-center justify-between text-[10px] uppercase tracking-widest text-blue-600 font-black mb-4">
-                🛠️ Herramientas Examen 
-                <span id="examToolIcon">⊕</span>
-            </button>
-            <div id="examTools" class="hidden space-y-4">
-                <div class="bg-blue-50 p-3 rounded-xl border border-blue-100">
-                    <p class="text-[10px] font-bold text-blue-800 mb-2 uppercase">Generación Aleatoria</p>
-                    <input id="autoNum" type="number" value="4" class="w-full border p-2 rounded-lg text-xs mb-2" placeholder="Nº preguntas">
-                    <button onclick="generateRandom()" class="w-full py-2 bg-blue-600 text-white rounded-lg text-[10px] font-bold hover:bg-blue-700">GENERAR</button>
+<div class="flex flex-1 overflow-hidden relative">
+    <aside id="sidebar" class="bg-white border-r border-gray-200 flex flex-col no-print">
+        <div class="p-6 flex-1 overflow-y-auto custom-scroll space-y-6">
+            <section class="space-y-4">
+                <button onclick="resetFilters()" class="w-full py-2 bg-gray-100 hover:bg-gray-200 text-gray-500 text-[10px] font-bold uppercase rounded-xl transition-all">Limpiar Filtros</button>
+                
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Búsqueda</label>
+                    <input id="search" type="text" placeholder="Palabra clave..." class="w-full border p-2 rounded-xl text-sm outline-none focus:ring-2 focus:ring-black">
                 </div>
-                <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-100">
-                    <p class="text-[10px] font-bold text-emerald-800 mb-2 uppercase">Datos PDF</p>
-                    <input id="instName" type="text" placeholder="Institución" class="w-full border p-2 rounded-lg text-[10px] mb-1">
-                    <input id="examTitle" type="text" placeholder="Título" class="w-full border p-2 rounded-lg text-[10px]">
-                </div>
-                <button onclick="printExam()" class="w-full py-3 bg-black text-white rounded-xl text-xs font-bold shadow-lg">🖨️ IMPRIMIR SELECCIÓN (<span id="examCount">0</span>)</button>
-            </div>
-        </div>
 
-        <div id="subjectFooter" class="mt-auto p-4 rounded-2xl border border-current opacity-40 text-xs italic" style="color: var(--subject-color)">
-            Consultor dinámico v4.2
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1 block">Año</label>
+                        <select id="yearSelect" class="w-full border p-2 rounded-lg text-xs bg-white"></select>
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1 block">Modelo</label>
+                        <select id="modelSelect" class="w-full border p-2 rounded-lg text-xs bg-white"></select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1 block">Bloque Temático</label>
+                    <select id="topicSelect" class="w-full border p-2 rounded-lg text-xs bg-white"></select>
+                </div>
+            </section>
+
+            <section class="pt-6 border-t space-y-4">
+                <h3 class="text-xs font-black text-blue-600 uppercase tracking-tighter">⚡ Configuración de Examen</h3>
+                
+                <div class="space-y-3 bg-blue-50/50 p-4 rounded-2xl border border-blue-100">
+                    <div>
+                        <label class="text-[10px] font-bold text-blue-800 mb-2 block">CANTIDAD POR TEMA (Pesos)</label>
+                        <div id="topicWeights" class="space-y-2 max-h-48 overflow-y-auto custom-scroll pr-2">
+                            </div>
+                    </div>
+                    
+                    <button onclick="generateByWeights()" class="w-full py-2 bg-blue-600 text-white rounded-xl text-[10px] font-bold shadow-md hover:bg-blue-700 transition">GENERAR POR PESOS</button>
+                </div>
+
+                <div class="bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100 space-y-3">
+                    <p class="text-[10px] font-bold text-emerald-800 uppercase italic">Formato Editorial</p>
+                    <input id="instName" type="text" placeholder="Nombre de la Institución" class="w-full border p-2 rounded-lg text-[10px]">
+                    <input id="examTitle" type="text" placeholder="Título del Examen" class="w-full border p-2 rounded-lg text-[10px]">
+                </div>
+
+                <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-xs font-bold shadow-xl hover:scale-[1.02] transition">🖨️ IMPRIMIR SELECCIÓN (<span id="examCount">0</span>)</button>
+            </section>
         </div>
     </aside>
 
-    <main class="flex-1 overflow-y-auto p-4 md:p-8">
-        <div class="max-w-5xl mx-auto">
-            <div id="questions" class="flex flex-col gap-4"></div>
-            <div id="loader" class="text-center py-20 opacity-30 italic">Cargando base de datos...</div>
-        </div>
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 relative bg-gray-50/30">
+        <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-4"></div>
+        <div id="loader" class="text-center py-20 opacity-30 italic">Cargando sistema...</div>
     </main>
 </div>
 
@@ -207,57 +132,41 @@ let currentSubject = "QUIM";
 let allQuestions = [];
 let selectedIds = new Set();
 
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('collapsed');
+}
+
 function switchSubject(id) {
     currentSubject = id;
     const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
     document.documentElement.style.setProperty('--bg', config.bg);
-    document.documentElement.style.setProperty('--subject-bg-soft', config.color + '20');
-
-    document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
-    const btn = document.getElementById(`btn-${id}`);
-    if(btn) btn.classList.add('active-sub');
+    document.documentElement.style.setProperty('--subject-bg-soft', config.color + '15');
     
-    const title = document.getElementById('mainTitle');
-    if(title) title.innerHTML = `Banco de Preguntas · <span style="color:${config.color}">${config.icon} ${config.title}</span>`;
+    document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
+    document.getElementById(`btn-${id}`).classList.add('active-sub');
     
     selectedIds.clear();
     updateExamCounter();
     loadData();
 }
 
-function toggleExamTools() {
-    const el = document.getElementById('examTools');
-    const icon = document.getElementById('examToolIcon');
-    const isHidden = el.classList.contains('hidden');
-    el.classList.toggle('hidden');
-    icon.textContent = isHidden ? "⊖" : "⊕";
-}
-
 async function loadData() {
     const loader = document.getElementById('loader');
     const container = document.getElementById('questions');
-    const stats = document.getElementById('stats');
     const config = subjectConfig[currentSubject];
     
     loader.style.display = "block";
     container.innerHTML = "";
-    stats.textContent = "CARGANDO...";
-
-    const pathBase = config.folder + "/";
-    const indexPath = pathBase + config.file;
 
     try {
-        const response = await fetch(indexPath);
-        const indexText = await response.text();
-        const index = JSON.parse(indexText);
+        const response = await fetch(`${config.folder}/${config.file}`);
+        const index = await response.json();
         
-        allQuestions = [];
         const promises = index.topics.map(async t => {
             try {
-                const res = await fetch(pathBase + t.file);
+                const res = await fetch(`${config.folder}/${t.file}`);
                 let raw = await res.text();
-                // Reparación de barras para JSON estricto
                 raw = raw.replace(/\\/g, "\\\\").replace(/\\\\n/g, "\\n").replace(/\\\\"/g, "\\\"").replace(/\\\\u/g, "\\u");
                 return JSON.parse(raw);
             } catch (err) { return []; }
@@ -267,10 +176,11 @@ async function loadData() {
         allQuestions = results.flat();
         
         populateFilters();
+        populateTopicWeights();
         render();
         loader.style.display = "none";
     } catch (e) {
-        loader.innerHTML = `<div class="text-red-500 font-bold">⚠️ Error cargando ${config.title}</div>`;
+        loader.innerHTML = `<div class="text-red-500">Error cargando ${config.title}</div>`;
     }
 }
 
@@ -279,32 +189,35 @@ function populateFilters() {
     const ySel = document.getElementById('yearSelect');
     const mSel = document.getElementById('modelSelect');
     
-    if(!tSel || !ySel || !mSel) return;
-
     const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
     tSel.innerHTML = '<option value="all">Todos los bloques</option>';
     topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
 
     const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
-    ySel.innerHTML = '<option value="all">Todos los años</option>';
+    ySel.innerHTML = '<option value="all">Año: Todos</option>';
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
 
     const models = [...new Set(allQuestions.map(q => q.exam_model))].filter(Boolean).sort();
-    mSel.innerHTML = '<option value="all">Todos los modelos</option>';
+    mSel.innerHTML = '<option value="all">Modelos: Todos</option>';
     models.forEach(m => mSel.innerHTML += `<option value="${m}">${m}</option>`);
+}
+
+function populateTopicWeights() {
+    const container = document.getElementById('topicWeights');
+    const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
+    container.innerHTML = "";
+    topics.forEach(t => {
+        container.innerHTML += `
+            <div class="flex items-center justify-between gap-2 border-b border-blue-100 pb-1">
+                <span class="text-[9px] text-gray-500 font-medium truncate w-32">${t}</span>
+                <input type="number" data-topic="${t}" class="weight-input w-10 border rounded text-[10px] text-center" value="0" min="0">
+            </div>`;
+    });
 }
 
 function normalizeTopic(q) {
     if (q.is_competency_based || q.topic_name === "Actividad Competencial") return "Actividad Competencial";
-    if (q.topic_name.includes("Formulación")) return "T00: Formulación";
     return q.topic_name;
-}
-
-function getQuestionType(text) {
-    const t = text.toLowerCase();
-    if (/calcule|determine|ajuste|halle|obtenga/.test(t)) return {label:'Problema', color:'bg-blue-50 text-blue-600 border-blue-100'};
-    if (/justifique|razone|explique|indique/.test(t)) return {label:'Teoría', color:'bg-emerald-50 text-emerald-600 border-emerald-100'};
-    return {label:'Mixto', color:'bg-gray-50 text-gray-600 border-gray-100'};
 }
 
 function render() {
@@ -321,81 +234,36 @@ function render() {
         return okText && okTopic && okYear && okModel;
     });
 
-    const stats = document.getElementById('stats');
-    if (stats) stats.textContent = `${filtered.length} RESULTADOS`;
-    
+    document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
     const container = document.getElementById('questions');
-    if (!container) return;
     container.innerHTML = '';
-
-    if (filtered.length === 0) {
-        container.innerHTML = '<div class="text-center py-20 text-gray-400 italic">No hay coincidencias con los filtros seleccionados.</div>';
-        return;
-    }
 
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
-        const type = getQuestionType(q.text || "");
         const card = document.createElement('div');
-        card.className = `data-row p-6 flex flex-col gap-4 mb-4 ${isSelected ? 'ring-2 ring-black border-black shadow-md' : 'border-gray-100 shadow-sm'}`;
+        card.className = `data-row p-6 flex flex-col gap-4 mb-2 ${isSelected ? 'ring-2 ring-black border-black' : ''}`;
         
         const cleanText = (q.text || "").replace(/\\n/g, '\n');
-        const cleanContext = (q.context_text || "").replace(/\\n/g, '\n');
-        const cleanSolution = (q.solution || "").replace(/\\n/g, '\n');
-
-        const contextHTML = q.context_text ? 
-            `<div class="p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600 rounded-r-lg mb-2">
-                ${formatChemicalFormula(marked.parse(cleanContext))}
-            </div>` : "";
-            
-        const solutionHTML = q.solution ? 
-            `<details class="mt-2 border-t pt-3 no-print">
-                <summary class="text-xs font-bold cursor-pointer hover:opacity-70 flex items-center gap-2" style="color:var(--subject-color)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
-                    VER SOLUCIÓN PASO A PASO
-                </summary>
-                <div class="mt-2 text-sm text-gray-700 pl-4 border-l-2 border-gray-100 bg-gray-50/50 p-3 rounded-r-lg">
-                    ${formatChemicalFormula(marked.parse(cleanSolution))}
-                </div>
-            </details>` : "";
+        const solutionHTML = q.solution ? `<details class="mt-2 border-t pt-3 no-print"><summary class="text-xs font-bold cursor-pointer" style="color:var(--subject-color)">VER SOLUCIÓN</summary><div class="mt-2 text-sm text-gray-600 pl-4 border-l-2">${marked.parse(q.solution.replace(/\\n/g, '\n'))}</div></details>` : "";
 
         card.innerHTML = `
             <div class="flex justify-between items-start gap-4">
-                <div class="flex flex-col">
-                    <span class="text-xl font-black">${q.exam_year || '?'}</span>
-                    <span class="text-[10px] font-mono text-gray-400 uppercase tracking-tighter leading-tight">${q.exam_model || ''}</span>
-                    <button onclick="toggleInExam('${q.id}')" class="no-print mt-3 text-[9px] font-bold py-1 px-3 rounded-full border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-100 border-gray-200 text-gray-600 hover:bg-black hover:text-white'}">
-                        ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
+                <div>
+                    <span class="text-xl font-black">${q.exam_year}</span>
+                    <span class="text-[10px] text-gray-400 block">${q.exam_model || ''}</span>
+                    <button onclick="toggleInExam('${q.id}')" class="mt-3 text-[9px] font-bold py-1 px-3 rounded-full border ${isSelected ? 'bg-red-500 text-white' : 'bg-gray-100'} transition">
+                        ${isSelected ? 'QUITAR' : '+ SELECCIONAR'}
                     </button>
                 </div>
-                <div class="flex flex-col items-end gap-2 text-right">
-                    <span class="tag-subject">${normalizeTopic(q)}</span>
-                    <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${type.color}">${type.label.toUpperCase()}</span>
-                </div>
+                <span class="tag-subject">${normalizeTopic(q)}</span>
             </div>
-            <div class="prose prose-sm text-gray-800 leading-relaxed mt-2">
-                ${contextHTML}
-                <div class="question-body">
-                    ${formatChemicalFormula(marked.parse(cleanText))}
-                </div>
-                ${solutionHTML}
-            </div>
+            <div class="prose prose-sm text-gray-800">${marked.parse(cleanText)}</div>
+            ${solutionHTML}
         `;
         container.appendChild(card);
     });
 
-    renderMathInElement(container, { 
-        delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}],
-        throwOnError: false
-    });
-}
-
-function formatChemicalFormula(text) {
-    if (!text) return "";
-    return text.replace(/\b([A-Z][a-z]?[\d()A-Za-z]*)\b/g, (match) => {
-        if (!/[A-Z].*\d|\(|\)/.test(match)) return match;
-        return match.replace(/(\d+)/g, '<sub>$1</sub>');
-    });
+    renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
 }
 
 function toggleInExam(id) {
@@ -406,8 +274,7 @@ function toggleInExam(id) {
 }
 
 function updateExamCounter() { 
-    const counter = document.getElementById('examCount');
-    if(counter) counter.textContent = selectedIds.size; 
+    document.getElementById('examCount').textContent = selectedIds.size; 
 }
 
 function resetFilters() {
@@ -418,11 +285,16 @@ function resetFilters() {
     render();
 }
 
-function generateRandom() {
-    const num = parseInt(document.getElementById('autoNum').value);
+function generateByWeights() {
     selectedIds.clear();
-    const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-    shuffled.slice(0, num).forEach(q => selectedIds.add(q.id));
+    document.querySelectorAll('.weight-input').forEach(input => {
+        const topic = input.dataset.topic;
+        const count = parseInt(input.value);
+        if (count > 0) {
+            const pool = allQuestions.filter(q => normalizeTopic(q) === topic).sort(() => 0.5 - Math.random());
+            pool.slice(0, count).forEach(q => selectedIds.add(q.id));
+        }
+    });
     updateExamCounter();
     render();
 }
@@ -432,26 +304,21 @@ function printExam() {
     if (qs.length === 0) return alert("Selecciona preguntas primero");
     
     const win = window.open('', '_blank');
-    const inst = document.getElementById('instName').value || "CENTRO EDUCATIVO";
+    const inst = document.getElementById('instName').value || "INSTITUCIÓN";
     const title = document.getElementById('examTitle').value || "EXAMEN";
 
     let h = `<html><head><title>Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <style>body{font-family:serif;padding:40px;} .h{border-bottom:2px solid #000;padding-bottom:10px;margin-bottom:20px;display:flex;justify-content:space-between;} .q{margin-bottom:30px; page-break-inside: avoid;}</style></head><body>
-    <div class="h"><div><h1>${inst}</h1><p>${title}</p></div><div>Asignatura: ${subjectConfig[currentSubject].title}<br>Fecha: ________</div></div>`;
+    <style>body{padding:40px;font-family:serif;} .h{border-bottom:2px solid #000;display:flex;justify-content:space-between;margin-bottom:20px;} .q{margin-bottom:30px;page-break-inside:avoid;}</style></head><body>
+    <div class="h"><div><h1>${inst}</h1><p>${title}</p></div><div>Asignatura: ${subjectConfig[currentSubject].title}</div></div>`;
     
-    qs.forEach((q, i) => {
-        h += `<div class="q"><strong>${i+1}.</strong> ${marked.parse(q.text.replace(/\\n/g, '\n'))}</div>`;
-    });
-
-    h += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script>
-    <script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});window.print();<\/script></body></html>`;
+    qs.forEach((q, i) => { h += `<div class="q"><strong>${i+1}.</strong> ${marked.parse(q.text.replace(/\\n/g, '\n'))}</div>`; });
+    h += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});window.print();<\/script></body></html>`;
     
     win.document.write(h);
     win.document.close();
 }
 
-// Escuchas de eventos
+// Eventos
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search').oninput = render;
     document.getElementById('topicSelect').onchange = render;
