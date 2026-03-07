@@ -1,5 +1,26 @@
 [
   {
+    "text": "a) Explicar las diferencias entre el aprendizaje automático supervisado y el aprendizaje automático no supervisado.\n\nb) En el contexto de la inteligencia artificial, mencionar y describir tres aspectos negativos de la misma. ¿Qué es la autoconciencia?\n\nc) Indicar en qué documentos básicos de un proyecto técnico deben incluirse los siguientes apartados: estudio de impacto ambiental, condiciones económicas, cuadro de precios unitarios de materiales, análisis de soluciones, planificación.",
+    "topic_name": "Control y Programación",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Inteligencia Artificial",
+      "Machine Learning",
+      "Oficina Técnica",
+      "Documentación de proyectos"
+    ],
+    "has_image": false,
+    "image_bbox": [],
+    "image_description": "",
+    "image_page": 2,
+    "id": "o82y6p104",
+    "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "a) Respecto a los documentos de un proyecto técnico, indicar qué relación existe entre el documento de Mediciones y el de Presupuesto y entre el de Mediciones y el de Planos.\n\nb) Explicar en qué consiste la eficiencia energética de los materiales y enumerar dos factores que influyan sobre ella.\n\nc) Un ordenador reporta que ha detectado un malware. Explicar qué significa este aviso y cómo se debe proceder.\n\nd) Una empresa de desarrollo software quiere adoptar una metodología que permita desarrollar prototipos en ciclos cortos de iteración para recibir una realimentación rápida de los usuarios y poder mejorar así el producto desde fases tempranas del desarrollo. Proponer y razonar la elección de un tipo de metodología agile que esté alineado con las necesidades de esta empresa.",
     "topic_name": "Control y Programación",
     "exam_year": 2025,
