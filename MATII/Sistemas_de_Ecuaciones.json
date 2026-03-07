@@ -8,6 +8,14 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "tn14p3izq",
-    "source_file": "Examen_Titular-B_MatematicasII.pdf"
+    "source_file": "Examen_Titular-B_MatematicasII.pdf",
+    "detected_topics": [
+      "Sistemas de ecuaciones lineales",
+      "Ecuaciones con tres incógnitas",
+      "Números naturales",
+      "Problemas de planteo",
+      "Discusión de sistemas",
+      "Modelización matemática"
+    ]
   }
 ]
