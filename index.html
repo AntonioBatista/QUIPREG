@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>EduDB | Banco de Preguntas v5.6 Final Engine</title>
+    <title>PEvAU-DB | TodoPAU</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -67,7 +67,7 @@
         <div onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/math.png"> Mat II</div>
         <div onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/line-chart.png"> CCSS II</div>
         <div onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/circuit.png"> Tecno II</div>
-        <div onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/ruler-pencil.png"> Dibujo II</div>
+        <div onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/design.png"> Dibujo II</div>
     </nav>
 
     <div class="flex items-center gap-3">
@@ -99,7 +99,7 @@
         </section>
 
         <section id="tagCloudSection" class="hidden">
-            <label class="text-[10px] uppercase font-bold text-gray-400 mb-4 block tracking-widest border-t pt-4">Contenidos del Bloque</label>
+            <label class="text-[10px] uppercase font-bold text-gray-400 mb-4 block tracking-widest border-t pt-4">Contenidos Seleccionados</label>
             <div id="tagCloud"></div>
         </section>
     </aside>
@@ -150,12 +150,12 @@
 
 <script>
 const subjectConfig = {
-    'QUIM': { title: 'Química', folder: 'QUIM', file: 'indexquim.json', color: '#00c853', soft: 'rgba(0, 200, 83, 0.1)', icon: 'https://img.icons8.com/fluency/240/test-tube.png' },
-    'FIS': { title: 'Física', folder: 'FIS', file: 'indexfis.json', color: '#2979ff', soft: 'rgba(41, 121, 255, 0.1)', icon: 'https://img.icons8.com/fluency/240/physics.png' },
-    'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', soft: 'rgba(101, 31, 255, 0.1)', icon: 'https://img.icons8.com/fluency/240/math.png' },
-    'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', soft: 'rgba(245, 0, 87, 0.1)', icon: 'https://img.icons8.com/fluency/240/line-chart.png' },
-    'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', soft: 'rgba(255, 145, 0, 0.1)', icon: 'https://img.icons8.com/fluency/240/circuit.png' },
-    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/ruler-pencil.png' }};
+    'QUIM': { title: 'Química', folder: 'QUIM', file: 'indexquim.json', color: '#00c853', soft: 'rgba(0, 200, 83, 0.1)', icon: 'https://img.icons8.com/fluency/48/test-tube.png' },
+    'FIS': { title: 'Física', folder: 'FIS', file: 'indexfis.json', color: '#2979ff', soft: 'rgba(41, 121, 255, 0.1)', icon: 'https://img.icons8.com/fluency/48/physics.png' },
+    'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', soft: 'rgba(101, 31, 255, 0.1)', icon: 'https://img.icons8.com/fluency/48/math.png' },
+    'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', soft: 'rgba(245, 0, 87, 0.1)', icon: 'https://img.icons8.com/fluency/48/line-chart.png' },
+    'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', soft: 'rgba(255, 145, 0, 0.1)', icon: 'https://img.icons8.com/fluency/48/circuit.png' },
+    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/design.png' }};
 
 let currentSubject = "QUIM";
 let allQuestions = [];
@@ -192,7 +192,7 @@ function switchSubject(id) {
     const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
     document.documentElement.style.setProperty('--subject-soft', config.soft);
-    document.getElementById('placeholder-icon').src = config.icon;
+    document.getElementById('placeholder-icon').src = config.icon.replace('/48/', '/240/');
     document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
     document.getElementById(`btn-${id}`).classList.add('active-sub');
     resetFilters();
@@ -245,7 +245,7 @@ function updateDynamicTags() {
     const cloud = document.getElementById('tagCloud');
     const section = document.getElementById('tagCloudSection');
 
-    // CAMBIO: Ahora se muestra si hay un tema seleccionado O si hay un año seleccionado
+    // CORRECCIÓN: Nube activa si hay Bloque O Año seleccionado
     if (topic === 'all' && year === 'all') { 
         section.classList.add('hidden'); 
         activeTagFilter = "all"; 
@@ -254,7 +254,6 @@ function updateDynamicTags() {
     
     section.classList.remove('hidden');
 
-    // Filtramos las preguntas para obtener los tags que realmente existen en esa selección
     const visibleQs = allQuestions.filter(q => {
         const okTopic = topic === 'all' || q.topic_name === topic;
         const okYear = year === 'all' || q.exam_year == year;
@@ -263,10 +262,8 @@ function updateDynamicTags() {
 
     const tagCounts = {};
     visibleQs.forEach(q => q.detected_topics?.forEach(tag => tagCounts[tag] = (tagCounts[tag] || 0) + 1));
-
     const uniqueTags = Object.keys(tagCounts).sort();
     
-    // Si no hay tags detectados en ese año/bloque, ocultamos
     if (uniqueTags.length === 0) { section.classList.add('hidden'); return; }
 
     const maxFreq = Math.max(...Object.values(tagCounts), 1);
