@@ -1,5 +1,54 @@
 [
   {
+    "text": "EJERCICIO 3 OPCIÓN B\n\na) Obtener las tablas de verdad de las siguientes funciones lógicas y simplificarlas mediante el método de Karnaugh:\nF = x'yz + xy'z' + xyz\nG = a'b'c'd' + a'bc'd' + abcd' + abcd\n\nb) Explicar la función que realiza un controlador de acción proporcional e integral en un sistema de control de lazo cerrado.",
+    "topic_name": "Circuitos Lógicos",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Tablas de verdad",
+      "Karnaugh",
+      "Sistemas de Control",
+      "Control PI"
+    ],
+    "has_image": false,
+    "id": "vn13i5w7s",
+    "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "a) Dada la función lógica S = A (B̅ C̅ D̅ + \n\nC) + C̅ (A B D̅ + \n\nD) , se pide:\n\na.\n\n1) Obtener la función S en forma canónica como suma de productos lógicos (MINTERMS).\n\na.\n\n2) Simplificar la función S por el método de Karnaugh e implementarla con puertas NAND.\n\nb) Explicar la diferencia entre un sistema de control de lazo cerrado y otro de lazo abierto, indicando alguna de las ventajas de los sistemas de control de lazo cerrado.",
+    "topic_name": "Circuitos Lógicos",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Álgebra de Boole",
+      "Mapas de Karnaugh",
+      "Sistemas de control"
+    ],
+    "has_image": false,
+    "id": "8lx8wwjyw",
+    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "a) Una función booleana de 4 variables debe tomar el valor “0” cuando el número binario expresado en decimal sea un número distinto de cero y múltiplo de 2 o de 3, y tomará el valor “1” en el resto de los casos.\n\na.\n\n1) Obtener la tabla de verdad y la función lógica correspondiente.\n\na.\n\n2) Simplificar dicha función lógica mediante el método de Karnaugh e implementar el circuito correspondiente usando puertas lógicas.\n\nb) Explicar el principio de funcionamiento y una aplicación característica de los sensores PTC y LDR.",
+    "topic_name": "Circuitos Lógicos",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Tablas de verdad",
+      "Simplificación lógica",
+      "Sensores"
+    ],
+    "has_image": false,
+    "id": "z7o3y16m6",
+    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "a) Un circuito digital recibe tres señales de entrada procedentes de tres pulsadores (P1, P2 y P3) y proporciona tres señales de salida (S1, S2 y S3). La primera señal de salida se activa (S1 = \n\n1) si todas las entradas están a 1, la segunda señal de salida se activa (S2 = \n\n1) si todas las entradas están a 0 y la tercera señal de salida se activa (S3 = \n\n1) si el número de entradas a 1 supera al de entradas a 0. Se pide:\n\na.\n\n1) Construir la tabla de verdad.\n\na.\n\n2) Obtener las funciones lógicas simplificadas por Karnaugh e implementarlas con puertas lógicas básicas.\n\nb) Indicar las diferencias entre un sistema de control de lazo abierto y otro de lazo cerrado.",
     "topic_name": "Circuitos Lógicos",
     "exam_year": 2025,
