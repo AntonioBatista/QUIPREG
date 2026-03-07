@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>PEvAU-DB | TodoPAU</title>
+    <title>PEvAU-DB | TodoPAU v5.7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -57,7 +57,7 @@
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">PEvAU-DB</span>
-            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">TODO PAU</span>
+            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">TODO PAU v5.7</span>
         </div>
     </div>
 
@@ -67,7 +67,7 @@
         <div onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/math.png"> Mat II</div>
         <div onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/line-chart.png"> CCSS II</div>
         <div onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/circuit.png"> Tecno II</div>
-        <div onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/design.png"> Dibujo II</div>
+        <div onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/drafting-compass.png"> Dibujo II</div>
     </nav>
 
     <div class="flex items-center gap-3">
@@ -117,7 +117,6 @@
             <button onclick="document.getElementById('examPanel').classList.remove('open')" class="text-gray-400 hover:text-black">✕</button>
         </div>
         <div class="p-6 flex-1 space-y-6 overflow-y-auto custom-scroll">
-            
             <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100 space-y-4">
                 <p class="text-[9px] font-black text-blue-800 uppercase italic">Sorteo Aleatorio</p>
                 <div class="grid grid-cols-2 gap-2">
@@ -155,7 +154,7 @@ const subjectConfig = {
     'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', soft: 'rgba(101, 31, 255, 0.1)', icon: 'https://img.icons8.com/fluency/48/math.png' },
     'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', soft: 'rgba(245, 0, 87, 0.1)', icon: 'https://img.icons8.com/fluency/48/line-chart.png' },
     'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', soft: 'rgba(255, 145, 0, 0.1)', icon: 'https://img.icons8.com/fluency/48/circuit.png' },
-    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/design.png' }};
+    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/drafting-compass.png' }};
 
 let currentSubject = "QUIM";
 let allQuestions = [];
@@ -164,11 +163,13 @@ let activeTagFilter = "all";
 
 function autoChem(text) {
     if (!text) return "";
+    // Aseguramos que los números en fórmulas se rendericen como subíndices
     return text.replace(/\b([A-Z][a-z]?\d+|[A-Z][a-z]?\(.*?\)\d*|[A-Z][a-z]?)+\b/g, (f) => /\d/.test(f) ? f.replace(/(\d+)/g, '<sub>$1</sub>') : f);
 }
 
 function renderContent(question) {
-    let text = question.text.replace(/\\n/g, '\n');
+    // CORRECCIÓN: Procesamos \n\n para saltos de línea y limpiamos espacios excesivos
+    let text = question.text.replace(/\\n/g, '\n').replace(/\n{2,}/g, '\n\n');
     let imageTag = (question.has_image && question.image_data) ? `<img src="${question.image_data}" class="problem-image">` : "";
 
     if (imageTag) {
@@ -209,6 +210,7 @@ async function loadData() {
         const promises = index.topics.map(async t => {
             const res = await fetch(`${config.folder}/${t.file}`);
             let raw = await res.text();
+            // Sanitización profunda de strings JSON
             raw = raw.replace(/\\/g, "\\\\").replace(/\\\\n/g, "\\n").replace(/\\\\"/g, "\\\"").replace(/\\\\u/g, "\\u");
             return JSON.parse(raw);
         });
@@ -245,7 +247,7 @@ function updateDynamicTags() {
     const cloud = document.getElementById('tagCloud');
     const section = document.getElementById('tagCloudSection');
 
-    // CORRECCIÓN: Nube activa si hay Bloque O Año seleccionado
+    // Nube activa si hay Bloque O Año seleccionado
     if (topic === 'all' && year === 'all') { 
         section.classList.add('hidden'); 
         activeTagFilter = "all"; 
