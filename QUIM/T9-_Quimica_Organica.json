@@ -41,7 +41,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "jml8paled",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Química Orgánica",
+      "Alquenos",
+      "Alcoholes",
+      "Hidratación de alquenos",
+      "Isomería de cadena",
+      "Hibridación sp2",
+      "Alcohol secundario",
+      "Reacciones orgánicas"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH2=CH―CH2OH \n\nb) CH3―C(CH3)2―C CH \n\nc) Propanamida \n\nd) Ácido benzoico",
@@ -52,7 +62,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "whxz5zt5p",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Nomenclatura IUPAC",
+      "Formulación orgánica",
+      "Alcoholes",
+      "Alquenos",
+      "Alquinos",
+      "Amidas",
+      "Ácidos carboxílicos",
+      "Hidrocarburos aromáticos"
+    ]
   },
   {
     "text": "4B. Responda SOLO DOS apartados de la cuestión 4B:\n\na) Escriba una reacción que transforme el compuesto CH3CH=CHCH2CH3 en un alcohol.\n\nb) Dibuje un isómero de cadena del compuesto CH3CH2CH2CH3\n\nc) Escriba la estructura de un alcohol secundario de tres átomos de carbono en el que haya hibridación sp2.",
@@ -63,7 +84,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "6a3fh1un0",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Alquenos",
+      "Alcoholes",
+      "Reacciones de adición",
+      "Hidratación de alquenos",
+      "Isomería de cadena",
+      "Hibridación sp2",
+      "Alcanos"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH3—CH2—CH2—CH2—C(=O)—NH2 \n\nb) 4-metilfenol (seg3³n la imagen de la estructura arom3¡tica) \n\nc) Butanodial \n\nd) 6-Bromohex-2-ino",
@@ -74,7 +105,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "fruykejqe",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Química Orgánica",
+      "Nomenclatura orgánica",
+      "Formulación química",
+      "Amidas",
+      "Fenoles",
+      "Aldehídos",
+      "Alquinos",
+      "Halogenuros de alquilo",
+      "Compuestos aromáticos"
+    ]
   },
   {
     "text": "4B. Dado el compuesto CH3CH=CHCH3 \n\na) Dibuje su is3³mero cis.\n\nb) Escriba su reacci3³n de hidrogenaci3³n.\n\nc) Justifique si puede formar enlaces de hidr3³geno.",
@@ -85,7 +127,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "g2xgbwu2c",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Alquenos",
+      "2-buteno",
+      "Isomería geométrica",
+      "Isomería cis-trans",
+      "Hidrogenación",
+      "Reacciones de adición",
+      "Fuerzas intermoleculares",
+      "Enlace de hidrógeno"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH3―CH2―CH2―CH2―C(=O)―NH2 \n\nb) 4-Metilfenol (p-metilfenol) \n\nc) Butanodial \n\nd) 6-Bromohex-2-ino",
@@ -96,7 +149,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "zucvmiz2d",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Nomenclatura orgánica",
+      "Química orgánica",
+      "Amidas",
+      "Fenoles",
+      "Compuestos aromáticos",
+      "Aldehídos",
+      "Alquinos",
+      "Derivados halogenados"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH2=CH―CH2―NH2 \n\nb) CH3―O―CH3 \n\nc) Etilbenceno \n\nd) Difenil éter. 4B.\n\na) Razone cuál de estos compuestos es soluble en agua: CH3CH2COOH y CH≡CCH3 \n\nb) Escriba los productos de la reacción C6H6(benceno) + HNO3/H2SO4 \n\nc) Explique si el compuesto CH3CHBrCH2CH3 presenta estereoisomería y, en caso afirmativo, indique el tipo.",
@@ -107,7 +170,25 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "gwmqo4b5u",
-    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+    "source_file": "Examen_Suplente2-A_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Nomenclatura de compuestos orgánicos",
+      "Aminas",
+      "Éteres",
+      "Compuestos aromáticos",
+      "Propiedades físicas de compuestos orgánicos",
+      "Solubilidad",
+      "Puentes de hidrógeno",
+      "Ácidos carboxílicos",
+      "Alquinos",
+      "Reacciones orgánicas",
+      "Sustitución electrófila aromática",
+      "Nitración del benceno",
+      "Estereoisomería",
+      "Isomería óptica",
+      "Carbono asimétrico"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH3―C(CH3)=CH―CH3 \n\nb) CH3―CH2―CH(OH)―CH3 \n\nc) Etanoato de etilo \n\nd) Metil propil éter \n4B. Considerando los compuestos mencionados en el apartado 4A:\n\na) Escriba la reacción de adición de HCl al compuesto \n\na) .\n\nb) Escriba un isómero de función del compuesto \n\nb) .\n\nc) Justifique si el compuesto \n\nb) presenta isomería óptica.",
@@ -118,7 +199,20 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "q5wxjsl6k",
-    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+    "source_file": "Examen_Suplente2-B_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Nomenclatura orgánica",
+      "Alquenos",
+      "Alcoholes",
+      "Ésteres",
+      "Éteres",
+      "Reacciones de adición",
+      "Regla de Markovnikov",
+      "Isomería de función",
+      "Isomería óptica",
+      "Quiralidad"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH3―C(CH3)=CH―CH3 \n\nb) CH3―CH2―CH(OH)―CH3 \n\nc) Etanoato de etilo \n\nd) Metil propil éter",
@@ -129,7 +223,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "q2kgksjl4",
-    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+    "source_file": "Examen_Suplente2-B_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Nomenclatura de compuestos orgánicos",
+      "Formulación de compuestos orgánicos",
+      "Alquenos",
+      "Alcoholes",
+      "Ésteres",
+      "Éteres",
+      "Grupos funcionales"
+    ]
   },
   {
     "text": "4B. Considerando los compuestos mencionados en el apartado 4A:\n\na) Escriba la reacción de adición de HCl al compuesto \n\na) .\n\nb) Escriba un isómero de función del compuesto \n\nb) .\n\nc) Justifique si el compuesto \n\nb) presenta isomería óptica.",
@@ -140,7 +244,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "nw1t262so",
-    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+    "source_file": "Examen_Suplente2-B_Quimica.pdf",
+    "detected_topics": [
+      "Química Orgánica",
+      "Reacciones de adición",
+      "Adición de HCl",
+      "Isomería de función",
+      "Isomería óptica",
+      "Quiralidad",
+      "Carbono asimétrico"
+    ]
   },
   {
     "text": "4B.\n\na) Escriba y ajuste la reacción de combustión del CH3CH2CH3\n\nb) Escriba y ajuste la reacción de deshidratación del CH3CH2CH2OH\n\nc) Escriba un isómero de función del compuesto CH3COCH2CH3",
@@ -151,7 +264,19 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "z9r1kct8s",
-    "source_file": "Examen_Titular-A_Quimica.pdf"
+    "source_file": "Examen_Titular-A_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Reacciones de combustión",
+      "Alcanos",
+      "Deshidratación de alcoholes",
+      "Alcoholes",
+      "Reacciones de eliminación",
+      "Isomería de función",
+      "Cetonas",
+      "Aldehídos",
+      "Ajuste de reacciones"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH3―CH=CH―CH=CH2\n\nb) CH3―CH(OH)―CH2―CN\n\nc) 3–Metilpent–2–eno\n\nd) Etanamida",
@@ -162,7 +287,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "zkqvqsmmw",
-    "source_file": "Examen_Titular-A_Quimica.pdf"
+    "source_file": "Examen_Titular-A_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Nomenclatura IUPAC",
+      "Formulación química",
+      "Alquenos",
+      "Dienos",
+      "Alcoholes",
+      "Nitrilos",
+      "Amidas",
+      "Compuestos polifuncionales"
+    ]
   },
   {
     "text": "4B. Responda a SOLO DOS apartados de la cuestión 4B:\n\na) Escriba y ajuste la reacción de combustión del CH3CH2CH3\n\nb) Escriba y ajuste la reacción de deshidratación del CH3CH2CH2OH\n\nc) Escriba un isómero de función del compuesto CH3COCH2CH3",
@@ -173,7 +309,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "lfsessjhn",
-    "source_file": "Examen_Titular-A_Quimica.pdf"
+    "source_file": "Examen_Titular-A_Quimica.pdf",
+    "detected_topics": [
+      "Química orgánica",
+      "Reacción de combustión",
+      "Alcanos",
+      "Deshidratación de alcoholes",
+      "Alcoholes",
+      "Isomería de función",
+      "Cetonas",
+      "Isomería"
+    ]
   },
   {
     "text": "4A. Nombre o formule los siguientes compuestos:\n\na) CH3―CH2―O―CH3 \n\nb) CH3―CH(CH3)―CH2―CHO \n\nc) Etanamina \n\nd) Penta–1,3–dieno",
@@ -184,7 +330,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "eo4tbgav3",
-    "source_file": "Examen_Titular-B_Quimica.pdf"
+    "source_file": "Examen_Titular-B_Quimica.pdf",
+    "detected_topics": [
+      "Química Orgánica",
+      "Nomenclatura orgánica",
+      "Formulación orgánica",
+      "Éteres",
+      "Aldehídos",
+      "Aminas",
+      "Alquenos",
+      "Dienos"
+    ]
   },
   {
     "text": "4B. Dados los compuestos:\n\n(1) CH3CH(OH)CH2CH2CH3 y \n\n(2) CH3CH2CH2CH2CH2OH.\n\na) Justifique el tipo de isomería que presentan.\n\nb) Identifique cuál de los compuestos se deshidrata con H2SO4 y calor para formar un producto con isomería geométrica. Dibuje los isómeros geométricos.\n\nc) Razone cuál de los compuestos presenta isomería óptica.",
@@ -195,7 +351,19 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "mr0bhgxry",
-    "source_file": "Examen_Titular-B_Quimica.pdf"
+    "source_file": "Examen_Titular-B_Quimica.pdf",
+    "detected_topics": [
+      "Química Orgánica",
+      "Isomería",
+      "Isomería de posición",
+      "Deshidratación de alcoholes",
+      "Regla de Saytzeff",
+      "Isomería geométrica",
+      "Isomería óptica",
+      "Carbono asimétrico",
+      "Alcoholes",
+      "Reacciones de eliminación"
+    ]
   },
   {
     "text": "B4. Razone si son verdaderas o falsas las siguientes afirmaciones:\n\na) Los compuestos obtenidos, según la regla de Markovnikov, por adición de HBr al CH2=CHCH2CH3 y CH3CH=CHCH3 son iguales.\n\nb) El CH2=C(CH3)CH3 presenta isomería cis-trans, pero el CH3CH=CHCH3 no.\n\nc) El CH3COOH no desvía el plano de la luz polarizada.",
@@ -206,7 +374,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "infxa9jnw",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Regla de Markovnikov",
+      "Adición electrófila",
+      "Alquenos",
+      "Isomería cis-trans",
+      "Isomería geométrica",
+      "Isomería óptica",
+      "Quiralidad",
+      "Luz polarizada",
+      "Química orgánica"
+    ]
   },
   {
     "text": "B6. Considerando la molécula CH2=CHCH2CH3\n\na) Indique la hibridación de cada uno de sus átomos de carbono.\n\nb) Escriba la fórmula semidesarrollada de un isómero de cadena.\n\nc) Escriba la reacción de hidrogenación.",
@@ -217,7 +396,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "c1rwmfu3b",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Química Orgánica",
+      "Hibridación del carbono",
+      "Isomería de cadena",
+      "Reacciones de hidrogenación",
+      "Alquenos",
+      "1-buteno",
+      "Hibridación sp2",
+      "Hibridación sp3"
+    ]
   },
   {
     "text": "B4. Indique los productos que se obtienen en cada una de las siguientes reacciones, especificando el tipo de reacción:\n\na) CH3CH2COOH + CH3OH (H+ →) \n\nb) CH3CH2CHClCH3 (KOH/etanol →) \n\nc) CH3CH=CH2 + H2O (H+ →)",
