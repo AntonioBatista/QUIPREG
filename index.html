@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>EduDB | Banco de Preguntas v4.9</title>
+    <title>EduDB | Banco de Preguntas v5.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -13,128 +13,40 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:italic,wght@400;600&display=swap');
         
-        :root {
-            --bg: #F8F9FA;
-            --subject-color: #000000;
-        }
+        :root { --bg: #F8F9FA; --subject-color: #000000; }
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; color: #1a1a1a; overflow: hidden; }
 
-        body { 
-            background-color: var(--bg); 
-            font-family: 'Inter', sans-serif; 
-            color: #1a1a1a; 
-            overflow: hidden;
-        }
+        .glass-header { background: white; border-bottom: 1px solid #eee; padding: 0.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .subject-nav { display: flex; gap: 8px; align-items: center; background: #f1f5f9; padding: 6px; border-radius: 16px; }
+        .subject-tab { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; color: #64748b; transition: 0.2s; cursor: pointer; }
+        .subject-tab img { width: 18px; height: 18px; filter: grayscale(1); opacity: 0.7; }
+        .subject-tab.active-sub { background: white; color: var(--subject-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .subject-tab.active-sub img { filter: none; opacity: 1; }
 
-        /* Cabecera Estilo EduDB */
-        .glass-header {
-            background: white;
-            border-bottom: 1px solid #eee;
-            padding: 0.5rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 70px;
-        }
-
-        /* Nav de Materias */
-        .subject-nav {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            background: #f1f5f9;
-            padding: 6px;
-            border-radius: 16px;
-        }
-
-        .subject-tab {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 14px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #64748b;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .subject-tab img {
-            width: 20px;
-            height: 20px;
-            filter: grayscale(1);
-            opacity: 0.7;
-        }
-
-        .subject-tab.active-sub {
-            background: white;
-            color: var(--subject-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .subject-tab.active-sub img {
-            filter: none;
-            opacity: 1;
-        }
-
-        /* Sidebar */
-        #sidebar { 
-            width: 300px; 
-            border-right: 1px solid #eee;
-            background: white;
-            transition: transform 0.3s ease;
-        }
+        #sidebar { width: 300px; border-right: 1px solid #eee; background: white; transition: transform 0.3s ease; }
         #sidebar.collapsed { transform: translateX(-100%); width: 0; }
 
-        /* Tarjetas */
-        .data-row { 
-            background: white;
-            border-radius: 16px;
-            border: 1px solid #eee;
-            padding: 2rem;
-            transition: transform 0.2s;
-            position: relative;
-        }
+        .data-row { background: white; border-radius: 16px; border: 1px solid #eee; padding: 2rem; transition: 0.2s; position: relative; }
+        
+        /* COLORES DE TAGS (Basado en tu imagen) */
+        .pill-topic { background: #3b82f6; color: white; } /* Azul para el Bloque Principal */
+        .pill-content { background: #10b981; color: white; } /* Verde para Contenidos/Tags */
+        
+        .tag-badge { font-size: 9px; font-weight: 800; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-        /* Tags Estilizados */
-        .tag-pill {
-            font-size: 9px;
-            font-weight: 800;
-            padding: 3px 10px;
-            background: #f1f5f9;
-            color: #64748b;
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        /* Nube de Tags en Sidebar */
+        .tag-cloud-item { 
+            font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 20px; 
+            background: #f1f5f9; color: #64748b; cursor: pointer; transition: 0.2s;
+            border: 1px solid transparent;
         }
+        .tag-cloud-item:hover { background: #e2e8f0; color: black; }
+        .tag-cloud-item.active-tag { background: var(--subject-color); color: white; }
 
-        /* Marca de agua centro */
-        #placeholder-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.05;
-            width: 300px;
-            pointer-events: none;
-            display: block;
-        }
-
-        /* Panel Examen */
-        #examPanel {
-            position: fixed;
-            right: -400px;
-            top: 0;
-            width: 380px;
-            height: 100vh;
-            background: white;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.05);
-            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 100;
-        }
+        #placeholder-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 280px; pointer-events: none; }
+        #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s; z-index: 100; }
         #examPanel.open { right: 0; }
-
-        sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; bottom: -0.25em; color: inherit; }
+        sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; bottom: -0.25em; }
     </style>
 </head>
 
@@ -143,37 +55,25 @@
 <header class="glass-header no-print">
     <div class="flex items-center gap-4">
         <button onclick="document.getElementById('sidebar').classList.toggle('collapsed')" class="p-2 hover:bg-gray-100 rounded-lg">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">EduDB</span>
-            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">v4.9 Tags Engine</span>
+            <span class="text-[9px] font-bold text-gray-300 uppercase">v5.0 Dynamic Tags</span>
         </div>
     </div>
 
     <nav class="subject-nav">
-        <div onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub">
-            <img src="https://img.icons8.com/fluency/48/test-tube.png" alt="Q"> Química
-        </div>
-        <div onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab">
-            <img src="https://img.icons8.com/fluency/48/physics.png" alt="F"> Física
-        </div>
-        <div onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab">
-            <img src="https://img.icons8.com/fluency/48/math.png" alt="M"> Mat II
-        </div>
-        <div onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab">
-            <img src="https://img.icons8.com/fluency/48/line-chart.png" alt="C"> CCSS II
-        </div>
-        <div onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab">
-            <img src="https://img.icons8.com/fluency/48/circuit.png" alt="T"> Tecno II
-        </div>
-        <div onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab">
-            <img src="https://img.icons8.com/fluency/48/ruler-pencil.png" alt="D"> Dibujo II
-        </div>
+        <div onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub"><img src="https://img.icons8.com/fluency/48/test-tube.png"> Química</div>
+        <div onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab"><img src="https://img.icons8.com/fluency/48/physics.png"> Física</div>
+        <div onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/math.png"> Mat II</div>
+        <div onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/line-chart.png"> CCSS II</div>
+        <div onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/circuit.png"> Tecno II</div>
+        <div onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/ruler-pencil.png"> Dibujo II</div>
     </nav>
 
     <div class="flex items-center gap-3">
-        <button onclick="document.getElementById('examPanel').classList.add('open')" class="bg-black text-white px-5 py-2 rounded-xl text-[10px] font-bold tracking-widest hover:scale-105 transition">
+        <button onclick="document.getElementById('examPanel').classList.add('open')" class="bg-black text-white px-5 py-2 rounded-xl text-[10px] font-bold tracking-widest transition">
             MODO EXAMEN (<span id="examCount">0</span>)
         </button>
     </div>
@@ -181,50 +81,48 @@
 
 <div class="flex flex-1 overflow-hidden relative">
     
-    <aside id="sidebar" class="no-print p-6 flex flex-col gap-6 overflow-y-auto">
-        <button onclick="resetFilters()" class="w-full py-2 bg-gray-50 text-gray-400 text-[9px] font-black uppercase rounded-lg hover:bg-gray-100">Limpiar Filtros</button>
+    <aside id="sidebar" class="no-print p-6 flex flex-col gap-6 overflow-y-auto custom-scroll bg-white">
+        <button onclick="resetFilters()" class="w-full py-2 bg-gray-50 text-gray-400 text-[9px] font-black uppercase rounded-lg">Limpiar Filtros</button>
 
         <div>
             <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Buscador</label>
-            <input id="search" type="text" placeholder="Buscar enunciado..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-colors">
-        </div>
-
-        <div>
-            <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Contenido (Tags)</label>
-            <select id="tagSelect" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
+            <input id="search" type="text" placeholder="Buscar concepto..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-colors">
         </div>
 
         <div>
             <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque</label>
-            <select id="topicSelect" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
+            <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
         </div>
 
         <div>
             <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Año</label>
-            <select id="yearSelect" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
+            <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
+        </div>
+
+        <div>
+            <label class="text-[10px] uppercase font-bold text-gray-400 mb-3 block tracking-widest">Contenidos en el filtro</label>
+            <div id="tagCloud" class="flex flex-wrap gap-2">
+                </div>
         </div>
     </aside>
 
     <main class="flex-1 overflow-y-auto p-8 relative bg-[#fcfcfc]">
-        <img id="placeholder-icon" src="https://img.icons8.com/fluency/240/test-tube.png" alt="Watermark">
-        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest">Realice una búsqueda para ver resultados</div>
+        <img id="placeholder-icon" src="https://img.icons8.com/fluency/240/test-tube.png">
+        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center">Aplique un filtro para visualizar contenido</div>
         <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
-        <div id="loader" class="hidden text-center py-20 opacity-30 italic">Buscando en base de datos...</div>
+        <div id="loader" class="hidden text-center py-20 opacity-30 italic">Cargando base de datos...</div>
     </main>
 
-    <div id="examPanel" class="no-print flex flex-col">
+    <div id="examPanel" class="no-print flex flex-col shadow-2xl">
         <div class="p-6 flex items-center justify-between border-b">
-            <h3 class="font-black text-sm tracking-widest">CONFIGURADOR</h3>
+            <h3 class="font-black text-sm tracking-widest text-gray-800 uppercase">Configurador</h3>
             <button onclick="document.getElementById('examPanel').classList.remove('open')" class="text-gray-400 hover:text-black">✕</button>
         </div>
         <div class="p-6 flex-1 space-y-6 overflow-y-auto">
-            <div class="bg-gray-50 p-5 rounded-3xl space-y-4">
-                <input id="h-inst" type="text" placeholder="Nombre de la Institución" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+            <div class="bg-gray-50 p-6 rounded-3xl space-y-4">
+                <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-3 rounded-xl text-[10px] outline-none">
                 <input id="h-title" type="text" placeholder="Título del Examen" class="w-full border p-3 rounded-xl text-[10px] outline-none">
-                <div class="grid grid-cols-2 gap-2">
-                    <input id="h-course" type="text" placeholder="Curso/Grupo" class="w-full border p-3 rounded-xl text-[10px] outline-none">
-                    <input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-3 rounded-xl text-[10px] outline-none">
-                </div>
+                <div class="grid grid-cols-2 gap-2"><input id="h-course" type="text" placeholder="Curso" class="w-full border p-3 rounded-xl text-[10px] outline-none"><input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-3 rounded-xl text-[10px] outline-none"></div>
             </div>
             <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-[10px] font-black tracking-widest shadow-xl">GENERAR PDF</button>
         </div>
@@ -244,6 +142,7 @@ const subjectConfig = {
 let currentSubject = "QUIM";
 let allQuestions = [];
 let selectedIds = new Set();
+let activeTagFilter = "all";
 
 function autoChem(text) {
     if (!text) return "";
@@ -280,45 +179,66 @@ async function loadData() {
         });
         const results = await Promise.all(promises);
         allQuestions = results.flat();
-        populateFilters();
+        populateSelectors();
+        updateDynamicTags();
         loader.classList.add('hidden');
-    } catch (e) { console.error("Error cargando archivos", e); }
+    } catch (e) { console.error("Error", e); }
 }
 
-function populateFilters() {
+function populateSelectors() {
     const tSel = document.getElementById('topicSelect');
     const ySel = document.getElementById('yearSelect');
-    const tagSel = document.getElementById('tagSelect');
-    
     const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
     const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
-    
-    // Extracción dinámica de tags
-    const allTags = [];
-    allQuestions.forEach(q => { if(q.detected_topics) allTags.push(...q.detected_topics); });
-    const uniqueTags = [...new Set(allTags)].sort();
 
     tSel.innerHTML = '<option value="all">Bloque: Todos</option>';
     topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
 
     ySel.innerHTML = '<option value="all">Año: Todos</option>';
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
+}
 
-    tagSel.innerHTML = '<option value="all">Contenido: Todos</option>';
-    uniqueTags.forEach(tag => tagSel.innerHTML += `<option value="${tag}">${tag}</option>`);
+// ACTUALIZA LA NUBE DE TAGS EN FUNCIÓN DE LOS SELECTORES
+function updateDynamicTags() {
+    const topic = document.getElementById('topicSelect').value;
+    const year = document.getElementById('yearSelect').value;
+    const cloud = document.getElementById('tagCloud');
+
+    // Filtramos las preguntas para ver qué tags están disponibles en este contexto
+    const visibleQs = allQuestions.filter(q => {
+        const okTopic = topic === 'all' || q.topic_name === topic;
+        const okYear = year === 'all' || q.exam_year == year;
+        return okTopic && okYear;
+    });
+
+    const tagsInContext = [];
+    visibleQs.forEach(q => { if(q.detected_topics) tagsInContext.push(...q.detected_topics); });
+    const uniqueTags = [...new Set(tagsInContext)].sort();
+
+    cloud.innerHTML = "";
+    uniqueTags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = `tag-cloud-item ${activeTagFilter === tag ? 'active-tag' : ''}`;
+        span.textContent = tag;
+        span.onclick = () => {
+            activeTagFilter = (activeTagFilter === tag) ? "all" : tag;
+            updateDynamicTags();
+            render();
+        };
+        cloud.appendChild(span);
+    });
 }
 
 function render() {
     const year = document.getElementById('yearSelect').value;
     const topic = document.getElementById('topicSelect').value;
-    const tag = document.getElementById('tagSelect').value;
     const term = document.getElementById('search').value.trim().toLowerCase();
     const container = document.getElementById('questions');
     const stats = document.getElementById('stats');
 
-    if (!term && year === 'all' && topic === 'all' && tag === 'all') {
+    if (!term && year === 'all' && topic === 'all' && activeTagFilter === 'all') {
         container.innerHTML = '';
-        stats.textContent = "Realice una búsqueda para ver resultados";
+        stats.textContent = "Aplique un filtro para visualizar contenido";
         document.getElementById('placeholder-icon').style.display = 'block';
         return;
     }
@@ -329,7 +249,7 @@ function render() {
         const okText = (q.text || "").toLowerCase().includes(term);
         const okTopic = topic === 'all' || q.topic_name === topic;
         const okYear = year === 'all' || q.exam_year == year;
-        const okTag = tag === 'all' || (q.detected_topics && q.detected_topics.includes(tag));
+        const okTag = activeTagFilter === 'all' || (q.detected_topics && q.detected_topics.includes(activeTagFilter));
         return okText && okTopic && okYear && okTag;
     });
 
@@ -342,19 +262,17 @@ function render() {
         card.className = `data-row ${isSelected ? 'ring-2 ring-black border-black shadow-md' : ''}`;
         
         const cleanText = autoChem((q.text || "").replace(/\\n/g, '\n'));
-        const tagsHTML = (q.detected_topics || []).map(t => `<span class="tag-pill">${t}</span>`).join(' ');
+        const contentsHTML = (q.detected_topics || []).map(t => `<span class="tag-badge pill-content">${t}</span>`).join(' ');
 
         card.innerHTML = `
-            <div class="flex justify-between items-start mb-4">
+            <div class="flex justify-between items-start mb-6">
                 <div>
                     <h2 class="text-3xl font-black leading-none">${q.exam_year}</h2>
                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">${q.exam_model || ''}</span>
                 </div>
                 <div class="flex flex-col items-end gap-2">
-                    <span class="text-[9px] font-black px-4 py-1.5 bg-black text-white rounded-full uppercase tracking-tighter">
-                        ${q.topic_name}
-                    </span>
-                    <div class="flex gap-1 flex-wrap justify-end">${tagsHTML}</div>
+                    <span class="tag-badge pill-topic">${q.topic_name}</span>
+                    <div class="flex gap-1 flex-wrap justify-end">${contentsHTML}</div>
                 </div>
             </div>
             
@@ -363,7 +281,7 @@ function render() {
             </div>
 
             <div class="flex justify-between items-center no-print border-t pt-4">
-                <button onclick="toggleInExam('${q.id}')" class="text-[10px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">
+                <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">
                     ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
                 </button>
                 <span class="text-[9px] font-mono text-gray-300 italic">${q.community || ''}</span>
@@ -386,46 +304,29 @@ function resetFilters() {
     document.getElementById('search').value = "";
     document.getElementById('topicSelect').value = "all";
     document.getElementById('yearSelect').value = "all";
-    document.getElementById('tagSelect').value = "all";
+    activeTagFilter = "all";
+    updateDynamicTags();
     render();
 }
 
 function printExam() {
     const qs = allQuestions.filter(q => selectedIds.has(q.id));
     if (qs.length === 0) return alert("Selecciona preguntas primero");
-    
     const win = window.open('', '_blank');
     const inst = document.getElementById('h-inst').value || "INSTITUCIÓN";
     const title = document.getElementById('h-title').value || "EXAMEN";
 
     let h = `<html><head><title>Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <style>
-        body{font-family:'Lora', serif; padding:40px;}
-        .header{border-bottom:2px solid #000; padding-bottom:15px; margin-bottom:30px;}
-        .q{margin-bottom:40px; page-break-inside:avoid;}
-        sub { font-size: 0.7em; }
-    </style></head><body>
-    <div class="header">
-        <h1 style="margin:0; font-size:24px;">${inst}</h1>
-        <p><strong>${title}</strong> | Asignatura: ${subjectConfig[currentSubject].title}</p>
-        <p>Alumno: ___________________________________ | Curso: ${document.getElementById('h-course').value}</p>
-    </div>`;
+    <style>body{font-family:'Lora', serif; padding:40px;} .header{border-bottom:2px solid #000; padding-bottom:15px; margin-bottom:30px;} .q{margin-bottom:40px; page-break-inside:avoid;} sub{font-size:0.7em;}</style></head><body>
+    <div class="header"><h1>${inst}</h1><p><strong>${title}</strong> | Asignatura: ${subjectConfig[currentSubject].title}</p><p>Alumno: ___________________________________ | Curso: ${document.getElementById('h-course').value}</p></div>`;
     
-    qs.forEach((q, i) => { 
-        h += `<div class="q"><strong>EJERCICIO ${i+1}.</strong><br>${marked.parse(autoChem(q.text.replace(/\\n/g, '\n')))}</div>`; 
-    });
-    
+    qs.forEach((q, i) => { h += `<div class="q"><strong>EJERCICIO ${i+1}.</strong><br>${marked.parse(autoChem(q.text.replace(/\\n/g, '\n')))}</div>`; });
     h += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});window.print();<\/script></body></html>`;
-    
-    win.document.write(h);
-    win.document.close();
+    win.document.write(h); win.document.close();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search').oninput = render;
-    ['topicSelect', 'yearSelect', 'tagSelect'].forEach(id => {
-        document.getElementById(id).onchange = render;
-    });
     switchSubject('QUIM');
 });
 </script>
