@@ -1,6 +1,6 @@
 [
   {
-    "text": "**EJERCICIO 2. OPCIÓN A.**\na) **Un motor Otto de 4T y 4 cilindros consume 9 litros a la hora de un combustible cuyo poder calorífico es 41000 kJ / kg y densidad 0,850 kg / l. Se sabe que tiene un rendimiento del 40 %, el diámetro de cada pistón es 70 mm y la carrera 90 mm. Obtener la potencia desarrollada y la cilindrada del motor.** (1,5 puntos)\nb) **Mediante una bomba de calor reversible se quiere climatizar una nave industrial a 23 ºC en invierno. La máquina tiene una eficiencia real de 5 y se sabe que es el 30 % de la ideal. Calcular la temperatura media en el exterior.** (1 punto)",
+    "text": "**EJERCICIO 2. OPCIÓN A.**\n\na) **Un motor Otto de 4T y 4 cilindros consume 9 litros a la hora de un combustible cuyo poder calorífico es 41000 kJ / kg y densidad 0,850 kg / l. Se sabe que tiene un rendimiento del 40 %, el diámetro de cada pistón es 70 mm y la carrera 90 mm. Obtener la potencia desarrollada y la cilindrada del motor.** \n\nb) **Mediante una bomba de calor reversible se quiere climatizar una nave industrial a 23 ºC en invierno. La máquina tiene una eficiencia real de 5 y se sabe que es el 30 % de la ideal. Calcular la temperatura media en el exterior.**",
     "topic_name": "Máquinas Térmicas",
     "exam_year": 2025,
     "exam_model": "Titular-A",
@@ -16,7 +16,7 @@
     "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
   },
   {
-    "text": "**EJERCICIO 2 OPCIÓN A**\n\n**a) Un motor Diésel tiene un rendimiento del 45 % y consume 8,5 litros en una hora de un combustible que tiene una densidad de 0,7 kg / l y un poder calorífico de 13170 kcal / kg. Calcular la potencia desarrollada por el motor y la cantidad de calor perdido en una hora de funcionamiento (1 caloría = 4,18 Julios). (1,25 puntos)**\n**b) Un frigorífico está situado en una vivienda cuya temperatura media es 22 ºC y su eficiencia es el 25 % de la ideal. La potencia del compresor es 1 kW y la temperatura en el interior del frigorífico es 5 ºC. Calcular la eficiencia de la máquina y el calor cedido al foco caliente por unidad de tiempo. (1,25 puntos)**",
+    "text": "**EJERCICIO 2 OPCIÓN Aa) Un motor Diésel tiene un rendimiento del 45 % y consume 8,5 litros en una hora de un combustible que tiene una densidad de 0,7 kg / l y un poder calorífico de 13170 kcal / kg. Calcular la potencia desarrollada por el motor y la cantidad de calor perdido en una hora de funcionamiento (1 caloría = 4,18 Julios). \n**b) Un frigorífico está situado en una vivienda cuya temperatura media es 22 ºC y su eficiencia es el 25 % de la ideal. La potencia del compresor es 1 kW y la temperatura en el interior del frigorífico es 5 ºC. Calcular la eficiencia de la máquina y el calor cedido al foco caliente por unidad de tiempo.",
     "topic_name": "Máquinas Térmicas",
     "exam_year": 2025,
     "exam_model": "Titular-B",
