@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>PEvAU-DB | TodoPAU v5.7</title>
+    <title>PEvAU-DB | TodoPAU v5.8</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -39,6 +39,9 @@
 
         .problem-image { max-width: 100%; max-height: 400px; height: auto; margin: 1rem 0; border-radius: 8px; display: block; border: 1px solid #eee; }
 
+        .solucion-panel { background: #fdfdfd; border: 1px dashed #cbd5e1; border-radius: 12px; padding: 1.5rem; margin-top: 1rem; display: none; }
+        .solucion-panel.visible { display: block; }
+
         #placeholder-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 280px; pointer-events: none; }
         #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s; z-index: 100; }
         #examPanel.open { right: 0; }
@@ -57,7 +60,7 @@
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">PEvAU-DB</span>
-            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">TODO PAU v5.7</span>
+            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">TODO PAU v5.8</span>
         </div>
     </div>
 
@@ -154,7 +157,8 @@ const subjectConfig = {
     'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', soft: 'rgba(101, 31, 255, 0.1)', icon: 'https://img.icons8.com/fluency/48/math.png' },
     'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', soft: 'rgba(245, 0, 87, 0.1)', icon: 'https://img.icons8.com/fluency/48/line-chart.png' },
     'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', soft: 'rgba(255, 145, 0, 0.1)', icon: 'https://img.icons8.com/fluency/48/circuit.png' },
-    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/drafting-compass.png' }};
+    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/drafting-compass.png' }
+};
 
 let currentSubject = "QUIM";
 let allQuestions = [];
@@ -163,19 +167,23 @@ let activeTagFilter = "all";
 
 function autoChem(text) {
     if (!text) return "";
-    // Aseguramos que los números en fórmulas se rendericen como subíndices
     return text.replace(/\b([A-Z][a-z]?\d+|[A-Z][a-z]?\(.*?\)\d*|[A-Z][a-z]?)+\b/g, (f) => /\d/.test(f) ? f.replace(/(\d+)/g, '<sub>$1</sub>') : f);
 }
 
-function renderContent(question) {
-    // CORRECCIÓN: Procesamos \n\n para saltos de línea y limpiamos espacios excesivos
-    let text = question.text.replace(/\\n/g, '\n');
-
-    // 🔧 Arregla casos como (Z= \n\n19)
+function renderFormattedText(rawText) {
+    if (!rawText) return "";
+    // Limpieza de saltos de línea y formatos raros
+    let text = rawText.replace(/\\n/g, '\n');
     text = text.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g, '(Z=$1)');
-
-    // Limpieza general de saltos excesivos
     text = text.replace(/\n{3,}/g, '\n\n');
+    return marked.parse(autoChem(text));
+}
+
+function renderContent(question) {
+    let text = question.text.replace(/\\n/g, '\n');
+    text = text.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g, '(Z=$1)');
+    text = text.replace(/\n{3,}/g, '\n\n');
+
     let imageTag = (question.has_image && question.image_data) ? `<img src="${question.image_data}" class="problem-image">` : "";
 
     if (imageTag) {
@@ -216,7 +224,6 @@ async function loadData() {
         const promises = index.topics.map(async t => {
             const res = await fetch(`${config.folder}/${t.file}`);
             let raw = await res.text();
-            // Sanitización profunda de strings JSON
             raw = raw.replace(/\\/g, "\\\\").replace(/\\\\n/g, "\\n").replace(/\\\\"/g, "\\\"").replace(/\\\\u/g, "\\u");
             return JSON.parse(raw);
         });
@@ -253,7 +260,6 @@ function updateDynamicTags() {
     const cloud = document.getElementById('tagCloud');
     const section = document.getElementById('tagCloudSection');
 
-    // Nube activa si hay Bloque O Año seleccionado
     if (topic === 'all' && year === 'all') { 
         section.classList.add('hidden'); 
         activeTagFilter = "all"; 
@@ -285,6 +291,18 @@ function updateDynamicTags() {
         span.onclick = () => { activeTagFilter = activeTagFilter === tag ? "all" : tag; updateDynamicTags(); render(); };
         cloud.appendChild(span);
     });
+}
+
+function toggleSolucion(id) {
+    const panel = document.getElementById(`sol-${id}`);
+    const btn = document.getElementById(`btn-sol-${id}`);
+    if (panel.classList.contains('visible')) {
+        panel.classList.remove('visible');
+        btn.textContent = "VER SOLUCIÓN";
+    } else {
+        panel.classList.add('visible');
+        btn.textContent = "OCULTAR SOLUCIÓN";
+    }
 }
 
 function render() {
@@ -326,8 +344,21 @@ function render() {
                 </div>
             </div>
             <div class="prose prose-sm text-gray-700 font-medium mb-4">${renderContent(q)}</div>
+            
+            <div id="sol-${q.id}" class="solucion-panel prose prose-sm">
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 border-b pb-1">Solución Sugerida</p>
+                ${renderFormattedText(q.solution || "No hay solución disponible actualmente.")}
+            </div>
+
             <div class="flex justify-between items-center no-print border-t pt-4 mt-6">
-                <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white shadow-md' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}</button>
+                <div class="flex gap-2">
+                    <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white shadow-md' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">
+                        ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
+                    </button>
+                    <button id="btn-sol-${q.id}" onclick="toggleSolucion('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border border-gray-200 text-gray-500 hover:bg-blue-600 hover:text-white transition-all">
+                        VER SOLUCIÓN
+                    </button>
+                </div>
                 <span class="text-[9px] font-mono text-gray-300 italic">${q.community || ''}</span>
             </div>
         `;
