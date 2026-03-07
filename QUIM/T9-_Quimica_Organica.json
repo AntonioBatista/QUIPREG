@@ -1,5 +1,38 @@
 [
   {
+    "text": "B4. Indique los productos que se obtienen en cada una de las siguientes reacciones, especificando el tipo de reacción:\n\na) CH3CH2COOH + CH3OH (en presencia de H+)\n\nb) CH3CH2CHClCH3 (en presencia de KOH/etanol)\n\nc) CH3CH=CH2 + H2O (en presencia de H+)",
+    "topic_name": "T9: Química Orgánica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Reacciones orgánicas",
+      "Esterificación",
+      "Eliminación",
+      "Adición"
+    ],
+    "id": "cyipqd0fg",
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+  },
+  {
+    "text": "Razone si son verdaderas o falsas las siguientes afirmaciones:\n\na) Los compuestos obtenidos, según la regla de Markovnikov, por adición de HBr al CH2=CHCH2CH3 y CH3CH=CHCH3 son iguales.\n\nb) El CH2=C(CH3)CH3 presenta isomería cis-trans, pero el CH3CH=CHCH3 no.\n\nc) El CH3COOH no desvía el plano de la luz polarizada.",
+    "topic_name": "T9: Química Orgánica",
+    "exam_year": 2024,
+    "exam_model": "Reserva-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Reacciones orgánicas",
+      "Isomería",
+      "Quiralidad"
+    ],
+    "id": "r90vfc0k6",
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
     "text": "4B. Responda SOLO DOS apartados:\n\na) Escriba una reacción que transforme el compuesto CH3CH=CHCH2CH3 en un alcohol.\n\nb) Dibuje un isómero de cadena del compuesto CH3CH2CH2CH3.\n\nc) Escriba la estructura de un alcohol secundario de tres átomos de carbono en el que haya hibridación sp2.",
     "topic_name": "T9: Química Orgánica",
     "exam_year": 2025,
