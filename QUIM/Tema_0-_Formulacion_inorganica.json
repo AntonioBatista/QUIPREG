@@ -151,7 +151,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "rujc1mwsx",
-    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Formulación inorgánica",
+      "Formulación orgánica",
+      "Óxidos",
+      "Oxoácidos",
+      "Peróxidos",
+      "Sales ácidas",
+      "Fenoles",
+      "Éteres",
+      "Nomenclatura química"
+    ]
   },
   {
     "text": "A₁. Formule o nombre los siguientes compuestos:\n\na) Óxido de platino(IV); \n\nb) Perclorato de potasio; \n\nc) Nitrobenceno; \n\nd) HIO₃; \n\ne) HgSO₃; \n\nf) CH₃COCH₂CH₂CH₃",
@@ -162,7 +173,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "lvpowof2w",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Formulación inorgánica",
+      "Formulación orgánica",
+      "Óxidos",
+      "Oxosales",
+      "Oxoácidos",
+      "Cetonas",
+      "Nitrocompuestos",
+      "Nomenclatura química"
+    ]
   },
   {
     "text": "A₂. Formule o nombre los siguientes compuestos:\n\na) Hidróxido de cesio; \n\nb) Permanganato de litio; \n\nc) Etanamida; \n\nd) (NH₄)2S; \n\ne) PH₃; \n\nf) CH₂=CHCH₂CH=CH₂",
