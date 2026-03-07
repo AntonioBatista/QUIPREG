@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>PEvAU-DB | TodoPAU v5.8</title>
+    <title>PEvAU-DB | TodoPAU v5.9</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -39,8 +39,11 @@
 
         .problem-image { max-width: 100%; max-height: 400px; height: auto; margin: 1rem 0; border-radius: 8px; display: block; border: 1px solid #eee; }
 
-        .solucion-panel { background: #fdfdfd; border: 1px dashed #cbd5e1; border-radius: 12px; padding: 1.5rem; margin-top: 1rem; display: none; }
-        .solucion-panel.visible { display: block; }
+        .solucion-panel { background: #fdfdfd; border: 1px dashed var(--subject-color); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; display: none; }
+        .solucion-panel.visible { display: block; border-left-width: 4px; }
+
+        .btn-sol-active { background: var(--subject-color) !important; color: white !important; border-color: var(--subject-color) !important; box-shadow: 0 4px 10px var(--subject-soft); }
+        .btn-sol-empty { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
 
         #placeholder-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 280px; pointer-events: none; }
         #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s; z-index: 100; }
@@ -60,7 +63,7 @@
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">PEvAU-DB</span>
-            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">TODO PAU v5.8</span>
+            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">TODO PAU v5.9</span>
         </div>
     </div>
 
@@ -171,8 +174,7 @@ function autoChem(text) {
 }
 
 function renderFormattedText(rawText) {
-    if (!rawText) return "";
-    // Limpieza de saltos de línea y formatos raros
+    if (!rawText || rawText === "") return "<span class='text-gray-400 italic'>Contenido no disponible.</span>";
     let text = rawText.replace(/\\n/g, '\n');
     text = text.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g, '(Z=$1)');
     text = text.replace(/\n{3,}/g, '\n\n');
@@ -298,10 +300,10 @@ function toggleSolucion(id) {
     const btn = document.getElementById(`btn-sol-${id}`);
     if (panel.classList.contains('visible')) {
         panel.classList.remove('visible');
-        btn.textContent = "VER SOLUCIÓN";
+        btn.innerHTML = btn.dataset.hasSol === "true" ? "VER SOLUCIÓN" : "SIN SOLUCIÓN";
     } else {
         panel.classList.add('visible');
-        btn.textContent = "OCULTAR SOLUCIÓN";
+        btn.innerHTML = "OCULTAR SOLUCIÓN";
     }
 }
 
@@ -331,6 +333,7 @@ function render() {
     
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
+        const hasSolution = q.solution && q.solution.trim().length > 0;
         const card = document.createElement('div');
         card.className = `data-row ${isSelected ? 'ring-2 ring-black border-black shadow-md' : ''}`;
         const contentsHTML = (q.detected_topics || []).map(t => `<span class="tag-badge pill-content">${t}</span>`).join(' ');
@@ -347,7 +350,7 @@ function render() {
             
             <div id="sol-${q.id}" class="solucion-panel prose prose-sm">
                 <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 border-b pb-1">Solución Sugerida</p>
-                ${renderFormattedText(q.solution || "No hay solución disponible actualmente.")}
+                ${renderFormattedText(q.solution)}
             </div>
 
             <div class="flex justify-between items-center no-print border-t pt-4 mt-6">
@@ -355,8 +358,12 @@ function render() {
                     <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white shadow-md' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">
                         ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
                     </button>
-                    <button id="btn-sol-${q.id}" onclick="toggleSolucion('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border border-gray-200 text-gray-500 hover:bg-blue-600 hover:text-white transition-all">
-                        VER SOLUCIÓN
+                    <button id="btn-sol-${q.id}" 
+                            data-has-sol="${hasSolution}"
+                            onclick="toggleSolucion('${q.id}')" 
+                            class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all 
+                            ${hasSolution ? 'btn-sol-active' : 'btn-sol-empty text-gray-300'}">
+                        ${hasSolution ? 'VER SOLUCIÓN' : 'SIN SOLUCIÓN'}
                     </button>
                 </div>
                 <span class="text-[9px] font-mono text-gray-300 italic">${q.community || ''}</span>
