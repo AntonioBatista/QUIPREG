@@ -116,6 +116,7 @@
 <div id="printArea" class="hidden"></div>
 
 <script>
+// 1. Configuración de materias y rutas
 const subjectConfig = {
     'QUIM':   { title: 'Química', icon: '🧪', folder: 'QUIM', file: 'indexquim.json', color: '#10b981', bg: '#f0fdf4' },
     'FIS':    { title: 'Física', icon: '🧲', folder: 'FIS', file: 'indexfis.json', color: '#3b82f6', bg: '#eff6ff' },
@@ -129,82 +130,94 @@ let currentSubject = "QUIM";
 let allQuestions = [];
 let selectedIds = new Set();
 
-function toggleSidebar() { document.getElementById('sidebar').classList.toggle('collapsed'); }
+function toggleSidebar() { 
+    const sb = document.getElementById('sidebar');
+    if (sb) sb.classList.toggle('collapsed'); 
+}
 
 function switchSubject(id) {
+    if (!subjectConfig[id]) return;
     currentSubject = id;
     const config = subjectConfig[id];
+    
     document.documentElement.style.setProperty('--subject-color', config.color);
     document.documentElement.style.setProperty('--bg', config.bg);
+    
     document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
-    document.getElementById(`btn-${id}`).classList.add('active-sub');
-    document.getElementById('mainTitle').innerHTML = `Banco · <span style="color:${config.color}">${config.icon} ${config.title}</span>`;
+    const btn = document.getElementById(`btn-${id}`);
+    if (btn) btn.classList.add('active-sub');
+    
+    const title = document.getElementById('mainTitle');
+    if (title) title.innerHTML = `Banco · <span style="color:${config.color}">${config.icon} ${config.title}</span>`;
+
     selectedIds.clear();
     updateExamCounter();
     loadData();
 }
 
+// 2. MOTOR DE CARGA ULTRA-RESISTENTE
 async function loadData() {
     const loader = document.getElementById('loader');
     const container = document.getElementById('questions');
-    const stats = document.getElementById('stats'); // El elemento que daba el error
+    const stats = document.getElementById('stats');
     const config = subjectConfig[currentSubject];
     
     if (loader) {
         loader.style.display = "block";
-        loader.innerHTML = `<div class="loading-pulse text-sm italic">⏳ Procesando /${config.folder}...</div>`;
+        loader.innerHTML = `<div class="loading-pulse italic">⏳ Reparando y cargando ${config.title}...</div>`;
     }
     if (container) container.innerHTML = "";
-    if (stats) stats.textContent = "CONECTANDO..."; // Solo intenta si existe
+    if (stats) stats.textContent = "SINCRONIZANDO...";
 
-    const indexUrl = `${config.folder}/${config.file}?v=${Date.now()}`;
+    const pathBase = config.folder + "/";
+    const indexUrl = pathBase + config.file;
 
     try {
         const response = await fetch(indexUrl);
-        if (!response.ok) throw new Error(`No se encontró ${indexUrl}`);
-        
-        const indexText = await response.text();
-        const data = JSON.parse(indexText);
+        if (!response.ok) throw new Error(`404: No existe ${indexUrl}`);
+        const data = await response.json();
         
         allQuestions = [];
         
         for (const topic of data.topics) {
-            const topicUrl = `${config.folder}/${topic.file}?v=${Date.now()}`;
             try {
-                const res = await fetch(topicUrl);
-                if (!res.ok) continue;
-
+                const res = await fetch(pathBase + topic.file);
                 let rawText = await res.text();
-                // Limpieza de barras invertidas de LaTeX para evitar errores JSON
-                rawText = rawText.replace(/\\(?![\\\/bfnrtu"'])/g, "\\\\");
-                
+
+                // --- REPARACIÓN DE JSON AL VUELO ---
+                // Duplicamos todas las barras invertidas que rompen el JSON (LaTeX)
+                // Pero respetamos las que ya son válidas como \n o \"
+                rawText = rawText.replace(/\\/g, "\\\\")
+                                 .replace(/\\\\n/g, "\\n")
+                                 .replace(/\\\\"/g, "\\\"")
+                                 .replace(/\\\\u/g, "\\u");
+
                 const questions = JSON.parse(rawText);
                 allQuestions.push(...questions);
             } catch (err) {
-                console.warn(`Error en el archivo ${topic.file}:`, err);
+                console.warn(`Error reparando tema: ${topic.file}`, err);
             }
         }
 
-        if (allQuestions.length === 0) throw new Error("No se pudo extraer información.");
+        if (allQuestions.length === 0) throw new Error("Base de datos vacía o corrupta.");
 
-        // Estas funciones deben existir en tu script
-        if (typeof populateTopicWeights === 'function') populateTopicWeights();
+        populateTopicWeights();
         render();
-        
         if (loader) loader.style.display = "none";
         
     } catch (e) {
-        console.error("ERROR FINAL:", e);
-        if (loader) loader.innerHTML = `<div class="text-red-500 p-4 border rounded bg-red-50">❌ Error: ${e.message}</div>`;
-        if (stats) stats.textContent = "ERROR";
+        console.error("ERROR CRÍTICO:", e);
+        if (loader) loader.innerHTML = `<div class="text-red-600 bg-red-50 p-4 rounded-xl border border-red-200 shadow-lg">
+            <h4 class="font-bold">❌ Error en los archivos de ${config.title}</h4>
+            <p class="text-xs mt-2">No se pudo parsear el JSON de GitHub. Posible comilla doble " sin escapar dentro de un texto.</p>
+        </div>`;
     }
 }
 
-    
-// --- FUNCIONES DE RENDER Y FILTROS ---
 function populateTopicWeights() {
     const container = document.getElementById('topicWeights');
-    const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
+    if (!container) return;
+    const topics = [...new Set(allQuestions.map(q => q.topic_name || "Sin Tema"))].sort();
     container.innerHTML = "";
     topics.forEach(t => {
         container.innerHTML += `
@@ -215,38 +228,59 @@ function populateTopicWeights() {
     });
 }
 
+// 3. RENDERIZADO SEGURO
 function render() {
-    const term = document.getElementById('search').value.toLowerCase();
-    const minYear = parseInt(document.getElementById('yearRange').value);
+    const searchInput = document.getElementById('search');
+    const yearInput = document.getElementById('yearRange');
     const container = document.getElementById('questions');
+    const stats = document.getElementById('stats');
+
+    if (!container) return;
+
+    const term = searchInput ? searchInput.value.toLowerCase() : "";
+    const minYear = yearInput ? parseInt(yearInput.value) : 2010;
     
     const filtered = allQuestions.filter(q => {
         const text = (q.text || "").toLowerCase();
-        const year = q.exam_year || 0;
-        return text.includes(term) && year >= minYear;
+        return text.includes(term) && (q.exam_year || 0) >= minYear;
     });
 
+    if (stats) stats.textContent = `${filtered.length} RESULTADOS`;
     container.innerHTML = "";
-    document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
 
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
         const card = document.createElement('div');
         card.className = `data-row p-6 shadow-sm border ${isSelected ? 'ring-2 ring-black border-black' : 'border-gray-100'}`;
+        
+        // Limpiar el texto de posibles fallos de escape antes de renderizar
+        const cleanText = (q.text || "").replace(/\\n/g, '\n');
+        const context = q.context_text ? `<div class="p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600 rounded-r-lg mb-4">${marked.parse(q.context_text.replace(/\\n/g, '\n'))}</div>` : "";
+        
         card.innerHTML = `
             <div class="flex justify-between mb-4 items-center">
-                <span class="text-lg font-black">${q.exam_year} <small class="opacity-40 font-normal">(${q.exam_model || ''})</small></span>
+                <span class="text-lg font-black">${q.exam_year || '?'} <small class="opacity-40 font-normal">(${q.exam_model || ''})</small></span>
                 <button onclick="toggleInExam('${q.id}')" class="px-4 py-1.5 rounded-full text-[10px] font-bold transition ${isSelected ? 'bg-red-500 text-white' : 'bg-gray-100 hover:bg-black hover:text-white'}">
                     ${isSelected ? 'QUITAR' : '+ SELECCIONAR'}
                 </button>
             </div>
-            <div class="prose text-sm text-gray-800 mb-2">${marked.parse(q.text || "")}</div>
-            <span class="text-[9px] uppercase tracking-widest font-bold opacity-30">${q.topic_name}</span>
+            <div class="prose prose-sm text-gray-800 mb-2">
+                ${context}
+                <div>${marked.parse(cleanText)}</div>
+            </div>
+            <span class="text-[9px] uppercase tracking-widest font-bold opacity-30">${q.topic_name || ''}</span>
         `;
         container.appendChild(card);
     });
 
-    renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+    // Renderizar fórmulas
+    renderMathInElement(container, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+    });
 }
 
 function toggleInExam(id) {
@@ -256,7 +290,10 @@ function toggleInExam(id) {
     render();
 }
 
-function updateExamCounter() { document.getElementById('examCount').textContent = selectedIds.size; }
+function updateExamCounter() {
+    const counter = document.getElementById('examCount');
+    if (counter) counter.textContent = selectedIds.size;
+}
 
 function generateByWeights() {
     selectedIds.clear();
@@ -277,17 +314,18 @@ function printExam() {
     if (questionsToPrint.length === 0) return alert("Selecciona preguntas primero.");
     
     const printWindow = window.open('', '_blank');
-    const inst = document.getElementById('instName').value || "CENTRO EDUCATIVO";
-    const title = document.getElementById('examTitle').value || "EXAMEN";
-    const instr = document.getElementById('examInstructions').value || "";
+    const inst = document.getElementById('instName')?.value || "CENTRO EDUCATIVO";
+    const title = document.getElementById('examTitle')?.value || "EXAMEN";
+    const instr = document.getElementById('examInstructions')?.value || "";
 
-    let html = `<html><head><title>Imprimir Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <style>body{font-family:serif;padding:40px;} .h{border-bottom:2px solid #000;margin-bottom:20px;display:flex;justify-content:space-between;} .q{margin-bottom:25px;}</style></head><body>
-    <div class="h"><div><h1>${inst}</h1><p>${title}</p></div><div>Asignatura: ${subjectConfig[currentSubject].title}<br>Fecha: ________</div></div>
+    let html = `<html><head><title>Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>body{font-family:serif;padding:40px;} .h{border-bottom:2px solid #000;padding-bottom:10px;margin-bottom:20px;display:flex;justify-content:space-between;} .q{margin-bottom:30px; page-break-inside: avoid;}</style></head><body>
+    <div class="h"><div><h1 style="margin:0">${inst}</h1><p style="margin:0">${title}</p></div><div>Asignatura: ${subjectConfig[currentSubject].title}<br>Fecha: ________</div></div>
     <p><i>${instr}</i></p>`;
     
     questionsToPrint.forEach((q, i) => {
-        html += `<div class="q"><strong>${i+1}.</strong> ${marked.parse(q.text)}</div>`;
+        const text = (q.text || "").replace(/\\n/g, '\n');
+        html += `<div class="q"><strong>Ejercicio ${i+1}.</strong> ${marked.parse(text)}</div>`;
     });
 
     html += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script>
@@ -298,13 +336,20 @@ function printExam() {
     printWindow.document.close();
 }
 
-document.getElementById('search').oninput = render;
-document.getElementById('yearRange').oninput = (e) => {
-    document.getElementById('yearVal').textContent = `Desde ${e.target.value}`;
-    render();
-};
+// Escuchas de eventos
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search');
+    const yearInput = document.getElementById('yearRange');
+    
+    if (searchInput) searchInput.oninput = render;
+    if (yearInput) yearInput.oninput = (e) => {
+        const label = document.getElementById('yearVal');
+        if (label) label.textContent = `Desde ${e.target.value}`;
+        render();
+    };
 
-document.addEventListener('DOMContentLoaded', () => switchSubject('QUIM'));
+    switchSubject('QUIM');
+});
 </script>
 </body>
 </html>
