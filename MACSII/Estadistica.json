@@ -1,6 +1,6 @@
 [
   {
-    "text": "**EJERCICIO 6**\nA partir de un estudio muestral se sabe que, con un nivel de confianza del 95%, la proporción de estudiantes de una universidad que tienen carnet de conducir pertenece al intervalo (0.5616, 0.7184).\n\na) **** Calcule la proporción muestral de estudiantes que tienen carnet de conducir.\n\nb) **** Calcule el error máximo cometido en la estimación de la proporción poblacional.\n\nc) **** Calcule el tamaño de la muestra seleccionada.\n\nd) **** Razone qué efecto producirá sobre la amplitud del intervalo un aumento del tamaño muestral.",
+    "text": "**EJERCICIO 6**\nA partir de un estudio muestral se sabe que, con un nivel de confianza del 95%, la proporción de estudiantes de una universidad que tienen carnet de conducir pertenece al intervalo (0.5616, 0.7184).\n\na) Calcule la proporción muestral de estudiantes que tienen carnet de conducir.\n\nb) Calcule el error máximo cometido en la estimación de la proporción poblacional.\n\nc) Calcule el tamaño de la muestra seleccionada.\n\nd) Razone qué efecto producirá sobre la amplitud del intervalo un aumento del tamaño muestral.",
     "topic_name": "Estadística",
     "exam_year": 2025,
     "exam_model": "Titular-B",
@@ -16,7 +16,7 @@
     "source_file": "Examen_Titular-B_ Matemáticas Aplicadas a las Ciencias Sociales II.pdf"
   },
   {
-    "text": "**EJERCICIO 7**\nEl tiempo de adaptación a la guardería, en días, de los menores de dos años andaluces, sigue una distribución Normal de media 10.5 días y desviación típica 1.5 días.\n\na) **** Se toma una muestra aleatoria de 25 menores de estas características. ¿Qué distribución sigue la media muestral del tiempo de adaptación? ¿Cuál es la probabilidad de que el tiempo medio de adaptación de esta muestra supere los 10 días?\n\nb) **** ¿Qué porcentaje de muestras de tamaño 25 nos proporcionará un tiempo medio de adaptación entre 8 y 11 días?",
+    "text": "**EJERCICIO 7**\nEl tiempo de adaptación a la guardería, en días, de los menores de dos años andaluces, sigue una distribución Normal de media 10.5 días y desviación típica 1.5 días.\n\na) Se toma una muestra aleatoria de 25 menores de estas características. ¿Qué distribución sigue la media muestral del tiempo de adaptación? ¿Cuál es la probabilidad de que el tiempo medio de adaptación de esta muestra supere los 10 días?\n\nb) ¿Qué porcentaje de muestras de tamaño 25 nos proporcionará un tiempo medio de adaptación entre 8 y 11 días?",
     "topic_name": "Estadística",
     "exam_year": 2025,
     "exam_model": "Titular-B",
