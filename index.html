@@ -116,7 +116,6 @@
 <div id="printArea" class="hidden"></div>
 
 <script>
-// 1. CONFIGURACIÓN EXACTA (Revisa mayúsculas en tus carpetas de GitHub)
 const subjectConfig = {
     'QUIM':   { title: 'Química', icon: '🧪', folder: 'QUIM', file: 'indexquim.json', color: '#10b981', bg: '#f0fdf4' },
     'FIS':    { title: 'Física', icon: '🧲', folder: 'FIS', file: 'indexfis.json', color: '#3b82f6', bg: '#eff6ff' },
@@ -133,7 +132,6 @@ let selectedIds = new Set();
 function toggleSidebar() { document.getElementById('sidebar').classList.toggle('collapsed'); }
 
 function switchSubject(id) {
-    if (!subjectConfig[id]) return;
     currentSubject = id;
     const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
@@ -153,52 +151,75 @@ async function loadData() {
     const config = subjectConfig[currentSubject];
     
     loader.style.display = "block";
-    loader.innerHTML = "Sincronizando con GitHub...";
+    loader.innerHTML = `<div class="loading-pulse">⏳ Conectando con /${config.folder}...</div>`;
     container.innerHTML = "";
-    stats.textContent = "CARGANDO...";
+    stats.textContent = "CONECTANDO...";
 
-    const pathBase = config.folder + "/";
-    const indexUrl = pathBase + config.file;
+    const indexUrl = `${config.folder}/${config.file}`;
 
     try {
+        console.log("Intentando cargar índice:", indexUrl);
         const response = await fetch(indexUrl);
-        if (!response.ok) throw new Error(`404: No se encuentra ${indexUrl}`);
         
-        const data = await response.json();
-        
-        // Verificamos si data.topics existe
-        if (!data.topics) throw new Error(`El archivo ${config.file} no tiene el formato {topics: [...]}`);
+        if (!response.ok) {
+            throw new Error(`No se encuentra el archivo: ${indexUrl} (Error ${response.status})`);
+        }
 
-        const promises = data.topics.map(t => 
-            fetch(pathBase + t.file)
-                .then(r => r.ok ? r.json() : [])
-                .catch(() => [])
-        );
+        const data = await response.json();
+        console.log("Índice cargado correctamente:", data);
+
+        if (!data.topics || !Array.isArray(data.topics)) {
+            throw new Error(`El archivo ${indexUrl} no tiene el formato correcto { "topics": [...] }`);
+        }
+
+        allQuestions = [];
         
-        const results = await Promise.all(promises);
-        allQuestions = results.flat();
-        
+        // Carga secuencial para detectar exactamente cuál falla
+        for (const topic of data.topics) {
+            const topicUrl = `${config.folder}/${topic.file}`;
+            console.log("Cargando tema:", topicUrl);
+            
+            try {
+                const res = await fetch(topicUrl);
+                if (!res.ok) throw new Error(`Error ${res.status} al cargar ${topicUrl}`);
+                const questions = await res.json();
+                allQuestions.push(...questions);
+            } catch (err) {
+                console.warn(`Error en el tema ${topic.file}:`, err);
+                // Si un tema falla, seguimos con los demás pero avisamos
+                loader.innerHTML += `<div class="text-[10px] text-orange-600">⚠️ Saltando ${topic.file} por error de formato.</div>`;
+            }
+        }
+
+        if (allQuestions.length === 0) {
+            throw new Error("No se han podido cargar preguntas de ningún archivo.");
+        }
+
         populateTopicWeights();
         render();
         loader.style.display = "none";
     } catch (e) {
-        console.error(e);
+        console.error("ERROR CRÍTICO:", e);
         loader.innerHTML = `
-            <div class="bg-red-50 border-l-4 border-red-500 p-4 text-red-700">
-                <p class="font-bold">Error de Carga</p>
-                <p class="text-xs">No se pudo cargar: <strong>${indexUrl}</strong></p>
-                <p class="text-[10px] mt-2 opacity-70">Causa probable: Nombre de carpeta o archivo incorrecto en GitHub (verifica mayúsculas).</p>
+            <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl text-red-800 max-w-md mx-auto shadow-xl">
+                <h3 class="font-black text-lg mb-2">❌ ERROR CRÍTICO</h3>
+                <p class="text-sm mb-4">${e.message}</p>
+                <div class="text-[10px] bg-white/50 p-2 rounded font-mono text-left">
+                    Sugerencias:<br>
+                    1. Revisa que la carpeta <strong>${config.folder}</strong> esté en mayúsculas.<br>
+                    2. Revisa que el archivo <strong>${config.file}</strong> no tenga errores de sintaxis (comas de más).<br>
+                    3. Verifica que GitHub ha terminado de publicar (tarda 1-2 min).
+                </div>
+                <button onclick="loadData()" class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-red-700 transition">REINTENTAR</button>
             </div>`;
         stats.textContent = "ERROR";
     }
 }
 
-// ... Mantén el resto de funciones (render, populateFilters, printExam...) igual que antes.
-// Solo asegúrate de que la función toggleInExam y render estén presentes.
-
+// --- FUNCIONES DE RENDER Y FILTROS ---
 function populateTopicWeights() {
     const container = document.getElementById('topicWeights');
-    const topics = [...new Set(allQuestions.map(q => q.topic_name || "Sin Tema"))].sort();
+    const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
     container.innerHTML = "";
     topics.forEach(t => {
         container.innerHTML += `
@@ -216,7 +237,8 @@ function render() {
     
     const filtered = allQuestions.filter(q => {
         const text = (q.text || "").toLowerCase();
-        return text.includes(term) && (q.exam_year || 0) >= minYear;
+        const year = q.exam_year || 0;
+        return text.includes(term) && year >= minYear;
     });
 
     container.innerHTML = "";
@@ -228,12 +250,13 @@ function render() {
         card.className = `data-row p-6 shadow-sm border ${isSelected ? 'ring-2 ring-black border-black' : 'border-gray-100'}`;
         card.innerHTML = `
             <div class="flex justify-between mb-4 items-center">
-                <span class="text-lg font-black">${q.exam_year || '?'}</span>
+                <span class="text-lg font-black">${q.exam_year} <small class="opacity-40 font-normal">(${q.exam_model || ''})</small></span>
                 <button onclick="toggleInExam('${q.id}')" class="px-4 py-1.5 rounded-full text-[10px] font-bold transition ${isSelected ? 'bg-red-500 text-white' : 'bg-gray-100 hover:bg-black hover:text-white'}">
                     ${isSelected ? 'QUITAR' : '+ SELECCIONAR'}
                 </button>
             </div>
             <div class="prose text-sm text-gray-800 mb-2">${marked.parse(q.text || "")}</div>
+            <span class="text-[9px] uppercase tracking-widest font-bold opacity-30">${q.topic_name}</span>
         `;
         container.appendChild(card);
     });
@@ -244,13 +267,58 @@ function render() {
 function toggleInExam(id) {
     if (selectedIds.has(id)) selectedIds.delete(id);
     else selectedIds.add(id);
-    document.getElementById('examCount').textContent = selectedIds.size;
+    updateExamCounter();
     render();
 }
 
 function updateExamCounter() { document.getElementById('examCount').textContent = selectedIds.size; }
 
-// Inicio
+function generateByWeights() {
+    selectedIds.clear();
+    document.querySelectorAll('.weight-input').forEach(input => {
+        const topic = input.dataset.topic;
+        const count = parseInt(input.value);
+        if (count > 0) {
+            const pool = allQuestions.filter(q => q.topic_name === topic).sort(() => 0.5 - Math.random());
+            pool.slice(0, count).forEach(q => selectedIds.add(q.id));
+        }
+    });
+    updateExamCounter();
+    render();
+}
+
+function printExam() {
+    const questionsToPrint = allQuestions.filter(q => selectedIds.has(q.id));
+    if (questionsToPrint.length === 0) return alert("Selecciona preguntas primero.");
+    
+    const printWindow = window.open('', '_blank');
+    const inst = document.getElementById('instName').value || "CENTRO EDUCATIVO";
+    const title = document.getElementById('examTitle').value || "EXAMEN";
+    const instr = document.getElementById('examInstructions').value || "";
+
+    let html = `<html><head><title>Imprimir Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>body{font-family:serif;padding:40px;} .h{border-bottom:2px solid #000;margin-bottom:20px;display:flex;justify-content:space-between;} .q{margin-bottom:25px;}</style></head><body>
+    <div class="h"><div><h1>${inst}</h1><p>${title}</p></div><div>Asignatura: ${subjectConfig[currentSubject].title}<br>Fecha: ________</div></div>
+    <p><i>${instr}</i></p>`;
+    
+    questionsToPrint.forEach((q, i) => {
+        html += `<div class="q"><strong>${i+1}.</strong> ${marked.parse(q.text)}</div>`;
+    });
+
+    html += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script>
+    <script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});window.print();<\/script></body></html>`;
+    
+    printWindow.document.write(html);
+    printWindow.document.close();
+}
+
+document.getElementById('search').oninput = render;
+document.getElementById('yearRange').oninput = (e) => {
+    document.getElementById('yearVal').textContent = `Desde ${e.target.value}`;
+    render();
+};
+
 document.addEventListener('DOMContentLoaded', () => switchSubject('QUIM'));
 </script>
 </body>
