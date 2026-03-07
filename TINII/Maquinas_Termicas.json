@@ -1,5 +1,26 @@
 [
   {
+    "text": "Un motor de combustión interna de 1200 cm3 de cilindrada y una relación de compresión de 11:1, dispone de 4 cilindros de 80 mm de carrera. El motor desarrolla una potencia de 12 kW con un consumo específico de 300 g / kW·h. El combustible usado tiene una densidad de 850 kg/m3 y un poder calorífico de 41000 kJ / kg. Calcular:\n\na) El diámetro y el volumen de la cámara de combustión de cada cilindro.\n\nb) El consumo de combustible, en litros, en un trayecto de 3 h de duración y la energía aportada por el combustible en ese tiempo.",
+    "topic_name": "Máquinas Térmicas",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Motores de combustión interna",
+      "Parámetros geométricos del motor",
+      "Rendimiento térmico",
+      "Consumo de combustible"
+    ],
+    "has_image": false,
+    "image_bbox": [],
+    "image_description": "",
+    "image_page": 1,
+    "id": "zpdk7jrrg",
+    "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "a) Un motor Diésel tiene un rendimiento del 45 % y consume 8,5 litros en una hora de un combustible que tiene una densidad de 0,7 kg / l y un poder calorífico de 13170 kcal / kg. Calcular la potencia desarrollada por el motor y la cantidad de calor perdido en una hora de funcionamiento (1 caloría = 4,18 Julios).\n\nb) Un frigorífico está situado en una vivienda cuya temperatura media es 22 ºC y su eficiencia es el 25 % de la ideal. La potencia del compresor es 1 kW y la temperatura en el interior del frigorífico es 5 ºC. Calcular la eficiencia de la máquina y el calor cedido al foco caliente por unidad de tiempo.",
     "topic_name": "Máquinas Térmicas",
     "exam_year": 2025,
