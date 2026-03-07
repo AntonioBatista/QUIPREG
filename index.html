@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Banco de Preguntas v4.5 | Codigo Corrector</title>
+    <title>Banco de Preguntas v4.6 | Codigo Corrector</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -12,20 +12,19 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/mhchem.min.js"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:italic,wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:italic,wght@400;600&display=swap');
         :root { --bg: #F8F9FA; --subject-color: #141414; --subject-bg-soft: rgba(20, 20, 20, 0.05); }
-        body { background-color: var(--bg); font-family: 'Inter', sans-serif; transition: all 0.4s ease; overflow: hidden; }
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; transition: all 0.3s ease; overflow: hidden; }
         
-        /* Sidebar Retráctil */
-        #sidebar { transition: transform 0.3s ease, width 0.3s ease; width: 320px; z-index: 40; }
-        #sidebar.collapsed { transform: translateX(-100%); width: 0; padding: 0; margin: 0; overflow: hidden; }
+        #sidebar { transition: transform 0.3s ease, width 0.3s ease; width: 300px; z-index: 40; }
+        #sidebar.collapsed { transform: translateX(-100%); width: 0; padding: 0; margin: 0; }
         
-        .glass-header { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+        .glass-header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.08); }
         .subject-tab { padding: 0.5rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.8rem; transition: 0.2s; color: #64748b; white-space: nowrap; }
         .subject-tab.active-sub { color: var(--subject-color); background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
 
         .data-row { border-left: 4px solid transparent; transition: 0.3s; background: white; border-radius: 12px; border: 1px solid #eee; }
-        .data-row:hover { border-left-color: var(--subject-color); transform: translateY(-2px); }
+        .data-row:hover { border-left-color: var(--subject-color); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.03); }
 
         .custom-scroll::-webkit-scrollbar { width: 4px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -33,7 +32,8 @@
         @media print {
             .no-print { display: none !important; }
             main { padding: 0 !important; width: 100% !important; overflow: visible !important; }
-            .data-row { border: none !important; margin-bottom: 30px !important; page-break-inside: avoid; }
+            .data-row { border: none !important; margin-bottom: 40px !important; page-break-inside: avoid; }
+            .exam-header-print { display: block !important; border-bottom: 2px solid black; padding-bottom: 1rem; margin-bottom: 2rem; }
         }
     </style>
 </head>
@@ -42,13 +42,16 @@
 
 <header class="glass-header px-6 py-3 flex items-center justify-between no-print relative z-50">
     <div class="flex items-center gap-4">
-        <button onclick="toggleSidebar()" class="p-2 hover:bg-black/5 rounded-lg transition-colors" title="Alternar Menú">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        <button onclick="toggleSidebar()" class="p-2 hover:bg-black/5 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
-        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white font-serif italic text-xl shadow-lg">v4</div>
+        <div class="flex flex-col">
+            <h1 id="mainTitle" class="text-sm font-black tracking-tight text-gray-900 leading-none italic">BANCO DE PREGUNTAS</h1>
+            <span class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">Codigo Corrector v4.6</span>
+        </div>
     </div>
 
-    <nav class="subject-nav-container flex gap-1 p-1 bg-black/5 rounded-xl overflow-x-auto no-scrollbar">
+    <nav class="flex gap-1 p-1 bg-black/5 rounded-xl overflow-x-auto no-scrollbar max-w-lg">
         <button onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub">🧪 Química</button>
         <button onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab">🧲 Física</button>
         <button onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab">⚙️ Tecno II</button>
@@ -57,95 +60,122 @@
         <button onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab">📐 Dibujo II</button>
     </nav>
 
-    <div id="stats" class="text-[11px] font-mono font-bold bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-sm text-gray-500">0 RES</div>
+    <div id="stats" class="text-[10px] font-mono font-bold border px-3 py-1.5 rounded-lg text-gray-500 bg-white">0 RESULTADOS</div>
 </header>
 
 <div class="flex flex-1 overflow-hidden relative">
-    <aside id="sidebar" class="bg-white border-r border-gray-200 flex flex-col no-print">
-        <div class="p-6 flex-1 overflow-y-auto custom-scroll space-y-6">
+    
+    <aside id="sidebar" class="bg-white border-r border-gray-100 flex flex-col no-print h-full">
+        <div class="p-6 flex-1 overflow-y-auto custom-scroll space-y-8">
+            
+            <button onclick="resetFilters()" class="w-full py-2 bg-gray-50 text-gray-400 text-[9px] font-black uppercase rounded-lg hover:bg-gray-100 transition">Limpiar Filtros</button>
+
             <section class="space-y-4">
-                <button onclick="resetFilters()" class="w-full py-2 bg-gray-100 hover:bg-gray-200 text-gray-500 text-[10px] font-bold uppercase rounded-xl transition-all">Limpiar Filtros</button>
-                
                 <div>
-                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Búsqueda</label>
-                    <input id="search" type="text" placeholder="Palabra clave..." class="w-full border p-2 rounded-xl text-sm outline-none focus:ring-2 focus:ring-black">
-                </div>
-
-                <div class="grid grid-cols-2 gap-2">
-                    <div>
-                        <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1 block">Año</label>
-                        <select id="yearSelect" class="w-full border p-2 rounded-lg text-xs bg-white"></select>
-                    </div>
-                    <div>
-                        <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1 block">Modelo</label>
-                        <select id="modelSelect" class="w-full border p-2 rounded-lg text-xs bg-white"></select>
-                    </div>
+                    <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Búsqueda</label>
+                    <input id="search" type="text" placeholder="¿Qué buscas?" class="w-full border-b focus:border-black p-1 text-sm outline-none transition-colors">
                 </div>
 
                 <div>
-                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1 block">Bloque Temático</label>
-                    <select id="topicSelect" class="w-full border p-2 rounded-lg text-xs bg-white"></select>
+                    <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque Temático</label>
+                    <select id="topicSelect" class="w-full border rounded-lg p-2 text-xs bg-gray-50 outline-none"></select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Desde Año</label>
+                        <select id="yearFrom" class="w-full border rounded-lg p-2 text-xs bg-gray-50 outline-none"></select>
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Hasta Año</label>
+                        <select id="yearTo" class="w-full border rounded-lg p-2 text-xs bg-gray-50 outline-none"></select>
+                    </div>
                 </div>
             </section>
 
-            <section class="pt-6 border-t space-y-4">
-                <h3 class="text-xs font-black text-blue-600 uppercase tracking-tighter">⚡ Configuración de Examen</h3>
+            <section class="pt-6 border-t border-gray-100">
+                <button onclick="toggleSection('examTools')" class="flex items-center justify-between w-full text-[10px] font-black uppercase text-blue-600 tracking-widest">
+                    🛠️ Herramientas Examen <span id="icon-examTools">⊕</span>
+                </button>
                 
-                <div class="space-y-3 bg-blue-50/50 p-4 rounded-2xl border border-blue-100">
-                    <div>
-                        <label class="text-[10px] font-bold text-blue-800 mb-2 block">CANTIDAD POR TEMA (Pesos)</label>
-                        <div id="topicWeights" class="space-y-2 max-h-48 overflow-y-auto custom-scroll pr-2">
+                <div id="examTools" class="hidden mt-6 space-y-6">
+                    <div class="bg-blue-50/50 p-4 rounded-2xl border border-blue-100">
+                        <p class="text-[9px] font-black text-blue-800 uppercase mb-3 italic">Sorteo Aleatorio</p>
+                        <div class="flex gap-2 items-end">
+                            <div class="flex-1">
+                                <label class="text-[8px] font-bold text-blue-400 block mb-1">Nº PREGUNTAS</label>
+                                <select id="autoSelectNum" onchange="handleNumSelect(this.value)" class="w-full border rounded p-1 text-xs outline-none">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="more">+ de 3</option>
+                                </select>
+                                <input id="autoManualNum" type="number" class="hidden w-full border rounded mt-1 p-1 text-xs" placeholder="¿Cuántas?">
                             </div>
+                            <button onclick="generateRandomSelection()" class="h-8 px-3 bg-blue-600 text-white rounded font-bold text-[10px] hover:bg-blue-700">SORTEAR</button>
+                        </div>
                     </div>
-                    
-                    <button onclick="generateByWeights()" class="w-full py-2 bg-blue-600 text-white rounded-xl text-[10px] font-bold shadow-md hover:bg-blue-700 transition">GENERAR POR PESOS</button>
-                </div>
 
-                <div class="bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100 space-y-3">
-                    <p class="text-[10px] font-bold text-emerald-800 uppercase italic">Formato Editorial</p>
-                    <input id="instName" type="text" placeholder="Nombre de la Institución" class="w-full border p-2 rounded-lg text-[10px]">
-                    <input id="examTitle" type="text" placeholder="Título del Examen" class="w-full border p-2 rounded-lg text-[10px]">
-                </div>
+                    <div class="bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100 space-y-3">
+                        <p class="text-[9px] font-black text-emerald-800 uppercase mb-3 italic">Cabecera del Examen</p>
+                        <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-2 rounded text-[10px]">
+                        <input id="h-title" type="text" placeholder="Título (Ej: 1er Parcial)" class="w-full border p-2 rounded text-[10px]">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input id="h-course" type="text" placeholder="Curso/Grupo" class="w-full border p-2 rounded text-[10px]">
+                            <input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-2 rounded text-[10px]">
+                        </div>
+                        <textarea id="h-instr" placeholder="Instrucciones..." class="w-full border p-2 rounded text-[10px] h-16"></textarea>
+                    </div>
 
-                <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-xs font-bold shadow-xl hover:scale-[1.02] transition">🖨️ IMPRIMIR SELECCIÓN (<span id="examCount">0</span>)</button>
+                    <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-[10px] font-black shadow-xl hover:scale-[1.02] transition uppercase tracking-widest">
+                        Generar PDF (<span id="examCount">0</span>)
+                    </button>
+                </div>
             </section>
         </div>
     </aside>
 
-    <main class="flex-1 overflow-y-auto p-4 md:p-8 relative bg-gray-50/30">
-        <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-4"></div>
-        <div id="loader" class="text-center py-20 opacity-30 italic">Cargando sistema...</div>
+    <main class="flex-1 overflow-y-auto p-4 md:p-10 relative bg-gray-50/20">
+        <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
+        <div id="loader" class="text-center py-24 opacity-20 italic text-xl font-serif">Sincronizando archivos...</div>
     </main>
 </div>
 
 <script>
 const subjectConfig = {
-    'QUIM':   { title: 'Química', icon: '🧪', folder: 'QUIM', file: 'indexquim.json', color: '#10b981', bg: '#f0fdf4' },
-    'FIS':    { title: 'Física', icon: '🧲', folder: 'FIS', file: 'indexfis.json', color: '#3b82f6', bg: '#eff6ff' },
-    'TINII':  { title: 'Tecnología Industrial II', icon: '⚙️', folder: 'TINII', file: 'indextinii.json', color: '#f59e0b', bg: '#fffbeb' },
-    'MATII':  { title: 'Matemáticas II', icon: '➗', folder: 'MATII', file: 'indexmatii.json', color: '#6366f1', bg: '#f5f3ff' },
-    'MACSII': { title: 'Mates Aplicadas CCSS', icon: '📈', folder: 'MACSII', file: 'indexmacsii.json', color: '#ec4899', bg: '#fdf2f8' },
-    'DTECII': { title: 'Dibujo Técnico II', icon: '📐', folder: 'DTECII', file: 'indexdtec.json', color: '#64748b', bg: '#f8fafc' }
+    'QUIM':   { title: 'Química', folder: 'QUIM', file: 'indexquim.json', color: '#10b981' },
+    'FIS':    { title: 'Física', folder: 'FIS', file: 'indexfis.json', color: '#3b82f6' },
+    'TINII':  { title: 'Tecnología Industrial II', folder: 'TINII', file: 'indextinii.json', color: '#f59e0b' },
+    'MATII':  { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#6366f1' },
+    'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#ec4899' },
+    'DTECII': { title: 'Dibujo Técnico II', folder: 'DTECII', file: 'indexdtec.json', color: '#64748b' }
 };
 
 let currentSubject = "QUIM";
 let allQuestions = [];
 let selectedIds = new Set();
 
-function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('collapsed');
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('collapsed'); }
+
+function toggleSection(id) {
+    const el = document.getElementById(id);
+    const icon = document.getElementById('icon-' + id);
+    const isHidden = el.classList.contains('hidden');
+    el.classList.toggle('hidden');
+    icon.textContent = isHidden ? "⊖" : "⊕";
+}
+
+function handleNumSelect(val) {
+    const input = document.getElementById('autoManualNum');
+    input.classList.toggle('hidden', val !== 'more');
 }
 
 function switchSubject(id) {
     currentSubject = id;
     const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
-    document.documentElement.style.setProperty('--bg', config.bg);
-    document.documentElement.style.setProperty('--subject-bg-soft', config.color + '15');
-    
     document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
     document.getElementById(`btn-${id}`).classList.add('active-sub');
-    
     selectedIds.clear();
     updateExamCounter();
     loadData();
@@ -155,14 +185,11 @@ async function loadData() {
     const loader = document.getElementById('loader');
     const container = document.getElementById('questions');
     const config = subjectConfig[currentSubject];
-    
-    loader.style.display = "block";
-    container.innerHTML = "";
+    loader.style.display = "block"; container.innerHTML = "";
 
     try {
         const response = await fetch(`${config.folder}/${config.file}`);
         const index = await response.json();
-        
         const promises = index.topics.map(async t => {
             try {
                 const res = await fetch(`${config.folder}/${t.file}`);
@@ -171,67 +198,44 @@ async function loadData() {
                 return JSON.parse(raw);
             } catch (err) { return []; }
         });
-        
         const results = await Promise.all(promises);
         allQuestions = results.flat();
-        
         populateFilters();
-        populateTopicWeights();
         render();
         loader.style.display = "none";
-    } catch (e) {
-        loader.innerHTML = `<div class="text-red-500">Error cargando ${config.title}</div>`;
-    }
+    } catch (e) { loader.innerHTML = "Error de conexión."; }
 }
 
 function populateFilters() {
     const tSel = document.getElementById('topicSelect');
-    const ySel = document.getElementById('yearSelect');
-    const mSel = document.getElementById('modelSelect');
+    const yF = document.getElementById('yearFrom');
+    const yT = document.getElementById('yearTo');
     
-    const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
-    tSel.innerHTML = '<option value="all">Todos los bloques</option>';
+    const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
+    tSel.innerHTML = '<option value="all">Todos los Bloques</option>';
     topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
 
-    const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
-    ySel.innerHTML = '<option value="all">Año: Todos</option>';
-    years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
-
-    const models = [...new Set(allQuestions.map(q => q.exam_model))].filter(Boolean).sort();
-    mSel.innerHTML = '<option value="all">Modelos: Todos</option>';
-    models.forEach(m => mSel.innerHTML += `<option value="${m}">${m}</option>`);
-}
-
-function populateTopicWeights() {
-    const container = document.getElementById('topicWeights');
-    const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
-    container.innerHTML = "";
-    topics.forEach(t => {
-        container.innerHTML += `
-            <div class="flex items-center justify-between gap-2 border-b border-blue-100 pb-1">
-                <span class="text-[9px] text-gray-500 font-medium truncate w-32">${t}</span>
-                <input type="number" data-topic="${t}" class="weight-input w-10 border rounded text-[10px] text-center" value="0" min="0">
-            </div>`;
+    const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => a-b);
+    yF.innerHTML = '<option value="all">Desde...</option>';
+    yT.innerHTML = '<option value="all">Hasta...</option>';
+    years.forEach(y => {
+        yF.innerHTML += `<option value="${y}">${y}</option>`;
+        yT.innerHTML += `<option value="${y}">${y}</option>`;
     });
 }
 
-function normalizeTopic(q) {
-    if (q.is_competency_based || q.topic_name === "Actividad Competencial") return "Actividad Competencial";
-    return q.topic_name;
-}
-
 function render() {
-    const year = document.getElementById('yearSelect').value;
+    const from = document.getElementById('yearFrom').value;
+    const to = document.getElementById('yearTo').value;
     const topic = document.getElementById('topicSelect').value;
-    const model = document.getElementById('modelSelect').value;
     const term = document.getElementById('search').value.toLowerCase();
     
     const filtered = allQuestions.filter(q => {
         const okText = (q.text || "").toLowerCase().includes(term);
-        const okTopic = topic === 'all' || normalizeTopic(q) === topic;
-        const okYear = year === 'all' || q.exam_year == year;
-        const okModel = model === 'all' || q.exam_model === model;
-        return okText && okTopic && okYear && okModel;
+        const okTopic = topic === 'all' || q.topic_name === topic;
+        const okFrom = from === 'all' || q.exam_year >= parseInt(from);
+        const okTo = to === 'all' || q.exam_year <= parseInt(to);
+        return okText && okTopic && okFrom && okTo;
     });
 
     document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
@@ -241,29 +245,58 @@ function render() {
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
         const card = document.createElement('div');
-        card.className = `data-row p-6 flex flex-col gap-4 mb-2 ${isSelected ? 'ring-2 ring-black border-black' : ''}`;
+        card.className = `data-row p-8 flex flex-col gap-5 ${isSelected ? 'ring-2 ring-black border-black shadow-lg' : ''}`;
         
         const cleanText = (q.text || "").replace(/\\n/g, '\n');
-        const solutionHTML = q.solution ? `<details class="mt-2 border-t pt-3 no-print"><summary class="text-xs font-bold cursor-pointer" style="color:var(--subject-color)">VER SOLUCIÓN</summary><div class="mt-2 text-sm text-gray-600 pl-4 border-l-2">${marked.parse(q.solution.replace(/\\n/g, '\n'))}</div></details>` : "";
+        const solution = q.solution ? `<details class="mt-4 pt-4 border-t no-print"><summary class="text-[10px] font-black cursor-pointer uppercase opacity-40">Solución Oficial</summary><div class="mt-4 text-sm text-gray-600 pl-6 border-l-2">${marked.parse(q.solution.replace(/\\n/g, '\n'))}</div></details>` : "";
 
         card.innerHTML = `
-            <div class="flex justify-between items-start gap-4">
+            <div class="flex justify-between items-start">
                 <div>
-                    <span class="text-xl font-black">${q.exam_year}</span>
-                    <span class="text-[10px] text-gray-400 block">${q.exam_model || ''}</span>
-                    <button onclick="toggleInExam('${q.id}')" class="mt-3 text-[9px] font-bold py-1 px-3 rounded-full border ${isSelected ? 'bg-red-500 text-white' : 'bg-gray-100'} transition">
-                        ${isSelected ? 'QUITAR' : '+ SELECCIONAR'}
+                    <span class="text-2xl font-black">${q.exam_year}</span>
+                    <span class="text-[10px] font-bold text-gray-300 block uppercase tracking-widest">${q.exam_model || ''}</span>
+                    <button onclick="toggleInExam('${q.id}')" class="mt-4 no-print text-[9px] font-black py-1.5 px-4 rounded-full border ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-50 border-gray-200 text-gray-500'} transition-all">
+                        ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
                     </button>
                 </div>
-                <span class="tag-subject">${normalizeTopic(q)}</span>
+                <div class="text-right">
+                    <span class="text-[10px] font-black px-3 py-1 bg-gray-100 rounded-lg text-gray-600 uppercase tracking-tighter">${q.topic_name}</span>
+                    <span class="block text-[9px] text-gray-400 mt-2 font-mono italic">${q.community || ''}</span>
+                </div>
             </div>
-            <div class="prose prose-sm text-gray-800">${marked.parse(cleanText)}</div>
-            ${solutionHTML}
+            <div class="prose prose-sm text-gray-800 leading-relaxed font-medium">${marked.parse(cleanText)}</div>
+            ${solution}
         `;
         container.appendChild(card);
     });
-
     renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+}
+
+function generateRandomSelection() {
+    const from = document.getElementById('yearFrom').value;
+    const to = document.getElementById('yearTo').value;
+    const topic = document.getElementById('topicSelect').value;
+    
+    // Filtramos según los selectores actuales del sidebar
+    let pool = allQuestions.filter(q => {
+        const okTopic = topic === 'all' || q.topic_name === topic;
+        const okFrom = from === 'all' || q.exam_year >= parseInt(from);
+        const okTo = to === 'all' || q.exam_year <= parseInt(to);
+        return okTopic && okFrom && okTo;
+    });
+
+    if (pool.length === 0) return alert("No hay preguntas con esos criterios.");
+
+    let n = document.getElementById('autoSelectNum').value;
+    n = n === 'more' ? parseInt(document.getElementById('autoManualNum').value) : parseInt(n);
+    
+    selectedIds.clear();
+    const shuffled = pool.sort(() => 0.5 - Math.random());
+    shuffled.slice(0, n || 1).forEach(q => selectedIds.add(q.id));
+    
+    updateExamCounter();
+    render();
+    alert(`Sorteo completado: ${selectedIds.size} preguntas seleccionadas.`);
 }
 
 function toggleInExam(id) {
@@ -273,29 +306,13 @@ function toggleInExam(id) {
     render();
 }
 
-function updateExamCounter() { 
-    document.getElementById('examCount').textContent = selectedIds.size; 
-}
+function updateExamCounter() { document.getElementById('examCount').textContent = selectedIds.size; }
 
 function resetFilters() {
     document.getElementById('search').value = "";
-    document.getElementById('yearSelect').value = "all";
     document.getElementById('topicSelect').value = "all";
-    document.getElementById('modelSelect').value = "all";
-    render();
-}
-
-function generateByWeights() {
-    selectedIds.clear();
-    document.querySelectorAll('.weight-input').forEach(input => {
-        const topic = input.dataset.topic;
-        const count = parseInt(input.value);
-        if (count > 0) {
-            const pool = allQuestions.filter(q => normalizeTopic(q) === topic).sort(() => 0.5 - Math.random());
-            pool.slice(0, count).forEach(q => selectedIds.add(q.id));
-        }
-    });
-    updateExamCounter();
+    document.getElementById('yearFrom').value = "all";
+    document.getElementById('yearTo').value = "all";
     render();
 }
 
@@ -304,26 +321,43 @@ function printExam() {
     if (qs.length === 0) return alert("Selecciona preguntas primero");
     
     const win = window.open('', '_blank');
-    const inst = document.getElementById('instName').value || "INSTITUCIÓN";
-    const title = document.getElementById('examTitle').value || "EXAMEN";
+    const inst = document.getElementById('h-inst').value || "CENTRO EDUCATIVO";
+    const title = document.getElementById('h-title').value || "EXAMEN";
+    const course = document.getElementById('h-course').value || "_______";
+    const prof = document.getElementById('h-prof').value || "_______";
+    const instr = document.getElementById('h-instr').value || "";
 
     let h = `<html><head><title>Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <style>body{padding:40px;font-family:serif;} .h{border-bottom:2px solid #000;display:flex;justify-content:space-between;margin-bottom:20px;} .q{margin-bottom:30px;page-break-inside:avoid;}</style></head><body>
-    <div class="h"><div><h1>${inst}</h1><p>${title}</p></div><div>Asignatura: ${subjectConfig[currentSubject].title}</div></div>`;
+    <style>
+        body{font-family: 'Lora', serif; padding:40px; color:#000;}
+        .header{border-bottom:2px solid #000; padding-bottom:15px; margin-bottom:30px;}
+        .grid{display:grid; grid-template-columns: 1fr 1fr; gap:10px; font-size:12px; margin-top:10px;}
+        .q{margin-bottom:40px; page-break-inside:avoid;}
+        .instr{font-style:italic; font-size:11px; margin-bottom:30px; border:1px solid #ddd; padding:10px;}
+    </style></head><body>
+    <div class="header">
+        <h1 style="margin:0; font-size:24px; text-transform:uppercase;">${inst}</h1>
+        <h2 style="margin:5px 0; font-size:18px; font-style:italic;">${title} - ${subjectConfig[currentSubject].title}</h2>
+        <div class="grid">
+            <div><strong>APELLIDOS Y NOMBRE:</strong> ___________________________________</div>
+            <div><strong>CURSO/GRUPO:</strong> ${course}</div>
+            <div><strong>PROFESOR:</strong> ${prof}</div>
+            <div><strong>FECHA:</strong> ___________</div>
+        </div>
+    </div>`;
     
-    qs.forEach((q, i) => { h += `<div class="q"><strong>${i+1}.</strong> ${marked.parse(q.text.replace(/\\n/g, '\n'))}</div>`; });
+    if(instr) h += `<div class="instr">${instr}</div>`;
+    
+    qs.forEach((q, i) => { h += `<div class="q"><strong>EJERCICIO ${i+1}.</strong><br>${marked.parse(q.text.replace(/\\n/g, '\n'))}</div>`; });
     h += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});window.print();<\/script></body></html>`;
     
     win.document.write(h);
     win.document.close();
 }
 
-// Eventos
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search').oninput = render;
-    document.getElementById('topicSelect').onchange = render;
-    document.getElementById('yearSelect').onchange = render;
-    document.getElementById('modelSelect').onchange = render;
+    ['topicSelect', 'yearFrom', 'yearTo'].forEach(id => document.getElementById(id).onchange = render);
     switchSubject('QUIM');
 });
 </script>
