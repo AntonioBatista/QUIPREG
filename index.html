@@ -26,7 +26,27 @@
         #sidebar { width: 300px; border-right: 1px solid #eee; background: white; transition: transform 0.3s ease; }
         #sidebar.collapsed { transform: translateX(-100%); width: 0; }
 
-        .data-row { background: white; border-radius: 16px; border: 1px solid #eee; padding: 2rem; transition: 0.2s; position: relative; }
+        .data-row { 
+            display: grid;
+            grid-template-columns: 1fr 220px; /* Enunciado a la izquierda, Tags a la derecha */
+            grid-template-areas: 
+                "header tags"
+                "content tags"
+                "solution solution"
+                "footer footer";
+            gap: 0 1.5rem;
+            background: white; 
+            border-radius: 16px; 
+            border: 1px solid #eee; 
+            padding: 1.5rem; 
+            transition: 0.2s; 
+            position: relative; 
+        }
+        .card-header-area { grid-area: header; }
+        .card-tags-area { grid-area: tags; display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+        .card-content-area { grid-area: content; margin-top: -0.5rem; } /* Sube el texto */
+        .solucion-panel { grid-area: solution; }
+        .card-footer-area { grid-area: footer; }
         
         .pill-topic { background: #3b82f6; color: white; } 
         .pill-content { background: #10b981; color: white; } 
@@ -306,6 +326,18 @@ function toggleSolucion(id) {
         btn.innerHTML = "OCULTAR SOLUCIÓN";
     }
 }
+    function sanitizeLatex(text) {
+    if (!text) return "";
+    let clean = text.replace(/\\n/g, '\n'); 
+    
+    // 🔧 ELIMINA saltos de línea indeseados en expresiones de número atómico
+    // Esto une "Z= \n\n19" en "Z= 19"
+    clean = clean.replace(/(Z\s*=\s*)\n+/g, '$1'); 
+    
+    clean = clean.replace(/\$/g, '$$'); 
+    clean = clean.replace(/A\*/g, 'A^*');
+    return clean;
+}
 
 function render() {
     const year = document.getElementById('yearSelect').value;
@@ -339,30 +371,32 @@ function render() {
         const contentsHTML = (q.detected_topics || []).map(t => `<span class="tag-badge pill-content">${t}</span>`).join(' ');
 
         card.innerHTML = `
-            <div class="flex justify-between items-start mb-6">
-                <div><h2 class="text-3xl font-black leading-none">${q.exam_year}</h2><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">${q.exam_model || ''}</span></div>
-                <div class="flex flex-col items-end gap-2 text-right">
-                    <span class="tag-badge pill-topic">${q.topic_name}</span>
-                    <div class="flex gap-1 flex-wrap justify-end max-w-[220px]">${contentsHTML}</div>
-                </div>
+            <div class="card-header-area mb-2">
+                <h2 class="text-3xl font-black leading-tight">${q.exam_year}</h2>
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">${q.exam_model || ''}</span>
             </div>
-            <div class="prose prose-sm text-gray-700 font-medium mb-4">${renderContent(q)}</div>
+        
+            <div class="card-tags-area">
+                <span class="tag-badge pill-topic">${q.topic_name}</span>
+                ${(q.detected_topics || []).map(t => `<span class="tag-badge pill-content">${t}</span>`).join('')}
+            </div>
+        
+            <div class="card-content-area prose prose-sm text-gray-700 font-medium">
+                ${renderContent(q)}
+            </div>
             
             <div id="sol-${q.id}" class="solucion-panel prose prose-sm">
                 <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 border-b pb-1">Solución Sugerida</p>
                 ${renderFormattedText(q.solution)}
             </div>
-
-            <div class="flex justify-between items-center no-print border-t pt-4 mt-6">
+        
+            <div class="card-footer-area flex justify-between items-center no-print border-t pt-4 mt-4">
                 <div class="flex gap-2">
                     <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white shadow-md' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">
                         ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
                     </button>
-                    <button id="btn-sol-${q.id}" 
-                            data-has-sol="${hasSolution}"
-                            onclick="toggleSolucion('${q.id}')" 
-                            class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all 
-                            ${hasSolution ? 'btn-sol-active' : 'btn-sol-empty text-gray-300'}">
+                    <button id="btn-sol-${q.id}" data-has-sol="${hasSolution}" onclick="toggleSolucion('${q.id}')" 
+                        class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${hasSolution ? 'btn-sol-active' : 'btn-sol-empty text-gray-300'}">
                         ${hasSolution ? 'VER SOLUCIÓN' : 'SIN SOLUCIÓN'}
                     </button>
                 </div>
