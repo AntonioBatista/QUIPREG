@@ -1,16 +1,5 @@
 [
   {
-    "text": "EJERCICIO 6.  Hasta 1 punto por las dos aplicaciones de la regla de L’Hôpital.",
-    "topic_name": "Límites y Continuidad",
-    "exam_year": 2025,
-    "exam_model": "Desconocido",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "b6fte55js",
-    "source_file": "Criterios_Titular-B_Matematicas II.pdf"
-  },
-  {
     "text": "EJERCICIO 2. \nSabiendo que $\\lim_{x \\to 0} \\frac{\\text{sen}(x) - ax + 2 - 2 \\cos(x)}{e^x - x \\cos(x) - 1}$ es finito, calcula $a$ y el valor del límite.",
     "topic_name": "Límites y Continuidad",
     "exam_year": 2025,
