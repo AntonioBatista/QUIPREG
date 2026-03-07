@@ -1,5 +1,26 @@
 [
   {
+    "text": "En un taller de fabricación de trofeos y medallas se utiliza una máquina de estampación que funciona con un cilindro neumático de simple efecto con retorno por muelle, el cual se encarga de aplicar una fuerza sobre un molde para estampar el diseño de la medalla en una lámina metálica. El cilindro de simple efecto trabaja a una presión de 10 atm y es capaz de fabricar diez medallas por minuto, es decir, realiza 10 ciclos/minuto. El cilindro tiene un émbolo de 16 mm de diámetro y una carrera de 40 mm. Las pérdidas por rozamiento y por muelle son, respectivamente, el 10 % y el 6 % de la fuerza teórica. Calcular:\n\na) La fuerza efectiva ejercida en el avance del vástago.\n\nb) El consumo de aire en condiciones normales durante una hora de funcionamiento en l/h.",
+    "topic_name": "Actividad Competencial",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía",
+    "is_competency_based": true,
+    "context_text": "En un taller de fabricación de trofeos y medallas se utiliza una máquina de estampación que funciona con un cilindro neumático de simple efecto con retorno por muelle, el cual se encarga de aplicar una fuerza sobre un molde para estampar el diseño de la medalla en una lámina metálica. El cilindro de simple efecto trabaja a una presión de 10 atm y es capaz de fabricar diez medallas por minuto, es decir, realiza 10 ciclos/minuto.",
+    "detected_topics": [
+      "Neumática",
+      "Cilindros de simple efecto",
+      "Fuerza efectiva",
+      "Caudal de aire"
+    ],
+    "has_image": false,
+    "image_bbox": [],
+    "image_description": "",
+    "image_page": 1,
+    "id": "hfu78plwi",
+    "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "El sistema de seguridad de una fábrica monitoriza el acceso a una zona de trabajo peligrosa. El sistema activa dos alarmas (A y \n\nB) en función de cuatro variables:\nVariable X: sensor de identificación (acceso autorizado = “1”, no autorizado = “0”).\nVariable Y: sensor de puerta abierta (abierta = “1”, cerrada = “0”).\nVariable Z: sensor de maquinaria en funcionamiento (máquina activada = “1”, máquina desactivada = “0”).\nVariable W: pulsador de emergencia (activado = “1”, no activado = “0”).\nLa alarma de seguridad A se activa si hay una persona no autorizada en la zona o si la puerta está abierta mientras la maquinaria está funcionando. La alarma B controla la detención de la maquinaria y se activa si el pulsador de emergencia está presionado o si una persona no autorizada intenta acceder mientras la maquinaria está funcionando. Se pide:\n\na) Obtener la tabla de verdad de las alarmas A y B.\n\nb) Simplificar por el método de Karnaugh las funciones A y B.\n\nc) Implementar los circuitos que realicen dichas funciones con puertas lógicas.",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
