@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>EduDB | Banco de Preguntas v4.8</title>
+    <title>EduDB | Banco de Preguntas v4.9</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -36,7 +36,7 @@
             height: 70px;
         }
 
-        /* Nav de Materias Corregido */
+        /* Nav de Materias */
         .subject-nav {
             display: flex;
             gap: 12px;
@@ -93,6 +93,19 @@
             border: 1px solid #eee;
             padding: 2rem;
             transition: transform 0.2s;
+            position: relative;
+        }
+
+        /* Tags Estilizados */
+        .tag-pill {
+            font-size: 9px;
+            font-weight: 800;
+            padding: 3px 10px;
+            background: #f1f5f9;
+            color: #64748b;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         /* Marca de agua centro */
@@ -134,7 +147,7 @@
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">EduDB</span>
-            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">v4.8 Code Corrector</span>
+            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">v4.9 Tags Engine</span>
         </div>
     </div>
 
@@ -173,7 +186,12 @@
 
         <div>
             <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Buscador</label>
-            <input id="search" type="text" placeholder="Buscar enunciado o tema..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-colors">
+            <input id="search" type="text" placeholder="Buscar enunciado..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-colors">
+        </div>
+
+        <div>
+            <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Contenido (Tags)</label>
+            <select id="tagSelect" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
         </div>
 
         <div>
@@ -189,11 +207,8 @@
 
     <main class="flex-1 overflow-y-auto p-8 relative bg-[#fcfcfc]">
         <img id="placeholder-icon" src="https://img.icons8.com/fluency/240/test-tube.png" alt="Watermark">
-        
         <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest">Realice una búsqueda para ver resultados</div>
-        
         <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
-        
         <div id="loader" class="hidden text-center py-20 opacity-30 italic">Buscando en base de datos...</div>
     </main>
 
@@ -230,12 +245,9 @@ let currentSubject = "QUIM";
 let allQuestions = [];
 let selectedIds = new Set();
 
-// FUNCIÓN CLAVE: FORMATEO QUÍMICO AUTOMÁTICO
 function autoChem(text) {
     if (!text) return "";
-    // Detecta fórmulas como CuH2, H3AsO3, HOOCCH2COOH
     return text.replace(/\b([A-Z][a-z]?\d+|[A-Z][a-z]?\(.*?\)\d*|[A-Z][a-z]?)+\b/g, (formula) => {
-        // Si no tiene números, no formateamos como química (ej: "A")
         if (!/\d/.test(formula)) return formula;
         return formula.replace(/(\d+)/g, '<sub>$1</sub>');
     });
@@ -246,10 +258,8 @@ function switchSubject(id) {
     const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
     document.getElementById('placeholder-icon').src = config.icon;
-    
     document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
     document.getElementById(`btn-${id}`).classList.add('active-sub');
-    
     resetFilters();
     loadData();
 }
@@ -278,26 +288,35 @@ async function loadData() {
 function populateFilters() {
     const tSel = document.getElementById('topicSelect');
     const ySel = document.getElementById('yearSelect');
+    const tagSel = document.getElementById('tagSelect');
     
     const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
     const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
+    
+    // Extracción dinámica de tags
+    const allTags = [];
+    allQuestions.forEach(q => { if(q.detected_topics) allTags.push(...q.detected_topics); });
+    const uniqueTags = [...new Set(allTags)].sort();
 
-    tSel.innerHTML = '<option value="all">Todos los bloques</option>';
+    tSel.innerHTML = '<option value="all">Bloque: Todos</option>';
     topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
 
-    ySel.innerHTML = '<option value="all">Todos los años</option>';
+    ySel.innerHTML = '<option value="all">Año: Todos</option>';
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
+
+    tagSel.innerHTML = '<option value="all">Contenido: Todos</option>';
+    uniqueTags.forEach(tag => tagSel.innerHTML += `<option value="${tag}">${tag}</option>`);
 }
 
 function render() {
     const year = document.getElementById('yearSelect').value;
     const topic = document.getElementById('topicSelect').value;
+    const tag = document.getElementById('tagSelect').value;
     const term = document.getElementById('search').value.trim().toLowerCase();
     const container = document.getElementById('questions');
     const stats = document.getElementById('stats');
 
-    // REGLA DE CARGA BAJO DEMANDA: Solo renderiza si hay algún filtro activo
-    if (!term && year === 'all' && topic === 'all') {
+    if (!term && year === 'all' && topic === 'all' && tag === 'all') {
         container.innerHTML = '';
         stats.textContent = "Realice una búsqueda para ver resultados";
         document.getElementById('placeholder-icon').style.display = 'block';
@@ -310,7 +329,8 @@ function render() {
         const okText = (q.text || "").toLowerCase().includes(term);
         const okTopic = topic === 'all' || q.topic_name === topic;
         const okYear = year === 'all' || q.exam_year == year;
-        return okText && okTopic && okYear;
+        const okTag = tag === 'all' || (q.detected_topics && q.detected_topics.includes(tag));
+        return okText && okTopic && okYear && okTag;
     });
 
     stats.textContent = `${filtered.length} RESULTADOS ENCONTRADOS`;
@@ -319,29 +339,32 @@ function render() {
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
         const card = document.createElement('div');
-        card.className = `data-row ${isSelected ? 'ring-2 ring-black border-black' : ''}`;
+        card.className = `data-row ${isSelected ? 'ring-2 ring-black border-black shadow-md' : ''}`;
         
-        // Procesamos el texto: 1. Saltos de línea, 2. Química, 3. Markdown
         const cleanText = autoChem((q.text || "").replace(/\\n/g, '\n'));
+        const tagsHTML = (q.detected_topics || []).map(t => `<span class="tag-pill">${t}</span>`).join(' ');
 
         card.innerHTML = `
-            <div class="flex justify-between items-start mb-6">
+            <div class="flex justify-between items-start mb-4">
                 <div>
-                    <h2 class="text-3xl font-black">${q.exam_year}</h2>
+                    <h2 class="text-3xl font-black leading-none">${q.exam_year}</h2>
                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">${q.exam_model || ''}</span>
                 </div>
-                <span class="text-[10px] font-black px-4 py-1.5 bg-gray-100 rounded-full text-gray-500 uppercase tracking-tighter">
-                    ${q.topic_name}
-                </span>
+                <div class="flex flex-col items-end gap-2">
+                    <span class="text-[9px] font-black px-4 py-1.5 bg-black text-white rounded-full uppercase tracking-tighter">
+                        ${q.topic_name}
+                    </span>
+                    <div class="flex gap-1 flex-wrap justify-end">${tagsHTML}</div>
+                </div>
             </div>
             
             <div class="prose prose-sm text-gray-700 font-medium leading-relaxed mb-8">
                 ${marked.parse(cleanText)}
             </div>
 
-            <div class="flex justify-between items-center no-print">
+            <div class="flex justify-between items-center no-print border-t pt-4">
                 <button onclick="toggleInExam('${q.id}')" class="text-[10px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">
-                    ${isSelected ? 'QUITAR' : '+ SELECCIONAR'}
+                    ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
                 </button>
                 <span class="text-[9px] font-mono text-gray-300 italic">${q.community || ''}</span>
             </div>
@@ -363,6 +386,7 @@ function resetFilters() {
     document.getElementById('search').value = "";
     document.getElementById('topicSelect').value = "all";
     document.getElementById('yearSelect').value = "all";
+    document.getElementById('tagSelect').value = "all";
     render();
 }
 
@@ -399,8 +423,9 @@ function printExam() {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search').oninput = render;
-    document.getElementById('topicSelect').onchange = render;
-    document.getElementById('yearSelect').onchange = render;
+    ['topicSelect', 'yearSelect', 'tagSelect'].forEach(id => {
+        document.getElementById(id).onchange = render;
+    });
     switchSubject('QUIM');
 });
 </script>
