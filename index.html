@@ -195,14 +195,17 @@ function autoChem(text) {
 
 function renderFormattedText(rawText) {
     if (!rawText || rawText === "") return "<span class='text-gray-400 italic'>Contenido no disponible.</span>";
-    let text = rawText.replace(/\\n/g, '\n');
+    // Aplicamos limpieza de codificación, iones e isótopos
+    let text = cleanTextEngine(rawText);
+    // Mantenemos tu lógica de limpieza de Z y saltos
     text = text.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g, '(Z=$1)');
     text = text.replace(/\n{3,}/g, '\n\n');
     return marked.parse(autoChem(text));
 }
 
 function renderContent(question) {
-    let text = question.text.replace(/\\n/g, '\n');
+    // Aplicamos limpieza de codificación, iones e isótopos al enunciado
+    let text = cleanTextEngine(question.text);
     text = text.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g, '(Z=$1)');
     text = text.replace(/\n{3,}/g, '\n\n');
 
@@ -326,17 +329,67 @@ function toggleSolucion(id) {
         btn.innerHTML = "OCULTAR SOLUCIÓN";
     }
 }
-    function sanitizeLatex(text) {
+   // 🛠️ Función Maestra de Limpieza y Formateo v6.5
+function cleanTextEngine(text) {
     if (!text) return "";
-    let clean = text.replace(/\\n/g, '\n'); 
-    
-    // 🔧 ELIMINA saltos de línea indeseados en expresiones de número atómico
-    // Esto une "Z= \n\n19" en "Z= 19"
-    clean = clean.replace(/(Z\s*=\s*)\n+/g, '$1'); 
-    
-    clean = clean.replace(/\$/g, '$$'); 
+
+    let clean = text.replace(/\\n/g, '\n');
+
+    // 1. Corrección de Tildes y Codificación Corrupta
+    const encodingMap = {
+        '3³': 'ó',
+        '3a': 'ía',
+        '3º': 'ú',
+        '3i': 'í',
+        '3e': 'é',
+        '3n': 'ón',
+        '3u': 'ú',
+        '3A': 'Á',
+        '3O': 'Ó'
+    };
+    Object.keys(encodingMap).forEach(key => {
+        const regex = new RegExp(key, 'g');
+        clean = clean.replace(regex, encodingMap[key]);
+    });
+
+    // 2. Formateo de Isótopos (Patrón: 1H1, 6C12, 92U238)
+    // Busca: Número + Letras + Número
+    clean = clean.replace(/\b(\d+)([A-Z][a-z]?)(\d+)\b/g, (match, z, symbol, a) => {
+        const subs = { '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉' };
+        const sups = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+        const zSub = z.split('').map(n => subs[n]).join('');
+        const aSup = a.split('').map(n => sups[n]).join('');
+        return `${zSub}${aSup}${symbol}`;
+    });
+
+    // 3. Formateo de Iones (Cargas al final: S2-, Cl-, Al3+, H+)
+    // Transforma en superíndices Unicode reales
+    const chargeSups = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '+': '⁺', '-': '⁻', '–': '⁻' };
+    clean = clean.replace(/([A-Z][a-z]?|[\)])(\d*)([\+\-\–])(?=\s|$|\.|\,)/g, (match, element, num, sign) => {
+        const formattedNum = num.split('').map(n => chargeSups[n]).join('');
+        const formattedSign = chargeSups[sign];
+        return `${element}${formattedNum}${formattedSign}`;
+    });
+
+    // 4. Limpieza de notación atómica (Z= \n\n19)
+    clean = clean.replace(/(Z\s*=\s*)\n+/g, '$1');
+
+    // 5. Normalización KaTeX
     clean = clean.replace(/A\*/g, 'A^*');
+    clean = clean.replace(/eq/g, '\\neq');
+    
     return clean;
+}
+
+// Actualizamos autoChem para que use la limpieza base pero mantenga los subíndices de fórmulas
+function autoChem(text) {
+    if (!text) return "";
+    let clean = cleanTextEngine(text);
+    // Renderiza subíndices de fórmulas químicas estándar (ej: H2O)
+    return clean.replace(/\b([A-Z][a-z]?)(\d+)\b/g, (match, el, num) => {
+        const subs = { '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉' };
+        return el + num.split('').map(n => subs[n]).join('');
+    });
 }
 
 function render() {
