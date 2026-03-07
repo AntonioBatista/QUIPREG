@@ -1,145 +1,145 @@
 [
-    {
-        "text": "C₂. Para la siguiente reacción: 4NH₃(g) + ₃O²(g) -> 6H₂O(l) + ₂N²(g)\n\na) La entalpía de reacción estándar.\n\nb) La variación de energía interna (calor a volumen constante) a 25 ºC.\n\nDatos: R= 8,31 J·mol–1·K–1. Energías de enlace (kJ·mol–1): N-H: 390; O=O: 499; N≡N: 946; O-H: 460",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2024,
-        "exam_model": "Suplente-A",
-        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "detected_topics": [
-            "ENTALPÍA DE REACCIÓN",
-            "ENERGÍA INTERNA",
-            "ENERGÍA DE ENLACE"
-        ],
-        "id": "2p8d1dps7",
-        "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
-    },
-    {
-        "text": "3A.\n\na) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH₃CH₂OH(l) + ₃O²(g) → 2CO₂(g) + 3H₂O(l).\n\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior. Datos: S₀(J·mol-1·K-1): O₂(g)=204,8; CO₂(g)=213,8; H₂O(l)=69,8; CH₃CH₂OH(l)=160,5. ΔHf(kJ·mol-1): O₂(g)=0; CO₂(g)=-393,5; H₂O(l)=-285,8; CH₃CH₂OH(l)=-277,3.",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2025,
-        "exam_model": "Suplente1-A",
-        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "id": "hdh9l80vw",
-        "source_file": "Examen_Suplente1-A_Quimica.pdf",
-        "detected_topics": [
-            "ENTROPÍA DE REACCIÓN",
-            "ENTALPÍA DE FORMACIÓN",
-            "TERMOQUÍMICA",
-            "TEMPERATURA DE ESPONTANEIDAD",
-            "ENERGÍA LIBRE DE GIBBS",
-            "COMBUSTIÓN DEL ETANOL",
-            "ESPONTANEIDAD"
-        ]
-    },
-    {
-        "text": "3A.\n\na) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH₃CH₂OH(l) + ₃O²(g) → 2CO₂(g) + 3H₂O(l)\n\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior.\nDatos:\nO₂(g) S₀(J·mol-1·K-1): 204,8 ΔHf(kJ·mol-1): 0\nCO₂(g) S₀(J·mol-1·K-1): 213,8 ΔHf(kJ·mol-1): -393,5\nH₂O(l) S₀(J·mol-1·K-1): 69,8 ΔHf(kJ·mol-1): -285,8\nCH₃CH₂OH(l) S₀(J·mol-1·K-1): 160,5 ΔHf(kJ·mol-1): -277,3",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2025,
-        "exam_model": "Suplente1-A",
-        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "id": "2k7jm0tt6",
-        "source_file": "Examen_Suplente1-A_Quimica.pdf",
-        "detected_topics": [
-            "ENTALPÍA DE FORMACIÓN",
-            "TERMOQUÍMICA",
-            "ESPONTANEIDAD DE LAS REACCIONES",
-            "ENERGÍA LIBRE DE GIBBS",
-            "TEMPERATURA DE ESPONTANEIDAD",
-            "ENTROPÍA",
-            "COMBUSTIÓN"
-        ]
-    },
-    {
-        "text": "2A. Justifique si son verdaderas o falsas las siguientes afirmaciones:\n\na) Un proceso exotérmico y espontáneo a cualquier temperatura tendrá ΔS > 0.\n\nb) La sublimación del diyodo es un proceso que implica un aumento de entropía.\n\nc) En todos los procesos espontáneos la entropía del sistema aumenta.\n\nd) La reacción PCl₃(g) + Cl₂(g) → PCl₅(g) (ΔH₀ = −86 kJ·mol⁻¹) no es espontánea a ninguna temperatura.",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2025,
-        "exam_model": "Titular-A",
-        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "id": "dv4zely9n",
-        "source_file": "Examen_Titular-A_Quimica.pdf",
-        "detected_topics": [
-            "TERMODINÁMICA QUÍMICA",
-            "TERMOQUÍMICA",
-            "ENERGÍA LIBRE DE GIBBS",
-            "ECUACIÓN DE GIBBS-HELMHOLTZ",
-            "CAMBIOS DE FASE",
-            "ENTALPÍA",
-            "ESPONTANEIDAD",
-            "ENTROPÍA",
-            "SEGUNDA LEY DE LA TERMODINÁMICA"
-        ]
-    },
-    {
-        "text": "2A.\n\na) Estudie la espontaneidad del siguiente proceso: H₂(g) + 1/₂O²(g) → H₂O(g) ∆H₀= –241,8 kJ·mol–1\n\nb) Razone si la obtención de amoniaco a partir de sus elementos presenta un aumento o disminución de entropía.\n\nc) En qué caso coindice el valor del calor de reacción a presión constante y el valor del calor de reacción a volumen constante. Justique la respuesta utilizando la relación que existe entre ambas.\n\nd) Razone cómo varía la entropía en la fusión del hielo.",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2025,
-        "exam_model": "Titular-B",
-        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "id": "rps0bpv5l",
-        "source_file": "Examen_Titular-B_Quimica.pdf",
-        "detected_topics": [
-            "CALOR A PRESIÓN CONSTANTE",
-            "RELACIÓN QP Y QV",
-            "SÍNTESIS DE AMONÍACO",
-            "TERMOQUÍMICA",
-            "ESPONTANEIDAD DE LAS REACCIONES",
-            "ENERGÍA LIBRE DE GIBBS",
-            "CAMBIO DE ESTADO",
-            "ENTALPÍA",
-            "FUSIÓN DEL HIELO",
-            "ENTROPÍA",
-            "CALOR A VOLUMEN CONSTANTE"
-        ]
-    },
-    {
-        "text": "C₂. Para la siguiente reacción: 4NH₃(g) + ₃O²(g) → 6H₂O(l) + ₂N²(g). Calcule:\n\na) La entalpía de reacción estándar.\n\nb) La variación de energía interna (calor a volumen constante) a 25 ºC.\nDatos: R= 8,31 J·mol–1·K–1. Energías de enlace (kJ·mol–1): N-H: 390; O=O: 499; N≡N: 946; O-H: 460",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2024,
-        "exam_model": "Suplente-A",
-        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "id": "lvoatry8w",
-        "source_file": "Examen_Suplente-A_QUÍMICA.pdf",
-        "detected_topics": [
-            "RELACIÓN ENTALPÍA-ENERGÍA INTERNA",
-            "ENERGÍAS DE ENLACE",
-            "TERMOQUÍMICA",
-            "ENERGÍA INTERNA",
-            "CALOR A VOLUMEN CONSTANTE",
-            "ENTALPÍA DE REACCIÓN"
-        ]
-    },
-    {
-        "text": "B₁. Dada la siguiente reacción: NaCl(s) → Na+(ac) + Cl–(ac) ΔHº= 1,7 kJ·mol–1 \nIndique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas:\n\na) La reacción es exotérmica.\n\nb) Se produce un aumento de la entropía.\n\nc) La reacción es espontánea a cualquier temperatura.",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2024,
-        "exam_model": "Suplente-B",
-        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "id": "j10brwgv1",
-        "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
-    },
-    {
-        "text": "B₅. Indique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas:\n\na) Toda reacción exotérmica es espontánea.\n\nb) En toda reacción química espontánea la variación de entropía es positiva.\n\nc) En el cambio de estado H₂O(l) ⇄ H₂O(g) se produce un aumento de entropía.",
-        "topic_name": "T3: Termoquímica",
-        "exam_year": 2024,
-        "exam_model": "Titular-B",
-        "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
-        "is_competency_based": false,
-        "context_text": "",
-        "id": "rccelhtkr",
-        "source_file": "Examen_Titular-B_QUÍMICA.pdf"
-    }
+  {
+    "text": "C₂. Para la siguiente reacción: 4NH₃(g) + ₃O²(g) -> 6H₂O(l) + ₂N²(g)\n\na) La entalpía de reacción estándar.\n\nb) La variación de energía interna (calor a volumen constante) a 25 ºC.\n\nDatos: R= 8,31 J·mol–1·K–1. Energías de enlace (kJ·mol–1): N-H: 390; O=O: 499; N≡N: 946; O-H: 460",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Entalpía de reacción",
+      "Energía de enlace",
+      "Energía interna"
+    ],
+    "id": "2p8d1dps7",
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+  },
+  {
+    "text": "3A.\n\na) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH₃CH₂OH(l) + ₃O²(g) → 2CO₂(g) + 3H₂O(l).\n\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior. Datos: S₀(J·mol-1·K-1): O₂(g)=204,8; CO₂(g)=213,8; H₂O(l)=69,8; CH₃CH₂OH(l)=160,5. ΔHf(kJ·mol-1): O₂(g)=0; CO₂(g)=-393,5; H₂O(l)=-285,8; CH₃CH₂OH(l)=-277,3.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "hdh9l80vw",
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Termoquímica",
+      "Entropía de reacción",
+      "Entalpía de formación",
+      "Energía libre de Gibbs",
+      "Espontaneidad",
+      "Temperatura de espontaneidad",
+      "Combustión del etanol"
+    ]
+  },
+  {
+    "text": "3A.\n\na) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH₃CH₂OH(l) + ₃O²(g) → 2CO₂(g) + 3H₂O(l)\n\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior.\nDatos:\nO₂(g) S₀(J·mol-1·K-1): 204,8 ΔHf(kJ·mol-1): 0\nCO₂(g) S₀(J·mol-1·K-1): 213,8 ΔHf(kJ·mol-1): -393,5\nH₂O(l) S₀(J·mol-1·K-1): 69,8 ΔHf(kJ·mol-1): -285,8\nCH₃CH₂OH(l) S₀(J·mol-1·K-1): 160,5 ΔHf(kJ·mol-1): -277,3",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "2k7jm0tt6",
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Termoquímica",
+      "Entropía",
+      "Entalpía de formación",
+      "Energía libre de Gibbs",
+      "Espontaneidad de las reacciones",
+      "Combustión",
+      "Temperatura de espontaneidad"
+    ]
+  },
+  {
+    "text": "2A. Justifique si son verdaderas o falsas las siguientes afirmaciones:\n\na) Un proceso exotérmico y espontáneo a cualquier temperatura tendrá ΔS > 0.\n\nb) La sublimación del diyodo es un proceso que implica un aumento de entropía.\n\nc) En todos los procesos espontáneos la entropía del sistema aumenta.\n\nd) La reacción PCl₃(g) + Cl₂(g) → PCl₅(g) (ΔH₀ = −86 kJ·mol⁻¹) no es espontánea a ninguna temperatura.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "dv4zely9n",
+    "source_file": "Examen_Titular-A_Quimica.pdf",
+    "detected_topics": [
+      "Termoquímica",
+      "Termodinámica química",
+      "Espontaneidad",
+      "Entalpía",
+      "Entropía",
+      "Energía libre de Gibbs",
+      "Ecuación de Gibbs-Helmholtz",
+      "Cambios de fase",
+      "Segunda ley de la termodinámica"
+    ]
+  },
+  {
+    "text": "2A.\n\na) Estudie la espontaneidad del siguiente proceso: H₂(g) + 1/₂O²(g) → H₂O(g) ∆H₀= –241,8 kJ·mol–1\n\nb) Razone si la obtención de amoniaco a partir de sus elementos presenta un aumento o disminución de entropía.\n\nc) En qué caso coindice el valor del calor de reacción a presión constante y el valor del calor de reacción a volumen constante. Justique la respuesta utilizando la relación que existe entre ambas.\n\nd) Razone cómo varía la entropía en la fusión del hielo.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "rps0bpv5l",
+    "source_file": "Examen_Titular-B_Quimica.pdf",
+    "detected_topics": [
+      "Termoquímica",
+      "Espontaneidad de las reacciones",
+      "Energía libre de Gibbs",
+      "Entalpía",
+      "Entropía",
+      "Síntesis de amoníaco",
+      "Calor a presión constante",
+      "Calor a volumen constante",
+      "Relación Qp y Qv",
+      "Fusión del hielo",
+      "Cambio de estado"
+    ]
+  },
+  {
+    "text": "C₂. Para la siguiente reacción: 4NH₃(g) + ₃O²(g) → 6H₂O(l) + ₂N²(g). Calcule:\n\na) La entalpía de reacción estándar.\n\nb) La variación de energía interna (calor a volumen constante) a 25 ºC.\nDatos: R= 8,31 J·mol–1·K–1. Energías de enlace (kJ·mol–1): N-H: 390; O=O: 499; N≡N: 946; O-H: 460",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "lvoatry8w",
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Termoquímica",
+      "Entalpía de reacción",
+      "Energías de enlace",
+      "Energía interna",
+      "Calor a volumen constante",
+      "Relación entalpía-energía interna"
+    ]
+  },
+  {
+    "text": "B₁. Dada la siguiente reacción: NaCl(s) → Na+(ac) + Cl–(ac) ΔHº= 1,7 kJ·mol–1 \nIndique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas:\n\na) La reacción es exotérmica.\n\nb) Se produce un aumento de la entropía.\n\nc) La reacción es espontánea a cualquier temperatura.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "j10brwgv1",
+    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+  },
+  {
+    "text": "B₅. Indique, razonadamente, si las siguientes afirmaciones son verdaderas o falsas:\n\na) Toda reacción exotérmica es espontánea.\n\nb) En toda reacción química espontánea la variación de entropía es positiva.\n\nc) En el cambio de estado H₂O(l) ⇄ H₂O(g) se produce un aumento de entropía.",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2024,
+    "exam_model": "Titular-B",
+    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "id": "rccelhtkr",
+    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+  }
 ]
