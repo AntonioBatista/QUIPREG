@@ -1,5 +1,21 @@
 [
   {
+    "text": "Para las moléculas CH3Cl y CH4 \n\na) Indique el tipo de hibridación que presenta el átomo de carbono.\n\nb) Justifique la polaridad de los enlaces y de la molécula.\n\nc) Razone su solubilidad en agua.",
+    "topic_name": "T2: Enlace Químico",
+    "exam_year": 2024,
+    "exam_model": "Reserva-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Hibridación",
+      "Polaridad",
+      "Solubilidad"
+    ],
+    "id": "igwexema4",
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
     "text": "1B. Identifique el tipo de enlace de las sustancias y explique las siguientes afirmaciones:\n\na) El cloruro de sodio (NaCl) es soluble en agua.\n\nb) El hierro es conductor de la electricidad.\n\nc) El metano (CH4) tiene bajo punto de fusión.\n\nd) El tetracloruro de carbono (CCl4) es insoluble en agua.",
     "topic_name": "T2: Enlace Químico",
     "exam_year": 2025,
