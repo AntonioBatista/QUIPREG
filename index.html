@@ -1,152 +1,384 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>PEvAU-DB | TodoPAU v6</title>
+    <meta charset="UTF-8">
+    <title>PEvAU-DB | TodoPAU v5.7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:italic,wght@400;600&display=swap');
+        
+        :root { --bg: #F8F9FA; --subject-color: #000000; --subject-soft: rgba(0,0,0,0.05); }
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; color: #1a1a1a; overflow: hidden; }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+        .glass-header { background: white; border-bottom: 1px solid #eee; padding: 0.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .subject-nav { display: flex; gap: 8px; align-items: center; background: #f1f5f9; padding: 6px; border-radius: 16px; }
+        .subject-tab { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; color: #64748b; transition: 0.2s; cursor: pointer; }
+        .subject-tab img { width: 18px; height: 18px; filter: grayscale(1); opacity: 0.7; }
+        .subject-tab.active-sub { background: white; color: var(--subject-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .subject-tab.active-sub img { filter: none; opacity: 1; }
 
-<style>
-:root{--subject-color:#00c853;--subject-soft:rgba(0,200,83,.1)}
-body{font-family:Inter,sans-serif;background:#f8f9fa;color:#1a1a1a;overflow:hidden}
-.data-row{background:white;border-radius:16px;border:1px solid #eee;padding:2rem}
-.problem-image{max-width:100%;border-radius:8px;margin:1rem 0;border:1px solid #eee}
-.custom-scroll::-webkit-scrollbar{width:4px}
-.custom-scroll::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:10px}
-mark{background:#fff3a3;padding:1px 3px;border-radius:4px}
-</style>
+        #sidebar { width: 300px; border-right: 1px solid #eee; background: white; transition: transform 0.3s ease; }
+        #sidebar.collapsed { transform: translateX(-100%); width: 0; }
+
+        .data-row { background: white; border-radius: 16px; border: 1px solid #eee; padding: 2rem; transition: 0.2s; position: relative; }
+        
+        .pill-topic { background: #3b82f6; color: white; } 
+        .pill-content { background: #10b981; color: white; } 
+        .tag-badge { font-size: 9px; font-weight: 800; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        #tagCloud { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .tag-cloud-item { font-weight: 700; padding: 4px 10px; border-radius: 12px; background: #f8fafc; color: #94a3b8; cursor: pointer; transition: 0.3s; line-height: 1.1; }
+        .tag-cloud-item:hover { background: var(--subject-soft); color: var(--subject-color); transform: translateY(-1px); }
+        .tag-cloud-item.active-tag { background: var(--subject-color) !important; color: white !important; }
+
+        .problem-image { max-width: 100%; max-height: 400px; height: auto; margin: 1rem 0; border-radius: 8px; display: block; border: 1px solid #eee; }
+
+        #placeholder-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 280px; pointer-events: none; }
+        #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s; z-index: 100; }
+        #examPanel.open { right: 0; }
+        sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; bottom: -0.25em; }
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
 </head>
 
 <body class="h-screen flex flex-col">
 
-<header class="bg-white border-b p-4 flex justify-between">
-<b>PEvAU-DB</b>
-<button onclick="toggleExam()" class="bg-black text-white px-4 py-2 rounded">MODO EXAMEN (<span id="examCount">0</span>)</button>
+<header class="glass-header no-print">
+    <div class="flex items-center gap-4">
+        <button onclick="document.getElementById('sidebar').classList.toggle('collapsed')" class="p-2 hover:bg-gray-100 rounded-lg">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="flex flex-col">
+            <span class="font-black text-lg tracking-tighter italic">PEvAU-DB</span>
+            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">TODO PAU v5.7</span>
+        </div>
+    </div>
+
+    <nav class="subject-nav">
+        <div onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub"><img src="https://img.icons8.com/fluency/48/test-tube.png"> Química</div>
+        <div onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab"><img src="https://img.icons8.com/fluency/48/physics.png"> Física</div>
+        <div onclick="switchSubject('MATII')" id="btn-MATII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/math.png"> Mat II</div>
+        <div onclick="switchSubject('MACSII')" id="btn-MACSII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/line-chart.png"> CCSS II</div>
+        <div onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/circuit.png"> Tecno II</div>
+        <div onclick="switchSubject('DTECII')" id="btn-DTECII" class="subject-tab"><img src="https://img.icons8.com/fluency/48/drafting-compass.png"> Dibujo II</div>
+    </nav>
+
+    <div class="flex items-center gap-3">
+        <button onclick="document.getElementById('examPanel').classList.add('open')" class="bg-black text-white px-5 py-2 rounded-xl text-[10px] font-bold tracking-widest transition shadow-lg">
+            MODO EXAMEN (<span id="examCount">0</span>)
+        </button>
+    </div>
 </header>
 
-<div class="flex flex-1 overflow-hidden">
-<aside class="w-72 bg-white border-r p-6 flex flex-col gap-6 overflow-y-auto custom-scroll">
-<input id="search" placeholder="Buscar..." class="border-b p-2">
-<select id="topicSelect" class="border p-2 rounded"></select>
-<select id="yearSelect" class="border p-2 rounded"></select>
-<button onclick="resetFilters()" class="bg-gray-100 p-2 rounded">Limpiar</button>
-</aside>
+<div class="flex flex-1 overflow-hidden relative">
+    
+    <aside id="sidebar" class="no-print p-6 flex flex-col gap-6 overflow-y-auto custom-scroll bg-white">
+        <button onclick="resetFilters()" class="w-full py-2 bg-gray-50 text-gray-400 text-[9px] font-black uppercase rounded-lg hover:bg-gray-100 transition">Limpiar Filtros</button>
 
-<main class="flex-1 overflow-y-auto p-8">
-<div id="stats" class="text-xs text-gray-400 mb-6"></div>
-<div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
-</main>
+        <section>
+            <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Buscador</label>
+            <input id="search" type="text" placeholder="Concepto o enunciado..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-all">
+        </section>
+
+        <section class="space-y-4">
+            <div>
+                <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque Principal</label>
+                <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
+            </div>
+            <div>
+                <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Año</label>
+                <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
+            </div>
+        </section>
+
+        <section id="tagCloudSection" class="hidden">
+            <label class="text-[10px] uppercase font-bold text-gray-400 mb-4 block tracking-widest border-t pt-4">Contenidos Seleccionados</label>
+            <div id="tagCloud"></div>
+        </section>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto p-8 relative bg-[#fcfcfc]">
+        <img id="placeholder-icon" src="https://img.icons8.com/fluency/240/test-tube.png">
+        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center italic">Selecciona un bloque o busca para explorar</div>
+        <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
+        <div id="loader" class="hidden text-center py-20 opacity-30 italic">Cargando base de datos...</div>
+    </main>
+
+    <div id="examPanel" class="no-print flex flex-col shadow-2xl">
+        <div class="p-6 flex items-center justify-between border-b bg-white sticky top-0 z-10">
+            <h3 class="font-black text-sm tracking-widest text-gray-800 uppercase">Configurador</h3>
+            <button onclick="document.getElementById('examPanel').classList.remove('open')" class="text-gray-400 hover:text-black">✕</button>
+        </div>
+        <div class="p-6 flex-1 space-y-6 overflow-y-auto custom-scroll">
+            <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100 space-y-4">
+                <p class="text-[9px] font-black text-blue-800 uppercase italic">Sorteo Aleatorio</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <select id="autoYearFrom" class="w-full border rounded p-2 text-[10px] bg-white outline-none"></select>
+                    <select id="autoYearTo" class="w-full border rounded p-2 text-[10px] bg-white outline-none"></select>
+                </div>
+                <div class="flex gap-2 items-end pt-2">
+                    <select id="autoNumSelect" onchange="document.getElementById('autoManualInput').classList.toggle('hidden', this.value !== 'more')" class="flex-1 border rounded p-1.5 text-xs bg-white">
+                        <option value="1">1 Pregunta</option><option value="2">2 Preguntas</option><option value="3">3 Preguntas</option><option value="more">+ de 3</option>
+                    </select>
+                    <input id="autoManualInput" type="number" class="hidden w-20 border rounded p-1.5 text-xs" placeholder="Nº">
+                    <button onclick="runSorteo()" class="h-9 px-4 bg-blue-600 text-white rounded-xl font-black text-[9px] hover:bg-blue-700">SORTEAR</button>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-3xl space-y-4">
+                <p class="text-[9px] font-black text-gray-500 uppercase italic">Cabecera PDF</p>
+                <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                <input id="h-title" type="text" placeholder="Título del Examen" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                <div class="grid grid-cols-2 gap-2">
+                    <input id="h-course" type="text" placeholder="Curso" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                    <input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                </div>
+                <textarea id="h-instr" placeholder="Instrucciones adicionales..." class="w-full border p-3 rounded-xl text-[10px] h-20 outline-none"></textarea>
+            </div>
+            <button onclick="printExam()" class="w-full py-5 bg-black text-white rounded-3xl text-[11px] font-black tracking-widest shadow-xl transition hover:opacity-85">GENERAR PDF</button>
+        </div>
+    </div>
 </div>
 
 <script>
-// ========= CONFIG =========
-const config={folder:"QUIM",file:"indexquim.json"};
-const el={
-search:document.getElementById('search'),
-topic:document.getElementById('topicSelect'),
-year:document.getElementById('yearSelect'),
-stats:document.getElementById('stats'),
-questions:document.getElementById('questions'),
-examCount:document.getElementById('examCount')
-};
+const subjectConfig = {
+    'QUIM': { title: 'Química', folder: 'QUIM', file: 'indexquim.json', color: '#00c853', soft: 'rgba(0, 200, 83, 0.1)', icon: 'https://img.icons8.com/fluency/48/test-tube.png' },
+    'FIS': { title: 'Física', folder: 'FIS', file: 'indexfis.json', color: '#2979ff', soft: 'rgba(41, 121, 255, 0.1)', icon: 'https://img.icons8.com/fluency/48/physics.png' },
+    'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', soft: 'rgba(101, 31, 255, 0.1)', icon: 'https://img.icons8.com/fluency/48/math.png' },
+    'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', soft: 'rgba(245, 0, 87, 0.1)', icon: 'https://img.icons8.com/fluency/48/line-chart.png' },
+    'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', soft: 'rgba(255, 145, 0, 0.1)', icon: 'https://img.icons8.com/fluency/48/circuit.png' },
+    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtecii.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/48/drafting-compass.png' }};
 
-let allQuestions=[];
-let selectedIds=new Set();
-let activeTag="all";
+let currentSubject = "QUIM";
+let allQuestions = [];
+let selectedIds = new Set();
+let activeTagFilter = "all";
 
-// ========= UTIL =========
-function debounce(fn,d){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),d)}}
-function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}}
-function saveState(){localStorage.setItem("pau_state",JSON.stringify({topic:el.topic.value,year:el.year.value}))}
-function loadState(){const s=JSON.parse(localStorage.getItem("pau_state"));if(s){el.topic.value=s.topic;el.year.value=s.year}}
-
-// ========= TEXTO =========
-function autoChem(t){return t.replace(/\b([A-Z][a-z]?\d+)+\b/g,f=>f.replace(/(\d+)/g,'<sub>$1</sub>'))}
-function cleanText(t){
-t=t.replace(/\\n/g,'\n')
-t=t.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g,'(Z=$1)')
-t=t.replace(/\n{3,}/g,'\n\n')
-return t
-}
-function highlight(t,term){if(!term)return t;const r=new RegExp(term,'gi');return t.replace(r,m=>`<mark>${m}</mark>`)}
-function renderContent(q,term){
-let text=highlight(autoChem(cleanText(q.text)),term)
-return DOMPurify.sanitize(marked.parse(text))
+function autoChem(text) {
+    if (!text) return "";
+    // Aseguramos que los números en fórmulas se rendericen como subíndices
+    return text.replace(/\b([A-Z][a-z]?\d+|[A-Z][a-z]?\(.*?\)\d*|[A-Z][a-z]?)+\b/g, (f) => /\d/.test(f) ? f.replace(/(\d+)/g, '<sub>$1</sub>') : f);
 }
 
-// ========= RENDER =========
-function render(){
-const term=el.search.value.trim().toLowerCase()
-const topic=el.topic.value
-const year=el.year.value
+function renderContent(question) {
+    // CORRECCIÓN: Procesamos \n\n para saltos de línea y limpiamos espacios excesivos
+    let text = question.text.replace(/\\n/g, '\n');
 
-const filtered=allQuestions.filter(q=>{
-return (q.text||"").toLowerCase().includes(term)
-&&(topic==='all'||q.topic_name===topic)
-&&(year==='all'||q.exam_year==year)
-})
+    // 🔧 Arregla casos como (Z= \n\n19)
+    text = text.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g, '(Z=$1)');
 
-el.stats.textContent=`${filtered.length} resultados`
-const frag=document.createDocumentFragment()
+    // Limpieza general de saltos excesivos
+    text = text.replace(/\n{3,}/g, '\n\n');
+    let imageTag = (question.has_image && question.image_data) ? `<img src="${question.image_data}" class="problem-image">` : "";
 
-filtered.forEach(q=>{
-const card=document.createElement('div')
-card.className='data-row'
-card.innerHTML=`
-<h2 class="font-bold text-xl mb-2">${q.exam_year} · ${q.exam_model||''}</h2>
-<div class="prose">${renderContent(q,term)}</div>
-<button onclick="toggleExamItem('${q.id}')" class="mt-4 border px-4 py-2 rounded">
-${selectedIds.has(q.id)?'Quitar':'Seleccionar'}
-</button>`
-frag.appendChild(card)
-})
-
-el.questions.innerHTML=''
-el.questions.appendChild(frag)
-el.questions.scrollIntoView({behavior:'smooth'})
-renderMathInElement(el.questions,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]})
-saveState()
+    if (imageTag) {
+        const regex = /(imagen|figura|circuito|esquema|gráfico|mostrado en la figura)\s*:/gi;
+        if (regex.test(text)) {
+            text = text.replace(regex, (match) => `${match}\n${imageTag}\n`);
+        } else {
+            const firstNewline = text.indexOf('\n');
+            if (firstNewline !== -1) {
+                text = text.slice(0, firstNewline) + '\n' + imageTag + '\n' + text.slice(firstNewline);
+            } else {
+                text += '\n' + imageTag;
+            }
+        }
+    }
+    return marked.parse(autoChem(text));
 }
 
-// ========= DATOS =========
-async function loadData(){
-const idx=await fetch(`${config.folder}/${config.file}`).then(r=>r.json())
-const files=await Promise.all(idx.topics.map(t=>fetch(`${config.folder}/${t.file}`).then(r=>r.json())))
-allQuestions=files.flat()
-
-const topics=[...new Set(allQuestions.map(q=>q.topic_name))]
-const years=[...new Set(allQuestions.map(q=>q.exam_year))].sort((a,b)=>b-a)
-
-el.topic.innerHTML='<option value="all">Todos los bloques</option>'+topics.map(t=>`<option>${t}</option>`).join('')
-el.year.innerHTML='<option value="all">Todos los años</option>'+years.map(y=>`<option>${y}</option>`).join('')
-loadState()
-render()
+function switchSubject(id) {
+    currentSubject = id;
+    const config = subjectConfig[id];
+    document.documentElement.style.setProperty('--subject-color', config.color);
+    document.documentElement.style.setProperty('--subject-soft', config.soft);
+    document.getElementById('placeholder-icon').src = config.icon.replace('/48/', '/240/');
+    document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
+    document.getElementById(`btn-${id}`).classList.add('active-sub');
+    resetFilters();
+    loadData();
 }
 
-// ========= EXAMEN =========
-function toggleExamItem(id){
-selectedIds.has(id)?selectedIds.delete(id):selectedIds.add(id)
-el.examCount.textContent=selectedIds.size
-render()
+async function loadData() {
+    const loader = document.getElementById('loader');
+    const config = subjectConfig[currentSubject];
+    loader.classList.remove('hidden');
+    try {
+        const response = await fetch(`${config.folder}/${config.file}`);
+        const index = await response.json();
+        const promises = index.topics.map(async t => {
+            const res = await fetch(`${config.folder}/${t.file}`);
+            let raw = await res.text();
+            // Sanitización profunda de strings JSON
+            raw = raw.replace(/\\/g, "\\\\").replace(/\\\\n/g, "\\n").replace(/\\\\"/g, "\\\"").replace(/\\\\u/g, "\\u");
+            return JSON.parse(raw);
+        });
+        const results = await Promise.all(promises);
+        allQuestions = results.flat();
+        populateSelectors();
+        loader.classList.add('hidden');
+    } catch (e) { console.error("Error", e); }
 }
-function toggleExam(){alert("Modo examen en construcción")}
 
-// ========= FILTROS =========
-function resetFilters(){el.search.value='';el.topic.value='all';el.year.value='all';render()}
+function populateSelectors() {
+    const tSel = document.getElementById('topicSelect');
+    const ySel = document.getElementById('yearSelect');
+    const aFrom = document.getElementById('autoYearFrom');
+    const aTo = document.getElementById('autoYearTo');
 
-// ========= EVENTOS =========
-el.search.oninput=debounce(render,250)
-el.topic.onchange=render
-el.year.onchange=render
+    const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
+    const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
 
-// ========= INIT =========
-document.addEventListener('DOMContentLoaded',loadData)
+    const fill = (el, items, label) => {
+        el.innerHTML = `<option value="all">${label}</option>`;
+        items.forEach(i => el.innerHTML += `<option value="${i}">${i}</option>`);
+    };
+
+    fill(tSel, topics, "Bloque: Todos");
+    fill(ySel, years, "Año: Todos");
+    fill(aFrom, [...years].sort((a,b)=>a-b), "Desde Año...");
+    fill(aTo, years, "Hasta Año...");
+}
+
+function updateDynamicTags() {
+    const topic = document.getElementById('topicSelect').value;
+    const year = document.getElementById('yearSelect').value;
+    const cloud = document.getElementById('tagCloud');
+    const section = document.getElementById('tagCloudSection');
+
+    // Nube activa si hay Bloque O Año seleccionado
+    if (topic === 'all' && year === 'all') { 
+        section.classList.add('hidden'); 
+        activeTagFilter = "all"; 
+        return; 
+    }
+    
+    section.classList.remove('hidden');
+
+    const visibleQs = allQuestions.filter(q => {
+        const okTopic = topic === 'all' || q.topic_name === topic;
+        const okYear = year === 'all' || q.exam_year == year;
+        return okTopic && okYear;
+    });
+
+    const tagCounts = {};
+    visibleQs.forEach(q => q.detected_topics?.forEach(tag => tagCounts[tag] = (tagCounts[tag] || 0) + 1));
+    const uniqueTags = Object.keys(tagCounts).sort();
+    
+    if (uniqueTags.length === 0) { section.classList.add('hidden'); return; }
+
+    const maxFreq = Math.max(...Object.values(tagCounts), 1);
+    cloud.innerHTML = "";
+    uniqueTags.forEach(tag => {
+        const span = document.createElement('span');
+        const size = 9 + (tagCounts[tag] / maxFreq) * 6;
+        span.className = `tag-cloud-item ${activeTagFilter === tag ? 'active-tag' : ''}`;
+        span.style.fontSize = `${size}px`;
+        span.textContent = tag;
+        span.onclick = () => { activeTagFilter = activeTagFilter === tag ? "all" : tag; updateDynamicTags(); render(); };
+        cloud.appendChild(span);
+    });
+}
+
+function render() {
+    const year = document.getElementById('yearSelect').value;
+    const topic = document.getElementById('topicSelect').value;
+    const term = document.getElementById('search').value.trim().toLowerCase();
+    const container = document.getElementById('questions');
+    const stats = document.getElementById('stats');
+
+    if (!term && year === 'all' && topic === 'all' && activeTagFilter === 'all') {
+        container.innerHTML = ''; stats.textContent = "Busca o filtra para ver problemas";
+        document.getElementById('placeholder-icon').style.display = 'block'; return;
+    }
+    document.getElementById('placeholder-icon').style.display = 'none';
+
+    const filtered = allQuestions.filter(q => {
+        const okText = (q.text || "").toLowerCase().includes(term);
+        const okTopic = topic === 'all' || q.topic_name === topic;
+        const okYear = year === 'all' || q.exam_year == year;
+        const okTag = activeTagFilter === 'all' || q.detected_topics?.includes(activeTagFilter);
+        return okText && okTopic && okYear && okTag;
+    });
+
+    stats.textContent = `${filtered.length} RESULTADOS ENCONTRADOS`;
+    container.innerHTML = '';
+    
+    filtered.forEach(q => {
+        const isSelected = selectedIds.has(q.id);
+        const card = document.createElement('div');
+        card.className = `data-row ${isSelected ? 'ring-2 ring-black border-black shadow-md' : ''}`;
+        const contentsHTML = (q.detected_topics || []).map(t => `<span class="tag-badge pill-content">${t}</span>`).join(' ');
+
+        card.innerHTML = `
+            <div class="flex justify-between items-start mb-6">
+                <div><h2 class="text-3xl font-black leading-none">${q.exam_year}</h2><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">${q.exam_model || ''}</span></div>
+                <div class="flex flex-col items-end gap-2 text-right">
+                    <span class="tag-badge pill-topic">${q.topic_name}</span>
+                    <div class="flex gap-1 flex-wrap justify-end max-w-[220px]">${contentsHTML}</div>
+                </div>
+            </div>
+            <div class="prose prose-sm text-gray-700 font-medium mb-4">${renderContent(q)}</div>
+            <div class="flex justify-between items-center no-print border-t pt-4 mt-6">
+                <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white shadow-md' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}</button>
+                <span class="text-[9px] font-mono text-gray-300 italic">${q.community || ''}</span>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+    renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+}
+
+function runSorteo() {
+    const from = document.getElementById('autoYearFrom').value;
+    const to = document.getElementById('autoYearTo').value;
+    const pool = allQuestions.filter(q => (from === 'all' || q.exam_year >= parseInt(from)) && (to === 'all' || q.exam_year <= parseInt(to)));
+    if (pool.length === 0) return alert("Sin resultados.");
+    let n = document.getElementById('autoNumSelect').value;
+    n = n === 'more' ? parseInt(document.getElementById('autoManualInput').value) : parseInt(n);
+    selectedIds.clear();
+    const shuffled = pool.sort(() => 0.5 - Math.random());
+    shuffled.slice(0, n || 1).forEach(q => selectedIds.add(q.id));
+    document.getElementById('examCount').textContent = selectedIds.size;
+    render();
+}
+
+function toggleInExam(id) {
+    if (selectedIds.has(id)) selectedIds.delete(id); else selectedIds.add(id);
+    document.getElementById('examCount').textContent = selectedIds.size; render();
+}
+
+function resetFilters() {
+    document.getElementById('search').value = ""; document.getElementById('topicSelect').value = "all";
+    document.getElementById('yearSelect').value = "all"; activeTagFilter = "all"; updateDynamicTags(); render();
+}
+
+function printExam() {
+    const qs = allQuestions.filter(q => selectedIds.has(q.id));
+    if (qs.length === 0) return alert("Selecciona preguntas primero");
+    const win = window.open('', '_blank');
+    const hData = { inst: document.getElementById('h-inst').value || "CENTRO EDUCATIVO", title: document.getElementById('h-title').value || "EXAMEN", curso: document.getElementById('h-course').value || "____", prof: document.getElementById('h-prof').value || "____", instr: document.getElementById('h-instr').value || "" };
+
+    let h = `<html><head><title>Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>body{font-family:'Lora', serif; padding:40px;} .header{border-bottom:2px solid #000; padding-bottom:15px; margin-bottom:30px;} .q{margin-bottom:40px; page-break-inside:avoid;} .problem-image{max-width:300px; display:block; margin: 15px 0;} sub{font-size:0.7em;}</style></head><body>
+    <div class="header"><h1>${hData.inst}</h1><p><strong>${hData.title}</strong> - ${subjectConfig[currentSubject].title}</p>
+    <p>Nombre: ___________________________________ | Curso: ${hData.curso} | Prof: ${hData.prof}</p>
+    <p style="font-size:11px; font-style:italic;">${hData.instr}</p></div>`;
+    
+    qs.forEach((q, i) => { h += `<div class="q"><strong>EJERCICIO ${i+1}.</strong><br>${renderContent(q)}</div>`; });
+    
+    h += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});window.print();<\/script></body></html>`;
+    win.document.write(h); win.document.close();
+}
+
+document.addEventListener('DOMContentLoaded', () => { document.getElementById('search').oninput = render; switchSubject('QUIM'); });
 </script>
 </body>
 </html>
