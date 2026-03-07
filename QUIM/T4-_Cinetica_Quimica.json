@@ -1,5 +1,21 @@
 [
   {
+    "text": "La reacción A + B -> C es de orden cero con respecto a, orden 2 con respecto a B y su constante de velocidad vale 0,027 mol–1·L·s–1. Responda a las siguientes preguntas, justificando la respuesta:\n\na) ¿Cuál es el orden total de la reacción?\n\nb) ¿Cuál es la velocidad si las concentraciones iniciales de A y de B son 0,48 M y 0,35 M, respectivamente?\n\nc) ¿Cómo se modifica la velocidad si la concentración inicial de A se reduce a la mitad?",
+    "topic_name": "T4: Cinética Química",
+    "exam_year": 2024,
+    "exam_model": "Reserva-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Velocidad de reacción",
+      "Orden de reacción",
+      "Ecuación de velocidad"
+    ],
+    "id": "0hocn4zif",
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
     "text": "2B. La reacción A + 2B → C es de primer orden respecto a cada uno de los reactivos. Cuando la concentración de A es 0,2 M y la de B es 0,8 M, la velocidad de formación de C es 5,6·10–1 mol·L–1·s–1.\n\na) Determine la constante de velocidad.\n\nb) ¿Cuánto valdrá la velocidad en el momento en que [A]= 0,1 mol·L–1 y [B]= 0,4 mol·L–1?\n\nc) ¿Cuál es el orden total de la reacción?\n\nd) Razone cómo afectaría la velocidad de la reacción la adición de un catalizador.",
     "topic_name": "T4: Cinética Química",
     "exam_year": 2025,
