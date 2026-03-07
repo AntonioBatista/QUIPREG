@@ -24,7 +24,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "yfjxukcu6",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Enlace iónico",
+      "Enlace metálico",
+      "Enlace covalente",
+      "Solubilidad",
+      "Conductividad eléctrica",
+      "Punto de fusión",
+      "Fuerzas intermoleculares",
+      "Polaridad molecular"
+    ]
   },
   {
     "text": "1B. Dadas las mol3©culas NF3 y BF3 \n\na) Razone si en ambas mol3©culas el 3¡tomo central presenta alg3³n par de electrones sin compartir.\n\nb) Explique seg3³n la TRPECV si la mol3©cula de NF3 presenta geometr3­a tetra3©drica.\n\nc) Justifique si ambas mol3©culas son polares.\n\nd) Indique la hibridaci3³n del 3¡tomo central en la mol3©cula de NF3",
@@ -35,7 +45,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "sqfk84uta",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Enlace químico",
+      "Estructura de Lewis",
+      "TRPECV",
+      "Geometría molecular",
+      "Polaridad molecular",
+      "Hibridación de orbitales",
+      "Pares de electrones no enlazantes"
+    ]
   },
   {
     "text": "1B. Dadas las moléculas NF3 y BF3 \n\na) Razone si en ambas moléculas el átomo central presenta algún par de electrones sin compartir.\n\nb) Explique según la TRPECV si la molécula de NF3 presenta geometría tetraédrica.\n\nc) Justifique si ambas moléculas son polares.\n\nd) Indique la hibridación del átomo central en la molécula de NF3.",
@@ -46,7 +65,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "jb0tjf9i4",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Enlace Químico",
+      "Estructura de Lewis",
+      "TRPECV",
+      "Geometría molecular",
+      "Polaridad",
+      "Hibridación",
+      "Pares de electrones solitarios"
+    ]
   },
   {
     "text": "1B. Razone las siguientes afirmaciones:\n\na) A 25 °C y 1 atm, el agua es un líquido y el sulfuro de hidrógeno es un gas.\n\nb) El NH3 tiene un punto de ebullición más alto que el CH4 \n\nc) A 25 °C y 1 atm, el diflúor y el dicloro son gases, el dibromo es líquido y el diyodo es sólido.\n\nd) El KCl tiene un punto de fusión mayor que el Cl2",
@@ -57,7 +85,19 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "v8pgxzelo",
-    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+    "source_file": "Examen_Suplente2-A_Quimica.pdf",
+    "detected_topics": [
+      "Enlace de hidrógeno",
+      "Fuerzas intermoleculares",
+      "Punto de ebullición",
+      "Punto de fusión",
+      "Fuerzas de Van der Waals",
+      "Fuerzas de dispersión de London",
+      "Enlace iónico",
+      "Enlace covalente",
+      "Polaridad molecular",
+      "Estados de agregación"
+    ]
   },
   {
     "text": "1B.\n\na) Dadas las moléculas H2S y PF3, razone en cuál o cuáles de ellas el átomo central presenta algún par de electrones sin compartir.\n\nb) Justifique la geometría que presenta la molécula de PF3.\n\nc) Indique la hibridación del átomo central del H2S.\n\nd) ¿Por qué la molécula BF3 es apolar?",
@@ -68,7 +108,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "7lyhb1p2n",
-    "source_file": "Examen_Titular-A_Quimica.pdf"
+    "source_file": "Examen_Titular-A_Quimica.pdf",
+    "detected_topics": [
+      "Enlace químico",
+      "Estructura de Lewis",
+      "Pares de electrones no enlazantes",
+      "Geometría molecular",
+      "TRPECV",
+      "Hibridación de orbitales",
+      "Polaridad molecular"
+    ]
   },
   {
     "text": "B3. Para las moléculas CH3Cl y CH4\n\na) Indique el tipo de hibridación que presenta el átomo de carbono.\n\nb) Justifique la polaridad de los enlaces y de la molécula.\n\nc) Razone su solubilidad en agua.",
@@ -79,7 +128,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "06kw6w3ot",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Hibridación",
+      "Polaridad de enlace",
+      "Polaridad molecular",
+      "Momento dipolar",
+      "Solubilidad",
+      "Fuerzas intermoleculares",
+      "Enlace covalente",
+      "Geometría molecular"
+    ]
   },
   {
     "text": "B3. Para las sustancias KCl y Cl2, justifique:\n\na) El tipo de enlace presente en cada una.\n\nb) Cuál tendrá menor punto de fusión.\n\nc) Cuál tendrá mayor solubilidad en agua.",
@@ -90,7 +149,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "7s45u365q",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Enlace iónico",
+      "Enlace covalente",
+      "Punto de fusión",
+      "Solubilidad",
+      "Fuerzas intermoleculares",
+      "Polaridad",
+      "Redes cristalinas"
+    ]
   },
   {
     "text": "B3. Justifique si las siguientes afirmaciones son verdaderas o falsas:\n\na) Si una molécula es apolar no puede contener enlaces polares.\n\nb) En un sólido metálico los cationes y aniones ocupan posiciones fijas dentro de la red metálica.\n\nc) La molécula de BCl3 tiene geometría plana triangular.",
