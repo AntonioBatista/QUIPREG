@@ -169,7 +169,13 @@ function autoChem(text) {
 
 function renderContent(question) {
     // CORRECCIÓN: Procesamos \n\n para saltos de línea y limpiamos espacios excesivos
-    let text = question.text.replace(/\\n/g, '\n').replace(/\n{2,}/g, '\n\n');
+    let text = question.text.replace(/\\n/g, '\n');
+
+    // 🔧 Arregla casos como (Z= \n\n19)
+    text = text.replace(/\(\s*Z=\s*\n+\s*(\d+)\s*\)/g, '(Z=$1)');
+
+    // Limpieza general de saltos excesivos
+    text = text.replace(/\n{3,}/g, '\n\n');
     let imageTag = (question.has_image && question.image_data) ? `<img src="${question.image_data}" class="problem-image">` : "";
 
     if (imageTag) {
