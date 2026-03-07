@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>EduDB | Banco de Preguntas v5.2</title>
+    <title>EduDB | Banco de Preguntas v5.2 Full</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -28,37 +28,27 @@
 
         .data-row { background: white; border-radius: 16px; border: 1px solid #eee; padding: 2rem; transition: 0.2s; position: relative; }
         
-        /* COLORES DE TAGS EN TARJETAS */
         .pill-topic { background: #3b82f6; color: white; } 
         .pill-content { background: #10b981; color: white; } 
-        
         .tag-badge { font-size: 9px; font-weight: 800; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-        /* NUBE DE TAGS PONDERADA Y REACTIVA */
+        /* Nube de Tags Ponderada */
         #tagCloud { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
         .tag-cloud-item { 
             font-weight: 700; padding: 4px 10px; border-radius: 12px; 
             background: #f8fafc; color: #94a3b8; cursor: pointer; transition: all 0.3s ease;
-            line-height: 1.1; border: 1px solid transparent;
+            line-height: 1.1;
         }
-        /* Hover suave con el color de la materia */
-        .tag-cloud-item:hover { 
-            background: var(--subject-soft); 
-            color: var(--subject-color);
-            transform: translateY(-1px);
-        }
-        /* Seleccionado sólido */
-        .tag-cloud-item.active-tag { 
-            background: var(--subject-color) !important; 
-            color: white !important; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+        .tag-cloud-item:hover { background: var(--subject-soft); color: var(--subject-color); transform: translateY(-1px); }
+        .tag-cloud-item.active-tag { background: var(--subject-color) !important; color: white !important; }
 
         #placeholder-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 280px; pointer-events: none; }
-        #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s; z-index: 100; }
-        #examPanel.open { right: 0; }
-        sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; bottom: -0.25em; }
         
+        /* Panel Configurador Deslizante */
+        #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 100; }
+        #examPanel.open { right: 0; }
+
+        sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; bottom: -0.25em; }
         .custom-scroll::-webkit-scrollbar { width: 4px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
     </style>
@@ -73,7 +63,7 @@
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">EduDB</span>
-            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">v5.2 Smart Cloud</span>
+            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">v5.2 Engine Full</span>
         </div>
     </div>
 
@@ -87,7 +77,7 @@
     </nav>
 
     <div class="flex items-center gap-3">
-        <button onclick="document.getElementById('examPanel').classList.add('open')" class="bg-black text-white px-5 py-2 rounded-xl text-[10px] font-bold tracking-widest transition active:scale-95">
+        <button onclick="document.getElementById('examPanel').classList.add('open')" class="bg-black text-white px-5 py-2 rounded-xl text-[10px] font-bold tracking-widest transition shadow-lg">
             MODO EXAMEN (<span id="examCount">0</span>)
         </button>
     </div>
@@ -105,41 +95,68 @@
 
         <section class="space-y-4">
             <div>
-                <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque</label>
-                <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer hover:border-gray-300 transition"></select>
+                <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque Principal</label>
+                <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
             </div>
             <div>
                 <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Año</label>
-                <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer hover:border-gray-300 transition"></select>
+                <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
             </div>
         </section>
 
         <section id="tagCloudSection" class="hidden">
             <label class="text-[10px] uppercase font-bold text-gray-400 mb-4 block tracking-widest border-t pt-4">Contenidos del Bloque</label>
-            <div id="tagCloud">
-                </div>
+            <div id="tagCloud"></div>
         </section>
     </aside>
 
     <main class="flex-1 overflow-y-auto p-8 relative bg-[#fcfcfc]">
         <img id="placeholder-icon" src="https://img.icons8.com/fluency/240/test-tube.png">
-        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center italic">Selecciona un bloque o busca para ver resultados</div>
+        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center italic">Selecciona un bloque o busca para explorar</div>
         <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
-        <div id="loader" class="hidden text-center py-20 opacity-30 italic">Consultando archivos...</div>
+        <div id="loader" class="hidden text-center py-20 opacity-30 italic">Sincronizando base de datos...</div>
     </main>
 
-    <div id="examPanel" class="no-print flex flex-col shadow-2xl">
-        <div class="p-6 flex items-center justify-between border-b">
-            <h3 class="font-black text-sm tracking-widest text-gray-800 uppercase leading-none">Configurador</h3>
+    <div id="examPanel" class="no-print flex flex-col">
+        <div class="p-6 flex items-center justify-between border-b bg-white sticky top-0 z-10">
+            <h3 class="font-black text-sm tracking-widest text-gray-800 uppercase">Configurador de Examen</h3>
             <button onclick="document.getElementById('examPanel').classList.remove('open')" class="text-gray-400 hover:text-black">✕</button>
         </div>
-        <div class="p-6 flex-1 space-y-6 overflow-y-auto custom-scroll">
-            <div class="bg-gray-50 p-6 rounded-3xl space-y-4">
-                <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition">
-                <input id="h-title" type="text" placeholder="Título del Examen" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition">
-                <div class="grid grid-cols-2 gap-2"><input id="h-course" type="text" placeholder="Curso" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition"><input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition"></div>
+        
+        <div class="p-6 flex-1 space-y-8 overflow-y-auto custom-scroll">
+            
+            <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100 space-y-4">
+                <p class="text-[9px] font-black text-blue-800 uppercase italic">Sorteo Aleatorio por Criterios</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <select id="autoYearFrom" class="w-full border rounded p-2 text-[10px] bg-white outline-none"></select>
+                    <select id="autoYearTo" class="w-full border rounded p-2 text-[10px] bg-white outline-none"></select>
+                </div>
+                <select id="autoTopic" class="w-full border rounded p-2 text-[10px] bg-white outline-none"></select>
+                
+                <div class="flex gap-2 items-end pt-2">
+                    <div class="flex-1">
+                        <label class="text-[8px] font-bold text-blue-400 block mb-1 uppercase">Nº Preguntas</label>
+                        <select id="autoNumSelect" onchange="document.getElementById('autoManualInput').classList.toggle('hidden', this.value !== 'more')" class="w-full border rounded p-1.5 text-xs bg-white">
+                            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="more">+ de 3</option>
+                        </select>
+                        <input id="autoManualInput" type="number" class="hidden w-full border rounded mt-1 p-1 text-xs" placeholder="Cantidad...">
+                    </div>
+                    <button onclick="runSorteo()" class="h-9 px-4 bg-blue-600 text-white rounded-xl font-black text-[9px] hover:bg-blue-700 transition">SORTEAR</button>
+                </div>
             </div>
-            <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-[10px] font-black tracking-widest shadow-xl transition hover:opacity-85 active:scale-[0.98]">GENERAR PDF</button>
+
+            <div class="bg-gray-50 p-6 rounded-3xl space-y-4">
+                <p class="text-[9px] font-black text-gray-500 uppercase italic">Datos de la Cabecera</p>
+                <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                <input id="h-title" type="text" placeholder="Título del Examen" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                <div class="grid grid-cols-2 gap-2">
+                    <input id="h-course" type="text" placeholder="Curso/Grupo" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                    <input id="h-prof" type="text" placeholder="Profesor/a" class="w-full border p-3 rounded-xl text-[10px] outline-none">
+                </div>
+                <textarea id="h-instr" placeholder="Instrucciones adicionales..." class="w-full border p-3 rounded-xl text-[10px] h-20 outline-none"></textarea>
+            </div>
+
+            <button onclick="printExam()" class="w-full py-5 bg-black text-white rounded-3xl text-[11px] font-black tracking-[0.2em] shadow-xl hover:opacity-85 transition">GENERAR PDF FINAL</button>
         </div>
     </div>
 </div>
@@ -161,10 +178,7 @@ let activeTagFilter = "all";
 
 function autoChem(text) {
     if (!text) return "";
-    return text.replace(/\b([A-Z][a-z]?\d+|[A-Z][a-z]?\(.*?\)\d*|[A-Z][a-z]?)+\b/g, (formula) => {
-        if (!/\d/.test(formula)) return formula;
-        return formula.replace(/(\d+)/g, '<sub>$1</sub>');
-    });
+    return text.replace(/\b([A-Z][a-z]?\d+|[A-Z][a-z]?\(.*?\)\d*|[A-Z][a-z]?)+\b/g, (f) => /\d/.test(f) ? f.replace(/(\d+)/g, '<sub>$1</sub>') : f);
 }
 
 function switchSubject(id) {
@@ -183,7 +197,6 @@ async function loadData() {
     const loader = document.getElementById('loader');
     const config = subjectConfig[currentSubject];
     loader.classList.remove('hidden');
-
     try {
         const response = await fetch(`${config.folder}/${config.file}`);
         const index = await response.json();
@@ -203,14 +216,23 @@ async function loadData() {
 function populateSelectors() {
     const tSel = document.getElementById('topicSelect');
     const ySel = document.getElementById('yearSelect');
+    const aTopic = document.getElementById('autoTopic');
+    const aFrom = document.getElementById('autoYearFrom');
+    const aTo = document.getElementById('autoYearTo');
+
     const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
     const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
 
-    tSel.innerHTML = '<option value="all">Bloque: Todos</option>';
-    topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
+    const fill = (el, items, label) => {
+        el.innerHTML = `<option value="all">${label}</option>`;
+        items.forEach(i => el.innerHTML += `<option value="${i}">${i}</option>`);
+    };
 
-    ySel.innerHTML = '<option value="all">Año: Todos</option>';
-    years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
+    fill(tSel, topics, "Bloque: Todos");
+    fill(ySel, years, "Año: Todos");
+    fill(aTopic, topics, "Sorteo: Cualquier bloque");
+    fill(aFrom, years.sort((a,b)=>a-b), "Desde...");
+    fill(aTo, years.sort((a,b)=>b-a), "Hasta...");
 }
 
 function updateDynamicTags() {
@@ -219,48 +241,23 @@ function updateDynamicTags() {
     const cloud = document.getElementById('tagCloud');
     const section = document.getElementById('tagCloudSection');
 
-    // REGLA: Ocultar nube si no hay tema seleccionado
-    if (topic === 'all') {
-        section.classList.add('hidden');
-        activeTagFilter = "all";
-        return;
-    }
+    if (topic === 'all') { section.classList.add('hidden'); activeTagFilter = "all"; return; }
     section.classList.remove('hidden');
 
-    const visibleQs = allQuestions.filter(q => {
-        const okTopic = q.topic_name === topic;
-        const okYear = year === 'all' || q.exam_year == year;
-        return okTopic && okYear;
-    });
-
+    const visibleQs = allQuestions.filter(q => q.topic_name === topic && (year === 'all' || q.exam_year == year));
     const tagCounts = {};
-    visibleQs.forEach(q => { 
-        if(q.detected_topics) {
-            q.detected_topics.forEach(tag => {
-                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-            });
-        } 
-    });
+    visibleQs.forEach(q => q.detected_topics?.forEach(tag => tagCounts[tag] = (tagCounts[tag] || 0) + 1));
 
     const uniqueTags = Object.keys(tagCounts).sort();
     const maxFreq = Math.max(...Object.values(tagCounts), 1);
-
     cloud.innerHTML = "";
     uniqueTags.forEach(tag => {
-        const freq = tagCounts[tag];
         const span = document.createElement('span');
-        
-        // Ponderado proporcional (9px a 15px)
-        const size = 9 + (freq / maxFreq) * 6;
-        
+        const size = 9 + (tagCounts[tag] / maxFreq) * 6;
         span.className = `tag-cloud-item ${activeTagFilter === tag ? 'active-tag' : ''}`;
         span.style.fontSize = `${size}px`;
-        span.textContent = tag; // Sin número al lado
-        span.onclick = () => {
-            activeTagFilter = (activeTagFilter === tag) ? "all" : tag;
-            updateDynamicTags();
-            render();
-        };
+        span.textContent = tag;
+        span.onclick = () => { activeTagFilter = activeTagFilter === tag ? "all" : tag; updateDynamicTags(); render(); };
         cloud.appendChild(span);
     });
 }
@@ -273,76 +270,71 @@ function render() {
     const stats = document.getElementById('stats');
 
     if (!term && year === 'all' && topic === 'all' && activeTagFilter === 'all') {
-        container.innerHTML = '';
-        stats.textContent = "Selecciona un bloque o busca para ver resultados";
-        document.getElementById('placeholder-icon').style.display = 'block';
-        return;
+        container.innerHTML = ''; stats.textContent = "Busca o filtra para ver problemas";
+        document.getElementById('placeholder-icon').style.display = 'block'; return;
     }
-
     document.getElementById('placeholder-icon').style.display = 'none';
 
     const filtered = allQuestions.filter(q => {
         const okText = (q.text || "").toLowerCase().includes(term);
         const okTopic = topic === 'all' || q.topic_name === topic;
         const okYear = year === 'all' || q.exam_year == year;
-        const okTag = activeTagFilter === 'all' || (q.detected_topics && q.detected_topics.includes(activeTagFilter));
+        const okTag = activeTagFilter === 'all' || q.detected_topics?.includes(activeTagFilter);
         return okText && okTopic && okYear && okTag;
     });
 
     stats.textContent = `${filtered.length} RESULTADOS ENCONTRADOS`;
     container.innerHTML = '';
-
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
         const card = document.createElement('div');
         card.className = `data-row ${isSelected ? 'ring-2 ring-black border-black shadow-md' : ''}`;
-        
         const cleanText = autoChem((q.text || "").replace(/\\n/g, '\n'));
         const contentsHTML = (q.detected_topics || []).map(t => `<span class="tag-badge pill-content">${t}</span>`).join(' ');
 
         card.innerHTML = `
             <div class="flex justify-between items-start mb-6">
-                <div>
-                    <h2 class="text-3xl font-black leading-none">${q.exam_year}</h2>
-                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">${q.exam_model || ''}</span>
-                </div>
+                <div><h2 class="text-3xl font-black leading-none">${q.exam_year}</h2><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">${q.exam_model || ''}</span></div>
                 <div class="flex flex-col items-end gap-2 text-right">
                     <span class="tag-badge pill-topic">${q.topic_name}</span>
                     <div class="flex gap-1 flex-wrap justify-end max-w-[200px]">${contentsHTML}</div>
                 </div>
             </div>
-            
-            <div class="prose prose-sm text-gray-700 font-medium leading-relaxed mb-8">
-                ${marked.parse(cleanText)}
-            </div>
-
+            <div class="prose prose-sm text-gray-700 font-medium mb-8">${marked.parse(cleanText)}</div>
             <div class="flex justify-between items-center no-print border-t pt-4">
-                <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">
-                    ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
-                </button>
+                <button onclick="toggleInExam('${q.id}')" class="text-[9px] font-black py-2 px-6 rounded-xl border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-black hover:text-white'}">${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}</button>
                 <span class="text-[9px] font-mono text-gray-300 italic">${q.community || ''}</span>
             </div>
         `;
         container.appendChild(card);
     });
-
     renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
 }
 
-function toggleInExam(id) {
-    if (selectedIds.has(id)) selectedIds.delete(id);
-    else selectedIds.add(id);
+function runSorteo() {
+    const from = document.getElementById('autoYearFrom').value;
+    const to = document.getElementById('autoYearTo').value;
+    const topic = document.getElementById('autoTopic').value;
+    const pool = allQuestions.filter(q => (topic === 'all' || q.topic_name === topic) && (from === 'all' || q.exam_year >= parseInt(from)) && (to === 'all' || q.exam_year <= parseInt(to)));
+    if (pool.length === 0) return alert("No hay preguntas con esos criterios.");
+    let n = document.getElementById('autoNumSelect').value;
+    n = n === 'more' ? parseInt(document.getElementById('autoManualInput').value) : parseInt(n);
+    selectedIds.clear();
+    const shuffled = pool.sort(() => 0.5 - Math.random());
+    shuffled.slice(0, n || 1).forEach(q => selectedIds.add(q.id));
     document.getElementById('examCount').textContent = selectedIds.size;
     render();
+    alert(`Sorteo completado con ${selectedIds.size} preguntas.`);
+}
+
+function toggleInExam(id) {
+    if (selectedIds.has(id)) selectedIds.delete(id); else selectedIds.add(id);
+    document.getElementById('examCount').textContent = selectedIds.size; render();
 }
 
 function resetFilters() {
-    document.getElementById('search').value = "";
-    document.getElementById('topicSelect').value = "all";
-    document.getElementById('yearSelect').value = "all";
-    activeTagFilter = "all";
-    updateDynamicTags();
-    render();
+    document.getElementById('search').value = ""; document.getElementById('topicSelect').value = "all";
+    document.getElementById('yearSelect').value = "all"; activeTagFilter = "all"; updateDynamicTags(); render();
 }
 
 function printExam() {
@@ -351,20 +343,15 @@ function printExam() {
     const win = window.open('', '_blank');
     const inst = document.getElementById('h-inst').value || "INSTITUCIÓN";
     const title = document.getElementById('h-title').value || "EXAMEN";
-
     let h = `<html><head><title>Examen</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <style>body{font-family:'Lora', serif; padding:40px;} .header{border-bottom:2px solid #000; padding-bottom:15px; margin-bottom:30px;} .q{margin-bottom:40px; page-break-inside:avoid;} sub{font-size:0.7em;}</style></head><body>
-    <div class="header"><h1>${inst}</h1><p><strong>${title}</strong> | Asignatura: ${subjectConfig[currentSubject].title}</p><p>Alumno: ___________________________________ | Curso: ${document.getElementById('h-course').value}</p></div>`;
-    
-    qs.forEach((q, i) => { h += `<div class="q"><strong>EJERCICIO ${i+1}.</strong><br>${marked.parse(autoChem(q.text.replace(/\\n/g, '\n')))}</div>`; });
+    <div class="header"><h1>${inst}</h1><p><strong>${title}</strong> | Asignatura: ${subjectConfig[currentSubject].title}</p><p>Alumno: ___________________________________ | Curso: ${document.getElementById('h-course').value} | Profesor: ${document.getElementById('h-prof').value}</p><p style="font-style:italic; font-size:12px;">${document.getElementById('h-instr').value}</p></div>`;
+    qs.forEach((q, i) => h += `<div class="q"><strong>EJERCICIO ${i+1}.</strong><br>${marked.parse(autoChem(q.text.replace(/\\n/g, '\n')))}</div>`);
     h += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});window.print();<\/script></body></html>`;
     win.document.write(h); win.document.close();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('search').oninput = render;
-    switchSubject('QUIM');
-});
+document.addEventListener('DOMContentLoaded', () => { document.getElementById('search').oninput = render; switchSubject('QUIM'); });
 </script>
 </body>
 </html>
