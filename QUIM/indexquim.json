@@ -8,7 +8,7 @@
     {
       "name": "T1: Estructura Atómica",
       "file": "T1-_Estructura_Atomica.json",
-      "count": 21
+      "count": 20
     },
     {
       "name": "T2: Enlace Químico",
@@ -51,6 +51,6 @@
       "count": 11
     }
   ],
-  "last_updated": "2026-03-07T12:12:35.608Z",
-  "total_questions": 152
+  "last_updated": "2026-03-07T12:19:02.322Z",
+  "total_questions": 151
 }
