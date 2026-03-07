@@ -1,5 +1,21 @@
 [
   {
+    "text": "Se ha preparado una disolución acuosa 0,1 M de un ácido débil monoprótico, R-COOH (Ka= 1,52·10–5).\n\na) Calcule las concentraciones de todas las especies químicas en el equilibrio y el grado de disociación.\n\nb) Si se mezclan 250 mL de la disolución anterior del ácido con 250 mL de agua, ¿cuál será el pH la disolución resultante?",
+    "topic_name": "T7: Ácido-Base",
+    "exam_year": 2024,
+    "exam_model": "Reserva-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ácidos débiles",
+      "Cálculo de pH",
+      "Dilución"
+    ],
+    "id": "rdlnzn84b",
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+  },
+  {
     "text": "2B.\n\na) Razone, según la teoría de Brönsted-Lowry, si el ácido conjugado de una base fuerte es un ácido fuerte.\n\nb) Escriba la reacción del CN– en agua, identificando los pares ácido-base conjugados.\n\nc) Explique si al disolver NaNO3 en agua el pH cambia.\n\nd) Justifique cuál o cuáles de las especies HCO3–, CO3 2– y H2CO3 son anfóteras.",
     "topic_name": "T7: Ácido-Base",
     "exam_year": 2025,
