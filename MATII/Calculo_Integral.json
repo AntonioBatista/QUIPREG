@@ -1,27 +1,5 @@
 [
   {
-    "text": "EJERCICIO 2.  Hasta 1 punto por el cálculo de la integral indefinida.",
-    "topic_name": "Cálculo Integral",
-    "exam_year": 2025,
-    "exam_model": "Desconocido",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "cptu93dlr",
-    "source_file": "Criterios_Titular-B_Matematicas II.pdf"
-  },
-  {
-    "text": "EJERCICIO 3.  Hasta 1,25 puntos por la integral indefinida.",
-    "topic_name": "Cálculo Integral",
-    "exam_year": 2025,
-    "exam_model": "Desconocido",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "0kgnsx4h5",
-    "source_file": "Criterios_Titular-B_Matematicas II.pdf"
-  },
-  {
     "text": "EJERCICIO 6. \nHalla la función $f : (0, +\\infty) \\to \\mathbb{R}$ que pasa por los puntos $(2, e - 2 - 2 \\ln(2))$ y $(1, 0)$, y verifica que $f''(x) = e^{x-1} - \\frac{1}{x}$.",
     "topic_name": "Cálculo Integral",
     "exam_year": 2025,
