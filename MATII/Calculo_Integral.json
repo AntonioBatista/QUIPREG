@@ -44,7 +44,7 @@
     "source_file": "Examen_Titular-B_MatematicasII.pdf"
   },
   {
-    "text": "EJERCICIO 3. (2,5 puntos)\nCalcula el valor de $k$ para que $\\int_{1}^{3} e^{x-k}(x - 2) dx = 2$.",
+    "text": "EJERCICIO 3. (2,5 puntos)\nCalcula el valor de $k$ para que $\\int_{1}^{3} e^{x-k}(x - \n\n2) dx = 2$.",
     "topic_name": "Cálculo Integral",
     "exam_year": 2025,
     "exam_model": "Titular-B",
