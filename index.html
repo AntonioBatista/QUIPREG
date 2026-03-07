@@ -155,62 +155,64 @@ async function loadData() {
     container.innerHTML = "";
     stats.textContent = "CONECTANDO...";
 
+    // Creamos un controlador para cancelar si tarda mucho
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 segundos máximo
+
     const indexUrl = `${config.folder}/${config.file}`;
 
     try {
-        console.log("Intentando cargar índice:", indexUrl);
-        const response = await fetch(indexUrl);
-        
+        console.log("🔍 Buscando archivo en:", indexUrl);
+        const response = await fetch(indexUrl, { signal: controller.signal });
+        clearTimeout(timeoutId);
+
         if (!response.ok) {
-            throw new Error(`No se encuentra el archivo: ${indexUrl} (Error ${response.status})`);
+            throw new Error(`ERROR 404: No se encuentra el archivo "${indexUrl}". Comprueba que la carpeta en GitHub se llame exactamente "${config.folder}" (MAYÚSCULAS).`);
         }
 
         const data = await response.json();
-        console.log("Índice cargado correctamente:", data);
 
         if (!data.topics || !Array.isArray(data.topics)) {
-            throw new Error(`El archivo ${indexUrl} no tiene el formato correcto { "topics": [...] }`);
+            throw new Error(`El archivo "${indexUrl}" está vacío o mal escrito. Debe tener el formato: { "topics": [...] }`);
         }
 
         allQuestions = [];
         
-        // Carga secuencial para detectar exactamente cuál falla
         for (const topic of data.topics) {
             const topicUrl = `${config.folder}/${topic.file}`;
-            console.log("Cargando tema:", topicUrl);
-            
             try {
                 const res = await fetch(topicUrl);
-                if (!res.ok) throw new Error(`Error ${res.status} al cargar ${topicUrl}`);
+                if (!res.ok) throw new Error(`No se pudo cargar el tema: ${topic.file}`);
                 const questions = await res.json();
                 allQuestions.push(...questions);
             } catch (err) {
-                console.warn(`Error en el tema ${topic.file}:`, err);
-                // Si un tema falla, seguimos con los demás pero avisamos
-                loader.innerHTML += `<div class="text-[10px] text-orange-600">⚠️ Saltando ${topic.file} por error de formato.</div>`;
+                console.error(err);
+                loader.innerHTML += `<div class="text-[10px] text-orange-600">⚠️ Error en tema: ${topic.file}</div>`;
             }
         }
 
-        if (allQuestions.length === 0) {
-            throw new Error("No se han podido cargar preguntas de ningún archivo.");
-        }
+        if (allQuestions.length === 0) throw new Error("No hay preguntas válidas en esta asignatura.");
 
         populateTopicWeights();
         render();
         loader.style.display = "none";
+        
     } catch (e) {
-        console.error("ERROR CRÍTICO:", e);
+        console.error("Detalle del error:", e);
+        let msg = e.message;
+        if (e.name === 'AbortError') msg = `TIEMPO AGOTADO. GitHub no responde. Revisa si el nombre de la carpeta "/${config.folder}" es correcto.`;
+        
         loader.innerHTML = `
             <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl text-red-800 max-w-md mx-auto shadow-xl">
-                <h3 class="font-black text-lg mb-2">❌ ERROR CRÍTICO</h3>
-                <p class="text-sm mb-4">${e.message}</p>
-                <div class="text-[10px] bg-white/50 p-2 rounded font-mono text-left">
-                    Sugerencias:<br>
-                    1. Revisa que la carpeta <strong>${config.folder}</strong> esté en mayúsculas.<br>
-                    2. Revisa que el archivo <strong>${config.file}</strong> no tenga errores de sintaxis (comas de más).<br>
-                    3. Verifica que GitHub ha terminado de publicar (tarda 1-2 min).
+                <h3 class="font-black text-lg mb-2 text-red-600 italic">❌ ERROR DE CONEXIÓN</h3>
+                <p class="text-sm mb-4">${msg}</p>
+                <div class="text-[10px] bg-white/70 p-3 rounded font-mono text-left space-y-2">
+                    <strong>LISTA DE CHEQUEO:</strong><br>
+                    • ¿Carpeta en GitHub: <span class="bg-yellow-200 px-1">${config.folder}</span>?<br>
+                    • ¿Archivo: <span class="bg-yellow-200 px-1">${config.file}</span>?<br>
+                    • ¿Has hecho "Push" de los cambios hace más de 1 min?
                 </div>
-                <button onclick="loadData()" class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-red-700 transition">REINTENTAR</button>
+                <button onclick="location.reload()" class="mt-4 w-full bg-red-600 text-white py-2 rounded-xl text-xs font-bold hover:bg-red-700 shadow-lg">RECARGAR TODA LA WEB</button>
             </div>`;
         stats.textContent = "ERROR";
     }
