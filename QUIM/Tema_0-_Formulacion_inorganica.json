@@ -39,7 +39,17 @@
     "context_text": "",
     "id": "nxysf1mqt",
     "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
-    "solution": "### a) Hidróxido de vanadio(V)\n$V(OH)_5$\n\n### b) Bromato de aluminio\n$Al(BrO_3)_3$\n\n### c) Etilbenceno\n$C_6H_5CH_2CH_3$\n\n### d) $CuH_2$\nHidruro de cobre(II)\n\n### e) $H_3AsO_3$\nÁcido arsenioso\n\n### f) $HOOCCH_2COOH$\nÁcido propanodioico"
+    "solution": "### a) Hidróxido de vanadio(V)\n$V(OH)_5$\n\n### b) Bromato de aluminio\n$Al(BrO_3)_3$\n\n### c) Etilbenceno\n$C_6H_5CH_2CH_3$\n\n### d) $CuH_2$\nHidruro de cobre(II)\n\n### e) $H_3AsO_3$\nÁcido arsenioso\n\n### f) $HOOCCH_2COOH$\nÁcido propanodioico",
+    "detected_topics": [
+      "Formulación inorgánica",
+      "Formulación orgánica",
+      "Hidróxidos",
+      "Oxosales",
+      "Hidrocarburos aromáticos",
+      "Hidruros metálicos",
+      "Oxoácidos",
+      "Ácidos carboxílicos"
+    ]
   },
   {
     "text": "A2. Formule o nombre los siguientes compuestos:\n\na) Óxido de aluminio; \n\nb) Ácido cloroso; \n\nc) But-2-ino; \n\nd) Sn(OH)2; \n\ne) Ba(MnO4)2; \n\nf) CH3CH2CONH2",
@@ -51,7 +61,18 @@
     "context_text": "",
     "id": "dqtsds6w5",
     "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
-    "solution": "### a) Óxido de aluminio\n$Al_2O_3$\n\n### b) Ácido cloroso\n$HClO_2$\n\n### c) But-2-ino\n$CH_3-C\\equiv C-CH_3$\n\n### d) $Sn(OH)_2$\nHidróxido de estaño(II)\n\n### e) $Ba(MnO_4)_2$\nPermanganato de bario\n\n### f) $CH_3CH_2CONH_2$\nPropanamida"
+    "solution": "### a) Óxido de aluminio\n$Al_2O_3$\n\n### b) Ácido cloroso\n$HClO_2$\n\n### c) But-2-ino\n$CH_3-C\\equiv C-CH_3$\n\n### d) $Sn(OH)_2$\nHidróxido de estaño(II)\n\n### e) $Ba(MnO_4)_2$\nPermanganato de bario\n\n### f) $CH_3CH_2CONH_2$\nPropanamida",
+    "detected_topics": [
+      "Formulación inorgánica",
+      "Formulación orgánica",
+      "Nomenclatura química",
+      "Óxidos metálicos",
+      "Oxoácidos",
+      "Alquinos",
+      "Hidróxidos",
+      "Oxosales",
+      "Amidas"
+    ]
   },
   {
     "text": "A1. Formule o nombre los siguientes compuestos:\n\na) Óxido de molibdeno(IV); \n\nb) Sulfato de manganeso(II); \n\nc) Penta-1,3-dieno; \n\nd) Al(OH)3; \n\ne) HClO4; \n\nf) CH3CHOHCOOH",
@@ -62,7 +83,19 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "r69ntbiko",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Formulación inorgánica",
+      "Formulación orgánica",
+      "Óxidos",
+      "Sales oxoácidas",
+      "Oxoácidos",
+      "Hidróxidos",
+      "Alquenos",
+      "Dienos",
+      "Ácidos carboxílicos",
+      "Alcoholes"
+    ]
   },
   {
     "text": "A2. Formule o nombre los siguientes compuestos:\n\na) Fluoruro de plata; \n\nb) Ácido nitroso; \n\nc) p-metilfenol; \n\nd) O7Cl2; \n\ne) Ca(HCO3)2; \n\nf) CH3OCH2CH3",
@@ -73,7 +106,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "c4kcgo85a",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Formulación inorgánica",
+      "Formulación orgánica",
+      "Sales binarias",
+      "Oxoácidos",
+      "Fenoles",
+      "Óxidos",
+      "Sales ácidas",
+      "Éteres",
+      "Nomenclatura química"
+    ]
   },
   {
     "text": "A1. Formule o nombre los siguientes compuestos:\n\na) Fluoruro de estroncio; \n\nb) Sulfito de amonio; \n\nc) But-3-en-1-ol; \n\nd) Mn2O7; \n\ne) HClO2; \n\nf) (CH3)3N",
@@ -84,7 +128,19 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "x5a6z58zb",
-    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Formulación inorgánica",
+      "Nomenclatura inorgánica",
+      "Formulación orgánica",
+      "Nomenclatura orgánica",
+      "Sales binarias",
+      "Oxosales",
+      "Alcoholes",
+      "Óxidos metálicos",
+      "Oxoácidos",
+      "Aminas"
+    ]
   },
   {
     "text": "A2. Formule o nombre los siguientes compuestos:\n\na) Óxido de plomo(II); \n\nb) Ácido bórico; \n\nc) o-Bromofenol; \n\nd) K2O2; \n\ne) Mg(HSO4)2; \n\nf) CH3CH2OCH2CH3",
