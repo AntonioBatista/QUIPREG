@@ -1,6 +1,6 @@
 [
   {
-    "text": "C) **VIBRACIONES Y ONDASa)** Un objeto describe un movimiento armónico simple de amplitud A en el extremo de un resorte. Si la amplitud se duplica, conteste razonadamente:\n\ni) ¿qué sucede con la energía del sistema?; \n\nii) ¿qué sucede con la velocidad máxima del objeto?\n\n**b1)** Se sitúa un objeto de 20 cm de altura a 2 m del vértice de un espejo esférico convexo. Si la distancia focal es 6 m, calcule, indicando el criterio de signos utilizado:\n\ni) la distancia a la que se forma la imagen justificando si la misma es real o virtual; \n\nii) la altura de la imagen.\n\n**b2)** Un rayo de luz amarilla, emitido por una lámpara de sodio, tiene una longitud de onda en el vacío de 5,89·10−7 m. Determine:\n\ni) su frecuencia; \n\nii) su velocidad de propagación y su longitud de onda en el interior de una fibra de cuarzo; \n\niii) el ángulo límite entre la lámina de cuarzo y el aire. c = 3·108 m s-1; naire = 1; ncuarzo = 1,458",
+    "text": "C) VIBRACIONES Y ONDASa) Un objeto describe un movimiento armónico simple de amplitud A en el extremo de un resorte. Si la amplitud se duplica, conteste razonadamente:\n\ni) ¿qué sucede con la energía del sistema?; \n\nii) ¿qué sucede con la velocidad máxima del objeto?\n\nb1) Se sitúa un objeto de 20 cm de altura a 2 m del vértice de un espejo esférico convexo. Si la distancia focal es 6 m, calcule, indicando el criterio de signos utilizado:\n\ni) la distancia a la que se forma la imagen justificando si la misma es real o virtual; \n\nii) la altura de la imagen.\n\nb2) Un rayo de luz amarilla, emitido por una lámpara de sodio, tiene una longitud de onda en el vacío de 5,89·10−7 m. Determine:\n\ni) su frecuencia; \n\nii) su velocidad de propagación y su longitud de onda en el interior de una fibra de cuarzo; \n\niii) el ángulo límite entre la lámina de cuarzo y el aire. c = 3·108 m s-1; naire = 1; ncuarzo = 1,458",
     "topic_name": "T3: Vibraciones y Ondas",
     "exam_year": 2025,
     "exam_model": "Suplente1-A",
@@ -16,7 +16,7 @@
     "source_file": "Examen_Suplente1-A_FÍSICA.pdf"
   },
   {
-    "text": "C) VIBRACIONES Y ONDAS \n\n**b2)** Una onda estacionaria está descrita mediante la siguiente ecuación: y(x,t) = 0,5∙cos(0,5π x)∙sen(4π t) (SI). Determine razonadamente: \n\n**i)**  la amplitud, la longitud de onda y la velocidad de propagación de las ondas armónicas cuya superposición da lugar a esta onda estacionaria; \n\n**ii)**  la posición de algún nodo, ayudándose de un esquema.",
+    "text": "C) VIBRACIONES Y ONDAS \n\nb2) Una onda estacionaria está descrita mediante la siguiente ecuación: y(x,t) = 0,5∙cos(0,5π x)∙sen(4π t) (SI). Determine razonadamente:\n\ni) la amplitud, la longitud de onda y la velocidad de propagación de las ondas armónicas cuya superposición da lugar a esta onda estacionaria; \n\nii) la posición de algún nodo, ayudándose de un esquema.",
     "topic_name": "T3: Vibraciones y Ondas",
     "exam_year": 2025,
     "exam_model": "Suplente2-B",
@@ -31,7 +31,7 @@
     "source_file": "Examen_Suplente2-B_Fisica.pdf"
   },
   {
-    "text": "C) **VIBRACIONES Y ONDASb2)** La ecuación de una onda viajera que se pro-paga por una cuerda tensa es: y(x,t) = 10∙sen(25 t - 15 x) (SI).\nCalcule razonadamente:\n**i)**  la velocidad de propagación de la onda;\n**ii)**  la velocidad de oscilación de la cuerda en el punto x = 0 m en t = 5 s;\n**iii)**  la diferencia de fase entre dos puntos que, en el mismo instante, están separados 2 m.",
+    "text": "C) VIBRACIONES Y ONDASb2) La ecuación de una onda viajera que se pro-paga por una cuerda tensa es: y(x,t) = 10∙sen(25 t - 15 x) (SI).\nCalcule razonadamente:\n\ni) la velocidad de propagación de la onda;\n\nii) la velocidad de oscilación de la cuerda en el punto x = 0 m en t = 5 s;\n\niii) la diferencia de fase entre dos puntos que, en el mismo instante, están separados 2 m.",
     "topic_name": "T3: Vibraciones y Ondas",
     "exam_year": 2025,
     "exam_model": "Titular-B",
@@ -47,7 +47,7 @@
     "source_file": "Examen_Titular-B_Fisica.pdf"
   },
   {
-    "text": "**b1)** Por una cuerda tensa, se propaga en el sentido negativo del eje OX una onda armónica transversal de 0,1 m de amplitud, 5 Hz de frecuencia y una velocidad de propagación de 0,5 m s-1. Determine razonadamente: **i)**  la ecuación de la onda, sabiendo que para t = 0 s y x = 0 m se encuentra en la posición más alta de su oscilación; **ii)**  la diferencia de fase entre dos puntos de la cuerda separados 10 cm para un mismo instante; **iii)**  la distancia mínima entre dos puntos de la cuerda que se encuentren en oposición de fase en un mismo instante.",
+    "text": "b1) Por una cuerda tensa, se propaga en el sentido negativo del eje OX una onda armónica transversal de 0,1 m de amplitud, 5 Hz de frecuencia y una velocidad de propagación de 0,5 m s-1. Determine razonadamente:\n\ni) la ecuación de la onda, sabiendo que para t = 0 s y x = 0 m se encuentra en la posición más alta de su oscilación; \n\nii) la diferencia de fase entre dos puntos de la cuerda separados 10 cm para un mismo instante; \n\niii) la distancia mínima entre dos puntos de la cuerda que se encuentren en oposición de fase en un mismo instante.",
     "topic_name": "T3: Vibraciones y Ondas",
     "exam_year": 2025,
     "exam_model": "Titular-A",
