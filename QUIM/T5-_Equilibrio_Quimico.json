@@ -40,7 +40,15 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "mswc647xr",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Equilibrio Químico",
+      "Principio de Le Chatelier",
+      "Efecto de la temperatura",
+      "Reacción endotérmica",
+      "Efecto de la concentración",
+      "Efecto de un catalizador"
+    ]
   },
   {
     "text": "3A.\n\na) Una disoluci3³n saturada de Ca(OH)2 en agua a 25 °C contiene 0,296 g de Ca(OH)2 por cada 200 mL de disoluci3³n. Calcule el producto de solubilidad del Ca(OH)2 a esa temperatura.\n\nb) Razone si se formar3¡ precipitado de Mg(OH)2 al adicionar 0,05 g de Mg2+ a 100 mL de una disoluci3³n acuosa de pH= 11. \nDatos: KS(Mg(OH)2)= 5,61·10–12; Masas at3³micas relativas: Ca= 40; O= 16; H= 1; Mg= 24",
@@ -51,7 +59,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "ho1ggmhbp",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Equilibrio de solubilidad",
+      "Producto de solubilidad",
+      "Precipitación",
+      "Cálculos de solubilidad",
+      "pH y pOH",
+      "Solubilidad molar",
+      "Concentración iónica",
+      "Estequiometría"
+    ]
   },
   {
     "text": "2B. Dado el siguiente equilibrio: 2NO(g) + Cl2(g) ⇄ 2NOCl(g) ∆H0= 42 kJ·mol–1 \nConteste razonadamente a cada una de las siguientes cuestiones:\n\na) ¿Qué efecto producirá sobre la concentración de NO(g) la adición de Cl2(g)?\n\nb) ¿Hacia dónde se desplazará el equilibrio al aumentar la temperatura?\n\nc) ¿Qué efecto producirá sobre la concentración de NOCl(g) aumentar el volumen del reactor a temperatura constante?\n\nd) ¿Hacia dónde se desplazará el equilibrio al añadir un catalizador?",
@@ -62,7 +80,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "otvgqv0fp",
-    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+    "source_file": "Examen_Suplente2-B_Quimica.pdf",
+    "detected_topics": [
+      "Equilibrio químico",
+      "Principio de Le Chatelier",
+      "Efecto de la concentración",
+      "Efecto de la temperatura",
+      "Efecto del volumen",
+      "Efecto de catalizadores",
+      "Reacción endotérmica"
+    ]
   },
   {
     "text": "3B. Si el producto de solubilidad del yoduro de plata (AgI) es 1,5·10–16 a 25 °C:\n\na) Calcule la concentración en g·L–1 de iones Ag+ disueltos en una disolución saturada.\n\nb) ¿Se formará precipitado de AgI si se mezclan 10 mL de NaI 1·10–9 M y 30 mL de AgNO3 4·10–7 M? \nDato: Masa atómica relativa: Ag= 108",
@@ -73,7 +100,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "k8p8sgz5e",
-    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+    "source_file": "Examen_Suplente2-B_Quimica.pdf",
+    "detected_topics": [
+      "Equilibrio de solubilidad",
+      "Producto de solubilidad",
+      "Kps",
+      "Disolución saturada",
+      "Precipitación",
+      "Producto iónico",
+      "Solubilidad molar"
+    ]
   },
   {
     "text": "3A. El equilibrio de descomposición del NaHCO3 puede expresarse como: 2NaHCO3(s) ⇄ Na2CO3(s) + CO2(g) + H2O(g). Para estudiar este equilibrio en el laboratorio, se depositaron 200 g de NaHCO3(s) en un recipiente cerrado de 25 L, en el que previamente se hizo el vacío y se calentó a 110 °C. La presión en el interior del recipiente, una vez alcanzado el equilibrio, fue de 1,65 atm. Calcule:\n\na) La masa de NaHCO3(s) que queda en el recipiente tras alcanzarse el equilibrio a 110 °C.\n\nb) El valor de KP y KC a esa temperatura.\nDatos: R = 0,082 atm·L·mol⁻¹·K⁻¹; Masas atómicas relativas: Na = 23; O = 16; C = 12; H = 1",
@@ -84,7 +120,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "wjuu5grcm",
-    "source_file": "Examen_Titular-A_Quimica.pdf"
+    "source_file": "Examen_Titular-A_Quimica.pdf",
+    "detected_topics": [
+      "Equilibrio químico",
+      "Equilibrio heterogéneo",
+      "Constante de equilibrio Kp",
+      "Constante de equilibrio Kc",
+      "Presión parcial",
+      "Gases ideales",
+      "Estequiometría",
+      "Descomposición térmica",
+      "Relación entre Kc y Kp"
+    ]
   },
   {
     "text": "2B. La KS del Ca(OH)2 a 25 °C es 5·10–6.\n\na) A partir del equilibrio correspondiente, escriba la expresión del producto de solubilidad en función de la solubilidad molar.\n\nb) Razone si la solubilidad del Ca(OH)2 en agua aumentará al añadir CaCl2 \n\nc) Justifique si se producirá precipitado de Ca(OH)2 en una disolución a 25 °C en la que [Ca2+]= 10–1 M y [OH–]= 10–2 M.\n\nd) Razone cómo varía la solubilidad al disminuir el pH de una disolución de Ca(OH)2",
@@ -95,7 +142,15 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "63n46v8c3",
-    "source_file": "Examen_Titular-B_Quimica.pdf"
+    "source_file": "Examen_Titular-B_Quimica.pdf",
+    "detected_topics": [
+      "Equilibrio de solubilidad",
+      "Producto de solubilidad",
+      "Solubilidad molar",
+      "Efecto del ion común",
+      "Precipitación",
+      "Efecto del pH en la solubilidad"
+    ]
   },
   {
     "text": "3A. El NO2 se descompone según el equilibrio: 2NO2(g) ⇄ 2NO(g) + O2(g) \nEn un recipiente de 2 L a 25 °C se introduce NO2(g) hasta que su presión es 21,1 atm. Posteriormente, se calienta a 300 °C hasta alcanzar el equilibrio y se observa que la presión es 50 atm.\n\na) Calcule el valor de KC \n\nb) Calcule el valor de KP y el grado de disociación del NO2 en esas condiciones. \nDato: R= 0,082 atm·L·mol–1·K–1",
@@ -106,7 +161,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "taci9ndou",
-    "source_file": "Examen_Titular-B_Quimica.pdf"
+    "source_file": "Examen_Titular-B_Quimica.pdf",
+    "detected_topics": [
+      "Equilibrio químico",
+      "Equilibrio gaseoso",
+      "Constante de equilibrio Kc",
+      "Constante de equilibrio Kp",
+      "Grado de disociación",
+      "Ley de los gases ideales",
+      "Presión total",
+      "Estequiometría de la reacción"
+    ]
   },
   {
     "text": "C1. Al calentar HgO(s) a 400 ºC en un recipiente cerrado se obtiene Hg(g) y O2(g), estableciéndose el siguiente equilibrio: 2HgO(s) ⇄ 2Hg(g) + O2(g). Si la presión total cuando se alcanza el equilibrio es de 0,195 atm, calcule:\n\na) Las presiones parciales de cada gas en el equilibrio y el valor de KP a 400 ºC.\n\nb) El valor de KC a 400 ºC y los moles de HgO que se han descompuesto si el recipiente tiene un volumen de 2 L. Dato: R= 0,082 atm·L·mol−1·K−1",
@@ -117,7 +182,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "3m59xrpj5",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Equilibrio químico",
+      "Equilibrio heterogéneo",
+      "Presiones parciales",
+      "Constante de equilibrio Kp",
+      "Constante de equilibrio Kc",
+      "Relación Kp y Kc",
+      "Estequiometría",
+      "Gases ideales"
+    ]
   },
   {
     "text": "C1. El cloro gaseoso, Cl2(g), se obtiene industrialmente a partir de HCl(g) y O2(g), de acuerdo con la siguiente ecuación: 4HCl(g) + O2(g) ⇄ 2Cl2(g) + 2H2O(g). Se introducen 32,85 g de HCl y 38,40 g de O2 en un recipiente cerrado de 10 L y se calienta la mezcla de reacción a 390 ºC. Cuando se alcanza el equilibrio se observa que la presión parcial del Cl2(g) vale 2,175 atm. Calcule:\n\na) Las concentraciones de todos los gases en el equilibrio.\n\nb) Las constantes KC y KP a 390 ºC.\nDatos: Masas atómicas relativas: Cl= 35,5; O= 16; H= 1; R = 0,082 atm·L·mol−1·K−1",
@@ -128,7 +203,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "ll74tzz2x",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Equilibrio químico",
+      "Constante de equilibrio Kc",
+      "Constante de equilibrio Kp",
+      "Presiones parciales",
+      "Concentraciones en el equilibrio",
+      "Estequiometría",
+      "Gases ideales"
+    ]
   },
   {
     "text": "C2. El producto de solubilidad del BaF2 es 1,7·10–6.\n\na) A partir del equilibrio de disociación correspondiente, determine la solubilidad en g·L–1 del BaF2\n\nb) Calcule la masa de NaF(s) que se debe añadir a 100 mL de disolución 0,005 M de Ba(NO3)2 para iniciar la precipitación de BaF2\nDatos: Masas atómicas relativas: F= 19; Ba= 137; Na= 23",
@@ -139,7 +223,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "qkofaqvjw",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Equilibrio de solubilidad",
+      "Producto de solubilidad",
+      "Solubilidad",
+      "Precipitación",
+      "Efecto del ion común",
+      "Producto iónico",
+      "Cálculos estequiométricos"
+    ]
   },
   {
     "text": "B6. Al añadir una pequeña cantidad de Ca(OH)2 sólido a un vaso con agua se observa que no se disuelve por completo, quedando parte del sólido en equilibrio con la disolución saturada.\n\na) A partir del equilibrio correspondiente, deduzca la relación entre la solubilidad molar de este compuesto y su producto de solubilidad.\n\nb) Razone si aumentará la solubilidad del Ca(OH)2 añadiendo a la disolución CaCl2, que es una sal muy soluble.\n\nc) Justifique si cambiará el producto de solubilidad del Ca(OH)2 al añadir NaOH a la disolución saturada.",
@@ -161,7 +254,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "h137hddke",
-    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Equilibrio químico",
+      "Equilibrio heterogéneo",
+      "Constante Kc",
+      "Constante Kp",
+      "Ecuación de los gases ideales",
+      "Estequiometría",
+      "Descomposición térmica"
+    ]
   },
   {
     "text": "B5. Se prepara un litro de una disolución saturada de BaSO4 quedando producto en el fondo sin disolver. Razone qué le ocurre al equilibrio de solubilidad si se añade:\n\na) 2 g de BaSO4 \n\nb) 1 g de BaCl2 \n\nc) 1 L de agua destilada.",
