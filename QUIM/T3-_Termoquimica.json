@@ -1,5 +1,21 @@
 [
   {
+    "text": "C2. Para la siguiente reacción: 4NH3(g) + 3O2(g) -> 6H2O(l) + 2N2(g)\n\na) La entalpía de reacción estándar.\n\nb) La variación de energía interna (calor a volumen constante) a 25 ºC.\n\nDatos: R= 8,31 J·mol–1·K–1. Energías de enlace (kJ·mol–1): N-H: 390; O=O: 499; N≡N: 946; O-H: 460",
+    "topic_name": "T3: Termoquímica",
+    "exam_year": 2024,
+    "exam_model": "Suplente-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Entalpía de reacción",
+      "Energía de enlace",
+      "Energía interna"
+    ],
+    "id": "2p8d1dps7",
+    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+  },
+  {
     "text": "3A.\n\na) Calcule la variación de entropía que tiene lugar en la combustión del etanol: CH3CH2OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l).\n\nb) Calcule a partir de qué temperatura será espontánea la reacción anterior. Datos: S0(J·mol-1·K-1): O2(g)=204,8; CO2(g)=213,8; H2O(l)=69,8; CH3CH2OH(l)=160,5. ΔHf(kJ·mol-1): O2(g)=0; CO2(g)=-393,5; H2O(l)=-285,8; CH3CH2OH(l)=-277,3.",
     "topic_name": "T3: Termoquímica",
     "exam_year": 2025,
