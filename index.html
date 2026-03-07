@@ -29,7 +29,6 @@
 
         .font-serif { font-family: 'Lora', serif; }
 
-        /* Cabecera Premium */
         .glass-header {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
@@ -68,7 +67,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        /* Tarjetas Estilo v3 */
         .data-row { 
             border-left: 4px solid transparent;
             transition: all 0.3s ease;
@@ -92,7 +90,6 @@
             font-weight: 600;
         }
 
-        /* Utilidades */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .loading-pulse { animation: pulse 2s infinite; }
@@ -100,7 +97,6 @@
         
         .prose { max-width: none; }
 
-        /* Estilos Impresión */
         @media print {
             .no-print { display: none !important; }
             main { padding: 0 !important; }
@@ -139,6 +135,11 @@
 
 <div class="flex flex-1 overflow-hidden">
     <aside class="w-72 bg-white/50 border-r border-gray-200 p-6 flex flex-col gap-6 no-print hidden md:flex">
+        <button onclick="resetFilters()" class="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-600 text-[10px] font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+            Limpiar Filtros
+        </button>
+
         <div>
             <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Búsqueda</label>
             <input id="search" type="text" placeholder="Concepto, palabra..." class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black transition-all">
@@ -147,6 +148,11 @@
         <div>
             <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Año</label>
             <select id="yearSelect" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white cursor-pointer"></select>
+        </div>
+
+        <div>
+            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Modelo</label>
+            <select id="modelSelect" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white cursor-pointer"></select>
         </div>
 
         <div>
@@ -161,12 +167,12 @@
             </button>
             <div id="examTools" class="hidden space-y-4">
                 <div class="bg-blue-50 p-3 rounded-xl border border-blue-100">
-                    <p class="text-[10px] font-bold text-blue-800 mb-2">GENERACIÓN ALEATORIA</p>
+                    <p class="text-[10px] font-bold text-blue-800 mb-2 uppercase">Generación Aleatoria</p>
                     <input id="autoNum" type="number" value="4" class="w-full border p-2 rounded-lg text-xs mb-2" placeholder="Nº preguntas">
                     <button onclick="generateRandom()" class="w-full py-2 bg-blue-600 text-white rounded-lg text-[10px] font-bold hover:bg-blue-700">GENERAR</button>
                 </div>
                 <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-100">
-                    <p class="text-[10px] font-bold text-emerald-800 mb-2">DATOS PDF</p>
+                    <p class="text-[10px] font-bold text-emerald-800 mb-2 uppercase">Datos PDF</p>
                     <input id="instName" type="text" placeholder="Institución" class="w-full border p-2 rounded-lg text-[10px] mb-1">
                     <input id="examTitle" type="text" placeholder="Título" class="w-full border p-2 rounded-lg text-[10px]">
                 </div>
@@ -174,7 +180,7 @@
             </div>
         </div>
 
-        <div class="mt-auto p-4 rounded-2xl border border-current opacity-40 text-xs italic" style="color: var(--subject-color)">
+        <div id="subjectFooter" class="mt-auto p-4 rounded-2xl border border-current opacity-40 text-xs italic" style="color: var(--subject-color)">
             Consultor dinámico v4.2
         </div>
     </aside>
@@ -188,7 +194,6 @@
 </div>
 
 <script>
-// 1. CONFIGURACIÓN
 const subjectConfig = {
     'QUIM':   { title: 'Química', icon: '🧪', folder: 'QUIM', file: 'indexquim.json', color: '#10b981', bg: '#f0fdf4' },
     'FIS':    { title: 'Física', icon: '🧲', folder: 'FIS', file: 'indexfis.json', color: '#3b82f6', bg: '#eff6ff' },
@@ -202,15 +207,19 @@ let currentSubject = "QUIM";
 let allQuestions = [];
 let selectedIds = new Set();
 
-// 2. NAVEGACIÓN
 function switchSubject(id) {
     currentSubject = id;
     const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
     document.documentElement.style.setProperty('--bg', config.bg);
+    document.documentElement.style.setProperty('--subject-bg-soft', config.color + '20');
+
     document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
-    document.getElementById(`btn-${id}`).classList.add('active-sub');
-    document.getElementById('mainTitle').innerHTML = `Banco · <span style="color:${config.color}">${config.icon} ${config.title}</span>`;
+    const btn = document.getElementById(`btn-${id}`);
+    if(btn) btn.classList.add('active-sub');
+    
+    const title = document.getElementById('mainTitle');
+    if(title) title.innerHTML = `Banco de Preguntas · <span style="color:${config.color}">${config.icon} ${config.title}</span>`;
     
     selectedIds.clear();
     updateExamCounter();
@@ -225,7 +234,6 @@ function toggleExamTools() {
     icon.textContent = isHidden ? "⊖" : "⊕";
 }
 
-// 3. MOTOR DE CARGA CON REPARACIÓN DE JSON (Para evitar errores de LaTeX)
 async function loadData() {
     const loader = document.getElementById('loader');
     const container = document.getElementById('questions');
@@ -237,10 +245,10 @@ async function loadData() {
     stats.textContent = "CARGANDO...";
 
     const pathBase = config.folder + "/";
-    const indexUrl = pathBase + config.file;
+    const indexPath = pathBase + config.file;
 
     try {
-        const response = await fetch(indexUrl);
+        const response = await fetch(indexPath);
         const indexText = await response.text();
         const index = JSON.parse(indexText);
         
@@ -249,7 +257,7 @@ async function loadData() {
             try {
                 const res = await fetch(pathBase + t.file);
                 let raw = await res.text();
-                // Reparación de barras invertidas para JSON estricto
+                // Reparación de barras para JSON estricto
                 raw = raw.replace(/\\/g, "\\\\").replace(/\\\\n/g, "\\n").replace(/\\\\"/g, "\\\"").replace(/\\\\u/g, "\\u");
                 return JSON.parse(raw);
             } catch (err) { return []; }
@@ -266,11 +274,13 @@ async function loadData() {
     }
 }
 
-// 4. FILTROS Y RENDER
 function populateFilters() {
     const tSel = document.getElementById('topicSelect');
     const ySel = document.getElementById('yearSelect');
+    const mSel = document.getElementById('modelSelect');
     
+    if(!tSel || !ySel || !mSel) return;
+
     const topics = [...new Set(allQuestions.map(q => normalizeTopic(q)))].sort();
     tSel.innerHTML = '<option value="all">Todos los bloques</option>';
     topics.forEach(t => tSel.innerHTML += `<option value="${t}">${t}</option>`);
@@ -278,6 +288,10 @@ function populateFilters() {
     const years = [...new Set(allQuestions.map(q => q.exam_year))].sort((a,b) => b-a);
     ySel.innerHTML = '<option value="all">Todos los años</option>';
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
+
+    const models = [...new Set(allQuestions.map(q => q.exam_model))].filter(Boolean).sort();
+    mSel.innerHTML = '<option value="all">Todos los modelos</option>';
+    models.forEach(m => mSel.innerHTML += `<option value="${m}">${m}</option>`);
 }
 
 function normalizeTopic(q) {
@@ -296,34 +310,61 @@ function getQuestionType(text) {
 function render() {
     const year = document.getElementById('yearSelect').value;
     const topic = document.getElementById('topicSelect').value;
+    const model = document.getElementById('modelSelect').value;
     const term = document.getElementById('search').value.toLowerCase();
     
     const filtered = allQuestions.filter(q => {
-        const okText = q.text.toLowerCase().includes(term);
+        const okText = (q.text || "").toLowerCase().includes(term);
         const okTopic = topic === 'all' || normalizeTopic(q) === topic;
         const okYear = year === 'all' || q.exam_year == year;
-        return okText && okTopic && okYear;
+        const okModel = model === 'all' || q.exam_model === model;
+        return okText && okTopic && okYear && okModel;
     });
 
-    document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
+    const stats = document.getElementById('stats');
+    if (stats) stats.textContent = `${filtered.length} RESULTADOS`;
+    
     const container = document.getElementById('questions');
+    if (!container) return;
     container.innerHTML = '';
+
+    if (filtered.length === 0) {
+        container.innerHTML = '<div class="text-center py-20 text-gray-400 italic">No hay coincidencias con los filtros seleccionados.</div>';
+        return;
+    }
 
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
-        const type = getQuestionType(q.text);
+        const type = getQuestionType(q.text || "");
         const card = document.createElement('div');
-        card.className = `data-row p-6 flex flex-col gap-4 ${isSelected ? 'ring-2 ring-black border-black' : ''}`;
+        card.className = `data-row p-6 flex flex-col gap-4 mb-4 ${isSelected ? 'ring-2 ring-black border-black shadow-md' : 'border-gray-100 shadow-sm'}`;
         
-        const context = q.context_text ? `<div class="p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600 rounded-r-lg">${formatChemicalFormula(marked.parse(q.context_text.replace(/\\n/g, '\n')))}</div>` : "";
-        const solution = q.solution ? `<details class="mt-2 border-t pt-3 no-print"><summary class="text-xs font-bold cursor-pointer hover:opacity-70" style="color:var(--subject-color)">VER SOLUCIÓN</summary><div class="mt-2 text-sm text-gray-700 pl-4 border-l-2 border-gray-100">${formatChemicalFormula(marked.parse(q.solution.replace(/\\n/g, '\n')))}</div></details>` : "";
+        const cleanText = (q.text || "").replace(/\\n/g, '\n');
+        const cleanContext = (q.context_text || "").replace(/\\n/g, '\n');
+        const cleanSolution = (q.solution || "").replace(/\\n/g, '\n');
+
+        const contextHTML = q.context_text ? 
+            `<div class="p-3 bg-amber-50/50 border-l-2 border-amber-200 text-sm italic text-gray-600 rounded-r-lg mb-2">
+                ${formatChemicalFormula(marked.parse(cleanContext))}
+            </div>` : "";
+            
+        const solutionHTML = q.solution ? 
+            `<details class="mt-2 border-t pt-3 no-print">
+                <summary class="text-xs font-bold cursor-pointer hover:opacity-70 flex items-center gap-2" style="color:var(--subject-color)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+                    VER SOLUCIÓN PASO A PASO
+                </summary>
+                <div class="mt-2 text-sm text-gray-700 pl-4 border-l-2 border-gray-100 bg-gray-50/50 p-3 rounded-r-lg">
+                    ${formatChemicalFormula(marked.parse(cleanSolution))}
+                </div>
+            </details>` : "";
 
         card.innerHTML = `
             <div class="flex justify-between items-start gap-4">
                 <div class="flex flex-col">
-                    <span class="text-xl font-black">${q.exam_year}</span>
-                    <span class="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">${q.exam_model || ''}</span>
-                    <button onclick="toggleInExam('${q.id}')" class="no-print mt-2 text-[9px] font-bold py-1 px-2 rounded bg-gray-100 hover:bg-black hover:text-white transition">
+                    <span class="text-xl font-black">${q.exam_year || '?'}</span>
+                    <span class="text-[10px] font-mono text-gray-400 uppercase tracking-tighter leading-tight">${q.exam_model || ''}</span>
+                    <button onclick="toggleInExam('${q.id}')" class="no-print mt-3 text-[9px] font-bold py-1 px-3 rounded-full border transition-all ${isSelected ? 'bg-red-500 border-red-500 text-white' : 'bg-gray-100 border-gray-200 text-gray-600 hover:bg-black hover:text-white'}">
                         ${isSelected ? '✕ QUITAR' : '+ SELECCIONAR'}
                     </button>
                 </div>
@@ -332,16 +373,21 @@ function render() {
                     <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${type.color}">${type.label.toUpperCase()}</span>
                 </div>
             </div>
-            <div class="prose prose-sm text-gray-800">
-                ${context}
-                <div>${formatChemicalFormula(marked.parse(q.text.replace(/\\n/g, '\n')))}</div>
-                ${solution}
+            <div class="prose prose-sm text-gray-800 leading-relaxed mt-2">
+                ${contextHTML}
+                <div class="question-body">
+                    ${formatChemicalFormula(marked.parse(cleanText))}
+                </div>
+                ${solutionHTML}
             </div>
         `;
         container.appendChild(card);
     });
 
-    renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
+    renderMathInElement(container, { 
+        delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}],
+        throwOnError: false
+    });
 }
 
 function formatChemicalFormula(text) {
@@ -352,7 +398,6 @@ function formatChemicalFormula(text) {
     });
 }
 
-// 5. LÓGICA EXAMEN
 function toggleInExam(id) {
     if (selectedIds.has(id)) selectedIds.delete(id);
     else selectedIds.add(id);
@@ -360,7 +405,18 @@ function toggleInExam(id) {
     render();
 }
 
-function updateExamCounter() { document.getElementById('examCount').textContent = selectedIds.size; }
+function updateExamCounter() { 
+    const counter = document.getElementById('examCount');
+    if(counter) counter.textContent = selectedIds.size; 
+}
+
+function resetFilters() {
+    document.getElementById('search').value = "";
+    document.getElementById('yearSelect').value = "all";
+    document.getElementById('topicSelect').value = "all";
+    document.getElementById('modelSelect').value = "all";
+    render();
+}
 
 function generateRandom() {
     const num = parseInt(document.getElementById('autoNum').value);
@@ -395,11 +451,14 @@ function printExam() {
     win.document.close();
 }
 
-document.getElementById('search').oninput = render;
-document.getElementById('topicSelect').onchange = render;
-document.getElementById('yearSelect').onchange = render;
-
-switchSubject('QUIM');
+// Escuchas de eventos
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('search').oninput = render;
+    document.getElementById('topicSelect').onchange = render;
+    document.getElementById('yearSelect').onchange = render;
+    document.getElementById('modelSelect').onchange = render;
+    switchSubject('QUIM');
+});
 </script>
 </body>
 </html>
