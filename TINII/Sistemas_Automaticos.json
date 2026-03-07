@@ -1,6 +1,6 @@
 [
   {
-    "text": "**EJERCICIO 3. OPCIÓN B.**\na) **Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.** (1,5 puntos)\nb) **El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.** (1 punto)",
+    "text": "**EJERCICIO 3. OPCIÓN B.**\n\na) **Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.** \n\nb) **El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.**",
     "topic_name": "Sistemas Automáticos",
     "exam_year": 2025,
     "exam_model": "Titular-A",
@@ -16,7 +16,7 @@
     "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
   },
   {
-    "text": "**EJERCICIO 2 OPCIÓN B**\n\n**Para desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:**\n**a) La fuerza que ejerce el vástago en la carrera de avance. (1 punto)**\n**b) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min. (1,5 puntos)**",
+    "text": "**EJERCICIO 2 OPCIÓN BPara desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:a) La fuerza que ejerce el vástago en la carrera de avance. \n**b) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min.",
     "topic_name": "Sistemas Automáticos",
     "exam_year": 2025,
     "exam_model": "Titular-B",
