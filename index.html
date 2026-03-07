@@ -151,73 +151,51 @@ async function loadData() {
     const config = subjectConfig[currentSubject];
     
     loader.style.display = "block";
-    loader.innerHTML = `<div class="loading-pulse">⏳ Conectando con /${config.folder}...</div>`;
+    loader.innerHTML = `<div class="loading-pulse">⏳ Procesando /${config.folder}...</div>`;
     container.innerHTML = "";
     stats.textContent = "CONECTANDO...";
 
-    // Creamos un controlador para cancelar si tarda mucho
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 segundos máximo
-
-    const indexUrl = `${config.folder}/${config.file}`;
+    const indexUrl = `${config.folder}/${config.file}?v=${Date.now()}`; // Evita caché
 
     try {
-        console.log("🔍 Buscando archivo en:", indexUrl);
-        const response = await fetch(indexUrl, { signal: controller.signal });
-        clearTimeout(timeoutId);
-
-        if (!response.ok) {
-            throw new Error(`ERROR 404: No se encuentra el archivo "${indexUrl}". Comprueba que la carpeta en GitHub se llame exactamente "${config.folder}" (MAYÚSCULAS).`);
-        }
-
+        const response = await fetch(indexUrl);
+        if (!response.ok) throw new Error(`404: No existe ${indexUrl}`);
+        
         const data = await response.json();
-
-        if (!data.topics || !Array.isArray(data.topics)) {
-            throw new Error(`El archivo "${indexUrl}" está vacío o mal escrito. Debe tener el formato: { "topics": [...] }`);
-        }
-
         allQuestions = [];
         
+        // Cargamos los temas
         for (const topic of data.topics) {
-            const topicUrl = `${config.folder}/${topic.file}`;
+            const topicUrl = `${config.folder}/${topic.file}?v=${Date.now()}`;
             try {
                 const res = await fetch(topicUrl);
-                if (!res.ok) throw new Error(`No se pudo cargar el tema: ${topic.file}`);
-                const questions = await res.json();
-                allQuestions.push(...questions);
+                const text = await res.json(); // Intentamos leer como JSON directamente
+                allQuestions.push(...text);
             } catch (err) {
-                console.error(err);
-                loader.innerHTML += `<div class="text-[10px] text-orange-600">⚠️ Error en tema: ${topic.file}</div>`;
+                console.error(`Error en ${topic.file}. Revisa comillas o barras invertidas.`);
+                loader.innerHTML += `<div class="text-[10px] text-red-500">❌ Error de formato en: ${topic.file}</div>`;
             }
         }
 
-        if (allQuestions.length === 0) throw new Error("No hay preguntas válidas en esta asignatura.");
+        if (allQuestions.length === 0) throw new Error("No se pudo cargar ninguna pregunta válida.");
 
         populateTopicWeights();
         render();
         loader.style.display = "none";
         
     } catch (e) {
-        console.error("Detalle del error:", e);
-        let msg = e.message;
-        if (e.name === 'AbortError') msg = `TIEMPO AGOTADO. GitHub no responde. Revisa si el nombre de la carpeta "/${config.folder}" es correcto.`;
-        
         loader.innerHTML = `
             <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl text-red-800 max-w-md mx-auto shadow-xl">
-                <h3 class="font-black text-lg mb-2 text-red-600 italic">❌ ERROR DE CONEXIÓN</h3>
-                <p class="text-sm mb-4">${msg}</p>
-                <div class="text-[10px] bg-white/70 p-3 rounded font-mono text-left space-y-2">
-                    <strong>LISTA DE CHEQUEO:</strong><br>
-                    • ¿Carpeta en GitHub: <span class="bg-yellow-200 px-1">${config.folder}</span>?<br>
-                    • ¿Archivo: <span class="bg-yellow-200 px-1">${config.file}</span>?<br>
-                    • ¿Has hecho "Push" de los cambios hace más de 1 min?
+                <h3 class="font-black text-lg mb-2 italic">❌ ERROR DE FORMATO JSON</h3>
+                <p class="text-sm mb-4">El archivo <strong>${config.file}</strong> o uno de sus temas tiene un error de sintaxis.</p>
+                <div class="text-[10px] bg-white/50 p-3 rounded font-mono text-left space-y-2">
+                    <strong>TIPS DE REPARACIÓN:</strong><br>
+                    1. Revisa que no haya comillas dobles <code>"</code> dentro de los textos (usa comillas simples <code>'</code>).<br>
+                    2. En las fórmulas LaTeX, usa doble barra: <code>\\frac</code> en lugar de <code>\frac</code>.
                 </div>
-                <button onclick="location.reload()" class="mt-4 w-full bg-red-600 text-white py-2 rounded-xl text-xs font-bold hover:bg-red-700 shadow-lg">RECARGAR TODA LA WEB</button>
             </div>`;
-        stats.textContent = "ERROR";
     }
 }
-
 // --- FUNCIONES DE RENDER Y FILTROS ---
 function populateTopicWeights() {
     const container = document.getElementById('topicWeights');
