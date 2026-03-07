@@ -1,97 +1,97 @@
 [
-  {
-    "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULASa) Razone, indicando los principios en los que se basa, si las siguientes reacciones nucleares son posibles:\n\ni) 27/13Al + 1/0n ⟶ 27/12Mg + 1/1H; \n\nii) 14/7N + 4/2He ⟶ 17/8O + 1/2H.\n\nb1) Una luz ultravioleta de longitud de onda 2,54·10-7 m incide sobre una superficie metálica. En estas condiciones, el potencial de frenado que detiene la emisión de fotoelectrones es de 0,181 V. Calcule razonadamente:\n\ni) energía cinética máxima de los fotoelectrones; \n\nii) el trabajo de extracción de dicha superficie; \n\niii) la longitud de onda umbral del metal. h = 6,63·10-34 J s; c = 3·108 m s-1; e = 1,6·10-19 C.\n\nb2) Los rayos cósmicos bombardean al 14/7N en la atmósfera que, por reacción nuclear, producen el isótopo radiactivo 14/6C. Este isótopo tiene un periodo de semidesintegración de 5730 años. Se mezcla uniformemente en la atmósfera y es captado por las plantas en su crecimiento. Después de que muera una planta, el C-14 decae en los años siguientes. ¿Cuál es la antigüedad de un pedazo de madera encontrado en un yacimiento arqueológico que tiene el 9% del contenido original de C-14?",
-    "topic_name": "T6: Física Nuclear",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Física Nuclear",
-      "Efecto fotoeléctrico",
-      "Radiactividad"
-    ],
-    "id": "5vhwedeom",
-    "source_file": "Examen_Suplente1-A_FÍSICA.pdf"
-  },
-  {
-    "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS \n\na) Discuta la veracidad de la siguiente afirmación: en un proceso de desintegración radiactiva, la relación entre los núcleos que quedan sin desintegrar entre dos tiempos t1 y t2 (t2 > t1), que distan 2T1/2, es N(t2)/N(t1)=1/4.",
-    "topic_name": "T6: Física Nuclear",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Desintegración radiactiva",
-      "Periodo de semidesintegración"
-    ],
-    "id": "eh67yr9zu",
-    "source_file": "Examen_Suplente2-B_Fisica.pdf"
-  },
-  {
-    "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS \n\nb2)i)  Determine razonadamente la energía de enlace del 226/88 Ra.\n\nii) Sabiendo que la energía de enlace por nucleón del 60/28 Ni es aproximadamente 9 MeV/nucleón, justifique cuál de estos dos núcleos es más estable. \n\nm(226/88 Ra) = 226,025410 u; mp = 1,007276 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; e = 1,6·10-19 C; c = 3·108 m s-1",
-    "topic_name": "T6: Física Nuclear",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Energía de enlace",
-      "Defecto de masa",
-      "Estabilidad nuclear"
-    ],
-    "id": "a0m0ewcly",
-    "source_file": "Examen_Suplente2-B_Fisica.pdf"
-  },
-  {
-    "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULASb1)i)  Determine razonadamente la energía de enlace del isótopo 3 2He.\n\nii) Sabiendo que la energía de enlace por nucleón del 4 2He es de 6,83 MeV/nucleón, razone si es más o menos estable que el 3 2He.\nm(3 2He) = 3,016029 u; mp = 1,007276 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; e = 1,6·10-19 C; c = 3·108 m s-1",
-    "topic_name": "T6: Física Nuclear",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Defecto de masa",
-      "Energía de enlace",
-      "Estabilidad nuclear"
-    ],
-    "id": "4nkcwizku",
-    "source_file": "Examen_Titular-B_Fisica.pdf"
-  },
-  {
-    "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULASb2) La masa de un núcleo de plutonio-239 es 239,05 u y su periodo de semidesintegración es 24200 años. Determine:\n\ni) la constante de desintegración;\n\nii) la actividad de una muestra de 1 mg de plutonio-239;\n\niii) el tiempo necesario para que quede el 25% de los núcleos de la muestra anterior.\nNA = 6,02·1023 mol-1",
-    "topic_name": "T6: Física Nuclear",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Desintegración radiactiva",
-      "Actividad radiactiva",
-      "Periodo de semidesintegración"
-    ],
-    "id": "e1nisif8h",
-    "source_file": "Examen_Titular-B_Fisica.pdf"
-  },
-  {
-    "text": "b1) Un proyecto de investigación estudia producir la fisión de 10B5 mediante el bombardeo con neutrones para dar lugar a una partícula alfa y 7Li3.\n\ni) Escriba la ecuación de la reacción nuclear.\n\nii) Calcule la energía liberada cuando se forman 1,5 millones de núcleos de 7Li3.\nm(10B5) = 10,012937 u; m(7Li3) = 7,016003 u; m(4He2) = 4,002603 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; c = 3·108 m s-1",
-    "topic_name": "T6: Física Nuclear",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Reacciones nucleares",
-      "Defecto de masa",
-      "Energía de enlace"
-    ],
-    "id": "m03ryzbqh",
-    "source_file": "Examen_Titular-A_Fisica.pdf"
-  }
+    {
+        "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULASa) Razone, indicando los principios en los que se basa, si las siguientes reacciones nucleares son posibles:\n\ni) 27/13Al + 1/0n ⟶ 27/12Mg + 1/1H; \n\nii) 14/7N + 4/2He ⟶ 17/8O + 1/2H.\n\nb1) Una luz ultravioleta de longitud de onda 2,54·10-7 m incide sobre una superficie metálica. En estas condiciones, el potencial de frenado que detiene la emisión de fotoelectrones es de 0,181 V. Calcule razonadamente:\n\ni) energía cinética máxima de los fotoelectrones; \n\nii) el trabajo de extracción de dicha superficie; \n\niii) la longitud de onda umbral del metal. h = 6,63·10-34 J s; c = 3·108 m s-1; e = 1,6·10-19 C.\n\nb2) Los rayos cósmicos bombardean al 14/7N en la atmósfera que, por reacción nuclear, producen el isótopo radiactivo 14/6C. Este isótopo tiene un periodo de semidesintegración de 5730 años. Se mezcla uniformemente en la atmósfera y es captado por las plantas en su crecimiento. Después de que muera una planta, el C-14 decae en los años siguientes. ¿Cuál es la antigüedad de un pedazo de madera encontrado en un yacimiento arqueológico que tiene el 9% del contenido original de C-14?",
+        "topic_name": "T6: Física Nuclear",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "FÍSICA NUCLEAR",
+            "EFECTO FOTOELÉCTRICO",
+            "RADIACTIVIDAD"
+        ],
+        "id": "5vhwedeom",
+        "source_file": "Examen_Suplente1-A_FÍSICA.pdf"
+    },
+    {
+        "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS \n\na) Discuta la veracidad de la siguiente afirmación: en un proceso de desintegración radiactiva, la relación entre los núcleos que quedan sin desintegrar entre dos tiempos t1 y t2 (t2 > t1), que distan 2T1/2, es N(t2)/N(t1)=1/4.",
+        "topic_name": "T6: Física Nuclear",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "PERIODO DE SEMIDESINTEGRACIÓN",
+            "DESINTEGRACIÓN RADIACTIVA"
+        ],
+        "id": "eh67yr9zu",
+        "source_file": "Examen_Suplente2-B_Fisica.pdf"
+    },
+    {
+        "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULAS \n\nb2)i)  Determine razonadamente la energía de enlace del 226/88 Ra.\n\nii) Sabiendo que la energía de enlace por nucleón del 60/28 Ni es aproximadamente 9 MeV/nucleón, justifique cuál de estos dos núcleos es más estable. \n\nm(226/88 Ra) = 226,025410 u; mp = 1,007276 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; e = 1,6·10-19 C; c = 3·108 m s-1",
+        "topic_name": "T6: Física Nuclear",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "DEFECTO DE MASA",
+            "ESTABILIDAD NUCLEAR",
+            "ENERGÍA DE ENLACE"
+        ],
+        "id": "a0m0ewcly",
+        "source_file": "Examen_Suplente2-B_Fisica.pdf"
+    },
+    {
+        "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULASb1)i)  Determine razonadamente la energía de enlace del isótopo 3 2He.\n\nii) Sabiendo que la energía de enlace por nucleón del 4 2He es de 6,83 MeV/nucleón, razone si es más o menos estable que el 3 2He.\nm(3 2He) = 3,016029 u; mp = 1,007276 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; e = 1,6·10-19 C; c = 3·108 m s-1",
+        "topic_name": "T6: Física Nuclear",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "DEFECTO DE MASA",
+            "ESTABILIDAD NUCLEAR",
+            "ENERGÍA DE ENLACE"
+        ],
+        "id": "4nkcwizku",
+        "source_file": "Examen_Titular-B_Fisica.pdf"
+    },
+    {
+        "text": "D) FÍSICA RELATIVISTA, CUÁNTICA Y DE PARTÍCULASb2) La masa de un núcleo de plutonio-239 es 239,05 u y su periodo de semidesintegración es 24200 años. Determine:\n\ni) la constante de desintegración;\n\nii) la actividad de una muestra de 1 mg de plutonio-239;\n\niii) el tiempo necesario para que quede el 25% de los núcleos de la muestra anterior.\nNA = 6,02·1023 mol-1",
+        "topic_name": "T6: Física Nuclear",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "ACTIVIDAD RADIACTIVA",
+            "PERIODO DE SEMIDESINTEGRACIÓN",
+            "DESINTEGRACIÓN RADIACTIVA"
+        ],
+        "id": "e1nisif8h",
+        "source_file": "Examen_Titular-B_Fisica.pdf"
+    },
+    {
+        "text": "b1) Un proyecto de investigación estudia producir la fisión de 10B5 mediante el bombardeo con neutrones para dar lugar a una partícula alfa y 7Li3.\n\ni) Escriba la ecuación de la reacción nuclear.\n\nii) Calcule la energía liberada cuando se forman 1,5 millones de núcleos de 7Li3.\nm(10B5) = 10,012937 u; m(7Li3) = 7,016003 u; m(4He2) = 4,002603 u; mn = 1,008665 u; 1 u = 1,66·10-27 kg; c = 3·108 m s-1",
+        "topic_name": "T6: Física Nuclear",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "ENERGÍA DE ENLACE",
+            "DEFECTO DE MASA",
+            "REACCIONES NUCLEARES"
+        ],
+        "id": "m03ryzbqh",
+        "source_file": "Examen_Titular-A_Fisica.pdf"
+    }
 ]

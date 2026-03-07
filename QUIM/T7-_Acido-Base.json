@@ -1,285 +1,285 @@
 [
-  {
-    "text": "Se ha preparado una disolución acuosa 0,1 M de un ácido débil monoprótico, R-COOH (Ka= 1,52·10–5).\n\na) Calcule las concentraciones de todas las especies químicas en el equilibrio y el grado de disociación.\n\nb) Si se mezclan 250 mL de la disolución anterior del ácido con 250 mL de agua, ¿cuál será el pH la disolución resultante?",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Reserva-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Ácidos débiles",
-      "Cálculo de pH",
-      "Dilución"
-    ],
-    "id": "rdlnzn84b",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
-  },
-  {
-    "text": "2B.\n\na) Razone, según la teoría de Brönsted-Lowry, si el ácido conjugado de una base fuerte es un ácido fuerte.\n\nb) Escriba la reacción del CN– en agua, identificando los pares ácido-base conjugados.\n\nc) Explique si al disolver NaNO₃ en agua el pH cambia.\n\nd) Justifique cuál o cuáles de las especies HCO₃–, CO₃ 2– y H₂CO₃ son anfóteras.",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "bmpo29dia",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf",
-    "detected_topics": [
-      "Teoría de Brönsted-Lowry",
-      "Ácido-base conjugado",
-      "Fuerza de ácidos y bases",
-      "Hidrólisis salina",
-      "pH de disoluciones",
-      "Especies anfóteras",
-      "Anfiprotismo"
-    ]
-  },
-  {
-    "text": "2A.\n\na) Razone qu3© sucede con el valor del pH de una disolución acuosa de 3¡cido ac3©tico (CH₃COOH) cuando se agrega acetato de sodio (CH₃COONa).\n\nb) Escriba la reacción de neutralización entre el hidróxido de calcio (Ca(OH)2) y el 3¡cido clorh3­drico (HCl).\n\nc) Justifique si una disolución de cloruro de amonio (NH₄Cl) presenta un pH 3¡cido, b3¡sico o neutro.\n\nd) Explique qu3© 3¡cido es m3¡s fuerte: CH₃COOH (Ka= 1,8·10–5), HCN (Ka= 4,9·10–10), HF (Ka= 3,6·10–4).",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "1a608ede0",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf",
-    "detected_topics": [
-      "pH",
-      "Efecto del ion común",
-      "Disoluciones amortiguadoras",
-      "Reacción de neutralización",
-      "Hidrólisis de sales",
-      "Fuerza de ácidos",
-      "Constante de acidez (Ka)"
-    ]
-  },
-  {
-    "text": "2A.\n\na) Razone qué sucede con el valor del pH de una disolución acuosa de ácido acético (CH₃COOH) cuando se agrega acetato de sodio (CH₃COONa).\n\nb) Escriba la reacción de neutralización entre el hidróxido de calcio (Ca(OH)2) y el ácido clorhídrico (HCl).\n\nc) Justifique si una disolución de cloruro de amonio (NH₄Cl) presenta un pH ácido, básico o neutro.\n\nd) Explique qué ácido es más fuerte: CH₃COOH (Ka= 1,8·10–5), HCN (Ka= 4,9·10–10), HF (Ka= 3,6·10–4).",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "bvhgxlflm",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf",
-    "detected_topics": [
-      "Ácido-Base",
-      "Efecto del ion común",
-      "Disoluciones amortiguadoras",
-      "Neutralización",
-      "Hidrólisis de sales",
-      "Fuerza relativa de ácidos",
-      "Constante de acidez (Ka)"
-    ]
-  },
-  {
-    "text": "3B. En el laboratorio nos encontramos una botella de 1 L que contiene una disolución diluida de amoniaco (NH₃) sin indicar su concentración. Medimos su pH y resulta ser 10,8.\n\na) Determine la concentración molar de NH₃ y el grado de disociación en dicha disolución.\n\nb) Para preparar una disolución de NaOH que tenga el mismo pH que la disolución diluida de amoniaco anterior, ¿qué masa de NaOH necesitaríamos disolver en un volumen final de 500 mL de disolución? Datos: Kb(NH₃)= 1,8·10–5; Masas atómicas relativas: Na= 23; O= 16; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "refhmgp1k",
-    "source_file": "Examen_Suplente2-A_Quimica.pdf",
-    "detected_topics": [
-      "Equilibrio ácido-base",
-      "Base débil",
-      "Base fuerte",
-      "Cálculo de pH",
-      "Grado de disociación",
-      "Constante de basicidad",
-      "Molaridad",
-      "Cálculos de masa",
-      "Estequiometría de disoluciones"
-    ]
-  },
-  {
-    "text": "3A. Se dispone de amoniaco comercial del 30% de riqueza en masa y densidad 0,897 g·mL–1 para preparar 250 mL de una disolución acuosa de amoniaco (NH₃) de concentración 0,1 M.\n\na) Determine el volumen de amoniaco comercial necesario para preparar dicha disolución.\n\nb) Calcule el pH de la disolución preparada y el grado de disociación. \nDatos: Kb(NH₃)= 1,8·10–5; Masas atómicas relativas: N= 14; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "lzge1fkdd",
-    "source_file": "Examen_Suplente2-B_Quimica.pdf",
-    "detected_topics": [
-      "Ácido-Base",
-      "Disoluciones",
-      "Concentración",
-      "Riqueza en masa",
-      "Densidad",
-      "Molaridad",
-      "Cálculos estequiométricos",
-      "Equilibrio químico",
-      "Base débil",
-      "Cálculo de pH",
-      "Grado de disociación",
-      "Constante de basicidad"
-    ]
-  },
-  {
-    "text": "3B. Se preparan 250 mL de una disolución acuosa de HNO₃ a partir de 2 mL de una disolución comercial de densidad 1,12 g·mL⁻¹ y 20% de riqueza en masa.\n\na) ¿Qué molaridad y pH tendrá la disolución preparada?\n\nb) ¿Qué volumen de una disolución de NaOH 0,02 M será necesario añadir para neutralizar 100 mL de la disolución que se ha preparado?\nDatos: Masas atómicas relativas: O = 16; N = 14; H = 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "bxtfca1wx",
-    "source_file": "Examen_Titular-A_Quimica.pdf",
-    "detected_topics": [
-      "Disoluciones",
-      "Densidad",
-      "Riqueza en masa",
-      "Molaridad",
-      "pH",
-      "Ácido fuerte",
-      "Neutralización",
-      "Estequiometría",
-      "Reacciones ácido-base",
-      "Dilución"
-    ]
-  },
-  {
-    "text": "C₃. Se ha preparado una disolución acuosa 0,1 M de un ácido débil monoprótico, R-COOH (Ka= 1,52·10–5).\n\na) Calcule las concentraciones de todas las especies químicas en el equilibrio y el grado de disociación.\n\nb) Si se mezclan 250 mL de la disolución anterior del ácido con 250 mL de agua, ¿cuál será el pH la disolución resultante?",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Reserva-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "8ysy7j5gy",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
-    "detected_topics": [
-      "Ácido débil",
-      "Ácido monoprótico",
-      "Constante de acidez",
-      "Equilibrio ácido-base",
-      "Grado de disociación",
-      "Cálculo de pH",
-      "Dilución"
-    ]
-  },
-  {
-    "text": "B₄. Indique de forma justificada:\n\na) Cuál de las siguientes especies es anfótera: CO₃ 2–, HCO₃ –, H₂CO₃\n\nb) Cuál es el ácido conjugado de HPO₄ 2–\n\nc) Qué disolución 0,5 M de las sales KCl o NH₄Cl presentará el pH más bajo.",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Reserva-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "zmx2x71gj",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
-    "detected_topics": [
-      "Anfoterismo",
-      "Teoría de Brønsted-Lowry",
-      "Ácido conjugado",
-      "Hidrólisis salina",
-      "pH de disoluciones salinas",
-      "Equilibrio ácido-base"
-    ]
-  },
-  {
-    "text": "C₃. Se preparan 250 mL de una disolución acuosa de HCl a partir de 2 mL de una disolución de HCl comercial de densidad 1,383 g·mL–1 y 33% de riqueza en masa.\n\na) ¿Cuál es la molaridad y el pH de la disolución que se ha preparado?\n\nb) ¿Qué volumen de una disolución de Ca(OH)2 0,02 M es necesario añadir para neutralizar 100 mL de la disolución de HCl que se ha preparado?\nDatos: Masas atómicas relativas: Cl= 35,5; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Reserva-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "e1titkex2",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
-    "detected_topics": [
-      "Disoluciones",
-      "Molaridad",
-      "Densidad",
-      "Riqueza en masa",
-      "Dilución",
-      "Cálculo de pH",
-      "Ácido fuerte",
-      "Neutralización",
-      "Estequiometría",
-      "Reacción ácido-base"
-    ]
-  },
-  {
-    "text": "B₅. Justifique, escribiendo las correspondientes reacciones químicas, si el pH de las siguientes disoluciones acuosas es ácido, básico o neutro:\n\na) Disolución de NH₃ cuya constante de equilibrio es Kb= 1,8·10–5.\n\nb) Disolución de NaBrO, teniendo en cuenta que la constante de equilibrio del HBrO es Ka= 2,3·10–9.\n\nc) Disolución resultante de la mezcla de 100 mL de disolución de HCl 0,2 M y de 150 mL de disolución de NaOH 0,2 M.",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Suplente-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "dxwydrp68",
-    "source_file": "Examen_Suplente-A_QUÍMICA.pdf",
-    "detected_topics": [
-      "Ácido-Base",
-      "Hidrólisis de sales",
-      "Base débil",
-      "Neutralización",
-      "Equilibrio químico",
-      "pH de disoluciones",
-      "Estequiometría de reacciones ácido-base"
-    ]
-  },
-  {
-    "text": "C₃. Se disuelven 0,2 g de Ca(OH)2 en agua, hasta un volumen final de 250 mL. Basándose en la reacción de disociación correspondiente, calcule:\n\na) La molaridad de la disolución y su pH.\n\nb) El pH de una disolución obtenida al diluir 15 mL de la disolución del enunciado en agua hasta un volumen de 100 mL.\nDatos: Masas atómicas relativas: Ca= 40; O= 16; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Suplente-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "u27qmbsoo",
-    "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
-  },
-  {
-    "text": "C₃. Una disolución acuosa de KOH para uso industrial tiene una composición del 40% de riqueza en masa y densidad 1,515 g·mL–1 \n\na) Calcule el volumen necesario de esta disolución para preparar 5 L de una disolución acuosa de pH 13.\n\nb) Si a 50 mL de la disolución de KOH de uso industrial se le adiciona agua hasta un volumen de 250 mL, calcule el volumen de una disolución acuosa de HClO₄ 2 M necesario para neutralizarla. \nDatos: Masas atómicas relativas: K=39; O= 16; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Suplente-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "afgnugvvj",
-    "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
-  },
-  {
-    "text": "B₅. Justifique si las siguientes afirmaciones son verdaderas o falsas:\n\na) En una disolución diluida de un ácido fuerte HX hay mayor proporción de HX que de X⁻\n\nb) Cuando se disuelve CH₃COONa en agua se producen iones OH–\n\nc) El pH de una disolución 0,1 M de HCl es menor que el de una disolución 0,1 M de CH₃COOH (Ka= 1,75·10–5).",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "vdwqisr5b",
-    "source_file": "Examen_Titular-A_QUÍMICA.pdf"
-  },
-  {
-    "text": "C₃. Se preparan 10 L de una disolución de ácido metanoico (HCOOH) disolviendo 23 g en agua. Teniendo en cuenta que el pH de la disolución es 3, calcule:\n\na) El grado de disociación del ácido.\n\nb) El valor de la constante de disociación.\nDatos: Masas atómicas relativas: C= 12; O= 16; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "o3by1mrry",
-    "source_file": "Examen_Titular-A_QUÍMICA.pdf"
-  },
-  {
-    "text": "C₃. El agua fuerte es una disolución acuosa que contiene un 25% en masa de HCl y tiene una densidad de 1,09 g·mL–1. Se diluyen 25 mL de agua fuerte añadiendo agua hasta un volumen final de 250 mL.\n\na) Calcule la concentración molar y el pH de la disolución diluida.\n\nb) ¿Qué volumen de una disolución que contiene 3,7 g·L–1 de Ca(OH)2 será necesario para neutralizar 20 mL de la disolución diluida de HCl?\nDatos: Masas atómicas relativas: Ca= 40; Cl= 35,5; O= 16; H= 1",
-    "topic_name": "T7: Ácido-Base",
-    "exam_year": 2024,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "e5djyfxac",
-    "source_file": "Examen_Titular-B_QUÍMICA.pdf"
-  }
+    {
+        "text": "Se ha preparado una disolución acuosa 0,1 M de un ácido débil monoprótico, R-COOH (Ka= 1,52·10–5).\n\na) Calcule las concentraciones de todas las especies químicas en el equilibrio y el grado de disociación.\n\nb) Si se mezclan 250 mL de la disolución anterior del ácido con 250 mL de agua, ¿cuál será el pH la disolución resultante?",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Reserva-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "CÁLCULO DE PH",
+            "DILUCIÓN",
+            "ÁCIDOS DÉBILES"
+        ],
+        "id": "rdlnzn84b",
+        "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+    },
+    {
+        "text": "2B.\n\na) Razone, según la teoría de Brönsted-Lowry, si el ácido conjugado de una base fuerte es un ácido fuerte.\n\nb) Escriba la reacción del CN– en agua, identificando los pares ácido-base conjugados.\n\nc) Explique si al disolver NaNO₃ en agua el pH cambia.\n\nd) Justifique cuál o cuáles de las especies HCO₃–, CO₃ 2– y H₂CO₃ son anfóteras.",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "bmpo29dia",
+        "source_file": "Examen_Suplente1-A_Quimica.pdf",
+        "detected_topics": [
+            "HIDRÓLISIS SALINA",
+            "ESPECIES ANFÓTERAS",
+            "ANFIPROTISMO",
+            "ÁCIDO-BASE CONJUGADO",
+            "PH DE DISOLUCIONES",
+            "FUERZA DE ÁCIDOS Y BASES",
+            "TEORÍA DE BRÖNSTED-LOWRY"
+        ]
+    },
+    {
+        "text": "2A.\n\na) Razone qu3© sucede con el valor del pH de una disolución acuosa de 3¡cido ac3©tico (CH₃COOH) cuando se agrega acetato de sodio (CH₃COONa).\n\nb) Escriba la reacción de neutralización entre el hidróxido de calcio (Ca(OH)2) y el 3¡cido clorh3­drico (HCl).\n\nc) Justifique si una disolución de cloruro de amonio (NH₄Cl) presenta un pH 3¡cido, b3¡sico o neutro.\n\nd) Explique qu3© 3¡cido es m3¡s fuerte: CH₃COOH (Ka= 1,8·10–5), HCN (Ka= 4,9·10–10), HF (Ka= 3,6·10–4).",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "1a608ede0",
+        "source_file": "Examen_Suplente1-B_Quimica.pdf",
+        "detected_topics": [
+            "EFECTO DEL ION COMÚN",
+            "REACCIÓN DE NEUTRALIZACIÓN",
+            "FUERZA DE ÁCIDOS",
+            "CONSTANTE DE ACIDEZ (KA)",
+            "HIDRÓLISIS DE SALES",
+            "PH",
+            "DISOLUCIONES AMORTIGUADORAS"
+        ]
+    },
+    {
+        "text": "2A.\n\na) Razone qué sucede con el valor del pH de una disolución acuosa de ácido acético (CH₃COOH) cuando se agrega acetato de sodio (CH₃COONa).\n\nb) Escriba la reacción de neutralización entre el hidróxido de calcio (Ca(OH)2) y el ácido clorhídrico (HCl).\n\nc) Justifique si una disolución de cloruro de amonio (NH₄Cl) presenta un pH ácido, básico o neutro.\n\nd) Explique qué ácido es más fuerte: CH₃COOH (Ka= 1,8·10–5), HCN (Ka= 4,9·10–10), HF (Ka= 3,6·10–4).",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "bvhgxlflm",
+        "source_file": "Examen_Suplente1-B_Quimica.pdf",
+        "detected_topics": [
+            "EFECTO DEL ION COMÚN",
+            "ÁCIDO-BASE",
+            "FUERZA RELATIVA DE ÁCIDOS",
+            "CONSTANTE DE ACIDEZ (KA)",
+            "HIDRÓLISIS DE SALES",
+            "DISOLUCIONES AMORTIGUADORAS",
+            "NEUTRALIZACIÓN"
+        ]
+    },
+    {
+        "text": "3B. En el laboratorio nos encontramos una botella de 1 L que contiene una disolución diluida de amoniaco (NH₃) sin indicar su concentración. Medimos su pH y resulta ser 10,8.\n\na) Determine la concentración molar de NH₃ y el grado de disociación en dicha disolución.\n\nb) Para preparar una disolución de NaOH que tenga el mismo pH que la disolución diluida de amoniaco anterior, ¿qué masa de NaOH necesitaríamos disolver en un volumen final de 500 mL de disolución? Datos: Kb(NH₃)= 1,8·10–5; Masas atómicas relativas: Na= 23; O= 16; H= 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "refhmgp1k",
+        "source_file": "Examen_Suplente2-A_Quimica.pdf",
+        "detected_topics": [
+            "ESTEQUIOMETRÍA DE DISOLUCIONES",
+            "CONSTANTE DE BASICIDAD",
+            "EQUILIBRIO ÁCIDO-BASE",
+            "CÁLCULO DE PH",
+            "GRADO DE DISOCIACIÓN",
+            "CÁLCULOS DE MASA",
+            "BASE DÉBIL",
+            "BASE FUERTE",
+            "MOLARIDAD"
+        ]
+    },
+    {
+        "text": "3A. Se dispone de amoniaco comercial del 30% de riqueza en masa y densidad 0,897 g·mL–1 para preparar 250 mL de una disolución acuosa de amoniaco (NH₃) de concentración 0,1 M.\n\na) Determine el volumen de amoniaco comercial necesario para preparar dicha disolución.\n\nb) Calcule el pH de la disolución preparada y el grado de disociación. \nDatos: Kb(NH₃)= 1,8·10–5; Masas atómicas relativas: N= 14; H= 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "lzge1fkdd",
+        "source_file": "Examen_Suplente2-B_Quimica.pdf",
+        "detected_topics": [
+            "MOLARIDAD",
+            "DENSIDAD",
+            "EQUILIBRIO QUÍMICO",
+            "ÁCIDO-BASE",
+            "CONCENTRACIÓN",
+            "CÁLCULOS ESTEQUIOMÉTRICOS",
+            "CONSTANTE DE BASICIDAD",
+            "CÁLCULO DE PH",
+            "GRADO DE DISOCIACIÓN",
+            "BASE DÉBIL",
+            "RIQUEZA EN MASA",
+            "DISOLUCIONES"
+        ]
+    },
+    {
+        "text": "3B. Se preparan 250 mL de una disolución acuosa de HNO₃ a partir de 2 mL de una disolución comercial de densidad 1,12 g·mL⁻¹ y 20% de riqueza en masa.\n\na) ¿Qué molaridad y pH tendrá la disolución preparada?\n\nb) ¿Qué volumen de una disolución de NaOH 0,02 M será necesario añadir para neutralizar 100 mL de la disolución que se ha preparado?\nDatos: Masas atómicas relativas: O = 16; N = 14; H = 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "bxtfca1wx",
+        "source_file": "Examen_Titular-A_Quimica.pdf",
+        "detected_topics": [
+            "ESTEQUIOMETRÍA",
+            "DENSIDAD",
+            "DILUCIÓN",
+            "DISOLUCIONES",
+            "REACCIONES ÁCIDO-BASE",
+            "RIQUEZA EN MASA",
+            "PH",
+            "MOLARIDAD",
+            "ÁCIDO FUERTE",
+            "NEUTRALIZACIÓN"
+        ]
+    },
+    {
+        "text": "C₃. Se ha preparado una disolución acuosa 0,1 M de un ácido débil monoprótico, R-COOH (Ka= 1,52·10–5).\n\na) Calcule las concentraciones de todas las especies químicas en el equilibrio y el grado de disociación.\n\nb) Si se mezclan 250 mL de la disolución anterior del ácido con 250 mL de agua, ¿cuál será el pH la disolución resultante?",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Reserva-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "8ysy7j5gy",
+        "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
+        "detected_topics": [
+            "ÁCIDO DÉBIL",
+            "DILUCIÓN",
+            "EQUILIBRIO ÁCIDO-BASE",
+            "CÁLCULO DE PH",
+            "GRADO DE DISOCIACIÓN",
+            "ÁCIDO MONOPRÓTICO",
+            "CONSTANTE DE ACIDEZ"
+        ]
+    },
+    {
+        "text": "B₄. Indique de forma justificada:\n\na) Cuál de las siguientes especies es anfótera: CO₃ 2–, HCO₃ –, H₂CO₃\n\nb) Cuál es el ácido conjugado de HPO₄ 2–\n\nc) Qué disolución 0,5 M de las sales KCl o NH₄Cl presentará el pH más bajo.",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Reserva-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "zmx2x71gj",
+        "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+        "detected_topics": [
+            "HIDRÓLISIS SALINA",
+            "PH DE DISOLUCIONES SALINAS",
+            "EQUILIBRIO ÁCIDO-BASE",
+            "TEORÍA DE BRØNSTED-LOWRY",
+            "ANFOTERISMO",
+            "ÁCIDO CONJUGADO"
+        ]
+    },
+    {
+        "text": "C₃. Se preparan 250 mL de una disolución acuosa de HCl a partir de 2 mL de una disolución de HCl comercial de densidad 1,383 g·mL–1 y 33% de riqueza en masa.\n\na) ¿Cuál es la molaridad y el pH de la disolución que se ha preparado?\n\nb) ¿Qué volumen de una disolución de Ca(OH)2 0,02 M es necesario añadir para neutralizar 100 mL de la disolución de HCl que se ha preparado?\nDatos: Masas atómicas relativas: Cl= 35,5; H= 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Reserva-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "e1titkex2",
+        "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+        "detected_topics": [
+            "ESTEQUIOMETRÍA",
+            "DENSIDAD",
+            "DILUCIÓN",
+            "DISOLUCIONES",
+            "CÁLCULO DE PH",
+            "RIQUEZA EN MASA",
+            "REACCIÓN ÁCIDO-BASE",
+            "MOLARIDAD",
+            "ÁCIDO FUERTE",
+            "NEUTRALIZACIÓN"
+        ]
+    },
+    {
+        "text": "B₅. Justifique, escribiendo las correspondientes reacciones químicas, si el pH de las siguientes disoluciones acuosas es ácido, básico o neutro:\n\na) Disolución de NH₃ cuya constante de equilibrio es Kb= 1,8·10–5.\n\nb) Disolución de NaBrO, teniendo en cuenta que la constante de equilibrio del HBrO es Ka= 2,3·10–9.\n\nc) Disolución resultante de la mezcla de 100 mL de disolución de HCl 0,2 M y de 150 mL de disolución de NaOH 0,2 M.",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Suplente-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "dxwydrp68",
+        "source_file": "Examen_Suplente-A_QUÍMICA.pdf",
+        "detected_topics": [
+            "EQUILIBRIO QUÍMICO",
+            "ÁCIDO-BASE",
+            "ESTEQUIOMETRÍA DE REACCIONES ÁCIDO-BASE",
+            "PH DE DISOLUCIONES",
+            "HIDRÓLISIS DE SALES",
+            "BASE DÉBIL",
+            "NEUTRALIZACIÓN"
+        ]
+    },
+    {
+        "text": "C₃. Se disuelven 0,2 g de Ca(OH)2 en agua, hasta un volumen final de 250 mL. Basándose en la reacción de disociación correspondiente, calcule:\n\na) La molaridad de la disolución y su pH.\n\nb) El pH de una disolución obtenida al diluir 15 mL de la disolución del enunciado en agua hasta un volumen de 100 mL.\nDatos: Masas atómicas relativas: Ca= 40; O= 16; H= 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Suplente-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "u27qmbsoo",
+        "source_file": "Examen_Suplente-A_QUÍMICA.pdf"
+    },
+    {
+        "text": "C₃. Una disolución acuosa de KOH para uso industrial tiene una composición del 40% de riqueza en masa y densidad 1,515 g·mL–1 \n\na) Calcule el volumen necesario de esta disolución para preparar 5 L de una disolución acuosa de pH 13.\n\nb) Si a 50 mL de la disolución de KOH de uso industrial se le adiciona agua hasta un volumen de 250 mL, calcule el volumen de una disolución acuosa de HClO₄ 2 M necesario para neutralizarla. \nDatos: Masas atómicas relativas: K=39; O= 16; H= 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Suplente-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "afgnugvvj",
+        "source_file": "Examen_Suplente-B_QUÍMICA.pdf"
+    },
+    {
+        "text": "B₅. Justifique si las siguientes afirmaciones son verdaderas o falsas:\n\na) En una disolución diluida de un ácido fuerte HX hay mayor proporción de HX que de X⁻\n\nb) Cuando se disuelve CH₃COONa en agua se producen iones OH–\n\nc) El pH de una disolución 0,1 M de HCl es menor que el de una disolución 0,1 M de CH₃COOH (Ka= 1,75·10–5).",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "vdwqisr5b",
+        "source_file": "Examen_Titular-A_QUÍMICA.pdf"
+    },
+    {
+        "text": "C₃. Se preparan 10 L de una disolución de ácido metanoico (HCOOH) disolviendo 23 g en agua. Teniendo en cuenta que el pH de la disolución es 3, calcule:\n\na) El grado de disociación del ácido.\n\nb) El valor de la constante de disociación.\nDatos: Masas atómicas relativas: C= 12; O= 16; H= 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "o3by1mrry",
+        "source_file": "Examen_Titular-A_QUÍMICA.pdf"
+    },
+    {
+        "text": "C₃. El agua fuerte es una disolución acuosa que contiene un 25% en masa de HCl y tiene una densidad de 1,09 g·mL–1. Se diluyen 25 mL de agua fuerte añadiendo agua hasta un volumen final de 250 mL.\n\na) Calcule la concentración molar y el pH de la disolución diluida.\n\nb) ¿Qué volumen de una disolución que contiene 3,7 g·L–1 de Ca(OH)2 será necesario para neutralizar 20 mL de la disolución diluida de HCl?\nDatos: Masas atómicas relativas: Ca= 40; Cl= 35,5; O= 16; H= 1",
+        "topic_name": "T7: Ácido-Base",
+        "exam_year": 2024,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "e5djyfxac",
+        "source_file": "Examen_Titular-B_QUÍMICA.pdf"
+    }
 ]

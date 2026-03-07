@@ -1,123 +1,123 @@
 [
-  {
-    "text": "EJERCICIO 4 OPCIÓN ÚNICA\n\na) Enumerar los principios de trabajo fundamentales en los que se basan las metodologías ágiles. Explica uno de ellos mediante los beneficios que aporta.\n\nb) Indicar cuatro medidas para una protección básica en la seguridad cibernética.\n\nc) Se ha presentado un proyecto en el que se han incluido los siguientes documentos: índice, memoria, anexo, estudio de impacto ambiental y planos. Indicar los documentos que faltan para que el proyecto esté completo.",
-    "topic_name": "Control y Programación",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Metodologías ágiles",
-      "Ciberseguridad",
-      "Oficina Técnica"
-    ],
-    "has_image": false,
-    "id": "sox2hftnv",
-    "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "a) Enumerar las fases de un proyecto y relacionar las siguientes actividades con la fase que corresponda: control de entregas, cronograma del proyecto, elaboración de la memoria del proyecto, distribución de las tareas a los grupos de trabajo, definición de objetivos generales del proyecto.\n\nb) Explicar las diferencias entre un algoritmo convencional de ordenador y otro de inteligencia artificial que utilice el aprendizaje automático.\n\nc) Describir detalladamente tres amenazas comunes en los sistemas informáticos.",
-    "topic_name": "Control y Programación",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Gestión de proyectos",
-      "Inteligencia Artificial",
-      "Seguridad informática"
-    ],
-    "has_image": false,
-    "id": "b1z3lezdj",
-    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "a) Explicar las diferencias entre el aprendizaje automático supervisado y el aprendizaje automático no supervisado.\n\nb) En el contexto de la inteligencia artificial, mencionar y describir tres aspectos negativos de la misma. ¿Qué es la autoconciencia?\n\nc) Indicar en qué documentos básicos de un proyecto técnico deben incluirse los siguientes apartados: estudio de impacto ambiental, condiciones económicas, cuadro de precios unitarios de materiales, análisis de soluciones, planificación.",
-    "topic_name": "Control y Programación",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Inteligencia Artificial",
-      "Machine Learning",
-      "Oficina Técnica",
-      "Documentación de proyectos"
-    ],
-    "has_image": false,
-    "image_bbox": [],
-    "image_description": "",
-    "image_page": 2,
-    "id": "o82y6p104",
-    "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "a) Respecto a los documentos de un proyecto técnico, indicar qué relación existe entre el documento de Mediciones y el de Presupuesto y entre el de Mediciones y el de Planos.\n\nb) Explicar en qué consiste la eficiencia energética de los materiales y enumerar dos factores que influyan sobre ella.\n\nc) Un ordenador reporta que ha detectado un malware. Explicar qué significa este aviso y cómo se debe proceder.\n\nd) Una empresa de desarrollo software quiere adoptar una metodología que permita desarrollar prototipos en ciclos cortos de iteración para recibir una realimentación rápida de los usuarios y poder mejorar así el producto desde fases tempranas del desarrollo. Proponer y razonar la elección de un tipo de metodología agile que esté alineado con las necesidades de esta empresa.",
-    "topic_name": "Control y Programación",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Gestión de proyectos",
-      "Sostenibilidad",
-      "Seguridad informática",
-      "Metodologías ágiles"
-    ],
-    "has_image": false,
-    "id": "mf99ymb1b",
-    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 4 OPCIÓN ÚNICA\n\na) Enumerar y definir los documentos básicos de un proyecto técnico.\n\nb) Se ha recibido un correo electrónico de una persona desconocida, indicando que la dirección IP de su ordenador ha ganado un premio. Para poder recibir el premio, debe entrar en una página web para indicar sus datos personales y verificar su identidad. Identificar y justificar el posible ataque que puede sufrir la persona a través de la amenaza anterior.\n\nc) En relación con la inteligencia artificial, ¿qué es una máquina reactiva? Indicar un ejemplo.\n\nd) ¿Cuándo y por qué es necesario realizar un estudio de impacto ambiental?",
-    "topic_name": "Control y Programación",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Proyectos técnicos",
-      "Ciberseguridad",
-      "Inteligencia Artificial",
-      "Impacto Ambiental"
-    ],
-    "has_image": false,
-    "id": "ndv0ycg0k",
-    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 4. OPCIÓN ÚNICA.\n\na) Enumerar y definir los documentos básicos de un proyecto técnico.\n\nb) Se ha recibido un correo electrónico de una persona desconocida, indicando que la dirección IP de su ordenador ha ganado un premio. Para poder recibir el premio, debe entrar en una página web para indicar sus datos personales y verificar su identidad. Identificar y justificar el posible ataque que puede sufrir la persona a través de la amenaza anterior.\n\nc) En relación con la inteligencia artificial, ¿qué es una máquina reactiva? Indicar un ejemplo.\n\nd) ¿Cuándo y por qué es necesario realizar un estudio de impacto ambiental?",
-    "topic_name": "Control y Programación",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Proyecto técnico",
-      "Seguridad informática",
-      "Inteligencia Artificial",
-      "Impacto ambiental"
-    ],
-    "id": "9h8jmx0xd",
-    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 4 OPCIÓN ÚNICAa) Respecto a los documentos de un proyecto técnico, indicar qué relación existe entre el documento de Mediciones y el de Presupuesto y entre el de Mediciones y el de Planos.\n\nb) Explicar en qué consiste la eficiencia energética de los materiales y enumerar dos factores que influyan sobre ella.\n\nc) Un ordenador reporta que ha detectado un malware. Explicar qué significa este aviso y cómo se debe proceder.\n\nd) Una empresa de desarrollo software quiere adoptar una metodología que permita desarrollar prototipos en ciclos cortos de iteración para recibir una realimentación rápida de los usuarios y poder mejorar así el producto desde fases tempranas del desarrollo. Proponer y razonar la elección de un tipo de metodología agile que esté alineado con las necesidades de esta empresa.",
-    "topic_name": "Control y Programación",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Documentos de proyecto",
-      "Sostenibilidad",
-      "Seguridad informática",
-      "Metodologías Ágiles"
-    ],
-    "id": "fk9acc3t3",
-    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
-  }
+    {
+        "text": "EJERCICIO 4 OPCIÓN ÚNICA\n\na) Enumerar los principios de trabajo fundamentales en los que se basan las metodologías ágiles. Explica uno de ellos mediante los beneficios que aporta.\n\nb) Indicar cuatro medidas para una protección básica en la seguridad cibernética.\n\nc) Se ha presentado un proyecto en el que se han incluido los siguientes documentos: índice, memoria, anexo, estudio de impacto ambiental y planos. Indicar los documentos que faltan para que el proyecto esté completo.",
+        "topic_name": "Control y Programación",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "CIBERSEGURIDAD",
+            "METODOLOGÍAS ÁGILES",
+            "OFICINA TÉCNICA"
+        ],
+        "has_image": false,
+        "id": "sox2hftnv",
+        "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "a) Enumerar las fases de un proyecto y relacionar las siguientes actividades con la fase que corresponda: control de entregas, cronograma del proyecto, elaboración de la memoria del proyecto, distribución de las tareas a los grupos de trabajo, definición de objetivos generales del proyecto.\n\nb) Explicar las diferencias entre un algoritmo convencional de ordenador y otro de inteligencia artificial que utilice el aprendizaje automático.\n\nc) Describir detalladamente tres amenazas comunes en los sistemas informáticos.",
+        "topic_name": "Control y Programación",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "INTELIGENCIA ARTIFICIAL",
+            "SEGURIDAD INFORMÁTICA",
+            "GESTIÓN DE PROYECTOS"
+        ],
+        "has_image": false,
+        "id": "b1z3lezdj",
+        "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "a) Explicar las diferencias entre el aprendizaje automático supervisado y el aprendizaje automático no supervisado.\n\nb) En el contexto de la inteligencia artificial, mencionar y describir tres aspectos negativos de la misma. ¿Qué es la autoconciencia?\n\nc) Indicar en qué documentos básicos de un proyecto técnico deben incluirse los siguientes apartados: estudio de impacto ambiental, condiciones económicas, cuadro de precios unitarios de materiales, análisis de soluciones, planificación.",
+        "topic_name": "Control y Programación",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "MACHINE LEARNING",
+            "INTELIGENCIA ARTIFICIAL",
+            "OFICINA TÉCNICA",
+            "DOCUMENTACIÓN DE PROYECTOS"
+        ],
+        "has_image": false,
+        "image_bbox": [],
+        "image_description": "",
+        "image_page": 2,
+        "id": "o82y6p104",
+        "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "a) Respecto a los documentos de un proyecto técnico, indicar qué relación existe entre el documento de Mediciones y el de Presupuesto y entre el de Mediciones y el de Planos.\n\nb) Explicar en qué consiste la eficiencia energética de los materiales y enumerar dos factores que influyan sobre ella.\n\nc) Un ordenador reporta que ha detectado un malware. Explicar qué significa este aviso y cómo se debe proceder.\n\nd) Una empresa de desarrollo software quiere adoptar una metodología que permita desarrollar prototipos en ciclos cortos de iteración para recibir una realimentación rápida de los usuarios y poder mejorar así el producto desde fases tempranas del desarrollo. Proponer y razonar la elección de un tipo de metodología agile que esté alineado con las necesidades de esta empresa.",
+        "topic_name": "Control y Programación",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía",
+        "is_competency_based": false,
+        "detected_topics": [
+            "SOSTENIBILIDAD",
+            "SEGURIDAD INFORMÁTICA",
+            "METODOLOGÍAS ÁGILES",
+            "GESTIÓN DE PROYECTOS"
+        ],
+        "has_image": false,
+        "id": "mf99ymb1b",
+        "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 4 OPCIÓN ÚNICA\n\na) Enumerar y definir los documentos básicos de un proyecto técnico.\n\nb) Se ha recibido un correo electrónico de una persona desconocida, indicando que la dirección IP de su ordenador ha ganado un premio. Para poder recibir el premio, debe entrar en una página web para indicar sus datos personales y verificar su identidad. Identificar y justificar el posible ataque que puede sufrir la persona a través de la amenaza anterior.\n\nc) En relación con la inteligencia artificial, ¿qué es una máquina reactiva? Indicar un ejemplo.\n\nd) ¿Cuándo y por qué es necesario realizar un estudio de impacto ambiental?",
+        "topic_name": "Control y Programación",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "INTELIGENCIA ARTIFICIAL",
+            "CIBERSEGURIDAD",
+            "IMPACTO AMBIENTAL",
+            "PROYECTOS TÉCNICOS"
+        ],
+        "has_image": false,
+        "id": "ndv0ycg0k",
+        "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 4. OPCIÓN ÚNICA.\n\na) Enumerar y definir los documentos básicos de un proyecto técnico.\n\nb) Se ha recibido un correo electrónico de una persona desconocida, indicando que la dirección IP de su ordenador ha ganado un premio. Para poder recibir el premio, debe entrar en una página web para indicar sus datos personales y verificar su identidad. Identificar y justificar el posible ataque que puede sufrir la persona a través de la amenaza anterior.\n\nc) En relación con la inteligencia artificial, ¿qué es una máquina reactiva? Indicar un ejemplo.\n\nd) ¿Cuándo y por qué es necesario realizar un estudio de impacto ambiental?",
+        "topic_name": "Control y Programación",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "INTELIGENCIA ARTIFICIAL",
+            "PROYECTO TÉCNICO",
+            "IMPACTO AMBIENTAL",
+            "SEGURIDAD INFORMÁTICA"
+        ],
+        "id": "9h8jmx0xd",
+        "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 4 OPCIÓN ÚNICAa) Respecto a los documentos de un proyecto técnico, indicar qué relación existe entre el documento de Mediciones y el de Presupuesto y entre el de Mediciones y el de Planos.\n\nb) Explicar en qué consiste la eficiencia energética de los materiales y enumerar dos factores que influyan sobre ella.\n\nc) Un ordenador reporta que ha detectado un malware. Explicar qué significa este aviso y cómo se debe proceder.\n\nd) Una empresa de desarrollo software quiere adoptar una metodología que permita desarrollar prototipos en ciclos cortos de iteración para recibir una realimentación rápida de los usuarios y poder mejorar así el producto desde fases tempranas del desarrollo. Proponer y razonar la elección de un tipo de metodología agile que esté alineado con las necesidades de esta empresa.",
+        "topic_name": "Control y Programación",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "SOSTENIBILIDAD",
+            "DOCUMENTOS DE PROYECTO",
+            "METODOLOGÍAS ÁGILES",
+            "SEGURIDAD INFORMÁTICA"
+        ],
+        "id": "fk9acc3t3",
+        "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+    }
 ]

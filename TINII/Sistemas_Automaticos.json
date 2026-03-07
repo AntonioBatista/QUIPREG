@@ -1,92 +1,92 @@
 [
-  {
-    "text": "EJERCICIO 2 OPCIÓN B\n\nPor una tubería horizontal de dos pulgadas de diámetro (1’’ = 25,4 mm) circula un fluido hidráulico con una velocidad de 6 m/s. Se pide:\n\na) Determinar el caudal en l/s.\n\nb) Calcular la velocidad del fluido en un punto de la tubería donde hay un estrechamiento de una pulgada de diámetro.",
-    "topic_name": "Sistemas Automáticos",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Hidráulica",
-      "Caudal",
-      "Ecuación de continuidad"
-    ],
-    "has_image": false,
-    "id": "j9gcs2bbm",
-    "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "Para desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:\n\na) La fuerza que ejerce el vástago en la carrera de avance.\n\nb) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min.",
-    "topic_name": "Sistemas Automáticos",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Neumática",
-      "Cilindros de doble efecto",
-      "Caudal",
-      "Fuerza neumática"
-    ],
-    "has_image": false,
-    "id": "0zcamx9ab",
-    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 3 OPCIÓN B\n\na) Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.\n\nb) El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.",
-    "topic_name": "Sistemas Automáticos",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Circuitos lógicos",
-      "Control de lazo cerrado",
-      "Ganancia",
-      "Error en estado estacionario"
-    ],
-    "has_image": true,
-    "image_bbox": [
-      632,
-      138,
-      721,
-      892
-    ],
-    "image_description": "A la izquierda un esquema de puertas lógicas y a la derecha un diagrama de bloques de un sistema de control de lazo cerrado.",
-    "image_page": 2,
-    "id": "lmg8jjc3l",
-    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 3. OPCIÓN B.\n\na) Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.\n\nb) El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.",
-    "topic_name": "Sistemas Automáticos",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Lógica combinacional",
-      "Sistemas de control",
-      "Error en régimen permanente"
-    ],
-    "id": "yroxl8ynu",
-    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 2 OPCIÓN B\n\nPara desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:\n\na) La fuerza que ejerce el vástago en la carrera de avance.\n\nb) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min.",
-    "topic_name": "Sistemas Automáticos",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Neumática",
-      "Cilindros de doble efecto",
-      "Caudal"
-    ],
-    "id": "hkjdlpnq3",
-    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
-  }
+    {
+        "text": "EJERCICIO 2 OPCIÓN B\n\nPor una tubería horizontal de dos pulgadas de diámetro (1’’ = 25,4 mm) circula un fluido hidráulico con una velocidad de 6 m/s. Se pide:\n\na) Determinar el caudal en l/s.\n\nb) Calcular la velocidad del fluido en un punto de la tubería donde hay un estrechamiento de una pulgada de diámetro.",
+        "topic_name": "Sistemas Automáticos",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "CAUDAL",
+            "HIDRÁULICA",
+            "ECUACIÓN DE CONTINUIDAD"
+        ],
+        "has_image": false,
+        "id": "j9gcs2bbm",
+        "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "Para desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:\n\na) La fuerza que ejerce el vástago en la carrera de avance.\n\nb) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min.",
+        "topic_name": "Sistemas Automáticos",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía",
+        "is_competency_based": false,
+        "detected_topics": [
+            "FUERZA NEUMÁTICA",
+            "CAUDAL",
+            "NEUMÁTICA",
+            "CILINDROS DE DOBLE EFECTO"
+        ],
+        "has_image": false,
+        "id": "0zcamx9ab",
+        "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 3 OPCIÓN B\n\na) Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.\n\nb) El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.",
+        "topic_name": "Sistemas Automáticos",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "GANANCIA",
+            "ERROR EN ESTADO ESTACIONARIO",
+            "CONTROL DE LAZO CERRADO",
+            "CIRCUITOS LÓGICOS"
+        ],
+        "has_image": true,
+        "image_bbox": [
+            632,
+            138,
+            721,
+            892
+        ],
+        "image_description": "A la izquierda un esquema de puertas lógicas y a la derecha un diagrama de bloques de un sistema de control de lazo cerrado.",
+        "image_page": 2,
+        "id": "lmg8jjc3l",
+        "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 3. OPCIÓN B.\n\na) Dado el circuito digital de la figura de la izquierda, obtener otro que realice la misma función con puertas de dos entradas.\n\nb) El sistema de control de lazo cerrado de la figura de la derecha tiene un regulador con ganancia G1 y una planta con ganancia G2 = 50. Determinar el valor de G1 para que el error E sea inferior a 0,1 cuando la entrada X es igual a 1.",
+        "topic_name": "Sistemas Automáticos",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "LÓGICA COMBINACIONAL",
+            "ERROR EN RÉGIMEN PERMANENTE",
+            "SISTEMAS DE CONTROL"
+        ],
+        "id": "yroxl8ynu",
+        "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 2 OPCIÓN B\n\nPara desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:\n\na) La fuerza que ejerce el vástago en la carrera de avance.\n\nb) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min.",
+        "topic_name": "Sistemas Automáticos",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "CAUDAL",
+            "NEUMÁTICA",
+            "CILINDROS DE DOBLE EFECTO"
+        ],
+        "id": "hkjdlpnq3",
+        "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+    }
 ]

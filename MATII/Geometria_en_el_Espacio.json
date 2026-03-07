@@ -1,83 +1,83 @@
 [
-  {
-    "text": "EJERCICIO 4. \nSean los puntos $O(0, 0, 0)$, $A(0, 2, -2)$, $B(1, 2, m)$ y $C(2, 3, 2)$.\n\na) Halla los valores de $m$ para que el tetraedro determinado por los puntos $O, A, B$ y $C$ tenga un volumen de 3 unidades cúbicas.\n\nb) Para $m = 0$, calcula la distancia del punto $O$ al plano que pasa por los puntos $A, B$ y $C$.",
-    "topic_name": "Geometría en el Espacio",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "1zfxzy5t6",
-    "source_file": "Examen_Titular-A_Matematicas II_Tabla.pdf",
-    "detected_topics": [
-      "Geometría en el espacio",
-      "Volumen de un tetraedro",
-      "Producto mixto",
-      "Distancia de un punto a un plano",
-      "Ecuación de un plano"
-    ]
-  },
-  {
-    "text": "EJERCICIO 5. \nConsidera el punto $P(1, 1, 1)$ y la recta $r \\equiv \\frac{x - 1}{1} = \\frac{y - 2}{2} = \\frac{z - 3}{2}$.\n\na) Halla el plano que pasa por el punto $P$ y contiene a la recta $r$.\n\nb) Halla la recta que pasa por el punto $P$ y corta perpendicularmente a la recta $r$.",
-    "topic_name": "Geometría en el Espacio",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "ybrhm0rsp",
-    "source_file": "Examen_Titular-A_Matematicas II_Tabla.pdf",
-    "detected_topics": [
-      "Geometría en el espacio",
-      "Ecuación del plano",
-      "Rectas en el espacio",
-      "Perpendicularidad",
-      "Intersección de rectas",
-      "Plano que contiene una recta",
-      "Proyección ortogonal de un punto sobre una recta",
-      "Vectores en el espacio"
-    ]
-  },
-  {
-    "text": "EJERCICIO 4. \nConsidera la recta $r \\equiv \\begin{cases} x - y + z = 3 \\\\ x + 2y - z = 4 \\end{cases}$ y el plano $\\pi \\equiv mx - y - 2z = 5$.\n\na) Halla $m$ para que $r$ y $\\pi$ sean paralelos.\n\nb) Para $m = -8$, calcula la distancia de la recta $r$ al plano $\\pi$.",
-    "topic_name": "Geometría en el Espacio",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "1toolhaur",
-    "source_file": "Examen_Titular-B_MatematicasII.pdf",
-    "solution": "### a) Cálculo de $m$ para que la recta $r$ y el plano $\\pi$ sean paralelos\n\nPara que una recta $r$ sea paralela a un plano $\\pi$, el vector director de la recta, $\\vec{d_r}$, debe ser perpendicular al vector normal del plano, $\\vec{n_\\pi}$. Matemáticamente, esto se traduce en que su producto escalar debe ser cero:\n$$\\vec{d_r} \\cdot \\vec{n_\\pi} = 0$$\n\nEn primer lugar, determinamos el vector director de la recta $r$. Dado que la recta viene dada como intersección de dos planos, su vector director se puede obtener mediante el producto vectorial de los vectores normales de dichos planos:\n$r \\equiv \\begin{cases} x - y + z = 3 \\implies \\vec{n_1} = (1, -1, 1) \\\\ x + 2y - z = 4 \\implies \\vec{n_2} = (1, 2, -1) \\end{cases}$\n\n$$\\vec{d_r} = \\vec{n_1} \\times \\vec{n_2} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 1 & -1 & 1 \\\\ 1 & 2 & -1 \\end{vmatrix}$$\n$$\\vec{d_r} = ((-1)(-1) - (1)(2))\\mathbf{i} - ((1)(-1) - (1)(1))\\mathbf{j} + ((1)(2) - (-1)(1))\\mathbf{k}$$\n$$\\vec{d_r} = (1 - 2)\\mathbf{i} - (-1 - 1)\\mathbf{j} + (2 + 1)\\mathbf{k} = (-1, 2, 3)$$\n\nEl vector normal del plano $\\pi \\equiv mx - y - 2z = 5$ es:\n$$\\vec{n_\\pi} = (m, -1, -2)$$\n\nAplicamos la condición de perpendicularidad $\\vec{d_r} \\cdot \\vec{n_\\pi} = 0$:\n$$(-1, 2, 3) \\cdot (m, -1, -2) = 0$$\n$$-m - 2 - 6 = 0$$\n$$-m - 8 = 0 \\implies m = -8$$\n\nPara asegurar que la recta es paralela y no está contenida en el plano, comprobamos si un punto de la recta pertenece al plano. Obtenemos un punto $P$ de $r$ fijando una variable, por ejemplo $x = 3$:\n$$\\begin{cases} 3 - y + z = 3 \\implies -y + z = 0 \\implies y = z \\\\ 3 + 2y - z = 4 \\implies 2y - z = 1 \\end{cases}$$\nSustituyendo $y = z$: $2z - z = 1 \\implies z = 1, y = 1$. El punto es $P(3, 1, 1)$.\nSustituimos $P$ en $\\pi$ con $m = -8$:\n$$-8(3) - (1) - 2(1) = -24 - 1 - 2 = -27 \\neq 5$$\nComo el punto no cumple la ecuación del plano, la recta es estrictamente paralela.\n\n**Respuesta:** El valor de $m$ para que la recta y el plano sean paralelos es $m = -8$.\n\n### b) Distancia de la recta $r$ al plano $\\pi$ para $m = -8$\n\nCuando una recta $r$ es paralela a un plano $\\pi$, la distancia entre ambos es igual a la distancia de cualquier punto $P$ de la recta al plano:\n$$d(r, \\pi) = d(P, \\pi)$$\n\nUtilizaremos el punto $P(3, 1, 1)$ hallado en el apartado anterior y el plano $\\pi$ con $m = -8$, cuya ecuación general es:\n$$\\pi \\equiv -8x - y - 2z - 5 = 0$$\n\nLa fórmula de la distancia de un punto $P(x_0, y_0, z_0)$ a un plano $Ax + By + Cz + D = 0$ es:\n$$d(P, \\pi) = \\frac{|Ax_0 + By_0 + Cz_0 + D|}{\\sqrt{A^2 + B^2 + C^2}}$$\n\nSustituimos los valores:\n$$d(r, \\pi) = \\frac{|-8(3) - 1(1) - 2(1) - 5|}{\\sqrt{(-8)^2 + (-1)^2 + (-2)^2}}$$\n$$d(r, \\pi) = \\frac{|-24 - 1 - 2 - 5|}{\\sqrt{64 + 1 + 4}}$$\n$$d(r, \\pi) = \\frac{|-32|}{\\sqrt{69}} = \\frac{32}{\\sqrt{69}}$$\n\nRacionalizando el resultado:\n$$d(r, \\pi) = \\frac{32\\sqrt{69}}{69} \\text{ unidades de longitud}$$\n\n**Respuesta:** La distancia de la recta al plano es $\\frac{32}{\\sqrt{69}}$ (aproximadamente $3,85$ unidades).",
-    "detected_topics": [
-      "Geometría en el espacio",
-      "Rectas",
-      "Planos",
-      "Paralelismo entre recta y plano",
-      "Vector director",
-      "Vector normal",
-      "Distancia entre recta y plano",
-      "Posiciones relativas"
-    ]
-  },
-  {
-    "text": "EJERCICIO 5. \nSean las rectas $r \\equiv \\frac{x + 1}{4} = \\frac{y + 2}{3} = \\frac{z - 2}{-1}$ y $s \\equiv \\begin{cases} x = 1 - \\lambda \\\\ y = 2 + \\lambda \\\\ z = -3 - 2\\lambda \\end{cases}$\n\na) Estudia la posición relativa de las rectas $r$ y $s$.\n\nb) Halla la ecuación de un plano que contiene a $r$ y a una recta perpendicular a las rectas $r$ y $s$.",
-    "topic_name": "Geometría en el Espacio",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "id": "0q6ujzh8c",
-    "source_file": "Examen_Titular-B_MatematicasII.pdf",
-    "detected_topics": [
-      "Geometría en el espacio",
-      "Rectas",
-      "Posición relativa de rectas",
-      "Planos",
-      "Perpendicularidad",
-      "Ecuación del plano",
-      "Vector director"
-    ]
-  }
+    {
+        "text": "EJERCICIO 4. \nSean los puntos $O(0, 0, 0)$, $A(0, 2, -2)$, $B(1, 2, m)$ y $C(2, 3, 2)$.\n\na) Halla los valores de $m$ para que el tetraedro determinado por los puntos $O, A, B$ y $C$ tenga un volumen de 3 unidades cúbicas.\n\nb) Para $m = 0$, calcula la distancia del punto $O$ al plano que pasa por los puntos $A, B$ y $C$.",
+        "topic_name": "Geometría en el Espacio",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "1zfxzy5t6",
+        "source_file": "Examen_Titular-A_Matematicas II_Tabla.pdf",
+        "detected_topics": [
+            "DISTANCIA DE UN PUNTO A UN PLANO",
+            "GEOMETRÍA EN EL ESPACIO",
+            "VOLUMEN DE UN TETRAEDRO",
+            "ECUACIÓN DE UN PLANO",
+            "PRODUCTO MIXTO"
+        ]
+    },
+    {
+        "text": "EJERCICIO 5. \nConsidera el punto $P(1, 1, 1)$ y la recta $r \\equiv \\frac{x - 1}{1} = \\frac{y - 2}{2} = \\frac{z - 3}{2}$.\n\na) Halla el plano que pasa por el punto $P$ y contiene a la recta $r$.\n\nb) Halla la recta que pasa por el punto $P$ y corta perpendicularmente a la recta $r$.",
+        "topic_name": "Geometría en el Espacio",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "ybrhm0rsp",
+        "source_file": "Examen_Titular-A_Matematicas II_Tabla.pdf",
+        "detected_topics": [
+            "PROYECCIÓN ORTOGONAL DE UN PUNTO SOBRE UNA RECTA",
+            "ECUACIÓN DEL PLANO",
+            "INTERSECCIÓN DE RECTAS",
+            "PLANO QUE CONTIENE UNA RECTA",
+            "RECTAS EN EL ESPACIO",
+            "GEOMETRÍA EN EL ESPACIO",
+            "VECTORES EN EL ESPACIO",
+            "PERPENDICULARIDAD"
+        ]
+    },
+    {
+        "text": "EJERCICIO 4. \nConsidera la recta $r \\equiv \\begin{cases} x - y + z = 3 \\\\ x + 2y - z = 4 \\end{cases}$ y el plano $\\pi \\equiv mx - y - 2z = 5$.\n\na) Halla $m$ para que $r$ y $\\pi$ sean paralelos.\n\nb) Para $m = -8$, calcula la distancia de la recta $r$ al plano $\\pi$.",
+        "topic_name": "Geometría en el Espacio",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "1toolhaur",
+        "source_file": "Examen_Titular-B_MatematicasII.pdf",
+        "solution": "### a) Cálculo de $m$ para que la recta $r$ y el plano $\\pi$ sean paralelos\n\nPara que una recta $r$ sea paralela a un plano $\\pi$, el vector director de la recta, $\\vec{d_r}$, debe ser perpendicular al vector normal del plano, $\\vec{n_\\pi}$. Matemáticamente, esto se traduce en que su producto escalar debe ser cero:\n$$\\vec{d_r} \\cdot \\vec{n_\\pi} = 0$$\n\nEn primer lugar, determinamos el vector director de la recta $r$. Dado que la recta viene dada como intersección de dos planos, su vector director se puede obtener mediante el producto vectorial de los vectores normales de dichos planos:\n$r \\equiv \\begin{cases} x - y + z = 3 \\implies \\vec{n_1} = (1, -1, 1) \\\\ x + 2y - z = 4 \\implies \\vec{n_2} = (1, 2, -1) \\end{cases}$\n\n$$\\vec{d_r} = \\vec{n_1} \\times \\vec{n_2} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 1 & -1 & 1 \\\\ 1 & 2 & -1 \\end{vmatrix}$$\n$$\\vec{d_r} = ((-1)(-1) - (1)(2))\\mathbf{i} - ((1)(-1) - (1)(1))\\mathbf{j} + ((1)(2) - (-1)(1))\\mathbf{k}$$\n$$\\vec{d_r} = (1 - 2)\\mathbf{i} - (-1 - 1)\\mathbf{j} + (2 + 1)\\mathbf{k} = (-1, 2, 3)$$\n\nEl vector normal del plano $\\pi \\equiv mx - y - 2z = 5$ es:\n$$\\vec{n_\\pi} = (m, -1, -2)$$\n\nAplicamos la condición de perpendicularidad $\\vec{d_r} \\cdot \\vec{n_\\pi} = 0$:\n$$(-1, 2, 3) \\cdot (m, -1, -2) = 0$$\n$$-m - 2 - 6 = 0$$\n$$-m - 8 = 0 \\implies m = -8$$\n\nPara asegurar que la recta es paralela y no está contenida en el plano, comprobamos si un punto de la recta pertenece al plano. Obtenemos un punto $P$ de $r$ fijando una variable, por ejemplo $x = 3$:\n$$\\begin{cases} 3 - y + z = 3 \\implies -y + z = 0 \\implies y = z \\\\ 3 + 2y - z = 4 \\implies 2y - z = 1 \\end{cases}$$\nSustituyendo $y = z$: $2z - z = 1 \\implies z = 1, y = 1$. El punto es $P(3, 1, 1)$.\nSustituimos $P$ en $\\pi$ con $m = -8$:\n$$-8(3) - (1) - 2(1) = -24 - 1 - 2 = -27 \\neq 5$$\nComo el punto no cumple la ecuación del plano, la recta es estrictamente paralela.\n\n**Respuesta:** El valor de $m$ para que la recta y el plano sean paralelos es $m = -8$.\n\n### b) Distancia de la recta $r$ al plano $\\pi$ para $m = -8$\n\nCuando una recta $r$ es paralela a un plano $\\pi$, la distancia entre ambos es igual a la distancia de cualquier punto $P$ de la recta al plano:\n$$d(r, \\pi) = d(P, \\pi)$$\n\nUtilizaremos el punto $P(3, 1, 1)$ hallado en el apartado anterior y el plano $\\pi$ con $m = -8$, cuya ecuación general es:\n$$\\pi \\equiv -8x - y - 2z - 5 = 0$$\n\nLa fórmula de la distancia de un punto $P(x_0, y_0, z_0)$ a un plano $Ax + By + Cz + D = 0$ es:\n$$d(P, \\pi) = \\frac{|Ax_0 + By_0 + Cz_0 + D|}{\\sqrt{A^2 + B^2 + C^2}}$$\n\nSustituimos los valores:\n$$d(r, \\pi) = \\frac{|-8(3) - 1(1) - 2(1) - 5|}{\\sqrt{(-8)^2 + (-1)^2 + (-2)^2}}$$\n$$d(r, \\pi) = \\frac{|-24 - 1 - 2 - 5|}{\\sqrt{64 + 1 + 4}}$$\n$$d(r, \\pi) = \\frac{|-32|}{\\sqrt{69}} = \\frac{32}{\\sqrt{69}}$$\n\nRacionalizando el resultado:\n$$d(r, \\pi) = \\frac{32\\sqrt{69}}{69} \\text{ unidades de longitud}$$\n\n**Respuesta:** La distancia de la recta al plano es $\\frac{32}{\\sqrt{69}}$ (aproximadamente $3,85$ unidades).",
+        "detected_topics": [
+            "VECTOR NORMAL",
+            "DISTANCIA ENTRE RECTA Y PLANO",
+            "GEOMETRÍA EN EL ESPACIO",
+            "PLANOS",
+            "VECTOR DIRECTOR",
+            "PARALELISMO ENTRE RECTA Y PLANO",
+            "RECTAS",
+            "POSICIONES RELATIVAS"
+        ]
+    },
+    {
+        "text": "EJERCICIO 5. \nSean las rectas $r \\equiv \\frac{x + 1}{4} = \\frac{y + 2}{3} = \\frac{z - 2}{-1}$ y $s \\equiv \\begin{cases} x = 1 - \\lambda \\\\ y = 2 + \\lambda \\\\ z = -3 - 2\\lambda \\end{cases}$\n\na) Estudia la posición relativa de las rectas $r$ y $s$.\n\nb) Halla la ecuación de un plano que contiene a $r$ y a una recta perpendicular a las rectas $r$ y $s$.",
+        "topic_name": "Geometría en el Espacio",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "id": "0q6ujzh8c",
+        "source_file": "Examen_Titular-B_MatematicasII.pdf",
+        "detected_topics": [
+            "ECUACIÓN DEL PLANO",
+            "POSICIÓN RELATIVA DE RECTAS",
+            "GEOMETRÍA EN EL ESPACIO",
+            "PERPENDICULARIDAD",
+            "PLANOS",
+            "VECTOR DIRECTOR",
+            "RECTAS"
+        ]
+    }
 ]

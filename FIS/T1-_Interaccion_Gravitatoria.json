@@ -1,157 +1,157 @@
 [
-  {
-    "text": "A) CAMPO GRAVITATORIO\n\na) Se deja caer un objeto de masa m desde una altura h sobre la superficie de la Tierra y llega al suelo sin que actúe ninguna fuerza de rozamiento. Considerando que la altura es mucho menor que el radio terrestre, y mediante razonamientos energéticos, calcule:\n\ni) el trabajo que realiza la fuerza peso en ese trayecto; \n\nii) la velocidad con que el cuerpo llega al suelo.\n\nb1) Dos masas puntuales de 400 kg están situadas en los puntos A(2,2) m y B(2,-2) m. Calcule razonadamente:\n\ni) el potencial gravitatorio en el punto C(2,0) m; \n\nii) el trabajo que hay que realizar para desplazar una masa de 3 kg, inicialmente en reposo en C, hasta dejarla en reposo en el origen de coordenadas. G = 6,67·10-11 N m² kg-2\n\nb2) Para salir de la Luna, los astronautas del Apolo tuvieron que despegar de su superficie en su módulo lunar de 15000 kg. Calcule razonadamente:\n\ni) la velocidad de escape de la Luna, \n\nii) la energía cinética mínima necesaria para que el vehículo escape de la Luna; \n\niii) la velocidad con la que llegaría la Tierra una nave, inicialmente en reposo, desde una altura de 2,5·104 km sobre la superficie terrestre. Considere despreciable el rozamiento con el aire y el efecto de la Luna. G = 6,67·10-11 N m2 kg-2; ML = 7,35·1022 kg; RL = 1740 km; MT = 5,98·1024 kg; RT = 6370 km",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Interacción Gravitatoria",
-      "Energía",
-      "Potencial gravitatorio"
-    ],
-    "id": "5zv5p52hd",
-    "source_file": "Examen_Suplente1-A_FÍSICA.pdf"
-  },
-  {
-    "text": "A) CAMPO GRAVITATORIO \n\na) La intensidad gravitatoria en la superficie de la Luna es 0,163 veces la de la Tierra y el radio de la Luna es 0,27 veces el de la Tierra. Razone la veracidad de la siguiente afirmación: la velocidad de escape de la Luna es la mitad que la velocidad de escape de la Tierra.",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Campo gravitatorio",
-      "Velocidad de escape",
-      "Intensidad gravitatoria"
-    ],
-    "id": "ftxvfkmpr",
-    "source_file": "Examen_Suplente2-B_Fisica.pdf"
-  },
-  {
-    "text": "A) CAMPO GRAVITATORIO \n\nb1) Dos masas puntuales, de masas 2 kg y 3 kg, están colocadas en los puntos A(2,0) m y B(0,2) m, respectivamente.\n\ni) Realice un esquema del campo gravitatorio en el punto C(3,1) m.\n\nii) Calcule el vector campo gravitatorio en dicho punto.\n\niii) Calcule el vector fuerza que experimenta la masa de 3 kg. \n\nG = 6,67·10-11 N m2 kg-2",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Masas puntuales",
-      "Campo gravitatorio",
-      "Fuerza gravitatoria"
-    ],
-    "id": "81rq0nr90",
-    "source_file": "Examen_Suplente2-B_Fisica.pdf"
-  },
-  {
-    "text": "A) CAMPO GRAVITATORIO \n\nb2) Un bloque de 3 kg se halla en reposo en la parte superior de un plano rugoso de 4 m de altura que está inclinado 37º respecto a la horizontal. Al liberar el bloque, desliza por el plano y llega al final con una velocidad de 5 m s-1. Determine mediante razonamientos energéticos:\n\ni) el trabajo realizado por cada una de las fuerzas que actúan sobre el bloque; \n\nii) el coeficiente de rozamiento entre el bloque y el plano. \n\ng = 9,8 m s-2",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Energía mecánica",
-      "Trabajo y energía",
-      "Fuerza de rozamiento"
-    ],
-    "id": "urkdq3ig7",
-    "source_file": "Examen_Suplente2-B_Fisica.pdf"
-  },
-  {
-    "text": "A) CAMPO GRAVITATORIO\n\na) Discuta razonadamente si los siguientes enunciados son verdaderos o falsos:\n\ni) si se realiza trabajo sobre una partícula, su energía cinética aumenta; \n\nii) las fuerzas conservativas siempre realizan trabajo nulo.",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Trabajo y energía",
-      "Fuerzas conservativas"
-    ],
-    "id": "faomgye8n",
-    "source_file": "Examen_Titular-B_Fisica.pdf"
-  },
-  {
-    "text": "A) CAMPO GRAVITATORIO. b1) Dos masas puntuales de 200 kg están situadas en los puntos A(0,-3) m y B(0,3) m. Calcule razonadamente:\n\ni) el campo gravitatorio en el punto C(4,0) m, apoyándose en un esquema;\n\nii) la fuerza sobre una masa puntual de 3 kg situada en el origen.\nG = 6,67·10-11 N m2 kg-2",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Campo gravitatorio",
-      "Ley de gravitación universal"
-    ],
-    "id": "8arwl0fch",
-    "source_file": "Examen_Titular-B_Fisica.pdf"
-  },
-  {
-    "text": "A) CAMPO GRAVITATORIO. b2) Un satélite de 1400 kg en una órbita circular tarda un día y medio en dar la vuelta a la Tierra. Calcule razonadamente:\n\ni) el radio de la órbita;\n\nii) la velocidad mínima que hay que suministrarle para que abandone el campo gravitatorio terrestre desde la órbita en la que se encuentra.\nG = 6,67·10-11 N m2 kg-2; MT = 5,98·1024 kg; RT = 6370 km; 1 día = 24h",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Órbitas circulares",
-      "Velocidad de escape"
-    ],
-    "id": "ud6d4tqnc",
-    "source_file": "Examen_Titular-B_Fisica.pdf"
-  },
-  {
-    "text": "A) CAMPO GRAVITATORIO.\n\na) Considere dos masas puntuales iguales separadas una cierta distancia. Razone la veracidad de las siguientes afirmaciones:\n\ni) el campo gravitatorio es nulo solamente en el punto medio entre las dos masas; \n\nii) el potencial gravitatorio solo se anula a distancia infinita.",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Campo gravitatorio",
-      "Potencial gravitatorio"
-    ],
-    "id": "bvlss72mc",
-    "source_file": "Examen_Titular-A_Fisica.pdf"
-  },
-  {
-    "text": "b1) Un asistente de vuelo arrastra con velocidad constante una maleta sin ruedas de 7 kg, por una superficie horizontal. Tira de la maleta con una correa que forma un ángulo de 63º con el suelo. El coeficiente de rozamiento entre la maleta y el suelo es 0,25.\n\ni) Realice un esquema de las fuerzas que actúan sobre la maleta.\n\nii) Calcule razonadamente el trabajo realizado por cada una de las fuerzas que actúan sobre la maleta en un recorrido de 3,5 m.\ng = 9,8 m s-2",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Dinámica",
-      "Trabajo y Energía"
-    ],
-    "id": "ev5x6v9h2",
-    "source_file": "Examen_Titular-A_Fisica.pdf"
-  },
-  {
-    "text": "b2) En los años 60 del siglo pasado, un satélite solía orbitar a 1,6·10^4 km sobre la superficie de la Tierra. Calcule razonadamente:\n\ni) la energía potencial de un satélite de 1000 kg en esta órbita; \n\nii) la velocidad que lleva el satélite en esa órbita; \n\niii) la energía que tiene el satélite en dicha órbita.\nG = 6,67·10-11 N m2 kg-2; MT = 5,98·1024 kg; RT = 6370 km",
-    "topic_name": "T1: Interacción Gravitatoria",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Satélites",
-      "Energía orbital",
-      "Velocidad orbital"
-    ],
-    "id": "a39u8uabb",
-    "source_file": "Examen_Titular-A_Fisica.pdf"
-  }
+    {
+        "text": "A) CAMPO GRAVITATORIO\n\na) Se deja caer un objeto de masa m desde una altura h sobre la superficie de la Tierra y llega al suelo sin que actúe ninguna fuerza de rozamiento. Considerando que la altura es mucho menor que el radio terrestre, y mediante razonamientos energéticos, calcule:\n\ni) el trabajo que realiza la fuerza peso en ese trayecto; \n\nii) la velocidad con que el cuerpo llega al suelo.\n\nb1) Dos masas puntuales de 400 kg están situadas en los puntos A(2,2) m y B(2,-2) m. Calcule razonadamente:\n\ni) el potencial gravitatorio en el punto C(2,0) m; \n\nii) el trabajo que hay que realizar para desplazar una masa de 3 kg, inicialmente en reposo en C, hasta dejarla en reposo en el origen de coordenadas. G = 6,67·10-11 N m² kg-2\n\nb2) Para salir de la Luna, los astronautas del Apolo tuvieron que despegar de su superficie en su módulo lunar de 15000 kg. Calcule razonadamente:\n\ni) la velocidad de escape de la Luna, \n\nii) la energía cinética mínima necesaria para que el vehículo escape de la Luna; \n\niii) la velocidad con la que llegaría la Tierra una nave, inicialmente en reposo, desde una altura de 2,5·104 km sobre la superficie terrestre. Considere despreciable el rozamiento con el aire y el efecto de la Luna. G = 6,67·10-11 N m2 kg-2; ML = 7,35·1022 kg; RL = 1740 km; MT = 5,98·1024 kg; RT = 6370 km",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "POTENCIAL GRAVITATORIO",
+            "INTERACCIÓN GRAVITATORIA",
+            "ENERGÍA"
+        ],
+        "id": "5zv5p52hd",
+        "source_file": "Examen_Suplente1-A_FÍSICA.pdf"
+    },
+    {
+        "text": "A) CAMPO GRAVITATORIO \n\na) La intensidad gravitatoria en la superficie de la Luna es 0,163 veces la de la Tierra y el radio de la Luna es 0,27 veces el de la Tierra. Razone la veracidad de la siguiente afirmación: la velocidad de escape de la Luna es la mitad que la velocidad de escape de la Tierra.",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "VELOCIDAD DE ESCAPE",
+            "INTENSIDAD GRAVITATORIA",
+            "CAMPO GRAVITATORIO"
+        ],
+        "id": "ftxvfkmpr",
+        "source_file": "Examen_Suplente2-B_Fisica.pdf"
+    },
+    {
+        "text": "A) CAMPO GRAVITATORIO \n\nb1) Dos masas puntuales, de masas 2 kg y 3 kg, están colocadas en los puntos A(2,0) m y B(0,2) m, respectivamente.\n\ni) Realice un esquema del campo gravitatorio en el punto C(3,1) m.\n\nii) Calcule el vector campo gravitatorio en dicho punto.\n\niii) Calcule el vector fuerza que experimenta la masa de 3 kg. \n\nG = 6,67·10-11 N m2 kg-2",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "MASAS PUNTUALES",
+            "FUERZA GRAVITATORIA",
+            "CAMPO GRAVITATORIO"
+        ],
+        "id": "81rq0nr90",
+        "source_file": "Examen_Suplente2-B_Fisica.pdf"
+    },
+    {
+        "text": "A) CAMPO GRAVITATORIO \n\nb2) Un bloque de 3 kg se halla en reposo en la parte superior de un plano rugoso de 4 m de altura que está inclinado 37º respecto a la horizontal. Al liberar el bloque, desliza por el plano y llega al final con una velocidad de 5 m s-1. Determine mediante razonamientos energéticos:\n\ni) el trabajo realizado por cada una de las fuerzas que actúan sobre el bloque; \n\nii) el coeficiente de rozamiento entre el bloque y el plano. \n\ng = 9,8 m s-2",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "ENERGÍA MECÁNICA",
+            "FUERZA DE ROZAMIENTO",
+            "TRABAJO Y ENERGÍA"
+        ],
+        "id": "urkdq3ig7",
+        "source_file": "Examen_Suplente2-B_Fisica.pdf"
+    },
+    {
+        "text": "A) CAMPO GRAVITATORIO\n\na) Discuta razonadamente si los siguientes enunciados son verdaderos o falsos:\n\ni) si se realiza trabajo sobre una partícula, su energía cinética aumenta; \n\nii) las fuerzas conservativas siempre realizan trabajo nulo.",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "TRABAJO Y ENERGÍA",
+            "FUERZAS CONSERVATIVAS"
+        ],
+        "id": "faomgye8n",
+        "source_file": "Examen_Titular-B_Fisica.pdf"
+    },
+    {
+        "text": "A) CAMPO GRAVITATORIO. b1) Dos masas puntuales de 200 kg están situadas en los puntos A(0,-3) m y B(0,3) m. Calcule razonadamente:\n\ni) el campo gravitatorio en el punto C(4,0) m, apoyándose en un esquema;\n\nii) la fuerza sobre una masa puntual de 3 kg situada en el origen.\nG = 6,67·10-11 N m2 kg-2",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "LEY DE GRAVITACIÓN UNIVERSAL",
+            "CAMPO GRAVITATORIO"
+        ],
+        "id": "8arwl0fch",
+        "source_file": "Examen_Titular-B_Fisica.pdf"
+    },
+    {
+        "text": "A) CAMPO GRAVITATORIO. b2) Un satélite de 1400 kg en una órbita circular tarda un día y medio en dar la vuelta a la Tierra. Calcule razonadamente:\n\ni) el radio de la órbita;\n\nii) la velocidad mínima que hay que suministrarle para que abandone el campo gravitatorio terrestre desde la órbita en la que se encuentra.\nG = 6,67·10-11 N m2 kg-2; MT = 5,98·1024 kg; RT = 6370 km; 1 día = 24h",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "VELOCIDAD DE ESCAPE",
+            "ÓRBITAS CIRCULARES"
+        ],
+        "id": "ud6d4tqnc",
+        "source_file": "Examen_Titular-B_Fisica.pdf"
+    },
+    {
+        "text": "A) CAMPO GRAVITATORIO.\n\na) Considere dos masas puntuales iguales separadas una cierta distancia. Razone la veracidad de las siguientes afirmaciones:\n\ni) el campo gravitatorio es nulo solamente en el punto medio entre las dos masas; \n\nii) el potencial gravitatorio solo se anula a distancia infinita.",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "POTENCIAL GRAVITATORIO",
+            "CAMPO GRAVITATORIO"
+        ],
+        "id": "bvlss72mc",
+        "source_file": "Examen_Titular-A_Fisica.pdf"
+    },
+    {
+        "text": "b1) Un asistente de vuelo arrastra con velocidad constante una maleta sin ruedas de 7 kg, por una superficie horizontal. Tira de la maleta con una correa que forma un ángulo de 63º con el suelo. El coeficiente de rozamiento entre la maleta y el suelo es 0,25.\n\ni) Realice un esquema de las fuerzas que actúan sobre la maleta.\n\nii) Calcule razonadamente el trabajo realizado por cada una de las fuerzas que actúan sobre la maleta en un recorrido de 3,5 m.\ng = 9,8 m s-2",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "TRABAJO Y ENERGÍA",
+            "DINÁMICA"
+        ],
+        "id": "ev5x6v9h2",
+        "source_file": "Examen_Titular-A_Fisica.pdf"
+    },
+    {
+        "text": "b2) En los años 60 del siglo pasado, un satélite solía orbitar a 1,6·10^4 km sobre la superficie de la Tierra. Calcule razonadamente:\n\ni) la energía potencial de un satélite de 1000 kg en esta órbita; \n\nii) la velocidad que lleva el satélite en esa órbita; \n\niii) la energía que tiene el satélite en dicha órbita.\nG = 6,67·10-11 N m2 kg-2; MT = 5,98·1024 kg; RT = 6370 km",
+        "topic_name": "T1: Interacción Gravitatoria",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "SATÉLITES",
+            "ENERGÍA ORBITAL",
+            "VELOCIDAD ORBITAL"
+        ],
+        "id": "a39u8uabb",
+        "source_file": "Examen_Titular-A_Fisica.pdf"
+    }
 ]

@@ -1,122 +1,122 @@
 [
-  {
-    "text": "EJERCICIO 2 OPCIÓN A\n\nUna máquina frigorífica cuya eficiencia es el 50 % de la ideal trabaja entre -3 ºC y 24 ºC. El compresor de la máquina consume 5400 kJ en cada hora de funcionamiento. Se pide:\n\na) Calcular la eficiencia real de la máquina y el calor extraído del foco frío en una hora de funcionamiento.\n\nb) Determinar la potencia frigorífica y el calor cedido al medio ambiente en cuatro horas de funcionamiento.",
-    "topic_name": "Máquinas Térmicas",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Termodinámica",
-      "Máquinas frigoríficas",
-      "Ciclo de Carnot"
-    ],
-    "has_image": false,
-    "id": "170b3b1hi",
-    "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "Un sistema de calefacción mantiene la temperatura de un recinto a 22 ºC mientras la temperatura del exterior es 2 ºC. La eficiencia de la máquina es el 40 % de la ideal y la potencia del compresor es 3 kW.\n\na) Calcular la eficiencia real de la máquina y la potencia calorífica del sistema de calefacción.\n\nb) Determinar la energía consumida por el compresor y la cantidad de calor absorbida del exterior en 3 horas de funcionamiento.",
-    "topic_name": "Máquinas Térmicas",
-    "exam_year": 2025,
-    "exam_model": "Suplente1-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Bomba de calor",
-      "Ciclo de Carnot",
-      "Eficiencia térmica"
-    ],
-    "has_image": false,
-    "id": "yh97u8ab4",
-    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "Un motor de combustión interna de 1200 cm3 de cilindrada y una relación de compresión de 11:1, dispone de 4 cilindros de 80 mm de carrera. El motor desarrolla una potencia de 12 kW con un consumo específico de 300 g / kW·h. El combustible usado tiene una densidad de 850 kg/m3 y un poder calorífico de 41000 kJ / kg. Calcular:\n\na) El diámetro y el volumen de la cámara de combustión de cada cilindro.\n\nb) El consumo de combustible, en litros, en un trayecto de 3 h de duración y la energía aportada por el combustible en ese tiempo.",
-    "topic_name": "Máquinas Térmicas",
-    "exam_year": 2025,
-    "exam_model": "Suplente2-B",
-    "community": "Andalucía",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Motores de combustión interna",
-      "Parámetros geométricos del motor",
-      "Rendimiento térmico",
-      "Consumo de combustible"
-    ],
-    "has_image": false,
-    "image_bbox": [],
-    "image_description": "",
-    "image_page": 1,
-    "id": "zpdk7jrrg",
-    "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "a) Un motor Diésel tiene un rendimiento del 45 % y consume 8,5 litros en una hora de un combustible que tiene una densidad de 0,7 kg / l y un poder calorífico de 13170 kcal / kg. Calcular la potencia desarrollada por el motor y la cantidad de calor perdido en una hora de funcionamiento (1 caloría = 4,18 Julios).\n\nb) Un frigorífico está situado en una vivienda cuya temperatura media es 22 ºC y su eficiencia es el 25 % de la ideal. La potencia del compresor es 1 kW y la temperatura en el interior del frigorífico es 5 ºC. Calcular la eficiencia de la máquina y el calor cedido al foco caliente por unidad de tiempo.",
-    "topic_name": "Máquinas Térmicas",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Motor Diésel",
-      "Ciclo de Carnot",
-      "Máquinas frigoríficas",
-      "Rendimiento térmico"
-    ],
-    "has_image": false,
-    "id": "9aqkj3lr0",
-    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 2 OPCIÓN \n\nA) Un motor Otto de 4T y 4 cilindros consume 9 litros a la hora de un combustible cuyo poder calorífico es 41000 kJ / kg y densidad 0,850 kg / l. Se sabe que tiene un rendimiento del 40 %, el diámetro de cada pistón es 70 mm y la carrera 90 mm. Obtener la potencia desarrollada y la cilindrada del motor.\n\nb) Mediante una bomba de calor reversible se quiere climatizar una nave industrial a 23 ºC en invierno. La máquina tiene una eficiencia real de 5 y se sabe que es el 30 % de la ideal. Calcular la temperatura media en el exterior.",
-    "topic_name": "Máquinas Térmicas",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "detected_topics": [
-      "Motor Otto",
-      "Potencia",
-      "Cilindrada",
-      "Bomba de calor"
-    ],
-    "has_image": false,
-    "id": "cqii1ee5w",
-    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 2. OPCIÓN A.\n\na) Un motor Otto de 4T y 4 cilindros consume 9 litros a la hora de un combustible cuyo poder calorífico es 41000 kJ / kg y densidad 0,850 kg / l. Se sabe que tiene un rendimiento del 40 %, el diámetro de cada pistón es 70 mm y la carrera 90 mm. Obtener la potencia desarrollada y la cilindrada del motor.\n\nb) Mediante una bomba de calor reversible se quiere climatizar una nave industrial a 23 ºC en invierno. La máquina tiene una eficiencia real de 5 y se sabe que es el 30 % de la ideal. Calcular la temperatura media en el exterior.",
-    "topic_name": "Máquinas Térmicas",
-    "exam_year": 2025,
-    "exam_model": "Titular-A",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Motor de combustión",
-      "Bomba de calor",
-      "Eficiencia térmica"
-    ],
-    "id": "588lb5cqc",
-    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
-  },
-  {
-    "text": "EJERCICIO 2 OPCIÓN Aa) Un motor Diésel tiene un rendimiento del 45 % y consume 8,5 litros en una hora de un combustible que tiene una densidad de 0,7 kg / l y un poder calorífico de 13170 kcal / kg. Calcular la potencia desarrollada por el motor y la cantidad de calor perdido en una hora de funcionamiento (1 caloría = 4,18 Julios).\n\nb) Un frigorífico está situado en una vivienda cuya temperatura media es 22 ºC y su eficiencia es el 25 % de la ideal. La potencia del compresor es 1 kW y la temperatura en el interior del frigorífico es 5 ºC. Calcular la eficiencia de la máquina y el calor cedido al foco caliente por unidad de tiempo.",
-    "topic_name": "Máquinas Térmicas",
-    "exam_year": 2025,
-    "exam_model": "Titular-B",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Motores térmicos",
-      "Ciclo Diésel",
-      "Máquinas frigoríficas",
-      "Eficiencia"
-    ],
-    "id": "u8pqizu1w",
-    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
-  }
+    {
+        "text": "EJERCICIO 2 OPCIÓN A\n\nUna máquina frigorífica cuya eficiencia es el 50 % de la ideal trabaja entre -3 ºC y 24 ºC. El compresor de la máquina consume 5400 kJ en cada hora de funcionamiento. Se pide:\n\na) Calcular la eficiencia real de la máquina y el calor extraído del foco frío en una hora de funcionamiento.\n\nb) Determinar la potencia frigorífica y el calor cedido al medio ambiente en cuatro horas de funcionamiento.",
+        "topic_name": "Máquinas Térmicas",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "CICLO DE CARNOT",
+            "MÁQUINAS FRIGORÍFICAS",
+            "TERMODINÁMICA"
+        ],
+        "has_image": false,
+        "id": "170b3b1hi",
+        "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "Un sistema de calefacción mantiene la temperatura de un recinto a 22 ºC mientras la temperatura del exterior es 2 ºC. La eficiencia de la máquina es el 40 % de la ideal y la potencia del compresor es 3 kW.\n\na) Calcular la eficiencia real de la máquina y la potencia calorífica del sistema de calefacción.\n\nb) Determinar la energía consumida por el compresor y la cantidad de calor absorbida del exterior en 3 horas de funcionamiento.",
+        "topic_name": "Máquinas Térmicas",
+        "exam_year": 2025,
+        "exam_model": "Suplente1-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "CICLO DE CARNOT",
+            "BOMBA DE CALOR",
+            "EFICIENCIA TÉRMICA"
+        ],
+        "has_image": false,
+        "id": "yh97u8ab4",
+        "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "Un motor de combustión interna de 1200 cm3 de cilindrada y una relación de compresión de 11:1, dispone de 4 cilindros de 80 mm de carrera. El motor desarrolla una potencia de 12 kW con un consumo específico de 300 g / kW·h. El combustible usado tiene una densidad de 850 kg/m3 y un poder calorífico de 41000 kJ / kg. Calcular:\n\na) El diámetro y el volumen de la cámara de combustión de cada cilindro.\n\nb) El consumo de combustible, en litros, en un trayecto de 3 h de duración y la energía aportada por el combustible en ese tiempo.",
+        "topic_name": "Máquinas Térmicas",
+        "exam_year": 2025,
+        "exam_model": "Suplente2-B",
+        "community": "Andalucía",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "MOTORES DE COMBUSTIÓN INTERNA",
+            "RENDIMIENTO TÉRMICO",
+            "PARÁMETROS GEOMÉTRICOS DEL MOTOR",
+            "CONSUMO DE COMBUSTIBLE"
+        ],
+        "has_image": false,
+        "image_bbox": [],
+        "image_description": "",
+        "image_page": 1,
+        "id": "zpdk7jrrg",
+        "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "a) Un motor Diésel tiene un rendimiento del 45 % y consume 8,5 litros en una hora de un combustible que tiene una densidad de 0,7 kg / l y un poder calorífico de 13170 kcal / kg. Calcular la potencia desarrollada por el motor y la cantidad de calor perdido en una hora de funcionamiento (1 caloría = 4,18 Julios).\n\nb) Un frigorífico está situado en una vivienda cuya temperatura media es 22 ºC y su eficiencia es el 25 % de la ideal. La potencia del compresor es 1 kW y la temperatura en el interior del frigorífico es 5 ºC. Calcular la eficiencia de la máquina y el calor cedido al foco caliente por unidad de tiempo.",
+        "topic_name": "Máquinas Térmicas",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía",
+        "is_competency_based": false,
+        "detected_topics": [
+            "CICLO DE CARNOT",
+            "MOTOR DIÉSEL",
+            "MÁQUINAS FRIGORÍFICAS",
+            "RENDIMIENTO TÉRMICO"
+        ],
+        "has_image": false,
+        "id": "9aqkj3lr0",
+        "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 2 OPCIÓN \n\nA) Un motor Otto de 4T y 4 cilindros consume 9 litros a la hora de un combustible cuyo poder calorífico es 41000 kJ / kg y densidad 0,850 kg / l. Se sabe que tiene un rendimiento del 40 %, el diámetro de cada pistón es 70 mm y la carrera 90 mm. Obtener la potencia desarrollada y la cilindrada del motor.\n\nb) Mediante una bomba de calor reversible se quiere climatizar una nave industrial a 23 ºC en invierno. La máquina tiene una eficiencia real de 5 y se sabe que es el 30 % de la ideal. Calcular la temperatura media en el exterior.",
+        "topic_name": "Máquinas Térmicas",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "detected_topics": [
+            "POTENCIA",
+            "BOMBA DE CALOR",
+            "CILINDRADA",
+            "MOTOR OTTO"
+        ],
+        "has_image": false,
+        "id": "cqii1ee5w",
+        "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 2. OPCIÓN A.\n\na) Un motor Otto de 4T y 4 cilindros consume 9 litros a la hora de un combustible cuyo poder calorífico es 41000 kJ / kg y densidad 0,850 kg / l. Se sabe que tiene un rendimiento del 40 %, el diámetro de cada pistón es 70 mm y la carrera 90 mm. Obtener la potencia desarrollada y la cilindrada del motor.\n\nb) Mediante una bomba de calor reversible se quiere climatizar una nave industrial a 23 ºC en invierno. La máquina tiene una eficiencia real de 5 y se sabe que es el 30 % de la ideal. Calcular la temperatura media en el exterior.",
+        "topic_name": "Máquinas Térmicas",
+        "exam_year": 2025,
+        "exam_model": "Titular-A",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "BOMBA DE CALOR",
+            "MOTOR DE COMBUSTIÓN",
+            "EFICIENCIA TÉRMICA"
+        ],
+        "id": "588lb5cqc",
+        "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+    },
+    {
+        "text": "EJERCICIO 2 OPCIÓN Aa) Un motor Diésel tiene un rendimiento del 45 % y consume 8,5 litros en una hora de un combustible que tiene una densidad de 0,7 kg / l y un poder calorífico de 13170 kcal / kg. Calcular la potencia desarrollada por el motor y la cantidad de calor perdido en una hora de funcionamiento (1 caloría = 4,18 Julios).\n\nb) Un frigorífico está situado en una vivienda cuya temperatura media es 22 ºC y su eficiencia es el 25 % de la ideal. La potencia del compresor es 1 kW y la temperatura en el interior del frigorífico es 5 ºC. Calcular la eficiencia de la máquina y el calor cedido al foco caliente por unidad de tiempo.",
+        "topic_name": "Máquinas Térmicas",
+        "exam_year": 2025,
+        "exam_model": "Titular-B",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "MOTORES TÉRMICOS",
+            "EFICIENCIA",
+            "MÁQUINAS FRIGORÍFICAS",
+            "CICLO DIÉSEL"
+        ],
+        "id": "u8pqizu1w",
+        "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+    }
 ]

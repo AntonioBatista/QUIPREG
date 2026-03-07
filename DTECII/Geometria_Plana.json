@@ -1,18 +1,18 @@
 [
-  {
-    "text": "**EJERCICIO 1: TRANSFORMACIONES GEOMÉTRICAS**\n\nDada la figura representada y la homología afín ortogonal definida por los pares de puntos homólogos A-A' y C≡C', se pide:\n1. Determinar el eje de afinidad.\n2. Representar la figura homóloga a la dada.",
-    "topic_name": "Geometría Plana",
-    "exam_year": 2025,
-    "exam_model": "Desconocido",
-    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
-    "is_competency_based": false,
-    "context_text": "",
-    "detected_topics": [
-      "Homología",
-      "Afinidad",
-      "Transformaciones geométricas"
-    ],
-    "id": "63q1wln1m",
-    "source_file": "Examen-Titular-A_Dibujo_Técnico_II.pdf"
-  }
+    {
+        "text": "**EJERCICIO 1: TRANSFORMACIONES GEOMÉTRICAS**\n\nDada la figura representada y la homología afín ortogonal definida por los pares de puntos homólogos A-A' y C≡C', se pide:\n1. Determinar el eje de afinidad.\n2. Representar la figura homóloga a la dada.",
+        "topic_name": "Geometría Plana",
+        "exam_year": 2025,
+        "exam_model": "Desconocido",
+        "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+        "is_competency_based": false,
+        "context_text": "",
+        "detected_topics": [
+            "HOMOLOGÍA",
+            "AFINIDAD",
+            "TRANSFORMACIONES GEOMÉTRICAS"
+        ],
+        "id": "63q1wln1m",
+        "source_file": "Examen-Titular-A_Dibujo_Técnico_II.pdf"
+    }
 ]
