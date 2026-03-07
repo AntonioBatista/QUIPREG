@@ -43,12 +43,6 @@
     "detected_topics": [
       "Formulación inorgánica",
       "Formulación orgánica",
-      "Hidróxidos",
-      "Oxosales",
-      "Hidrocarburos aromáticos",
-      "Hidruros metálicos",
-      "Oxoácidos",
-      "Ácidos carboxílicos"
     ]
   },
   {
@@ -65,13 +59,6 @@
     "detected_topics": [
       "Formulación inorgánica",
       "Formulación orgánica",
-      "Nomenclatura química",
-      "Óxidos metálicos",
-      "Oxoácidos",
-      "Alquinos",
-      "Hidróxidos",
-      "Oxosales",
-      "Amidas"
     ]
   },
   {
@@ -87,14 +74,6 @@
     "detected_topics": [
       "Formulación inorgánica",
       "Formulación orgánica",
-      "Óxidos",
-      "Sales oxoácidas",
-      "Oxoácidos",
-      "Hidróxidos",
-      "Alquenos",
-      "Dienos",
-      "Ácidos carboxílicos",
-      "Alcoholes"
     ]
   },
   {
@@ -110,13 +89,6 @@
     "detected_topics": [
       "Formulación inorgánica",
       "Formulación orgánica",
-      "Sales binarias",
-      "Oxoácidos",
-      "Fenoles",
-      "Óxidos",
-      "Sales ácidas",
-      "Éteres",
-      "Nomenclatura química"
     ]
   },
   {
@@ -132,14 +104,6 @@
     "detected_topics": [
       "Formulación inorgánica",
       "Nomenclatura inorgánica",
-      "Formulación orgánica",
-      "Nomenclatura orgánica",
-      "Sales binarias",
-      "Oxosales",
-      "Alcoholes",
-      "Óxidos metálicos",
-      "Oxoácidos",
-      "Aminas"
     ]
   },
   {
@@ -155,13 +119,6 @@
     "detected_topics": [
       "Formulación inorgánica",
       "Formulación orgánica",
-      "Óxidos",
-      "Oxoácidos",
-      "Peróxidos",
-      "Sales ácidas",
-      "Fenoles",
-      "Éteres",
-      "Nomenclatura química"
     ]
   },
   {
@@ -177,12 +134,6 @@
     "detected_topics": [
       "Formulación inorgánica",
       "Formulación orgánica",
-      "Óxidos",
-      "Oxosales",
-      "Oxoácidos",
-      "Cetonas",
-      "Nitrocompuestos",
-      "Nomenclatura química"
     ]
   },
   {
@@ -210,6 +161,10 @@
     "context_text": "",
     "id": "uzkgpzrdf",
     "source_file": "Examen_Titular-A_QUÍMICA.pdf"
+        "detected_topics": [
+      "formulación inorgánica",
+      "formulación orgánica"
+    ]
   },
   {
     "text": "A₂. Formule o nombre los siguientes compuestos:\n\na) Peróxido de estroncio; \n\nb) Nitrato de magnesio; \n\nc) 1,2-diclorobenceno; \n\nd) PbF₂; \n\ne) Cu(BrO₂)₂; \n\nf) CH₃NHCH₃",
@@ -221,6 +176,10 @@
     "context_text": "",
     "id": "1nd2mgn6v",
     "source_file": "Examen_Titular-A_QUÍMICA.pdf"
+        "detected_topics": [
+      "formulación inorgánica",
+      "formulación orgánica"
+    ]
   },
   {
     "text": "A₁. Formule o nombre los siguientes compuestos:\n\na) Sulfuro de plomo(II); \n\nb) Hidróxido de berilio; \n\nc) Etanoato de metilo; \n\nd) TiF₄; \n\ne) Ni₃(PO₄)₂; \n\nf) CH₃CH₂CH₂NH₂",
@@ -232,6 +191,10 @@
     "context_text": "",
     "id": "d0mx0vi3s",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf",
+        "detected_topics": [
+      "formulación inorgánica",
+      "formulación orgánica"
+    ]
     "solution": "### a) **Sulfuro de plomo(II)**\n$PbS$\n\n### b) **Hidróxido de berilio**\n$Be(OH)_2$\n\n### c) **Etanoato de metilo**\n$CH_3COOCH_3$\n\n### d) **$TiF_4$**\nFluoruro de titanio(IV)\n\n### e) **$Ni_3(PO_4)_2$**\nFosfato de níquel(II)\n\n### f) **$CH_3CH_2CH_2NH_2$**\nPropan-1-amina"
   },
   {
@@ -244,6 +207,10 @@
     "context_text": "",
     "id": "afk1bq9a8",
     "source_file": "Examen_Titular-B_QUÍMICA.pdf",
+        "detected_topics": [
+      "formulación inorgánica",
+      "formulación orgánica"
+    ]
     "solution": "### a) Peróxido de hidrógeno\n$H_2O_2$\n\n### b) Arsenato de hierro(III)\n$FeAsO_4$\n\n### c) 2,2,4-trimetilpentano\n$CH_3C(CH_3)_2CH_2CH(CH_3)CH_3$\n\n### d) $O_3I_2$\nTrióxido de diyodo\n\n### e) $Cr(OH)_3$\nHidróxido de cromo(III)\n\n### f) $CH_3CH_2CHO$\nPropanal"
   }
 ]
