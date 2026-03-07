@@ -39,7 +39,15 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "ve07c4q89",
-    "source_file": "Examen_Suplente1-A_Quimica.pdf"
+    "source_file": "Examen_Suplente1-A_Quimica.pdf",
+    "detected_topics": [
+      "Redox",
+      "Método del ion-electrón",
+      "Ajuste de reacciones",
+      "Estequiometría",
+      "Rendimiento de la reacción",
+      "Leyes de los gases ideales"
+    ]
   },
   {
     "text": "2B. Se pasa una corriente el3©ctrica continua a trav3©s de NaBr fundido para generar Na y Br2 \n\na) Escriba y ajuste las semirreacciones que tienen lugar en el 3¡nodo y en el c3¡todo.\n\nb) Indique qu3© signo tendr3¡ el potencial de la celda, razonando la respuesta.\n\nc) Explique la raz3³n por la cual el NaBr debe estar fundido.\n\nd) Razone en qu3© sentido fluir3¡n los electrones por el hilo conductor externo que une el c3¡todo y el 3¡nodo.",
@@ -50,7 +58,21 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "qm4f78dzj",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Electrólisis",
+      "Sales fundidas",
+      "Semirreacciones",
+      "Ánodo",
+      "Cátodo",
+      "Oxidación",
+      "Reducción",
+      "Potencial de celda",
+      "Espontaneidad",
+      "Conductividad iónica",
+      "Flujo de electrones",
+      "Electroquímica"
+    ]
   },
   {
     "text": "3B. Queremos platear electroqu3­micamente una tetera con 15 g de plata haciendo pasar una corriente de 5 A trav3©s de una disoluci3³n acuosa de AgNO3 \n\na) Escriba la semirreacci3³n de reducci3³n y calcule el tiempo necesario para ello.\n\nb) Determine la cantidad de oro que se depositar3¡ al usar una disoluci3³n de AuCl3, utilizando la misma intensidad de corriente que en el apartado anterior durante 45 min. Escriba la semirreacci3³n correspondiente. \nDatos: F= 96500 C·mol−1; Masas at3³micas relativas: Ag= 108; Au= 197",
@@ -61,7 +83,18 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "irgfkvnw0",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Electrólisis",
+      "Leyes de Faraday",
+      "Semirreacción de reducción",
+      "Cálculo de masa depositada",
+      "Cálculo de tiempo en electrólisis",
+      "Plata",
+      "Oro",
+      "Constante de Faraday",
+      "Estequiometría redox"
+    ]
   },
   {
     "text": "3B. Queremos platear electroquímicamente una tetera con 15 g de plata haciendo pasar una corriente de 5 A través de una disolución acuosa de AgNO3 \n\na) Escriba la semirreacción de reducción y calcule el tiempo necesario para ello.\n\nb) Determine la cantidad de oro que se depositará al usar una disolución de AuCl3, utilizando la misma intensidad de corriente que en el apartado anterior durante 45 min. Escriba la semirreacción correspondiente. Datos: F= 96500 C·mol–1; Masas atómicas relativas: Ag= 108; Au= 197",
@@ -72,7 +105,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "6npnx8wp6",
-    "source_file": "Examen_Suplente1-B_Quimica.pdf"
+    "source_file": "Examen_Suplente1-B_Quimica.pdf",
+    "detected_topics": [
+      "Electrólisis",
+      "Leyes de Faraday",
+      "Electrodeposición",
+      "Semirreacción de reducción",
+      "Constante de Faraday",
+      "Cálculo de masa en electrolisis",
+      "Cálculo de tiempo en electrolisis"
+    ]
   },
   {
     "text": "2A. Dados los siguientes potenciales normales de reducción: Eº(Cu2+/Cu)= +0,34 V; Eº(Ni2+/Ni)= −0,25 V; Eº(HNO3/NO)= +0,96 V. Razone cuáles de las siguientes afirmaciones son verdaderas o falsas:\n\na) Cuando se introduce un trozo de Cu metálico en ácido nítrico (HNO3), el Cu pasa a la disolución como iones Cu2+.\n\nb) Al introducir Ni metálico en una disolución de Cu2+, el Ni se oxida a Ni2+.\n\nc) Si se añade Ni metálico a una disolución de ácido nítrico, el Ni no se oxida.\n\nd) El HNO3 es la especie más oxidante.",
@@ -83,7 +125,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "y8jjuk8w5",
-    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+    "source_file": "Examen_Suplente2-A_Quimica.pdf",
+    "detected_topics": [
+      "Potenciales normales de reducción",
+      "Espontaneidad de las reacciones redox",
+      "Agente oxidante",
+      "Poder oxidante",
+      "Poder reductor",
+      "Ácido nítrico",
+      "Reacciones de transferencia de electrones"
+    ]
   },
   {
     "text": "3A. El magnesio se obtiene por electrólisis de MgCl2 fundido. Basándose en las semirreacciones correspondientes, calcule:\n\na) La masa de metal que se depositará si se hace pasar por la cuba electrolítica una corriente de 50 A durante 1 hora.\n\nb) El volumen de Cl2(g) generado a 650 K y 1,18 atm. Datos: F= 96500 C·mol–1; R= 0,082 atm·L·mol–1·K–1; Masas atómicas relativas: Cl= 35,5; Mg= 24,3",
@@ -94,7 +145,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "8te7bij05",
-    "source_file": "Examen_Suplente2-A_Quimica.pdf"
+    "source_file": "Examen_Suplente2-A_Quimica.pdf",
+    "detected_topics": [
+      "Electrólisis",
+      "Leyes de Faraday",
+      "Semirreacciones",
+      "Gases ideales",
+      "Redox",
+      "Estequiometría",
+      "Cálculos electrolíticos"
+    ]
   },
   {
     "text": "2A. Se ha montado una pila basada en la siguiente reacción: Ni(s) + 2Ag+(ac) → Ni2+(ac) + 2Ag(s) \n\na) Escriba las semirreaciones que tienen lugar en la pila, indicando cuál es la de reducción y la de oxidación.\n\nb) ¿De qué elemento metálico estará hecho el cátodo?\n\nc) Razone en qué sentido fluirán los electrones por el hilo conductor externo que une el cátodo y el ánodo.\n\nd) Justifique la espontaneidad de la reacción que tiene lugar en la pila. \nDatos: Eº(Ag+/Ag)= +0,80 V; Eº(Ni2+/Ni)= −0,23 V",
@@ -105,7 +165,19 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "uiw5riz96",
-    "source_file": "Examen_Suplente2-B_Quimica.pdf"
+    "source_file": "Examen_Suplente2-B_Quimica.pdf",
+    "detected_topics": [
+      "Electroquímica",
+      "Pilas galvánicas",
+      "Semirreacción de oxidación",
+      "Semirreacción de reducción",
+      "Ánodo",
+      "Cátodo",
+      "Flujo de electrones",
+      "Espontaneidad de las reacciones redox",
+      "Potencial estándar de reducción",
+      "Fuerza electromotriz"
+    ]
   },
   {
     "text": "3B. Al hacer reaccionar ácido clorhídrico (HCl) con dicromato de potasio (K2Cr2O7) se forma tricloruro de cromo (CrCl3), dicloro (Cl2), cloruro de potasio (KCl) y agua (H2O).\n\na) Ajuste la reacción molecular por el método del ion-electrón.\n\nb) ¿Qué volumen de HCl del 37% de riqueza en masa y densidad 1,19 g·mL–1 se necesitará para que reaccionen 7 g de K2Cr2O7? \nDatos: Masas atómicas relativas: H=1; O= 16; Cl= 35,5; K= 39; Cr= 52",
@@ -116,7 +188,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "dsg6fd3wy",
-    "source_file": "Examen_Titular-B_Quimica.pdf"
+    "source_file": "Examen_Titular-B_Quimica.pdf",
+    "detected_topics": [
+      "Redox",
+      "Método del ion-electrón",
+      "Estequiometría",
+      "Ajuste de reacciones",
+      "Riqueza en masa",
+      "Densidad",
+      "Disoluciones"
+    ]
   },
   {
     "text": "B5. Para cada una de las reacciones siguientes justifique si se trata de reacciones redox o no. Indique, en su caso, el agente oxidante y el reductor.\n\na) 2KMnO4 + 8H2SO4 + 5K2C2O4 → 2MnSO4 + 8H2O + 10CO2 + 6K2SO4\n\nb) CaCO3 + 2HNO3 → Ca(NO3)2 + CO2 + H2O\n\nc) 2NaBr + Cl2 → 2NaCl + Br2",
@@ -127,7 +208,15 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "chd73ccn4",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Reacciones redox",
+      "Número de oxidación",
+      "Agente oxidante",
+      "Agente reductor",
+      "Identificación de procesos redox",
+      "Transferencia de electrones"
+    ]
   },
   {
     "text": "C2. Basándose en las semirreacciones correspondientes, calcule:\n\na) El tiempo necesario para que todo el cobre contenido en 250 mL de una disolución acuosa 0,1 M de iones Cu2+ se deposite como cobre metálico, cuando se hace pasar una corriente eléctrica de 1,5 A.\n\nb) La intensidad de corriente eléctrica que se debe hacer pasar a través de una disolución acuosa de iones Au3+, si se quiere obtener 1 g de oro metálico en 30 minutos. Datos: F= 96500 C·mol–1. Masas atómicas relativas: Au= 197; Cu= 63,5",
@@ -138,7 +227,19 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "m9ibb1jx5",
-    "source_file": "Examen_Reserva-A_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-A_QUÍMICA.pdf",
+    "detected_topics": [
+      "Redox",
+      "Electrólisis",
+      "Leyes de Faraday",
+      "Electroquímica",
+      "Semirreacciones",
+      "Depósito de metales",
+      "Estequiometría",
+      "Cobre",
+      "Oro",
+      "Intensidad de corriente"
+    ]
   },
   {
     "text": "B5. Se construye una pila galvánica con un electrodo de cobre, un electrodo de plata, una disolución 1 M de CuSO4 y una disolución 1 M de AgNO3\n\na) Indique, razonadamente, cuál es el cátodo y cuál es el ánodo de la pila.\n\nb) Escriba la notación de la pila y establezca cuál es el sentido de circulación de los electrones en la misma.\n\nc) Determine el potencial estándar de la pila.\nDatos: Eo(Cu2+/Cu)= 0,34 V; Eo(Ag+/Ag)= 0,80 V",
@@ -149,7 +250,17 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "rjwcomggz",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Pila galvánica",
+      "Cátodo",
+      "Ánodo",
+      "Notación de la pila",
+      "Potencial estándar de la pila",
+      "Sentido de circulación de electrones",
+      "Redox",
+      "Electroquímica"
+    ]
   },
   {
     "text": "C4. En una cuba se electroliza CaCl2 fundido. Basándose en las semirreacciones correspondientes, calcule:\n\na) Los gramos de calcio que se depositarán si se hace pasar por la cuba una corriente de 0,5 A durante 30 min.\n\nb) El volumen de Cl2(g), medido a 25 ºC y 740 mmHg, que se desprenderá.\nDatos: Masas atómicas relativas: Ca= 40; Cl= 35,5; F= 96500 C·mol–1; R= 0,082 atm·L·mol−1·K−1",
@@ -160,7 +271,16 @@
     "is_competency_based": false,
     "context_text": "",
     "id": "njxa193wr",
-    "source_file": "Examen_Reserva-B_QUÍMICA.pdf"
+    "source_file": "Examen_Reserva-B_QUÍMICA.pdf",
+    "detected_topics": [
+      "Electrólisis",
+      "Leyes de Faraday",
+      "Semirreacciones",
+      "Sales fundidas",
+      "Cálculos estequiométricos",
+      "Gases ideales",
+      "Redox"
+    ]
   },
   {
     "text": "C4. El níquel metálico reacciona con ácido nítrico concentrado según la reacción: Ni + HNO3 → Ni(NO3)2 + NO + H2O.\n\na) Ajuste las ecuaciones iónica y molecular por el método del ion-electrón.\n\nb) Calcule la masa de níquel que podrá oxidarse con 1 mL de ácido nítrico comercial del 70% de riqueza en masa y densidad 1,42 g·mL–1.\nDatos: Masas atómicas relativas: Ni= 58,7; N= 14; O= 16; H=1",
