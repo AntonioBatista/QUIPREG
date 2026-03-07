@@ -1,5 +1,44 @@
 [
   {
+    "text": "Para medir la dureza de una plancha de acero se realiza un ensayo Vickers aplicando una carga de 40 kp durante 20 s, obteniéndose una huella de diagonales d1 = 0,604 mm y d2 = 0,598 mm.\n\na) Calcular la dureza de la plancha y expresar su valor normalizado.\n\nb) Si en otro ensayo Vickers sobre la misma plancha se usa una fuerza de 80 kp durante 10 s, ¿cuánto medirá la diagonal de la huella?",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ensayos de dureza",
+      "Vickers"
+    ],
+    "has_image": false,
+    "image_bbox": [],
+    "image_description": "",
+    "image_page": 1,
+    "id": "4gi66htwg",
+    "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "Al realizar un ensayo de tracción sobre una probeta de acero normalizada (100 mm de longitud y 13,8 mm de diámetro) se obtiene un módulo de Young de 21,5·105 kp/cm2 y en la zona elástica tiene un alargamiento de 2·10-3 mm en cierto instante. Determinar:\n\na) El alargamiento unitario y la longitud total de la probeta en ese instante.\n\nb) La fuerza en Newtons que se está aplicando en ese instante.",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Suplente2-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "context_text": "",
+    "detected_topics": [
+      "Ensayo de tracción",
+      "Elasticidad",
+      "Ley de Hooke"
+    ],
+    "has_image": false,
+    "image_bbox": [],
+    "image_description": "",
+    "image_page": 1,
+    "id": "svmeeav89",
+    "source_file": "Examen_Suplente2-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "Un ensayo de tipo Brinell que se realiza sobre un determinado metal da como resultado una dureza de 80 HB. La bola utilizada como penetrador es de 5 mm de diámetro y la huella que se obtiene al cabo de 30 s es de 2 mm de diámetro. Se pide:\n\na) La carga que se ha aplicado en el ensayo expresada en Newtons.\n\nb) La constante de ensayo del material.\n\nc) Expresar la dureza en su forma normalizada.",
     "topic_name": "Materiales",
     "exam_year": 2025,
