@@ -1,5 +1,56 @@
 [
   {
+    "text": "a) Dado el siguiente circuito:\n\na.\n\n1) Obtener la tabla de verdad para la salida F.\n\na.\n\n2) Simplificar F por el método de Karnaugh e implementarla mediante un circuito con puertas lógicas NAND.\n\nb) Obtener la función de transferencia C/E del siguiente sistema de control.",
+    "topic_name": "Circuitos Lógicos",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Puertas lógicas",
+      "Tablas de verdad",
+      "Mapas de Karnaugh",
+      "Sistemas de control",
+      "Función de transferencia"
+    ],
+    "has_image": true,
+    "image_bbox": [
+      197,
+      274,
+      468,
+      762
+    ],
+    "image_description": "Esquema de un circuito de puertas lógicas con entradas A, B, C y un diagrama de bloques de un sistema de control con realimentación.",
+    "image_page": 2,
+    "id": "60vhjlwhu",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "EJERCICIO 3 OPCIÓN \n\nA) Indicar el principio de funcionamiento y las aplicaciones principales de los sensores inductivos.\n\nb) Considerando el circuito digital de la figura, se pide:\n\nb.\n\n1) Obtener la tabla de verdad y la función lógica S.\n\nb.\n\n2) La función S simplificada por el método de Karnaugh y su implementación con puertas lógicas.",
+    "topic_name": "Circuitos Lógicos",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Sensores inductivos",
+      "Tabla de verdad",
+      "Función lógica",
+      "Simplificación de Karnaugh"
+    ],
+    "has_image": true,
+    "image_bbox": [
+      248,
+      210,
+      525,
+      815
+    ],
+    "image_description": "Diagrama de un circuito lógico con 4 entradas (A, B, C, D) y varias puertas lógicas que convergen en una salida S.",
+    "image_page": 2,
+    "id": "v1luzs215",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "EJERCICIO 3. OPCIÓN A.\n\na) Indicar el principio de funcionamiento y las aplicaciones principales de los sensores inductivos.\n\nb) Considerando el circuito digital de la figura, se pide:\nb.\n\n1) Obtener la tabla de verdad y la función lógica S. \nb.\n\n2) La función S simplificada por el método de Karnaugh y su implementación con puertas lógicas.",
     "topic_name": "Circuitos Lógicos",
     "exam_year": 2025,
