@@ -1,5 +1,21 @@
 [
   {
+    "text": "EJERCICIO 2 OPCIÓN B\n\nPor una tubería horizontal de dos pulgadas de diámetro (1’’ = 25,4 mm) circula un fluido hidráulico con una velocidad de 6 m/s. Se pide:\n\na) Determinar el caudal en l/s.\n\nb) Calcular la velocidad del fluido en un punto de la tubería donde hay un estrechamiento de una pulgada de diámetro.",
+    "topic_name": "Sistemas Automáticos",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Hidráulica",
+      "Caudal",
+      "Ecuación de continuidad"
+    ],
+    "has_image": false,
+    "id": "j9gcs2bbm",
+    "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "Para desplazar una pieza en una línea de producción industrial se utiliza un cilindro de doble efecto que tiene un émbolo de 10 cm de diámetro. La relación entre los diámetros de émbolo y vástago es 5. Este cilindro está conectado a una red de aire comprimido a 2 MPa de presión y efectúa 15 ciclos por minuto. Suponiendo una fuerza de rozamiento del 10 % de la teórica, calcular:\n\na) La fuerza que ejerce el vástago en la carrera de avance.\n\nb) La longitud de la carrera si el caudal de aire medido en condiciones normales es 583 l / min.",
     "topic_name": "Sistemas Automáticos",
     "exam_year": 2025,
