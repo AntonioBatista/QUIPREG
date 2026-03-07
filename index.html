@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Generador de Exámenes v4.0 | Codigo Corrector</title>
+    <title>Generador Pro v4.0 | Codigo Corrector</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -13,38 +13,44 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:italic,wght@400;600&display=swap');
         :root { --bg: #F8F9FA; --subject-color: #141414; }
-        body { background-color: var(--bg); font-family: 'Inter', sans-serif; transition: background-color 0.4s; }
-        .glass-header { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
-        .subject-tab { padding: 0.5rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.82rem; transition: 0.2s; color: #64748b; }
-        .subject-tab.active-sub { color: var(--subject-color); background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .data-row { background: white; border-radius: 12px; transition: 0.3s; border-left: 4px solid transparent; }
-        .data-row:hover { border-left-color: var(--subject-color); transform: translateY(-2px); }
+        body { background-color: var(--bg); font-family: 'Inter', sans-serif; transition: background-color 0.4s; overflow: hidden; }
         
-        /* Estilos específicos para IMPRESIÓN */
+        /* Layout */
+        #sidebar { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); width: 350px; }
+        #sidebar.collapsed { margin-left: -350px; }
+        
+        /* UI Elements */
+        .glass-header { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .subject-tab { padding: 0.5rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.8rem; transition: 0.2s; color: #64748b; white-space: nowrap; }
+        .subject-tab.active-sub { color: var(--subject-color); background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        
+        .data-row { background: white; border-radius: 12px; transition: 0.3s; border-left: 4px solid transparent; margin-bottom: 1rem; }
+        .data-row:hover { border-left-color: var(--subject-color); transform: translateY(-2px); }
+
+        /* Custom Scrollbar */
+        .custom-scroll::-webkit-scrollbar { width: 5px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+
         @media print {
-            body { background: white !important; }
-            header, aside, .no-print { display: none !important; }
-            main { padding: 0 !important; margin: 0 !important; width: 100% !important; max-width: none !important; }
-            .exam-view { display: block !important; }
-            .data-row { border: none !important; box-shadow: none !important; padding: 0 !important; margin-bottom: 2rem !important; page-break-inside: avoid; }
-            .prose { font-family: 'Lora', serif !important; font-size: 12pt !important; line-height: 1.5 !important; }
-            .exam-header { border-bottom: 2px solid black; padding-bottom: 1rem; margin-bottom: 2rem; display: block !important; }
+            #sidebar, header, .no-print { display: none !important; }
+            main { margin: 0 !important; width: 100% !important; overflow: visible !important; }
+            .exam-header { border-bottom: 2px solid black; padding-bottom: 1rem; margin-bottom: 2rem; }
+            .prose { font-family: 'Lora', serif !important; font-size: 12pt !important; }
         }
-        .exam-view { display: none; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="h-screen flex flex-col">
 
-<header class="sticky top-0 z-50 glass-header px-8 py-3 flex items-center justify-between no-print">
+<header class="glass-header px-6 py-3 flex items-center justify-between no-print z-50">
     <div class="flex items-center gap-4">
-        <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white font-serif italic text-xl shadow-lg transform rotate-3">v4</div>
-        <div class="hidden sm:block">
-            <h1 id="mainTitle" class="text-lg font-bold text-gray-900 leading-none">Banco de Preguntas</h1>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">EBAU 2026 · Codigo Corrector</p>
-        </div>
+        <button onclick="toggleSidebar()" class="p-2 hover:bg-gray-100 rounded-lg transition" title="Alternar Menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+        <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white font-serif italic shadow-md transform rotate-3">v4</div>
+        <h1 id="mainTitle" class="text-sm font-bold text-gray-900 hidden sm:block">Banco de Preguntas</h1>
     </div>
 
-    <nav class="bg-gray-100/80 p-1 rounded-xl flex gap-1 border border-gray-200 overflow-x-auto no-scrollbar max-w-2xl">
+    <nav id="subjectNav" class="bg-gray-100/80 p-1 rounded-xl flex gap-1 border border-gray-200 overflow-x-auto no-scrollbar max-w-xl">
         <button onclick="switchSubject('QUIM')" id="btn-QUIM" class="subject-tab active-sub">🧪 QUIM</button>
         <button onclick="switchSubject('FIS')" id="btn-FIS" class="subject-tab">🧲 FIS</button>
         <button onclick="switchSubject('TINII')" id="btn-TINII" class="subject-tab">⚙️ TIN II</button>
@@ -54,71 +60,60 @@
     </nav>
 
     <div class="flex items-center gap-3">
-        <button onclick="toggleExamPanel()" class="bg-black text-white px-4 py-2 rounded-lg text-xs font-bold shadow-md hover:bg-gray-800 transition">
-            📋 MI EXAMEN (<span id="examCount">0</span>)
-        </button>
-        <div id="stats" class="text-[11px] font-mono font-bold bg-white border px-3 py-1.5 rounded-lg text-gray-500">0 RES</div>
+        <button onclick="printExam()" class="bg-black text-white px-4 py-2 rounded-lg text-xs font-bold hover:scale-105 transition shadow-lg">🖨️ PDF (<span id="examCount">0</span>)</button>
     </div>
 </header>
 
-<div class="flex flex-1 overflow-hidden no-print">
-    <aside class="w-80 bg-white border-r border-gray-200 p-6 flex flex-col gap-6 overflow-y-auto">
-        <section>
-            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Buscador</label>
-            <input id="search" type="text" placeholder="Filtrar por texto..." class="w-full border rounded-xl px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black">
-        </section>
+<div class="flex flex-1 overflow-hidden">
+    
+    <aside id="sidebar" class="bg-white border-r border-gray-200 flex flex-col no-print h-full shadow-2xl z-40">
+        <div class="p-6 overflow-y-auto flex-1 custom-scroll space-y-8">
+            
+            <section>
+                <h3 class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-4">🔍 Búsqueda y Filtrado</h3>
+                <input id="search" type="text" placeholder="Palabra clave..." class="w-full border rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-black outline-none mb-3">
+                
+                <label class="text-xs text-gray-500 mb-1 block">Rango de Años: <span id="yearVal" class="font-bold text-black text-xs">Todos</span></label>
+                <input type="range" id="yearRange" min="2010" max="2026" value="2010" class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-black">
+                <div class="flex justify-between text-[10px] text-gray-400 mt-1 font-mono"><span>2010</span><span>2026</span></div>
+            </section>
 
-        <section class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-            <h3 class="text-xs font-bold uppercase mb-4 flex items-center gap-2">⚡ Generación Auto</h3>
-            <div class="space-y-3">
-                <input id="autoNum" type="number" value="4" class="w-full border p-2 rounded-lg text-sm" placeholder="Nº de preguntas">
-                <select id="autoType" class="w-full border p-2 rounded-lg text-sm">
-                    <option value="random">Totalmente Aleatorio</option>
-                    <option value="byBlock">Por Pesos (Bloques)</option>
-                    <option value="onlyTheory">Solo Teoría</option>
-                    <option value="onlyProblems">Solo Problemas</option>
-                </select>
-                <button onclick="generateAuto()" class="w-full py-2 bg-blue-600 text-white rounded-xl text-xs font-bold hover:bg-blue-700">Generar Ahora</button>
-            </div>
-        </section>
+            <section class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                <h3 class="text-[10px] uppercase tracking-widest text-blue-600 font-bold mb-4 flex items-center justify-between">
+                    ⚖️ Pesos por Tema
+                    <button onclick="generateByWeights()" class="bg-blue-600 text-white px-2 py-1 rounded text-[9px] hover:bg-blue-700">AUTO-GEN</button>
+                </h3>
+                <div id="topicWeights" class="space-y-3 max-h-60 overflow-y-auto pr-2 custom-scroll">
+                    <p class="text-[10px] italic text-gray-400">Cargando temas...</p>
+                </div>
+            </section>
 
-        <section class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100">
-            <h3 class="text-xs font-bold uppercase mb-4">🖋️ Datos de Impresión</h3>
-            <div class="space-y-2">
-                <input id="instName" type="text" placeholder="Institución" class="w-full border p-2 rounded-lg text-xs">
-                <input id="examTitle" type="text" placeholder="Título Examen" class="w-full border p-2 rounded-lg text-xs">
-                <textarea id="examInstructions" placeholder="Instrucciones..." class="w-full border p-2 rounded-lg text-xs" rows="2"></textarea>
-            </div>
-        </section>
+            <section class="space-y-4">
+                <h3 class="text-[10px] uppercase tracking-widest text-emerald-600 font-bold">🖋️ Formato Editorial</h3>
+                <input id="instName" type="text" placeholder="Nombre de la Institución" class="w-full border p-2 rounded-lg text-xs">
+                <input id="examTitle" type="text" placeholder="Título del Examen (Ej: 2º Trimestre)" class="w-full border p-2 rounded-lg text-xs">
+                <textarea id="examInstructions" placeholder="Instrucciones del examen..." class="w-full border p-2 rounded-lg text-xs" rows="3"></textarea>
+                
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="showSolutions" class="w-4 h-4 accent-emerald-500">
+                    <label for="showSolutions" class="text-xs font-medium text-gray-600">Incluir Solucionario al final</label>
+                </div>
+            </section>
+        </div>
 
-        <button onclick="printExam()" class="mt-4 w-full py-3 bg-black text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg">
-            🖨️ IMPRIMIR PDF
-        </button>
+        <div class="p-4 border-t bg-gray-50 flex gap-2">
+            <button onclick="clearExam()" class="flex-1 py-2 text-[10px] font-bold border border-red-200 text-red-500 rounded-lg hover:bg-red-50 transition">LIMPIAR TODO</button>
+            <button onclick="alert('Funcionalidad de guardado en la nube próximamente.')" class="flex-1 py-2 text-[10px] font-bold border border-gray-200 text-gray-500 rounded-lg hover:bg-white transition">GUARDAR</button>
+        </div>
     </aside>
 
-    <main class="flex-1 overflow-y-auto p-8 bg-gray-50/50">
-        <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-4"></div>
-        <div id="loader" class="text-center py-20 opacity-30 italic">Cargando base de datos...</div>
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 relative">
+        <div id="questions" class="max-w-4xl mx-auto"></div>
+        <div id="loader" class="text-center py-20 opacity-30 italic">Sincronizando con base de datos v4.0...</div>
     </main>
 </div>
 
-<div id="printArea" class="exam-view p-12 max-w-4xl mx-auto hidden">
-    <div class="exam-header mb-8">
-        <div class="flex justify-between items-start border-b-2 border-black pb-4">
-            <div>
-                <h1 id="p-inst" class="text-2xl font-bold uppercase tracking-tight">NOMBRE DE LA INSTITUCIÓN</h1>
-                <h2 id="p-title" class="text-xl italic font-serif mt-1">Título del Examen</h2>
-            </div>
-            <div class="text-right text-sm font-mono">
-                <p>ASIGNATURA: <span id="p-subject">---</span></p>
-                <p>FECHA: ___________</p>
-                <p>NOMBRE: _______________________</p>
-            </div>
-        </div>
-        <div id="p-instr" class="mt-4 text-xs italic text-gray-600">Instrucciones por defecto del examen.</div>
-    </div>
-    <div id="p-questions" class="space-y-12"></div>
-</div>
+<div id="printArea" class="hidden"></div>
 
 <script>
 const subjectConfig = {
@@ -132,7 +127,9 @@ const subjectConfig = {
 
 let currentSubject = "QUIM";
 let allQuestions = [];
-let selectedIds = new Set(); // Carrito de compra manual
+let selectedIds = new Set();
+
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('collapsed'); }
 
 function switchSubject(id) {
     currentSubject = id;
@@ -141,7 +138,6 @@ function switchSubject(id) {
     document.documentElement.style.setProperty('--bg', config.bg);
     document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
     document.getElementById(`btn-${id}`).classList.add('active-sub');
-    document.getElementById('mainTitle').innerHTML = `Banco · <span style="color:${config.color}">${config.title}</span>`;
     selectedIds.clear();
     updateExamCounter();
     loadData();
@@ -159,73 +155,110 @@ async function loadData() {
         const promises = index.topics.map(t => fetch(`${config.folder}/${t.file}`).then(r => r.json()).catch(() => []));
         const results = await Promise.all(promises);
         allQuestions = results.flat();
+        
+        populateTopicWeights();
         render();
         loader.style.display = "none";
     } catch (e) {
-        loader.innerHTML = `<div class="text-red-500">⚠️ Error al cargar ${config.title}</div>`;
+        loader.innerHTML = `<div class="text-red-500">Error crítico de red.</div>`;
     }
 }
 
-function addToExam(id) {
-    if (selectedIds.has(id)) selectedIds.delete(id);
-    else selectedIds.add(id);
-    updateExamCounter();
-    render();
-}
-
-function updateExamCounter() {
-    document.getElementById('examCount').textContent = selectedIds.size;
-}
-
-function generateAuto() {
-    const num = parseInt(document.getElementById('autoNum').value);
-    const type = document.getElementById('autoType').value;
-    let pool = [...allQuestions];
-
-    if (type === "onlyTheory") pool = pool.filter(q => /justifique|razone|explique|indique/.test(q.text.toLowerCase()));
-    if (type === "onlyProblems") pool = pool.filter(q => /calcule|determine|ajuste|halle/.test(q.text.toLowerCase()));
-
-    // Aleatorizar y seleccionar
-    selectedIds.clear();
-    const shuffled = pool.sort(() => 0.5 - Math.random());
-    shuffled.slice(0, num).forEach(q => selectedIds.add(q.id));
-    
-    updateExamCounter();
-    render();
-    alert(`Se han seleccionado ${selectedIds.size} preguntas aleatorias.`);
-}
-
-function printExam() {
-    const questionsToPrint = allQuestions.filter(q => selectedIds.has(q.id));
-    if (questionsToPrint.length === 0) return alert("Selecciona al menos una pregunta.");
-
-    // Rellenar encabezado
-    document.getElementById('p-inst').textContent = document.getElementById('instName').value || "INSTITUCIÓN EDUCATIVA";
-    document.getElementById('p-title').textContent = document.getElementById('examTitle').value || "EXAMEN DE EVALUACIÓN";
-    document.getElementById('p-instr').textContent = document.getElementById('examInstructions').value || "Lea atentamente y responda con claridad.";
-    document.getElementById('p-subject').textContent = subjectConfig[currentSubject].title.toUpperCase();
-
-    // Rellenar preguntas
-    const pArea = document.getElementById('p-questions');
-    pArea.innerHTML = "";
-    questionsToPrint.forEach((q, i) => {
-        pArea.innerHTML += `
-            <div class="data-row">
-                <div class="prose">
-                    <strong>PREGUNTA ${i + 1}.</strong> ${marked.parse(q.text)}
-                    ${q.context_text ? `<div class="italic mt-2 text-sm">${marked.parse(q.context_text)}</div>` : ''}
-                </div>
+function populateTopicWeights() {
+    const container = document.getElementById('topicWeights');
+    const topics = [...new Set(allQuestions.map(q => q.topic_name))].sort();
+    container.innerHTML = "";
+    topics.forEach(t => {
+        container.innerHTML += `
+            <div class="flex items-center justify-between gap-2">
+                <span class="text-[9px] text-gray-500 font-medium truncate w-40">${t}</span>
+                <input type="number" data-topic="${t}" class="weight-input w-12 border p-1 rounded text-[10px] text-center" value="0" min="0">
             </div>
         `;
     });
+}
 
-    renderMathInElement(pArea, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
-    window.print();
+function generateByWeights() {
+    selectedIds.clear();
+    const inputs = document.querySelectorAll('.weight-input');
+    inputs.forEach(input => {
+        const topic = input.dataset.topic;
+        const count = parseInt(input.value);
+        if (count > 0) {
+            const pool = allQuestions.filter(q => q.topic_name === topic).sort(() => 0.5 - Math.random());
+            pool.slice(0, count).forEach(q => selectedIds.add(q.id));
+        }
+    });
+    updateExamCounter();
+    render();
+}
+
+function updateExamCounter() { document.getElementById('examCount').textContent = selectedIds.size; }
+
+function clearExam() { selectedIds.clear(); updateExamCounter(); render(); }
+
+function printExam() {
+    const questionsToPrint = allQuestions.filter(q => selectedIds.has(q.id));
+    if (questionsToPrint.length === 0) return alert("El examen está vacío.");
+
+    const printWindow = window.open('', '_blank');
+    const inst = document.getElementById('instName').value || "CENTRO EDUCATIVO";
+    const title = document.getElementById('examTitle').value || "EXAMEN OFICIAL";
+    const instr = document.getElementById('examInstructions').value || "";
+    const showSol = document.getElementById('showSolutions').checked;
+
+    let html = `<html><head><title>Examen</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <style>
+            body { font-family: 'Lora', serif; padding: 40px; color: #000; }
+            .header { border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+            .question { margin-bottom: 30px; page-break-inside: avoid; }
+            .question-num { font-weight: bold; margin-right: 10px; }
+            .solution-area { margin-top: 50px; border-top: 1px dashed #ccc; padding-top: 20px; page-break-before: always; }
+            .instr { font-style: italic; font-size: 0.9em; margin-bottom: 20px; }
+        </style></head><body>`;
+
+    html += `<div class="header">
+        <div><h1 style="margin:0; text-transform:uppercase;">${inst}</h1><p style="margin:0">${title}</p></div>
+        <div style="text-align:right">Fecha: ________<br>Asignatura: ${subjectConfig[currentSubject].title}</div>
+    </div>`;
+
+    if(instr) html += `<div class="instr">${instr}</div>`;
+
+    questionsToPrint.forEach((q, i) => {
+        html += `<div class="question">
+            <span class="question-num">Ejercicio ${i + 1}.</span>
+            ${marked.parse(q.text)}
+        </div>`;
+    });
+
+    if (showSol) {
+        html += `<div class="solution-area"><h2>SOLUCIONARIO (PARA EL PROFESOR)</h2>`;
+        questionsToPrint.forEach((q, i) => {
+            html += `<p><strong>Pregunta ${i+1}:</strong> ${q.solution || 'Sin solución disponible'}</p>`;
+        });
+        html += `</div>`;
+    }
+
+    html += `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script>
+             <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script>
+             <script>renderMathInElement(document.body, {delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}]}); window.print();<\/script>
+             </body></html>`;
+
+    printWindow.document.write(html);
+    printWindow.document.close();
 }
 
 function render() {
     const term = document.getElementById('search').value.toLowerCase();
-    const filtered = allQuestions.filter(q => q.text.toLowerCase().includes(term));
+    const minYear = parseInt(document.getElementById('yearRange').value);
+    
+    const filtered = allQuestions.filter(q => {
+        const okText = q.text.toLowerCase().includes(term);
+        const okYear = q.exam_year >= minYear;
+        return okText && okYear;
+    });
+
     const container = document.getElementById('questions');
     container.innerHTML = "";
     document.getElementById('stats').textContent = `${filtered.length} RESULTADOS`;
@@ -233,16 +266,16 @@ function render() {
     filtered.forEach(q => {
         const isSelected = selectedIds.has(q.id);
         const card = document.createElement('div');
-        card.className = `data-row p-6 flex flex-col gap-4 shadow-sm border ${isSelected ? 'ring-2 ring-black border-black' : 'border-gray-100'}`;
+        card.className = `data-row p-6 shadow-sm border ${isSelected ? 'ring-2 ring-black border-black' : 'border-gray-100'}`;
         card.innerHTML = `
-            <div class="flex justify-between items-start">
-                <span class="text-xl font-black">${q.exam_year} <small class="text-xs font-normal opacity-50">${q.exam_model || ''}</small></span>
-                <button onclick="addToExam('${q.id}')" class="px-3 py-1 rounded-full text-xs font-bold transition ${isSelected ? 'bg-red-500 text-white' : 'bg-gray-100 hover:bg-black hover:text-white'}">
-                    ${isSelected ? 'QUITAR DEL EXAMEN' : '+ AÑADIR AL EXAMEN'}
+            <div class="flex justify-between mb-4 items-center">
+                <span class="text-lg font-black">${q.exam_year} <small class="opacity-40 font-normal">(${q.community})</small></span>
+                <button onclick="toggleInExam('${q.id}')" class="px-4 py-1.5 rounded-full text-[10px] font-bold transition ${isSelected ? 'bg-red-500 text-white' : 'bg-gray-100 hover:bg-black hover:text-white'}">
+                    ${isSelected ? 'QUITAR' : '+ SELECCIONAR'}
                 </button>
             </div>
-            <div class="prose text-sm text-gray-800">${marked.parse(q.text.substring(0, 300) + '...')}</div>
-            <div class="text-[10px] uppercase font-bold text-gray-400">${q.topic_name}</div>
+            <div class="prose text-sm text-gray-800 mb-2">${marked.parse(q.text.substring(0, 350) + '...')}</div>
+            <span class="text-[9px] uppercase tracking-widest font-bold opacity-30">${q.topic_name}</span>
         `;
         container.appendChild(card);
     });
@@ -250,7 +283,19 @@ function render() {
     renderMathInElement(container, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}] });
 }
 
+function toggleInExam(id) {
+    if (selectedIds.has(id)) selectedIds.delete(id);
+    else selectedIds.add(id);
+    updateExamCounter();
+    render();
+}
+
 document.getElementById('search').oninput = render;
+document.getElementById('yearRange').oninput = (e) => {
+    document.getElementById('yearVal').textContent = `Desde ${e.target.value}`;
+    render();
+};
+
 switchSubject('QUIM');
 </script>
 </body>
