@@ -1,5 +1,37 @@
 [
   {
+    "text": "EJERCICIO 2 OPCIÓN A\n\nUna máquina frigorífica cuya eficiencia es el 50 % de la ideal trabaja entre -3 ºC y 24 ºC. El compresor de la máquina consume 5400 kJ en cada hora de funcionamiento. Se pide:\n\na) Calcular la eficiencia real de la máquina y el calor extraído del foco frío en una hora de funcionamiento.\n\nb) Determinar la potencia frigorífica y el calor cedido al medio ambiente en cuatro horas de funcionamiento.",
+    "topic_name": "Máquinas Térmicas",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Termodinámica",
+      "Máquinas frigoríficas",
+      "Ciclo de Carnot"
+    ],
+    "has_image": false,
+    "id": "170b3b1hi",
+    "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "Un sistema de calefacción mantiene la temperatura de un recinto a 22 ºC mientras la temperatura del exterior es 2 ºC. La eficiencia de la máquina es el 40 % de la ideal y la potencia del compresor es 3 kW.\n\na) Calcular la eficiencia real de la máquina y la potencia calorífica del sistema de calefacción.\n\nb) Determinar la energía consumida por el compresor y la cantidad de calor absorbida del exterior en 3 horas de funcionamiento.",
+    "topic_name": "Máquinas Térmicas",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Bomba de calor",
+      "Ciclo de Carnot",
+      "Eficiencia térmica"
+    ],
+    "has_image": false,
+    "id": "yh97u8ab4",
+    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "Un motor de combustión interna de 1200 cm3 de cilindrada y una relación de compresión de 11:1, dispone de 4 cilindros de 80 mm de carrera. El motor desarrolla una potencia de 12 kW con un consumo específico de 300 g / kW·h. El combustible usado tiene una densidad de 850 kg/m3 y un poder calorífico de 41000 kJ / kg. Calcular:\n\na) El diámetro y el volumen de la cámara de combustión de cada cilindro.\n\nb) El consumo de combustible, en litros, en un trayecto de 3 h de duración y la energía aportada por el combustible en ese tiempo.",
     "topic_name": "Máquinas Térmicas",
     "exam_year": 2025,
