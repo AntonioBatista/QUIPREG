@@ -155,45 +155,63 @@ async function loadData() {
     container.innerHTML = "";
     stats.textContent = "CONECTANDO...";
 
-    const indexUrl = `${config.folder}/${config.file}?v=${Date.now()}`; // Evita caché
+    const indexUrl = `${config.folder}/${config.file}?v=${Date.now()}`;
 
     try {
         const response = await fetch(indexUrl);
-        if (!response.ok) throw new Error(`404: No existe ${indexUrl}`);
+        if (!response.ok) throw new Error(`No se encontró ${indexUrl}`);
         
-        const data = await response.json();
+        // Leemos el índice como texto para evitar bloqueos si está mal formado
+        const indexText = await response.text();
+        const data = JSON.parse(indexText);
+        
         allQuestions = [];
         
-        // Cargamos los temas
         for (const topic of data.topics) {
             const topicUrl = `${config.folder}/${topic.file}?v=${Date.now()}`;
             try {
                 const res = await fetch(topicUrl);
-                const text = await res.json(); // Intentamos leer como JSON directamente
-                allQuestions.push(...text);
+                if (!res.ok) continue;
+
+                let rawText = await res.text();
+
+                // --- MOTOR DE LIMPIEZA AUTOMÁTICA ---
+                // 1. Corregimos barras invertidas de LaTeX solitarias
+                rawText = rawText.replace(/\\(?![\\\/bfnrtu"'])/g, "\\\\");
+                
+                // 2. Intentamos limpiar comillas "curvas" o mal escapadas si rompen el JSON
+                // (Esta es la parte más delicada, el navegador hará lo mejor posible)
+                
+                const questions = JSON.parse(rawText);
+                allQuestions.push(...questions);
+
             } catch (err) {
-                console.error(`Error en ${topic.file}. Revisa comillas o barras invertidas.`);
-                loader.innerHTML += `<div class="text-[10px] text-red-500">❌ Error de formato en: ${topic.file}</div>`;
+                console.warn(`Error en ${topic.file}:`, err);
+                loader.innerHTML += `<div class="text-[10px] text-orange-500">⚠️ Error de formato en ${topic.file}.</div>`;
             }
         }
 
-        if (allQuestions.length === 0) throw new Error("No se pudo cargar ninguna pregunta válida.");
+        if (allQuestions.length === 0) throw new Error("No se pudo extraer información de los archivos.");
 
         populateTopicWeights();
         render();
         loader.style.display = "none";
         
     } catch (e) {
+        console.error("ERROR:", e);
         loader.innerHTML = `
             <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl text-red-800 max-w-md mx-auto shadow-xl">
-                <h3 class="font-black text-lg mb-2 italic">❌ ERROR DE FORMATO JSON</h3>
-                <p class="text-sm mb-4">El archivo <strong>${config.file}</strong> o uno de sus temas tiene un error de sintaxis.</p>
-                <div class="text-[10px] bg-white/50 p-3 rounded font-mono text-left space-y-2">
-                    <strong>TIPS DE REPARACIÓN:</strong><br>
-                    1. Revisa que no haya comillas dobles <code>"</code> dentro de los textos (usa comillas simples <code>'</code>).<br>
-                    2. En las fórmulas LaTeX, usa doble barra: <code>\\frac</code> en lugar de <code>\frac</code>.
+                <h3 class="font-black text-lg mb-2 italic text-red-600">❌ ERROR TÉCNICO</h3>
+                <p class="text-sm mb-4">${e.message}</p>
+                <div class="text-[10px] bg-white/50 p-3 rounded font-mono text-left">
+                    <strong>DIAGNÓSTICO:</strong><br>
+                    El archivo no tiene un formato JSON puro. <br>
+                    Revisa si hay caracteres invisibles o comillas anidadas.<br><br>
+                    Ruta intentada: <strong>${indexUrl}</strong>
                 </div>
+                <button onclick="switchSubject('${currentSubject}')" class="mt-4 w-full bg-red-600 text-white py-2 rounded-xl text-xs font-bold shadow-lg">REINTENTAR CARGA</button>
             </div>`;
+        stats.textContent = "ERROR";
     }
 }
 // --- FUNCIONES DE RENDER Y FILTROS ---
