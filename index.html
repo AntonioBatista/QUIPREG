@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>EduDB | Banco de Preguntas v5.0</title>
+    <title>EduDB | Banco de Preguntas v5.1</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -28,25 +28,29 @@
 
         .data-row { background: white; border-radius: 16px; border: 1px solid #eee; padding: 2rem; transition: 0.2s; position: relative; }
         
-        /* COLORES DE TAGS (Basado en tu imagen) */
-        .pill-topic { background: #3b82f6; color: white; } /* Azul para el Bloque Principal */
-        .pill-content { background: #10b981; color: white; } /* Verde para Contenidos/Tags */
+        /* COLORES DE TAGS */
+        .pill-topic { background: #3b82f6; color: white; } /* Azul: Bloque */
+        .pill-content { background: #10b981; color: white; } /* Verde: Contenido */
         
         .tag-badge { font-size: 9px; font-weight: 800; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-        /* Nube de Tags en Sidebar */
+        /* NUBE DE TAGS PONDERADA */
+        #tagCloud { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: flex-start; }
         .tag-cloud-item { 
-            font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 20px; 
-            background: #f1f5f9; color: #64748b; cursor: pointer; transition: 0.2s;
-            border: 1px solid transparent;
+            font-weight: 700; padding: 2px 8px; border-radius: 12px; 
+            background: #f1f5f9; color: #64748b; cursor: pointer; transition: 0.3s;
+            line-height: 1.2;
         }
-        .tag-cloud-item:hover { background: #e2e8f0; color: black; }
-        .tag-cloud-item.active-tag { background: var(--subject-color); color: white; }
+        .tag-cloud-item:hover { background: #e2e8f0; color: black; transform: scale(1.05); }
+        .tag-cloud-item.active-tag { background: var(--subject-color) !important; color: white !important; }
 
         #placeholder-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 280px; pointer-events: none; }
         #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s; z-index: 100; }
         #examPanel.open { right: 0; }
         sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; bottom: -0.25em; }
+        
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
 
@@ -59,7 +63,7 @@
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">EduDB</span>
-            <span class="text-[9px] font-bold text-gray-300 uppercase">v5.0 Dynamic Tags</span>
+            <span class="text-[9px] font-bold text-gray-300 uppercase leading-none">v5.1 Weighted Cloud</span>
         </div>
     </div>
 
@@ -84,33 +88,34 @@
     <aside id="sidebar" class="no-print p-6 flex flex-col gap-6 overflow-y-auto custom-scroll bg-white">
         <button onclick="resetFilters()" class="w-full py-2 bg-gray-50 text-gray-400 text-[9px] font-black uppercase rounded-lg">Limpiar Filtros</button>
 
-        <div>
+        <section>
             <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Buscador</label>
             <input id="search" type="text" placeholder="Buscar concepto..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-colors">
-        </div>
+        </section>
 
-        <div>
-            <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque</label>
-            <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
-        </div>
+        <section class="grid grid-cols-1 gap-4">
+            <div>
+                <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque</label>
+                <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
+            </div>
+            <div>
+                <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Año</label>
+                <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
+            </div>
+        </section>
 
-        <div>
-            <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Año</label>
-            <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none"></select>
-        </div>
-
-        <div>
-            <label class="text-[10px] uppercase font-bold text-gray-400 mb-3 block tracking-widest">Contenidos en el filtro</label>
-            <div id="tagCloud" class="flex flex-wrap gap-2">
+        <section>
+            <label class="text-[10px] uppercase font-bold text-gray-400 mb-3 block tracking-widest">Nube de Contenidos</label>
+            <div id="tagCloud">
                 </div>
-        </div>
+        </section>
     </aside>
 
     <main class="flex-1 overflow-y-auto p-8 relative bg-[#fcfcfc]">
         <img id="placeholder-icon" src="https://img.icons8.com/fluency/240/test-tube.png">
-        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center">Aplique un filtro para visualizar contenido</div>
+        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center italic">Selecciona un filtro para explorar problemas</div>
         <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
-        <div id="loader" class="hidden text-center py-20 opacity-30 italic">Cargando base de datos...</div>
+        <div id="loader" class="hidden text-center py-20 opacity-30 italic">Consultando archivos...</div>
     </main>
 
     <div id="examPanel" class="no-print flex flex-col shadow-2xl">
@@ -118,13 +123,13 @@
             <h3 class="font-black text-sm tracking-widest text-gray-800 uppercase">Configurador</h3>
             <button onclick="document.getElementById('examPanel').classList.remove('open')" class="text-gray-400 hover:text-black">✕</button>
         </div>
-        <div class="p-6 flex-1 space-y-6 overflow-y-auto">
+        <div class="p-6 flex-1 space-y-6 overflow-y-auto custom-scroll">
             <div class="bg-gray-50 p-6 rounded-3xl space-y-4">
                 <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-3 rounded-xl text-[10px] outline-none">
                 <input id="h-title" type="text" placeholder="Título del Examen" class="w-full border p-3 rounded-xl text-[10px] outline-none">
                 <div class="grid grid-cols-2 gap-2"><input id="h-course" type="text" placeholder="Curso" class="w-full border p-3 rounded-xl text-[10px] outline-none"><input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-3 rounded-xl text-[10px] outline-none"></div>
             </div>
-            <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-[10px] font-black tracking-widest shadow-xl">GENERAR PDF</button>
+            <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-[10px] font-black tracking-widest shadow-xl transition hover:opacity-80">GENERAR PDF</button>
         </div>
     </div>
 </div>
@@ -198,28 +203,40 @@ function populateSelectors() {
     years.forEach(y => ySel.innerHTML += `<option value="${y}">${y}</option>`);
 }
 
-// ACTUALIZA LA NUBE DE TAGS EN FUNCIÓN DE LOS SELECTORES
 function updateDynamicTags() {
     const topic = document.getElementById('topicSelect').value;
     const year = document.getElementById('yearSelect').value;
     const cloud = document.getElementById('tagCloud');
 
-    // Filtramos las preguntas para ver qué tags están disponibles en este contexto
     const visibleQs = allQuestions.filter(q => {
         const okTopic = topic === 'all' || q.topic_name === topic;
         const okYear = year === 'all' || q.exam_year == year;
         return okTopic && okYear;
     });
 
-    const tagsInContext = [];
-    visibleQs.forEach(q => { if(q.detected_topics) tagsInContext.push(...q.detected_topics); });
-    const uniqueTags = [...new Set(tagsInContext)].sort();
+    const tagCounts = {};
+    visibleQs.forEach(q => { 
+        if(q.detected_topics) {
+            q.detected_topics.forEach(tag => {
+                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            });
+        } 
+    });
+
+    const uniqueTags = Object.keys(tagCounts).sort();
+    const maxFreq = Math.max(...Object.values(tagCounts), 1);
 
     cloud.innerHTML = "";
     uniqueTags.forEach(tag => {
+        const freq = tagCounts[tag];
         const span = document.createElement('span');
+        
+        // CÁLCULO DE TAMAÑO PONDERADO (Escala entre 9px y 16px)
+        const size = 9 + (freq / maxFreq) * 7;
+        
         span.className = `tag-cloud-item ${activeTagFilter === tag ? 'active-tag' : ''}`;
-        span.textContent = tag;
+        span.style.fontSize = `${size}px`;
+        span.textContent = `${tag} (${freq})`;
         span.onclick = () => {
             activeTagFilter = (activeTagFilter === tag) ? "all" : tag;
             updateDynamicTags();
@@ -238,7 +255,7 @@ function render() {
 
     if (!term && year === 'all' && topic === 'all' && activeTagFilter === 'all') {
         container.innerHTML = '';
-        stats.textContent = "Aplique un filtro para visualizar contenido";
+        stats.textContent = "Selecciona un filtro para explorar problemas";
         document.getElementById('placeholder-icon').style.display = 'block';
         return;
     }
