@@ -1,5 +1,39 @@
 [
   {
+    "text": "a) Respecto a los documentos de un proyecto técnico, indicar qué relación existe entre el documento de Mediciones y el de Presupuesto y entre el de Mediciones y el de Planos.\n\nb) Explicar en qué consiste la eficiencia energética de los materiales y enumerar dos factores que influyan sobre ella.\n\nc) Un ordenador reporta que ha detectado un malware. Explicar qué significa este aviso y cómo se debe proceder.\n\nd) Una empresa de desarrollo software quiere adoptar una metodología que permita desarrollar prototipos en ciclos cortos de iteración para recibir una realimentación rápida de los usuarios y poder mejorar así el producto desde fases tempranas del desarrollo. Proponer y razonar la elección de un tipo de metodología agile que esté alineado con las necesidades de esta empresa.",
+    "topic_name": "Control y Programación",
+    "exam_year": 2025,
+    "exam_model": "Titular-B",
+    "community": "Andalucía",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Gestión de proyectos",
+      "Sostenibilidad",
+      "Seguridad informática",
+      "Metodologías ágiles"
+    ],
+    "has_image": false,
+    "id": "mf99ymb1b",
+    "source_file": "Examen_Titular-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "EJERCICIO 4 OPCIÓN ÚNICA\n\na) Enumerar y definir los documentos básicos de un proyecto técnico.\n\nb) Se ha recibido un correo electrónico de una persona desconocida, indicando que la dirección IP de su ordenador ha ganado un premio. Para poder recibir el premio, debe entrar en una página web para indicar sus datos personales y verificar su identidad. Identificar y justificar el posible ataque que puede sufrir la persona a través de la amenaza anterior.\n\nc) En relación con la inteligencia artificial, ¿qué es una máquina reactiva? Indicar un ejemplo.\n\nd) ¿Cuándo y por qué es necesario realizar un estudio de impacto ambiental?",
+    "topic_name": "Control y Programación",
+    "exam_year": 2025,
+    "exam_model": "Titular-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Proyectos técnicos",
+      "Ciberseguridad",
+      "Inteligencia Artificial",
+      "Impacto Ambiental"
+    ],
+    "has_image": false,
+    "id": "ndv0ycg0k",
+    "source_file": "Examen_Titular-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "EJERCICIO 4. OPCIÓN ÚNICA.\n\na) Enumerar y definir los documentos básicos de un proyecto técnico.\n\nb) Se ha recibido un correo electrónico de una persona desconocida, indicando que la dirección IP de su ordenador ha ganado un premio. Para poder recibir el premio, debe entrar en una página web para indicar sus datos personales y verificar su identidad. Identificar y justificar el posible ataque que puede sufrir la persona a través de la amenaza anterior.\n\nc) En relación con la inteligencia artificial, ¿qué es una máquina reactiva? Indicar un ejemplo.\n\nd) ¿Cuándo y por qué es necesario realizar un estudio de impacto ambiental?",
     "topic_name": "Control y Programación",
     "exam_year": 2025,
