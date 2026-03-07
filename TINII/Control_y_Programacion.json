@@ -1,5 +1,37 @@
 [
   {
+    "text": "EJERCICIO 4 OPCIÓN ÚNICA\n\na) Enumerar los principios de trabajo fundamentales en los que se basan las metodologías ágiles. Explica uno de ellos mediante los beneficios que aporta.\n\nb) Indicar cuatro medidas para una protección básica en la seguridad cibernética.\n\nc) Se ha presentado un proyecto en el que se han incluido los siguientes documentos: índice, memoria, anexo, estudio de impacto ambiental y planos. Indicar los documentos que faltan para que el proyecto esté completo.",
+    "topic_name": "Control y Programación",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-B",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Metodologías ágiles",
+      "Ciberseguridad",
+      "Oficina Técnica"
+    ],
+    "has_image": false,
+    "id": "sox2hftnv",
+    "source_file": "Examen_Suplente1-B_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "a) Enumerar las fases de un proyecto y relacionar las siguientes actividades con la fase que corresponda: control de entregas, cronograma del proyecto, elaboración de la memoria del proyecto, distribución de las tareas a los grupos de trabajo, definición de objetivos generales del proyecto.\n\nb) Explicar las diferencias entre un algoritmo convencional de ordenador y otro de inteligencia artificial que utilice el aprendizaje automático.\n\nc) Describir detalladamente tres amenazas comunes en los sistemas informáticos.",
+    "topic_name": "Control y Programación",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Gestión de proyectos",
+      "Inteligencia Artificial",
+      "Seguridad informática"
+    ],
+    "has_image": false,
+    "id": "b1z3lezdj",
+    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "a) Explicar las diferencias entre el aprendizaje automático supervisado y el aprendizaje automático no supervisado.\n\nb) En el contexto de la inteligencia artificial, mencionar y describir tres aspectos negativos de la misma. ¿Qué es la autoconciencia?\n\nc) Indicar en qué documentos básicos de un proyecto técnico deben incluirse los siguientes apartados: estudio de impacto ambiental, condiciones económicas, cuadro de precios unitarios de materiales, análisis de soluciones, planificación.",
     "topic_name": "Control y Programación",
     "exam_year": 2025,
