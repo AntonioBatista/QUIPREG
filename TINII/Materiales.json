@@ -1,5 +1,37 @@
 [
   {
+    "text": "En un ensayo Brinell se emplea una bola de 2,5 mm de diámetro y se aplica una carga que produce una huella de 1,2 mm de diámetro. La constante de ensayo para este material es 30 kp/mm2. Se pide:\n\na) Determinar la carga aplicada en el ensayo y calcular la dureza Brinell del material.\n\nb) Si se usara una bola de 5 mm de diámetro, ¿cuál sería el diámetro de la huella?",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Ensayos de dureza",
+      "Brinell",
+      "Propiedades de los materiales"
+    ],
+    "has_image": false,
+    "id": "et8xz2b5e",
+    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
+    "text": "A una varilla cilíndrica de latón de 10 mm de diámetro y 1 m de largo se le aplica una fuerza a tracción hasta su rotura. Su límite elástico es 250 MPa, el módulo de Young 120 GPa y el diámetro a la rotura 6,1 mm. Se pide:\n\na) Determinar si la varilla sufrirá una deformación permanente cuando se le aplique una fuerza de 2000 N.\n\nb) Calcular su alargamiento unitario para una fuerza de 1000 N.\n\nc) Calcular la estricción a la rotura.",
+    "topic_name": "Materiales",
+    "exam_year": 2025,
+    "exam_model": "Suplente1-A",
+    "community": "Andalucía, Ceuta, Melilla y Centros en Marruecos",
+    "is_competency_based": false,
+    "detected_topics": [
+      "Ensayo de tracción",
+      "Elasticidad",
+      "Ley de Hooke"
+    ],
+    "has_image": false,
+    "id": "nk6b9qssp",
+    "source_file": "Examen_Suplente1-A_TecnologiaIngenieriaII.pdf"
+  },
+  {
     "text": "Para medir la dureza de una plancha de acero se realiza un ensayo Vickers aplicando una carga de 40 kp durante 20 s, obteniéndose una huella de diagonales d1 = 0,604 mm y d2 = 0,598 mm.\n\na) Calcular la dureza de la plancha y expresar su valor normalizado.\n\nb) Si en otro ensayo Vickers sobre la misma plancha se usa una fuerza de 80 kp durante 10 s, ¿cuánto medirá la diagonal de la huella?",
     "topic_name": "Materiales",
     "exam_year": 2025,
