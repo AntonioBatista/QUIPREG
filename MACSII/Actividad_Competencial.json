@@ -1,6 +1,6 @@
 [
   {
-    "text": "**EJERCICIO 1**\na) **(1.75 puntos)** Un fabricante de paneles fotovoltaicos está analizando la eficiencia de tres modelos de placas (A, B y C). En un día determinado se realizaron tres pruebas. En la primera, utilizando 2 placas del modelo A, 1 placa del modelo B y 3 placas del modelo C, se generó una potencia efectiva total de 2960W. En la segunda, al combinar 1 placa del modelo A, 3 placas del modelo B y 2 placas del modelo C, se obtuvo una potencia efectiva total de 2990W. En la tercera, una configuración con 3 placas del modelo A, 2 placas del modelo B y 1 placa del modelo C produjo una potencia efectiva total de 2870W. Exprese el problema en forma matricial y discuta, a partir de la matriz del sistema, si se puede obtener la potencia efectiva que generó individualmente cada modelo de placa fotovoltaica. En caso afirmativo, obtenga dichas potencias efectivas.\nb) **(0.75 puntos)** Resuelva la ecuación matricial **2X = (1 2 / 0 -1) * (4 / 1)**",
+    "text": "**EJERCICIO 1**\n\na) **** Un fabricante de paneles fotovoltaicos está analizando la eficiencia de tres modelos de placas (A, B y C). En un día determinado se realizaron tres pruebas. En la primera, utilizando 2 placas del modelo A, 1 placa del modelo B y 3 placas del modelo C, se generó una potencia efectiva total de 2960W. En la segunda, al combinar 1 placa del modelo A, 3 placas del modelo B y 2 placas del modelo C, se obtuvo una potencia efectiva total de 2990W. En la tercera, una configuración con 3 placas del modelo A, 2 placas del modelo B y 1 placa del modelo C produjo una potencia efectiva total de 2870W. Exprese el problema en forma matricial y discuta, a partir de la matriz del sistema, si se puede obtener la potencia efectiva que generó individualmente cada modelo de placa fotovoltaica. En caso afirmativo, obtenga dichas potencias efectivas.\n\nb) **** Resuelva la ecuación matricial **2X = (1 2 / 0 -1) * (4 / 1)**",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
     "exam_model": "Titular-B",
@@ -16,7 +16,7 @@
     "source_file": "Examen_Titular-B_ Matemáticas Aplicadas a las Ciencias Sociales II.pdf"
   },
   {
-    "text": "**EJERCICIO 2**\n**(2.5 puntos)** Un agricultor cultiva dos tipos de lechuga: iceberg y romana. Por razones de demanda, en cada ciclo de cultivo, la cantidad de iceberg debe ser al menos la mitad de la de romana, pero no puede superar las 1500 unidades. Además, deben cultivarse en total entre 900 y 2400 lechugas. El cultivo de iceberg requiere 15 litros de agua por unidad, mientras que el de romana necesita 18 litros de agua por unidad. ¿Cuántas unidades de cada tipo de lechuga deben cultivarse para minimizar el consumo total de agua?",
+    "text": "**EJERCICIO 2**\n**** Un agricultor cultiva dos tipos de lechuga: iceberg y romana. Por razones de demanda, en cada ciclo de cultivo, la cantidad de iceberg debe ser al menos la mitad de la de romana, pero no puede superar las 1500 unidades. Además, deben cultivarse en total entre 900 y 2400 lechugas. El cultivo de iceberg requiere 15 litros de agua por unidad, mientras que el de romana necesita 18 litros de agua por unidad. ¿Cuántas unidades de cada tipo de lechuga deben cultivarse para minimizar el consumo total de agua?",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
     "exam_model": "Titular-B",
@@ -31,7 +31,7 @@
     "source_file": "Examen_Titular-B_ Matemáticas Aplicadas a las Ciencias Sociales II.pdf"
   },
   {
-    "text": "**EJERCICIO 3**\nTrinidad, una persona ahorradora, deposita 5000 € en un fondo de inversión y el capital final que obtiene cuando transcurren t años viene dado por la siguiente función:\nf(t) = { 5000 * (1 + 0.05t) if 0 <= t <= 1 ; 5000 * 1.05^t if t > 1 }\na) **(0.75 puntos)** ¿Cuánto tiempo debe mantener invertido el dinero si el capital final que se obtiene es de 5931.10 €?\nb) **(0.5 puntos)** Calcule los intereses que obtiene Trinidad entre el año 2 y el año 4, si se conoce que los intereses que genera esta inversión entre el año t1 y el año t2 vienen dados por I = f(t2) - f(t1).\nc) **(0.75 puntos)** Estudie la continuidad y derivabilidad de la función f.\nd) **(0.5 puntos)** Estudie la monotonía de la función f y esboce su gráfica.",
+    "text": "**EJERCICIO 3**\nTrinidad, una persona ahorradora, deposita 5000 € en un fondo de inversión y el capital final que obtiene cuando transcurren t años viene dado por la siguiente función:\nf(t) = { 5000 * (1 + 0.05t) if 0 <= t <= 1 ; 5000 * 1.05^t if t > 1 }\n\na) **** ¿Cuánto tiempo debe mantener invertido el dinero si el capital final que se obtiene es de 5931.10 €?\n\nb) **** Calcule los intereses que obtiene Trinidad entre el año 2 y el año 4, si se conoce que los intereses que genera esta inversión entre el año t1 y el año t2 vienen dados por I = f(t2) - f(t1).\n\nc) **** Estudie la continuidad y derivabilidad de la función f.\n\nd) **** Estudie la monotonía de la función f y esboce su gráfica.",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
     "exam_model": "Titular-B",
@@ -48,7 +48,7 @@
     "source_file": "Examen_Titular-B_ Matemáticas Aplicadas a las Ciencias Sociales II.pdf"
   },
   {
-    "text": "**EJERCICIO 5**\nLos alumnos de un colegio de una localidad andaluza van a realizar una excursión a la estación de esquí de Sierra Nevada desplazándose en tres autobuses A, B y C. En el autobús A se desplazan cuatro novenos de los alumnos de la excursión, en el B se desplaza la tercera parte y el resto van en el autobús C. Se sabe que el 65% de los alumnos que viajan en el autobús A y el 40% de los del autobús B no sabe esquiar y todos los del autobús C sí que saben esquiar. Se escoge al azar a uno de los alumnos de la excursión. Calcule la probabilidad de que:\na) **(1 punto)** Sepa esquiar.\nb) **(0.75 puntos)** Viaje en el autobús C, si sabe esquiar.\nc) **(0.75 puntos)** Sepa esquiar y no viaje en el autobús B.",
+    "text": "**EJERCICIO 5**\nLos alumnos de un colegio de una localidad andaluza van a realizar una excursión a la estación de esquí de Sierra Nevada desplazándose en tres autobuses A, B y C. En el autobús A se desplazan cuatro novenos de los alumnos de la excursión, en el B se desplaza la tercera parte y el resto van en el autobús C. Se sabe que el 65% de los alumnos que viajan en el autobús A y el 40% de los del autobús B no sabe esquiar y todos los del autobús C sí que saben esquiar. Se escoge al azar a uno de los alumnos de la excursión. Calcule la probabilidad de que:\n\na) **** Sepa esquiar.\n\nb) **** Viaje en el autobús C, si sabe esquiar.\n\nc) **** Sepa esquiar y no viaje en el autobús B.",
     "topic_name": "Actividad Competencial",
     "exam_year": 2025,
     "exam_model": "Titular-B",
