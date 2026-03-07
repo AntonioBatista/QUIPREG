@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>EduDB | Banco de Preguntas v5.1</title>
+    <title>EduDB | Banco de Preguntas v5.2</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
@@ -13,7 +13,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:italic,wght@400;600&display=swap');
         
-        :root { --bg: #F8F9FA; --subject-color: #000000; }
+        :root { --bg: #F8F9FA; --subject-color: #000000; --subject-soft: rgba(0,0,0,0.05); }
         body { background-color: var(--bg); font-family: 'Inter', sans-serif; color: #1a1a1a; overflow: hidden; }
 
         .glass-header { background: white; border-bottom: 1px solid #eee; padding: 0.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
@@ -28,21 +28,31 @@
 
         .data-row { background: white; border-radius: 16px; border: 1px solid #eee; padding: 2rem; transition: 0.2s; position: relative; }
         
-        /* COLORES DE TAGS */
-        .pill-topic { background: #3b82f6; color: white; } /* Azul: Bloque */
-        .pill-content { background: #10b981; color: white; } /* Verde: Contenido */
+        /* COLORES DE TAGS EN TARJETAS */
+        .pill-topic { background: #3b82f6; color: white; } 
+        .pill-content { background: #10b981; color: white; } 
         
         .tag-badge { font-size: 9px; font-weight: 800; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-        /* NUBE DE TAGS PONDERADA */
-        #tagCloud { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: flex-start; }
+        /* NUBE DE TAGS PONDERADA Y REACTIVA */
+        #tagCloud { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
         .tag-cloud-item { 
-            font-weight: 700; padding: 2px 8px; border-radius: 12px; 
-            background: #f1f5f9; color: #64748b; cursor: pointer; transition: 0.3s;
-            line-height: 1.2;
+            font-weight: 700; padding: 4px 10px; border-radius: 12px; 
+            background: #f8fafc; color: #94a3b8; cursor: pointer; transition: all 0.3s ease;
+            line-height: 1.1; border: 1px solid transparent;
         }
-        .tag-cloud-item:hover { background: #e2e8f0; color: black; transform: scale(1.05); }
-        .tag-cloud-item.active-tag { background: var(--subject-color) !important; color: white !important; }
+        /* Hover suave con el color de la materia */
+        .tag-cloud-item:hover { 
+            background: var(--subject-soft); 
+            color: var(--subject-color);
+            transform: translateY(-1px);
+        }
+        /* Seleccionado sólido */
+        .tag-cloud-item.active-tag { 
+            background: var(--subject-color) !important; 
+            color: white !important; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
         #placeholder-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 280px; pointer-events: none; }
         #examPanel { position: fixed; right: -400px; top: 0; width: 380px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.05); transition: right 0.4s; z-index: 100; }
@@ -58,12 +68,12 @@
 
 <header class="glass-header no-print">
     <div class="flex items-center gap-4">
-        <button onclick="document.getElementById('sidebar').classList.toggle('collapsed')" class="p-2 hover:bg-gray-100 rounded-lg">
+        <button onclick="document.getElementById('sidebar').classList.toggle('collapsed')" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
         <div class="flex flex-col">
             <span class="font-black text-lg tracking-tighter italic">EduDB</span>
-            <span class="text-[9px] font-bold text-gray-300 uppercase leading-none">v5.1 Weighted Cloud</span>
+            <span class="text-[9px] font-bold text-gray-400 uppercase leading-none">v5.2 Smart Cloud</span>
         </div>
     </div>
 
@@ -77,7 +87,7 @@
     </nav>
 
     <div class="flex items-center gap-3">
-        <button onclick="document.getElementById('examPanel').classList.add('open')" class="bg-black text-white px-5 py-2 rounded-xl text-[10px] font-bold tracking-widest transition">
+        <button onclick="document.getElementById('examPanel').classList.add('open')" class="bg-black text-white px-5 py-2 rounded-xl text-[10px] font-bold tracking-widest transition active:scale-95">
             MODO EXAMEN (<span id="examCount">0</span>)
         </button>
     </div>
@@ -86,26 +96,26 @@
 <div class="flex flex-1 overflow-hidden relative">
     
     <aside id="sidebar" class="no-print p-6 flex flex-col gap-6 overflow-y-auto custom-scroll bg-white">
-        <button onclick="resetFilters()" class="w-full py-2 bg-gray-50 text-gray-400 text-[9px] font-black uppercase rounded-lg">Limpiar Filtros</button>
+        <button onclick="resetFilters()" class="w-full py-2 bg-gray-50 text-gray-400 text-[9px] font-black uppercase rounded-lg hover:bg-gray-100 transition">Limpiar Filtros</button>
 
         <section>
             <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Buscador</label>
-            <input id="search" type="text" placeholder="Buscar concepto..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-colors">
+            <input id="search" type="text" placeholder="Concepto o enunciado..." class="w-full border-b focus:border-black p-2 text-sm outline-none transition-all">
         </section>
 
-        <section class="grid grid-cols-1 gap-4">
+        <section class="space-y-4">
             <div>
                 <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Bloque</label>
-                <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
+                <select id="topicSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer hover:border-gray-300 transition"></select>
             </div>
             <div>
                 <label class="text-[10px] uppercase font-bold text-gray-400 mb-2 block tracking-widest">Año</label>
-                <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer"></select>
+                <select id="yearSelect" onchange="updateDynamicTags(); render();" class="w-full border rounded-xl p-2 text-xs bg-gray-50 outline-none cursor-pointer hover:border-gray-300 transition"></select>
             </div>
         </section>
 
-        <section>
-            <label class="text-[10px] uppercase font-bold text-gray-400 mb-3 block tracking-widest">Nube de Contenidos</label>
+        <section id="tagCloudSection" class="hidden">
+            <label class="text-[10px] uppercase font-bold text-gray-400 mb-4 block tracking-widest border-t pt-4">Contenidos del Bloque</label>
             <div id="tagCloud">
                 </div>
         </section>
@@ -113,35 +123,35 @@
 
     <main class="flex-1 overflow-y-auto p-8 relative bg-[#fcfcfc]">
         <img id="placeholder-icon" src="https://img.icons8.com/fluency/240/test-tube.png">
-        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center italic">Selecciona un filtro para explorar problemas</div>
+        <div id="stats" class="mb-6 text-[10px] font-black text-gray-300 uppercase tracking-widest text-center italic">Selecciona un bloque o busca para ver resultados</div>
         <div id="questions" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
         <div id="loader" class="hidden text-center py-20 opacity-30 italic">Consultando archivos...</div>
     </main>
 
     <div id="examPanel" class="no-print flex flex-col shadow-2xl">
         <div class="p-6 flex items-center justify-between border-b">
-            <h3 class="font-black text-sm tracking-widest text-gray-800 uppercase">Configurador</h3>
+            <h3 class="font-black text-sm tracking-widest text-gray-800 uppercase leading-none">Configurador</h3>
             <button onclick="document.getElementById('examPanel').classList.remove('open')" class="text-gray-400 hover:text-black">✕</button>
         </div>
         <div class="p-6 flex-1 space-y-6 overflow-y-auto custom-scroll">
             <div class="bg-gray-50 p-6 rounded-3xl space-y-4">
-                <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-3 rounded-xl text-[10px] outline-none">
-                <input id="h-title" type="text" placeholder="Título del Examen" class="w-full border p-3 rounded-xl text-[10px] outline-none">
-                <div class="grid grid-cols-2 gap-2"><input id="h-course" type="text" placeholder="Curso" class="w-full border p-3 rounded-xl text-[10px] outline-none"><input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-3 rounded-xl text-[10px] outline-none"></div>
+                <input id="h-inst" type="text" placeholder="Institución / Colegio" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition">
+                <input id="h-title" type="text" placeholder="Título del Examen" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition">
+                <div class="grid grid-cols-2 gap-2"><input id="h-course" type="text" placeholder="Curso" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition"><input id="h-prof" type="text" placeholder="Profesor" class="w-full border p-3 rounded-xl text-[10px] outline-none focus:border-black transition"></div>
             </div>
-            <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-[10px] font-black tracking-widest shadow-xl transition hover:opacity-80">GENERAR PDF</button>
+            <button onclick="printExam()" class="w-full py-4 bg-black text-white rounded-2xl text-[10px] font-black tracking-widest shadow-xl transition hover:opacity-85 active:scale-[0.98]">GENERAR PDF</button>
         </div>
     </div>
 </div>
 
 <script>
 const subjectConfig = {
-    'QUIM': { title: 'Química', folder: 'QUIM', file: 'indexquim.json', color: '#00c853', icon: 'https://img.icons8.com/fluency/240/test-tube.png' },
-    'FIS': { title: 'Física', folder: 'FIS', file: 'indexfis.json', color: '#2979ff', icon: 'https://img.icons8.com/fluency/240/physics.png' },
-    'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', icon: 'https://img.icons8.com/fluency/240/math.png' },
-    'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', icon: 'https://img.icons8.com/fluency/240/line-chart.png' },
-    'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', icon: 'https://img.icons8.com/fluency/240/circuit.png' },
-    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtec.json', color: '#455a64', icon: 'https://img.icons8.com/fluency/240/ruler-pencil.png' }
+    'QUIM': { title: 'Química', folder: 'QUIM', file: 'indexquim.json', color: '#00c853', soft: 'rgba(0, 200, 83, 0.1)', icon: 'https://img.icons8.com/fluency/240/test-tube.png' },
+    'FIS': { title: 'Física', folder: 'FIS', file: 'indexfis.json', color: '#2979ff', soft: 'rgba(41, 121, 255, 0.1)', icon: 'https://img.icons8.com/fluency/240/physics.png' },
+    'MATII': { title: 'Matemáticas II', folder: 'MATII', file: 'indexmatii.json', color: '#651fff', soft: 'rgba(101, 31, 255, 0.1)', icon: 'https://img.icons8.com/fluency/240/math.png' },
+    'MACSII': { title: 'Mates CCSS II', folder: 'MACSII', file: 'indexmacsii.json', color: '#f50057', soft: 'rgba(245, 0, 87, 0.1)', icon: 'https://img.icons8.com/fluency/240/line-chart.png' },
+    'TINII': { title: 'Tecno II', folder: 'TINII', file: 'indextinii.json', color: '#ff9100', soft: 'rgba(255, 145, 0, 0.1)', icon: 'https://img.icons8.com/fluency/240/circuit.png' },
+    'DTECII': { title: 'Dibujo II', folder: 'DTECII', file: 'indexdtec.json', color: '#455a64', soft: 'rgba(69, 90, 100, 0.1)', icon: 'https://img.icons8.com/fluency/240/ruler-pencil.png' }
 };
 
 let currentSubject = "QUIM";
@@ -161,6 +171,7 @@ function switchSubject(id) {
     currentSubject = id;
     const config = subjectConfig[id];
     document.documentElement.style.setProperty('--subject-color', config.color);
+    document.documentElement.style.setProperty('--subject-soft', config.soft);
     document.getElementById('placeholder-icon').src = config.icon;
     document.querySelectorAll('.subject-tab').forEach(b => b.classList.remove('active-sub'));
     document.getElementById(`btn-${id}`).classList.add('active-sub');
@@ -185,7 +196,6 @@ async function loadData() {
         const results = await Promise.all(promises);
         allQuestions = results.flat();
         populateSelectors();
-        updateDynamicTags();
         loader.classList.add('hidden');
     } catch (e) { console.error("Error", e); }
 }
@@ -207,9 +217,18 @@ function updateDynamicTags() {
     const topic = document.getElementById('topicSelect').value;
     const year = document.getElementById('yearSelect').value;
     const cloud = document.getElementById('tagCloud');
+    const section = document.getElementById('tagCloudSection');
+
+    // REGLA: Ocultar nube si no hay tema seleccionado
+    if (topic === 'all') {
+        section.classList.add('hidden');
+        activeTagFilter = "all";
+        return;
+    }
+    section.classList.remove('hidden');
 
     const visibleQs = allQuestions.filter(q => {
-        const okTopic = topic === 'all' || q.topic_name === topic;
+        const okTopic = q.topic_name === topic;
         const okYear = year === 'all' || q.exam_year == year;
         return okTopic && okYear;
     });
@@ -231,12 +250,12 @@ function updateDynamicTags() {
         const freq = tagCounts[tag];
         const span = document.createElement('span');
         
-        // CÁLCULO DE TAMAÑO PONDERADO (Escala entre 9px y 16px)
-        const size = 9 + (freq / maxFreq) * 7;
+        // Ponderado proporcional (9px a 15px)
+        const size = 9 + (freq / maxFreq) * 6;
         
         span.className = `tag-cloud-item ${activeTagFilter === tag ? 'active-tag' : ''}`;
         span.style.fontSize = `${size}px`;
-        span.textContent = `${tag} (${freq})`;
+        span.textContent = tag; // Sin número al lado
         span.onclick = () => {
             activeTagFilter = (activeTagFilter === tag) ? "all" : tag;
             updateDynamicTags();
@@ -255,7 +274,7 @@ function render() {
 
     if (!term && year === 'all' && topic === 'all' && activeTagFilter === 'all') {
         container.innerHTML = '';
-        stats.textContent = "Selecciona un filtro para explorar problemas";
+        stats.textContent = "Selecciona un bloque o busca para ver resultados";
         document.getElementById('placeholder-icon').style.display = 'block';
         return;
     }
@@ -287,9 +306,9 @@ function render() {
                     <h2 class="text-3xl font-black leading-none">${q.exam_year}</h2>
                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">${q.exam_model || ''}</span>
                 </div>
-                <div class="flex flex-col items-end gap-2">
+                <div class="flex flex-col items-end gap-2 text-right">
                     <span class="tag-badge pill-topic">${q.topic_name}</span>
-                    <div class="flex gap-1 flex-wrap justify-end">${contentsHTML}</div>
+                    <div class="flex gap-1 flex-wrap justify-end max-w-[200px]">${contentsHTML}</div>
                 </div>
             </div>
             
